@@ -21,9 +21,6 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, HttpServletResponse res, Model model) {
 		logger.info("home");
@@ -51,6 +48,18 @@ public class HomeController {
 		
 		model.addAttribute("ua",deviceType);
 		return "home";
+	}
+	
+	@RequestMapping(value="/board")
+	public String boardTest(){
+		
+		return "custom/board";
+	}
+	
+	@RequestMapping(value="/location")
+	public String locationTest(){
+		
+		return "custom/location";
 	}
 	
 }

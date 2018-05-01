@@ -80,7 +80,7 @@
 			<h1><span id="mainlogo">메인로고</span></h1>
 			<div id="mainMenu">
 				<ul>
-					<li><a href="#">메뉴1</a></li>
+					<li><a href="board">메뉴1</a></li>
 					<li><a href="#">메뉴2</a></li>
 					<li><a href="#">메뉴3</a></li>
 					<li><a href="#">메뉴4</a></li>
