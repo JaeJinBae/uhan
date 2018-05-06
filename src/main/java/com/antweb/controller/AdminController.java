@@ -1,9 +1,12 @@
 package com.antweb.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.antweb.service.BoardService;
@@ -18,19 +21,23 @@ public class AdminController {
 	
 	@RequestMapping(value="/")
 	public String adminMain(){
-		
+		logger.info("adminMain GET");
 		
 		return "admin/adminMain";
 	}
 	
 	@RequestMapping(value="/aBoard")
 	public String board(){
+		logger.info("admin Board Main");
 		
 		return "/admin/adminBoard";
 	}
 	
 	@RequestMapping(value="/statistics")
-	public String statistics(){
+	public String statistics(HttpServletRequest req, Model model){
+		logger.info("admin statistics Main");
+		String uri=req.getRequestURI();
+		model.addAttribute("uri",uri);
 		return "/admin/adminStatistics";
 	}
 	/*@RequestMapping(value = "/board", method = RequestMethod.GET)

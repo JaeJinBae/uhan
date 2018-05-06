@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과 관리자페이지</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
 	*{
 		margin:0;
@@ -70,10 +71,10 @@
 		<div class="leftMenu">
 			<h2>통계 리스트</h2>
 			<ul> 
-				<li> <a href="#"> 유입경로</a></li>
-				<li> <a href="#"> OS별 통계</a></li>
+				<li> <a href="#"> 일별 방문 통계</a></li>
+				<li> <a href="#"> 월별 방문 통계</a></li>
 				<li> <a href="#"> 브라우저 통계</a></li>
-				<li> <a href="#"> 아무거나</a></li>
+				<li> <a href="#"> OS 통계</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
