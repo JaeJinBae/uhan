@@ -26,5 +26,17 @@ public class HomeController {
 		
 		return "main/notice";
 	}
+
+	@RequestMapping(value="/board")
+	public String boardTest(){
+		
+		return "custom/board";
+	}
+	
+	@RequestMapping(value="/location")
+	public String locationTest(){
+		
+		return "custom/location";
+	}
 	
 }
