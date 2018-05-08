@@ -21,22 +21,33 @@
 	}
 	#header{
 		width:100%;
+		min-width:1073px;
 		margin:0 auto;
 		z-index: 9999;
+		/* overflow:hidden; */
 	}
 	#footer{
 		width:100%;
 		position: absolute;
 		bottom:0;
 	}
-	#mainBackground{
+	/* #mainBackground{
 		width:100%;
-		min-width:1200px;
 		height:800px;
 		clear:both;
-		background: url("${pageContext.request.contextPath}/resources/images/1111.png") no-repeat;/* main_img.jpg */
+		background: url("${pageContext.request.contextPath}/resources/images/1111.png") no-repeat;
 		background-size:contain;
 		position:absolute;
+		top:54px;
+		left:50%;
+		transform:translateX(-50%);
+		z-index: -1;
+	} */
+	#mainBackground{
+		width:100%;
+		height:814px;
+		clear:both;
+		position: absolute;
 		top:54px;
 		left:50%;
 		transform:translateX(-50%);
@@ -176,7 +187,7 @@
 	}
 	#lastContent #bottomContent{
 		width:540px;
-		height:530px;
+		height:330px;
 		background: url("${pageContext.request.contextPath}/resources/images/box_2.png") no-repeat;
 		position: absolute;
 		top:100px;
@@ -231,8 +242,9 @@
 		<div id="header">
 			<jsp:include page="../include/header2.jsp"></jsp:include>
 		</div>
-		<div id="mainBackground">
-		</div>
+		<!-- <div id="mainBackground">
+		</div> -->
+		<img id="mainBackground" src="${pageContext.request.contextPath}/resources/images/IMG_0966.JPG">
 		<div id="contentWrap">
 			<div id="mainContent">
 				<p>ㅡ</p>
@@ -317,11 +329,6 @@
 					<ul id="lContentUL">
 						<li><b>- 진료 및 치료 예약 시스템</b> : 30분 간격</li>
 						<li><b>- 예약 문자 시스템</b> : 진료 하루전날</li>
-						<li><b>- 점심시간 당직</b></li>
-						<li><b>- 해피콜</b></li>
-						<li><b>- 클리닉 영상</b>(질환별/Q&A/원내소개)</li>
-						<li><b>- VIP할인 또는 서비스 제공</b></li>
-						<li><b>- 다과 및 간식 제공</b></li>
 					</ul>
 				</div>
 			</div>
