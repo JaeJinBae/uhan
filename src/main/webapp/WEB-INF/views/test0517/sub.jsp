@@ -33,7 +33,8 @@
 	}
 	section .mainBackground>.bgImg{
 		width:100%;
-		min-width:1200px;
+		/* min-width:1200px; */
+		height:346px;
 		float:left;
 	} 
 	section .mainBackground .navWrap{
@@ -43,27 +44,53 @@
 		background: #0B8783;
 	}
 	section .mainBackground .navWrap .navUl{
-		width:100%;
+		width:1200px;
+		margin:0 auto;
 	}
-	section .mainBackground .navWrap .navUl li{
-		width:250px;
+	section .mainBackground .navWrap .navUl>li{
 		height:70px;
-		border:1px solid blue;
+		border-left:1px solid #3C9F9C;
 		float:left;
-		padding:0, 15px;
+		text-align: center;
 	}
-	section .mainBackground .navWrap .navUl li a{
+	section .mainBackground .navWrap .navUl>li a{  
 		font-size: 20px;
 		color:white;
 		line-height: 70px;
+		margin:0 30px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:45px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #0B8783;
+	}
+	.sub_subDropdown>li{
+		text-align: left;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
 	}
 	section .contentWrap{
 		width:100%;
 		max-width:1200px;
 		margin:0 auto;
+		margin-top:50px;
 		text-align: center;
 		border:1px solid red;
-		clear:both; 
+		clear:both;
+		z-index: -1;
 	}
 	.contentWrap>img{
 		width:700px;
@@ -80,8 +107,22 @@
 			<div class="navWrap">
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
-					<li><a href="#">병원소개<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></a></li>
-					<li><a href="#">인사말<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></a></li>
+					<li>
+						<a href="#">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="#">병원소개</a></li>
+							<li><a href="#">진료분야</a></li>
+							<li><a href="#">병원소식</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">대상포진 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="#">비수술 클리닉</a></li>
+							<li><a href="#">대상포진 클리닉</a></li>
+							<li><a href="#">관절통증 클리닉</a></li>
+						</ul>	
+					</li>
 				</ul>
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
