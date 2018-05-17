@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>유한통증의학과 진료/비용 상담</title>
+<title>진료/비용 상담|유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -15,7 +15,7 @@
 	}
 	#bodyWrap{
 		width:100%;
-		height:2000px;
+		height:1400px;
 		position: relative;
 	}
 	#header{
@@ -30,14 +30,17 @@
 	}
 	#mainBackground{
 		width:100%;
-		min-width:1200px;
-		height:25%;
+		max-width:2000px;
+		height:346px;
 		clear:both;
 		background: url("${pageContext.request.contextPath}/resources/images/news_top_bg.png") no-repeat;
+		background-size:cover;
 		position:absolute;
 		top:54px;
-		left:50%;
-		transform:translateX(-50%);
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
 		z-index: -1;
 	}
 	#mainBackground #mainIntro{
@@ -87,11 +90,13 @@
 	}
 	#contentWrap{
 		width:1200px;
+		max-width:1200px;
 		margin:0 auto;
 		position: absolute;
 		top:500px;
-		left:50%;
-		transform:translateX(-50%);
+		left:0;
+		right:0;
+		bottom:0;
 		text-align: center;
 	}
 	#contentWrap>img{
@@ -112,7 +117,7 @@
 		</div>
 		<div id="centerNav">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}"><img id="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
+				<li><a href="${pageContext.request.contextPath}/"><img id="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 				<li>병원소식&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
 				<li>진료/비용 상담&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
 			</ul>

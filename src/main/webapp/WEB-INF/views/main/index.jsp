@@ -5,62 +5,62 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과</title>
-<meta name="description" content="대구광역시 수성구 범어동, 비수술클리닉, 대상포진클리닉, 관절클리닉">
+<meta name="description" content="대구광역시 수성구 범어동 통증의학과, 비수술클리닉, 대상포진클리닉, 관절클리닉">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="유한통증의학과">
+<meta property="og:description" content="대구광역시 수성구 범어동, 비수술클리닉, 대상포진클리닉, 관절클리닉">
+<meta property="og:image" content="http://www.mysite.com/myimage.jpg">
+<meta property="og:url" content="http://www.uhan-hospital.com">
+<link rel="canonical" href="http://www.uhan-hospital.com/">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js "></script> -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
 	#bodyWrap{
 		width:100%;
-		height:2300px;
+		/* height:2300px; */
 		position: relative;
 	}
 	#header{
 		width:100%;
 		min-width:1073px;
 		margin:0 auto;
-		z-index: 9999;
-		/* overflow:hidden; */
+		position: relative;
+		z-index: 9;
 	}
 	#footer{
 		width:100%;
-		position: absolute;
-		bottom:0;
+		margin-top:50px;
 	}
-	/* #mainBackground{
-		width:100%;
-		height:800px;
-		clear:both;
-		background: url("${pageContext.request.contextPath}/resources/images/1111.png") no-repeat;
-		background-size:contain;
+	.mainBanner{
+		width:90%;
+		height:900px;
+		margin:0 auto;
 		position:absolute;
 		top:54px;
-		left:50%;
-		transform:translateX(-50%);
-		z-index: -1;
-	} */
-	#mainBackground{
+		left:0;
+		right:0;
+		bottom:0;
+		z-index:-1;
+		text-align: center;
+		margin-bottom:35px;
+	}
+	.mainBanner img{
 		width:100%;
-		height:814px;
-		clear:both;
-		position: absolute;
-		top:54px;
-		left:50%;
-		transform:translateX(-50%);
-		z-index: -1;
+		height:900px;
+		border-radius: 10px;
 	}
 	#bodyWrap #contentWrap{
 		width:1200px;
-		margin:0 auto; 
-		position:absolute; 
-		top:540px;
-		left:50%;
-		transform:translateX(-50%);
-		z-index: 2;
+		margin:0 auto;
+		margin-top:600px;
 	}
 	#bodyWrap #contentWrap #mainContent{
 		width:615px; 
@@ -79,6 +79,17 @@
 		font-size:2.3em;
 		margin-bottom:70px;
 	} 
+/* 	
+	#bodyWrap #contentWrap #mainContent>h2:after{
+	content:"";
+	display:block;
+	position:absolute;
+	top:0;
+	left: 50%;
+	background-color:#fff;
+	
+	
+	} */
 	#bodyWrap #contentWrap #mainContent #anouncement{
 		width:440px;
 		margin:0 auto;
@@ -234,6 +245,15 @@
 		$(".bBtnImg").mouseout(function(){
 			$(this).attr("src","/resources/images/plus_off.png");
 		});
+		$(".mainBanner").slick({
+			arrows:false,
+			infinite:true,
+			speed:500,
+			fade:true,
+			cssEase:'linear',
+			autoplay:true,
+			autoplaySpeed:4000
+		});
 	});
 </script>
 </head> 
@@ -242,9 +262,11 @@
 		<div id="header">
 			<jsp:include page="../include/header2.jsp"></jsp:include>
 		</div>
-		<!-- <div id="mainBackground">
-		</div> -->
-		<img id="mainBackground" src="${pageContext.request.contextPath}/resources/images/IMG_0966.JPG">
+		<div class="mainBanner">
+			<div><img src="${pageContext.request.contextPath}/resources/images/IMG_0966.JPG" alt="유한통증의학과"></div>
+			<div><img src="${pageContext.request.contextPath}/resources/images/IMG_0979.JPG" alt="유한통증의학과"></div>
+			<div><img src="${pageContext.request.contextPath}/resources/images/IMG_1020.JPG" alt="유한통증의학과"></div>
+		</div>
 		<div id="contentWrap">
 			<div id="mainContent">
 				<p>ㅡ</p>
@@ -259,25 +281,25 @@
 			</div><!-- mainContent 종료 -->
 			<div id="clinicContent">
 				<div class="clinic">
-					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_2.png"></p>
+					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_2.png" alt="유한통증의학과"></p>
 					<p class="m">――</p>
 					<p class="cName">대상포진클리닉</p>
 					<P class="cSubName">유한통증의학만의 대상포진클리닉</P>
-					<p class="cBtn"><a href="clinic_info02"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png"></a></p>
+					<p class="cBtn"><a href="clinic_info02"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
-					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_1.png"></p>
+					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_1.png" alt="icon"></p>
 					<p class="m">――</p>
 					<p class="cName">비수술클리닉</p>
 					<P class="cSubName">유한통증의학만의 비수술클리닉</P>
-					<p class="cBtn"><a href="clinic_info01"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png"></a></p>
+					<p class="cBtn"><a href="clinic_info01"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
-					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_3.png"></p>
+					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_3.png" alt="icon"></p>
 					<p class="m">――</p>
 					<p class="cName">관절클리닉</p>
 					<P class="cSubName">유한통증의학만의 관절클리닉</P>
-					<p class="cBtn"><a href="clinic_info03"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png"></a></p>
+					<p class="cBtn"><a href="clinic_info03"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
 					<div id="time">
@@ -296,12 +318,12 @@
 				<div class="board">
 					<div class="bTitle">
 						<p>공지사항</p>
-						<a href="notice"><img class="bBtnImg" src="${pageContext.request.contextPath}/resources/images/plus_off.png"></a>
+						<a href="notice"><img class="bBtnImg" src="${pageContext.request.contextPath}/resources/images/plus_off.png" alt="off"></a>
 					</div>
 					<div class="bContent">
 						<table>
 							<tr>
-								<td><img src="${pageContext.request.contextPath}/resources/images/list.png">&nbsp;&nbsp;등록된 게시물이 없습니다.</td>
+								<td><img src="${pageContext.request.contextPath}/resources/images/list.png" alt="list">&nbsp;&nbsp;등록된 게시물이 없습니다.</td>
 							</tr>
 						</table>
 					</div>
@@ -309,12 +331,12 @@
 				<div class="board">
 					<div class="bTitle">
 						<p>보도자료</p>
-						<a href="broadcasting"><img class="bBtnImg" src="${pageContext.request.contextPath}/resources/images/plus_off.png"></a>
+						<a href="broadcasting"><img class="bBtnImg" src="${pageContext.request.contextPath}/resources/images/plus_off.png" alt="off"></a>
 					</div>
 					<div class="bContent">
 						<table>
 							<tr>
-								<td><img src="${pageContext.request.contextPath}/resources/images/list.png">&nbsp;&nbsp;등록된 게시물이 없습니다.</td>
+								<td><img src="${pageContext.request.contextPath}/resources/images/list.png" alt="list">&nbsp;&nbsp;등록된 게시물이 없습니다.</td>
 							</tr>
 						</table>
 					</div>
@@ -334,10 +356,10 @@
 			</div>
 			
 		</div><!-- contentWrap 종료 -->
-		<div id="footer">
-			<jsp:include page="../include/footer.jsp"></jsp:include>
-		</div>
+		
 	</div><!-- bodyWrap 종료 -->
-	
+	<div id="footer">
+			<jsp:include page="../include/footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

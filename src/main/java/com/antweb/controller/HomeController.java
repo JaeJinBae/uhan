@@ -1,5 +1,7 @@
 package com.antweb.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,19 +14,39 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		logger.info("home");
-		
-		return "main/home";
-	}
 
-	@RequestMapping(value="/board")
+	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
+	public String testmain(Model model, HttpServletRequest req) {
+		logger.info("home");
+		String old_url = req.getHeader("referer");
+		logger.info(old_url);
+		
+		return "test0517/testmain";
+	}
+	
+	@RequestMapping(value="/testboard")
 	public String boardTest(){
 		
-		return "custom/board";
+		return "test0517/board";
 	}
+	
+	@RequestMapping(value="/testsub")
+	public String testSub(){
+		
+		return "test0517/sub";
+	}
+
+	//========================== main ===============================
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Model model, HttpServletRequest req) {
+		logger.info("home");
+		String old_url = req.getHeader("referer");
+		logger.info(old_url);
+		
+		return "main/index";
+	}
+
+	
 	//========================== info(병원소개)===============================
 	@RequestMapping(value="/info01")
 	public String info01(){

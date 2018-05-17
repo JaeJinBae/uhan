@@ -7,7 +7,6 @@
 		height:108px;
 		margin:0 auto;
 		background: url("${pageContext.request.contextPath}/resources/images/gnb_bg.png") no-repeat;
-		z-index: 9999;
 	}
 	#mainLogo{
 		width:200px;
@@ -52,6 +51,7 @@
 		height:200px;
 		background: white;
 		display:none;
+		z-index: 3;
 	}
 	.column{
 		width:33%;
@@ -85,7 +85,7 @@
 	})
 </script>
 <div id="headerWrap">
-	<a id="mainLogo" href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
+	<a id="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 	<div id="main_menu">
 		<ul id="menu">
 			<li>

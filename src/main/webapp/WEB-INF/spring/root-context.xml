@@ -14,20 +14,20 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<!-- 호스팅용 -->	
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/test7425"/>
 		<property name="username" value="test7425"/>
 		<property name="password" value="qowowls12!"/>
-	</bean>
+	</bean> -->
 	
 	<!-- 개발용 -->
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://127.0.0.1:3306/book_ex"/>
 		<property name="username" value="root"/>
 		<property name="password" value="rootroot"/>
-	</bean> -->
+	</bean>
 	
 	<!-- 로그 찍히게 하는 녀석 -->
 	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -47,4 +47,6 @@
 	
 	<context:component-scan base-package="com.antweb.persistence"></context:component-scan>
 	<context:component-scan base-package="com.antweb.service"></context:component-scan>
+	
 </beans>
+

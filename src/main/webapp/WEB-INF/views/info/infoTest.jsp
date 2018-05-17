@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>병원 둘러보기|유한통증의학과</title>
+<title>유한통증의학과 진료절차</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -15,7 +15,7 @@
 	}
 	#bodyWrap{
 		width:100%;
-		height:1400px;
+		height:2000px;
 		position: relative;
 	}
 	#header{
@@ -30,17 +30,14 @@
 	}
 	#mainBackground{
 		width:100%;
-		max-width:2000px;
-		height:346px;
+		min-width:1200px;
+		height:25%;
 		clear:both;
-		background: url("${pageContext.request.contextPath}/resources/images/news_top_bg.png") no-repeat;
-		background-size:cover;
+		background: url("${pageContext.request.contextPath}/resources/images/location_top_image.png") no-repeat;
 		position:absolute;
 		top:54px;
-		left:0;
-		right:0;
-		bottom:0;
-		margin:0 auto;
+		left:50%;
+		transform:translateX(-50%);
 		z-index: -1;
 	}
 	#mainBackground #mainIntro{
@@ -90,13 +87,11 @@
 	}
 	#contentWrap{
 		width:1200px;
-		max-width:1200px;
 		margin:0 auto;
 		position: absolute;
 		top:500px;
-		left:0;
-		right:0;
-		bottom:0;
+		left:50%;
+		transform:translateX(-50%);
 		text-align: center;
 	}
 	#contentWrap>img{
@@ -120,7 +115,7 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/"><img id="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 				<li>병원소개&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
-				<li>병원 둘러보기&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
+				<li>진료절차&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
 			</ul>
 		</div>
 		<div id="contentWrap">
