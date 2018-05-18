@@ -118,7 +118,7 @@
 					<li>
 						<a href="clinic02">대상포진 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="clinic01_01"></a>비수술 클리닉</li>
+							<li><a href="clinic01_01">비수술 클리닉</a></li>
 							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
