@@ -285,21 +285,21 @@
 					<p class="m">――</p>
 					<p class="cName">대상포진클리닉</p>
 					<P class="cSubName">유한통증의학만의 대상포진클리닉</P>
-					<p class="cBtn"><a href="clinic_info02"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
+					<p class="cBtn"><a href="clinic02"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
 					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_1.png" alt="icon"></p>
 					<p class="m">――</p>
 					<p class="cName">비수술클리닉</p>
 					<P class="cSubName">유한통증의학만의 비수술클리닉</P>
-					<p class="cBtn"><a href="clinic_info01"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
+					<p class="cBtn"><a href="clinic01_01"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
 					<p class="clinic_icon"><img src="${pageContext.request.contextPath}/resources/images/icon_3.png" alt="icon"></p>
 					<p class="m">――</p>
 					<p class="cName">관절클리닉</p>
 					<P class="cSubName">유한통증의학만의 관절클리닉</P>
-					<p class="cBtn"><a href="clinic_info03"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
+					<p class="cBtn"><a href="clinic03_01"><img class="cBtnImg" src="${pageContext.request.contextPath}/resources/images/btn_off.png" alt="off"></a></p>
 				</div>
 				<div class="clinic">
 					<div id="time">
