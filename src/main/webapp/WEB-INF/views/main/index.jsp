@@ -260,7 +260,7 @@
 <body>
 	<div id="bodyWrap">
 		<div id="header">
-			<jsp:include page="../include/header2.jsp"></jsp:include>
+			<jsp:include page="../include/header.jsp"></jsp:include>
 		</div>
 		<div class="mainBanner">
 			<div><img src="${pageContext.request.contextPath}/resources/images/IMG_0966.JPG" alt="유한통증의학과"></div>

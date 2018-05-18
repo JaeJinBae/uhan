@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style type="text/css">
 	*{
 		margin:0;
@@ -32,7 +39,7 @@
 		line-height: 100px;
 	}
 	.mainMenu>li>a{
-		font-size: 21px;
+		font-size: 23px;
 		height:98px;
 	}
 	.mainMenu>li:hover>a{
@@ -75,38 +82,40 @@
 	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 	<ul class="mainMenu">
 		<li>
-			<a href="info01">병원소개</a>
+			<a href="#">병원소개</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
-					<li><a href="info01">인사말</a></li>
-					<li><a href="info02">의료진 소개</a></li>
-					<li><a href="info03">병원 둘러보기</a></li>
-					<li><a href="info04">진료안내</a></li>
-					<li><a href="location">오시는 길</a></li>
+					<li><a href="#">인사말</a></li>
+					<li><a href="#">의료진 소개</a></li>
+					<li><a href="#">진료안내</a></li>
+					<li><a href="#">병원 둘러보기</a></li>
+					<li><a href="#">오시는 길</a></li>
 				</ul>
 			</div>
 		</li>
 		<li>
-			<a href="clinic01_01">진료분야</a>
+			<a href="#">진료분야</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
-					<li><a href="clinic01_01">비수술 클리닉</a></li>
-					<li><a href="clinic02">대상포진 클리닉</a></li>
-					<li><a href="clinic03_01">관절통증 클리닉</a></li>
+					<li><a href="#">비수술 클리닉</a></li>
+					<li><a href="#">대상포진 클리닉</a></li>
+					<li><a href="#">관절통증 클리닉</a></li>
 				</ul>
 			</div>
 		</li>
 		<li>
-			<a href="notice">병원소식</a>
+			<a href="#">병원소식</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu" id="lastMainSubMenu">
-					<li><a href="notice">공지사항</a></li>
-					<li><a href="broadcasting">언론보도</a></li>
-					<li><a href="comment">시술 후기</a></li>
-					<li><a href="advice">진료/비용 상담</a></li>
-					<li><a href="freqQuestion">자주하는 질문</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">언론보도</a></li>
+					<li><a href="#">시술 후기</a></li>
+					<li><a href="#">진료/비용 상담</a></li>
+					<li><a href="#">자주하는 질문</a></li>
 				</ul>
 			</div>
 		</li>
 	</ul><!-- mainMenu end -->
 </div><!-- headerWrap end -->
+</body>
+</html>

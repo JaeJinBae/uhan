@@ -21,19 +21,25 @@ public class HomeController {
 		String old_url = req.getHeader("referer");
 		logger.info(old_url);
 		
-		return "test0517/testmain";
+		return "test/testmain";
 	}
 	
 	@RequestMapping(value="/testboard")
 	public String boardTest(){
 		
-		return "test0517/board";
+		return "test/board";
 	}
 	
 	@RequestMapping(value="/testsub")
 	public String testSub(){
 		
-		return "test0517/sub";
+		return "test/sub";
+	}
+	
+	@RequestMapping(value="/testheader")
+	public String testHeadMenu(){
+		
+		return "test/headmenu";
 	}
 
 	//========================== main ===============================
@@ -79,20 +85,40 @@ public class HomeController {
 		return "info/location";
 	}
 	//========================== clinic(진료분야)===============================
-	@RequestMapping(value="/clinic_info01")
-	public String clinic01(){
+	@RequestMapping(value="/clinic01_01")
+	public String clinic01_01(){
 		
-		return "clinic/clinic01";
+		return "clinic/clinic01_1";
 	}
-	@RequestMapping(value="/clinic_info02")
+	@RequestMapping(value="/clinic01_02")
+	public String clinic01_02(){
+		
+		return "clinic/clinic01_2";
+	}
+	@RequestMapping(value="/clinic01_03")
+	public String clinic01_03(){
+		
+		return "clinic/clinic01_3";
+	}
+	@RequestMapping(value="/clinic01_04")
+	public String clinic01_04(){
+		
+		return "clinic/clinic01_4";
+	}
+	@RequestMapping(value="/clinic02")
 	public String clinic02(){
 		
 		return "clinic/clinic02";
 	}
-	@RequestMapping(value="/clinic_info03")
-	public String clinic03(){
+	@RequestMapping(value="/clinic03_01")
+	public String clinic03_01(){
 		
-		return "clinic/clinic03";
+		return "clinic/clinic03_1";
+	}
+	@RequestMapping(value="/clinic03_02")
+	public String clinic03_02(){
+		
+		return "clinic/clinic03_2";
 	}
 	//========================== news(병원소식)===============================
 	@RequestMapping(value="/notice")

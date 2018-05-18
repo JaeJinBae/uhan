@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>인사말|유한통증의학과</title>
+<title>비수술 클리닉 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -27,6 +27,7 @@
 	section{
 		width:100%;
 		margin-top:54px;
+		margin-bottom:100px;
 	}
 	section .mainBackground{
 		width:100%;
@@ -86,10 +87,10 @@
 		width:100%;
 		max-width:1200px;
 		margin:0 auto;
-		margin-top:50px;
+		margin-top:100px;
 		text-align: center;
-		border:1px solid red;
 		clear:both;
+		position:relative;
 		z-index: -1;
 	}
 	.contentWrap>img{
@@ -99,7 +100,7 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/header2.jsp"></jsp:include>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="mainBackground">
@@ -108,22 +109,28 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="#">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="#">병원소개</a></li>
-							<li><a href="#">진료분야</a></li>
-							<li><a href="#">병원소식</a></li>
+							<li><a href="info01">병원소개</a></li>
+							<li><a href="notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">대상포진 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="#">비수술 클리닉</a></li>
-							<li><a href="#">대상포진 클리닉</a></li>
-							<li><a href="#">관절통증 클리닉</a></li>
+							<li><a href="clinic02">대상포진 클리닉</a></li>
+							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
-				</ul>
+					<li>
+						<a href="clinic01_03">추간공확장술<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="clinic01_01">꼬리뼈 레이저 내시경술</a></li>
+							<li><a href="clinic01_02">풍선 확장술</a></li>
+							<li><a href="clinic01_04">신경성형술</a></li>
+						</ul>	
+					</li>
+				</ul><!-- navUl end -->
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
@@ -133,7 +140,5 @@
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>
 	</footer>
-	
-
 </body>
 </html>

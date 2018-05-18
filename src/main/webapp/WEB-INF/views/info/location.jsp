@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>유한통증의학과 오시는 길</title>
+<title>오시는 길 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -14,106 +14,99 @@
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
-	#bodyWrap{
+	header{
 		width:100%;
-		height:2000px;
-		position: relative;
-	}
-	#header{
-		width:100%;
-		margin:0 auto;
-		z-index: 9999;
-	}
-	#footer{
-		width:100%;
+		height:108px;
 		position: absolute;
-		bottom:0;
-	}
-	#mainBackground{
-		width:100%;
-		max-width:2000px;
-		height:346px;
-		clear:both;
-		background: url("${pageContext.request.contextPath}/resources/images/news_top_bg.png") no-repeat;
-		background-size:cover;
-		position:absolute;
-		top:54px;
+		top: 0;
 		left:0;
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: -1;
+		z-index: 99;
 	}
-	#mainBackground #mainIntro{
-		width:500px;
-		height:100px;
-		margin-top:130px;
-		margin-left:18%;
-		color:white;
-	}
-	#mainBackground #mainIntro h2{
-		font-size: 2.7em;
-		margin-bottom:13px;
-	}
-	#mainBackground #mainIntro p{
-		font-size: 1.4em;
-		margin-bottom:5px;
-	}
-	#centerNav{
+	section{
 		width:100%;
-		height:60px;
-		background: #0B8783;
-		position: absolute;
-		top:400px;
+		margin-top:54px;
+		margin-bottom:100px;
 	}
-	#centerNav>ul{
-		width:600px;
-		height:60px;
-		/* line-height: 60px; */
-		margin-left:16%;
+	section .mainBackground{
+		width:100%;
 	}
-	#centerNav>ul li{
-		width:200px;
-		height:60px;
+	section .mainBackground>.bgImg{
+		width:100%;
+		height:346px;
 		float:left;
-		color:white;
-		font-size: 1.3em;
-		border-right:1px solid #3C9F9C;
-		border-left:1px solid #3c9f9c;
-		padding-right:15px;
-		padding-left:15px; 
-		line-height: 60px;
+	} 
+	section .mainBackground .navWrap{
+		width:100%;
+		height:70px;
+		clear:both;
+		background: #0B8783;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:1200px;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:70px;
+		border-left:1px solid #3C9F9C;
+		float:left;
 		text-align: center;
 	}
-	#centerNav>ul li:first-child{
-		width:50px;
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 20px;
+		color:white;
 		line-height: 70px;
+		margin:0 30px;
 	}
-	#contentWrap{
-		width:1200px;
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:45px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #0B8783;
+	}
+	.sub_subDropdown>li{
+		text-align: left;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
+	section .contentWrap{
+		width:100%;
 		max-width:1200px;
 		margin:0 auto;
-		position: absolute;
-		top:500px;
-		left:0;
-		right:0;
-		bottom:0;
+		margin-top:100px;
 		text-align: center;
+		clear:both;
+		position:relative;
+		z-index: -1;
 	}
-	#contentWrap #title{
+	.contentWrap .title{
 		margin-top:50px;
 		margin-bottom:50px;
 	}
-	#contentWrap #title p{
+	.contentWrap .title p{
 		font-size: 1.5em;
 		margin-bottom:10px;
 		color:#333333;
 	}
-	#contentWrap #title p:nth-child(2){
+	.contentWrap .title p:nth-child(2){
 		font-weight: bold;
 		font-size: 1.6em;
 	}
-	#addr{
+	.addr{
 		font-size: 1.5em;
 		margin-top:20px;
 		margin-bottom:100px;
@@ -147,33 +140,45 @@
 		font-size: 15px;
 		margin-bottom:10px;
 	}
-	#line{
+	.line{
 		width:920px;
 		margin-bottom:50px;
 	}
 </style>
 </head>
 <body>
-	<div id="bodyWrap">
-		<div id="header">
-			<jsp:include page="../include/header2.jsp"></jsp:include>
-		</div>
-		<div id="mainBackground">
-			<div id="mainIntro">
-				<h2>병원소개</h2>
-				<p>통증에 대한 오랜 연구 다양한 임상 경험과</p>
-				<p>노하우를 갖춘 유한통증의학과입니다.</p>
-			</div>
-		</div>
-		<div id="centerNav">
-			<ul>
-				<li><a href="${pageContext.request.contextPath}/"><img id="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
-				<li>병원소개&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
-				<li>오시는 길&nbsp;&nbsp;&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/images/arrow.png"></li>
-			</ul>
-		</div>
-		<div id="contentWrap">
-			<div id="title">
+	<header>
+		<jsp:include page="../include/header.jsp"></jsp:include>
+	</header>
+	<section>
+		<div class="mainBackground">
+			<img class="bgImg" src="${pageContext.request.contextPath}/resources/images/news_top_bg.png">
+			<div class="navWrap">
+				<ul class="navUl"> 
+					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
+					<li>
+						<a href="#">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="info01">병원소개</a></li>
+							<li><a href="clinic_info01">진료분야</a></li>
+							<li><a href="notice">병원소식</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">오시는길<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="info01">인사말</a></li>
+							<li><a href="info02">의료진 소개</a></li>
+							<li><a href="info03">병원 둘러보기</a></li>
+							<li><a href="info04">진료안내</a></li>
+							<li><a href="location">오시는길</a></li>
+						</ul>	
+					</li>
+				</ul>
+			</div><!-- navWrap end -->
+		</div><!-- mainBackground end -->
+		<div class="contentWrap">
+			<div class="title">
 				<p>|</p>
 				<p>오시는 길</p>
 			</div>
@@ -194,7 +199,7 @@
 				});
 				
 			</script>
-			<p id="addr">대구광역시 수성구 달구벌대로 2372, 4층(범어동)</p>
+			<p class="addr">대구광역시 수성구 달구벌대로 2372, 4층(범어동)</p>
 			<div class="addrInfo">
 				<div class="info2">
 					<img src="${pageContext.request.contextPath}/resources/images/subway.png">
@@ -207,7 +212,7 @@
 					</ul>
 				</div>
 			</div>
-			<img id="line" src="${pageContext.request.contextPath}/resources/images/line.png">
+			<img class="line" src="${pageContext.request.contextPath}/resources/images/line.png">
 			<div class="addrInfo">
 				<div class="info2">
 					<img src="${pageContext.request.contextPath}/resources/images/bus.png">
@@ -223,10 +228,10 @@
 				</div>
 			</div>
 		</div><!-- contentWrap 종료 --> 
-		<div id="footer">
-			<jsp:include page="../include/footer.jsp"></jsp:include>
-		</div>
-	</div><!-- bodyWrap 종료 -->
+	</section>
+	<footer>
+		<jsp:include page="../include/footer.jsp"></jsp:include>
+	</footer>
 	
 
 </body>

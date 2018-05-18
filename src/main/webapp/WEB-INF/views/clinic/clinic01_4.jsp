@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>병원 둘러보기 | 유한통증의학과</title>
+<title>비수술 클리닉 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -109,24 +109,28 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="#">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="info01">병원소개</a></li>
-							<li><a href="clinic_info01">진료분야</a></li>
 							<li><a href="notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">병원 둘러보기<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="info01">인사말</a></li>
-							<li><a href="info02">의료진 소개</a></li>
-							<li><a href="info03">병원 둘러보기</a></li>
-							<li><a href="info04">진료안내</a></li>
-							<li><a href="location">오시는길</a></li>
+							<li><a href="clinic02">대상포진 클리닉</a></li>
+							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
-				</ul>
+					<li>
+						<a href="clinic01_04">신경성형술<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<ul class="sub_subDropdown">
+							<li><a href="clinic01_01">꼬리뼈 레이저 내시경술</a></li>
+							<li><a href="clinic01_02">풍선 확장술</a></li>
+							<li><a href="clinic01_03">추간공확장술</a></li>
+						</ul>	
+					</li>
+				</ul><!-- navUl end -->
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
