@@ -58,7 +58,7 @@
 		font-size: 20px;
 		color:white;
 		line-height: 70px;
-		margin:0 30px;
+		margin:0 40px;
 	}
 	section .mainBackground .navWrap .navUl>li:first-child{
 		text-align: center;
@@ -70,15 +70,24 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:45px;
+		margin-left:55px;
 		width:20px;
 	}
 	.sub_subDropdown{
 		display: none;
-		background: #0B8783;
-	}
+		background: #376d6a;
+	} 
 	.sub_subDropdown>li{
 		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
 	}
 	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
 		display: block;
@@ -130,7 +139,6 @@
 		float:right;
 		width:650px;
 		margin:0 auto;
-		/* margin-right:50px; */
 		margin-top:50px;
 	}
 	.info3>ul>li{
@@ -157,21 +165,19 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="#">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="info01">병원소개</a></li>
-							<li><a href="clinic_info01">진료분야</a></li>
+							<li><a href="clinic01_01">진료분야</a></li>
 							<li><a href="notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">오시는길<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="location">오시는길<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="info01">인사말</a></li>
 							<li><a href="info02">의료진 소개</a></li>
 							<li><a href="info03">병원 둘러보기</a></li>
 							<li><a href="info04">진료안내</a></li>
-							<li><a href="location">오시는길</a></li>
 						</ul>	
 					</li>
 				</ul>

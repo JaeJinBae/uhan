@@ -9,78 +9,93 @@
 
 <url>
   <loc>http://www.uhan-hospital.com/</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/info01</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/info02</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/info03</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/info04</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://www.uhan-hospital.com/info05</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/location</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.uhan-hospital.com/clinic_info01</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <loc>http://www.uhan-hospital.com/clinic01_01</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.uhan-hospital.com/clinic_info02</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <loc>http://www.uhan-hospital.com/clinic02</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.uhan-hospital.com/clinic_info03</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <loc>http://www.uhan-hospital.com/clinic03_01</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/notice</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/broadcasting</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/comment</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/advice</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.uhan-hospital.com/freqQuestion</loc>
-  <lastmod>2018-05-14T04:13:46+00:00</lastmod>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.uhan-hospital.com/clinic01_02</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.uhan-hospital.com/clinic01_03</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.uhan-hospital.com/clinic01_04</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.uhan-hospital.com/clinic03_02</loc>
+  <lastmod>2018-05-20T06:55:25+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 

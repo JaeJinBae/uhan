@@ -58,7 +58,7 @@
 		font-size: 20px;
 		color:white;
 		line-height: 70px;
-		margin:0 30px;
+		margin:0 40px;
 	}
 	section .mainBackground .navWrap .navUl>li:first-child{
 		text-align: center;
@@ -70,15 +70,24 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:45px;
+		margin-left:55px;
 		width:20px;
 	}
 	.sub_subDropdown{
 		display: none;
-		background: #0B8783;
-	}
+		background: #376d6a;
+	} 
 	.sub_subDropdown>li{
 		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
 	}
 	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
 		display: block;
