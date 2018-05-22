@@ -27,13 +27,15 @@
 	}
 	.mainMenu > li{
 		width:33.33%;
-		float: left;
+		float: left; 
 		text-align: center;
 		line-height: 100px;
 	}
 	.mainMenu>li>a{
-		font-size: 21px;
-		height:98px;
+		font-size: 20px;
+		height:23px;
+		display: inline;
+		padding-bottom:32px;
 	}
 	.mainMenu>li:hover>a{
 		border-bottom:4px solid #00B4AE;
@@ -46,13 +48,14 @@
 	} 
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
-		border-right:2px solid #E1F3F2;
+		border-right:1px solid #E1F3F2;
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
 	}
 	.mainSubMenu li a{
 		font-size: 18px;
+		width:135px;
 	}
 	.mainSubMenu li:hover a{
 		color:#00B4AE; 

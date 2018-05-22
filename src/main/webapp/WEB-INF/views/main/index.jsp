@@ -13,12 +13,13 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+	@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);font-family: 'Noto Sans KR', sans-serif;
 	*{
 		margin:0;
 		padding:0;
 	}
 	body{
-		font-family: 'Noto Sans', sans-serif;
+		/* font-family: 'Noto Sans', sans-serif; */
 	}
 	header{
 		width:100%;
@@ -53,31 +54,114 @@
 		width:100%;
 		text-align: center;
 		margin-bottom:50px;
+		overflow: hidden;
 	}
 	.contentWrap .mainClinic{
 		width:370px;
 		height:350px;
-		display:inline-block;
-		margin-right:26px;
+		float:left;
+		margin-right:27px;
 		background: #ffffff;
 	}
 	.contentWrap .mainClinic:last-child{
-		margin:0;
+		margin:0; 
+	}
+	.contentWrap .mainClinic .clinicIcon{
+		margin-top:40px;
+	}
+	.mainClinic hr{
+		width:20px;
+		margin:10px auto;
+		margin-bottom:20px;
+		border:0;
+		border-top:2px solid #000000;
+	}
+	.mainClinic h1{
+		font-size:27px;
+		margin-bottom:20px;
+	}
+	.mainClinic p{
+		font-size: 20px;
+		letter-spacing: -1.5px;
+		line-height: 35px;
+	}
+	.boldText{
+		font-weight: bold;
+		font-size:20px;
+		color:#666666;
 	}
 	.contentWrap .content2Wrap{
 		width:100%;
+		overflow: hidden;
 	}
 	.contentWrap .content2Wrap .notice{
-		width:570px;
-		height:276px;
-		border:1px solid #dcdcdc;
-		display:inline-block;
+		width:586px;
+		height:276px; 
+		background:url("${pageContext.request.contextPath}/resources/images/noticeBg.png");
+		float:left;
+	}
+	.notice .noticeLogo{
+		float:left;
+		margin-top:35px;
+		margin-left:45px;
+		margin-bottom:20px;
+	}
+	.notice .noticeTextDiv{
+		float:left;
+		margin-left:20px;
+		margin-top:40px;
+	}
+	.notice .noticeTextDiv h1{
+		font-size:25px;
+	}
+	.notice .noticeTextDiv p{
+		font-size:14px;
+	}
+	.notice .noticeMoreBtn{
+		float:right;
+		margin-top:40px;
+		margin-right:40px;
+	}
+	.notice hr{
+		clear:both;
+		width:510px; 
+		margin:0 auto;
+		border:0.6px solid #c2c2c3;
+	}
+	.notice table{
+		width:87%;
+		margin:0 auto;
+		margin-top:25px;
+	}
+	.notice table tr td{
+		padding-top:10px;
+		color:#666666;
+		font-size:15px;
+	}
+	.notice table tr td a{
+		color:#666666;
+		font-size:15px;
+	}
+	.notice table tr:hover td{ 
+		color:black;
+		font-weight:bold;
+	}
+	.notice table tr td:first-child{
+		padding-left:20px;
+	}
+	.notice table tr td:first-child img{
+		margin-right:15px;
+		margin-top:8px;
+		float:left;
+	}
+	.notice table tr td:last-child{
+		text-align: right;
 	}
 	.contentWrap .content2Wrap .box{
-		display:inline-block;
+		float:left;
 		width:287px;
 		height:278px;
-		margin-left:23px;
+		margin-left:20px;
 	}
 	.bottomBannerWrap{
 		width:100%;
@@ -144,6 +228,12 @@
 			autoplaySpeed:4000,
 			dots:true
 		});
+		$(".noticeMoreBtn>img").mouseover(function(){
+			$(this).attr("src","/resources/images/plus_on.png");
+		});
+		$(".noticeMoreBtn>img").mouseout(function(){
+			$(this).attr("src","/resources/images/more_btn.png");
+		});
 	});
 </script>
 </head>
@@ -159,19 +249,54 @@
 		</div>
 		<div class="contentWrap">
 			<div class="content1Wrap">
-				<div class="mainClinic" style="border:5px solid #ec9631;">
-			
+				<div class="mainClinic" style="border:6px solid #ec9631;">
+					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_01.png" style="width:45px;"></p>
+					<hr align="center">
+					<h1>비수술 클리닉</h1>
+					<p><span class="boldText">수술 없이도</span> 통증의 원인을</p>
+					<p>분석하여 빠르게 통증을 줄이는</p>
+					<p>유한통증의학과만의 <span class="boldText">비수술 클리닉</span></p>
 				</div>
-				<div class="mainClinic" style="border:5px solid #6b5b95;">
-				
+				<div class="mainClinic" style="border:6px solid #6b5b95;">
+					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_02.png" style="width:35px;"></p>
+					<hr>
+					<h1>대상포진 클리닉</h1>
+					<p><span class="boldText">오랜기간 풍부한 임상경험</span>으로</p>
+					<p>빠른 통증치료와 만족감을 주는</p>
+					<p>유한통증의학과만의 <span class="boldText">대상포진 클리닉</span></p>
 				</div>
-				<div class="mainClinic" style="border:5px solid #00b4ae;">
-				
+				<div class="mainClinic" style="border:6px solid #00b4ae;">
+					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_03.png" style="width:31px;"></p>
+					<hr>
+					<h1>관절통증 클리닉</h1>
+					<p><span class="boldText">스포츠재활치료</span>와 <span class="boldText">주사치료</span>를 통해</p>
+					<p>수술 부담감을 줄여주는</p>
+					<p>유한통증의학과의 <span class="boldText">관절통증 클리닉</span></p>
 				</div>
 			</div><!-- content1Wrap end -->
 			<div class="content2Wrap">
 				<div class="notice">
-					
+					<img class="noticeLogo" src="${pageContext.request.contextPath}/resources/images/notice_btn.png" style="width:64px;">
+					<div class="noticeTextDiv">
+						<h1>공지사항</h1>
+						<p>유한통증의학과의 새로운 소식입니다.</p>
+					</div>
+					<a class="noticeMoreBtn" href="#"><img src="${pageContext.request.contextPath}/resources/images/more_btn.png" style="width:46px;"></a>
+					<hr>
+					<table>
+						<tr>
+							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
+							<td>2018-05-21</td>
+						</tr>
+						<tr>
+							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
+							<td>2018-05-21</td>
+						</tr>
+						<tr>
+							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
+							<td>2018-05-21</td>
+						</tr>
+					</table>
 				</div>
 				<div class="box" style="background: url('${pageContext.request.contextPath}/resources/images/timebg.png') no-repeat;">
 				

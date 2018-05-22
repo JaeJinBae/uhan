@@ -43,6 +43,8 @@
 		height:70px;
 		clear:both;
 		background: #0B8783;
+		position: relative;
+		z-index: 99;
 	}
 	section .mainBackground .navWrap .navUl{
 		width:1200px;
@@ -100,7 +102,6 @@
 		text-align: center;
 		clear:both;
 		position:relative;
-		z-index: -1;
 	}
 	.contentWrap .title{
 		margin-top:50px;
