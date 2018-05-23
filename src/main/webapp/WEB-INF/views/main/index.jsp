@@ -93,28 +93,11 @@
 		line-height: 35px;
 		color:#666666;
 	}
-	.mainClinic .clinicHoverDiv{
-		display:none;
-		width:380px;
-		height:350px;
-		color:white;
-		position: absolute;
-		top:0;
-		left:0;
-		z-index:99;
-	}
-	.clinicHoverDiv hr{
-		width:20px;
-		margin:10px auto;
-		margin-bottom:20px;
-		border:0;
-		border-top:2px solid white;
-	}
-	.clinicHoverDiv a img{
+	.mainClinic>a{
 		margin-top:50px;
 	}
-	.mainClinic:hover .clinicHoverDiv{
-		display: block;
+	.barogo{
+		display: none;
 	}
 	.boldText{
 		font-weight: bold;
@@ -331,12 +314,70 @@
 			autoplaySpeed:4000,
 			dots:true
 		});
+		
 		$(".noticeMoreBtn>img").mouseover(function(){
 			$(this).attr("src","/resources/images/plus_on.png");
 		});
 		$(".noticeMoreBtn>img").mouseout(function(){
 			$(this).attr("src","/resources/images/more_btn.png");
 		});
+		
+		//mainClinic Hover
+		$(".mainClinic:first-child").mouseover(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","none");
+			$(this).css("background","#ec9631");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_1_hover.png");
+			$(this).find("hr").css("border-top","2px solid white");
+			$(this).find("h1").css("color","white");
+			$(this).find(".barogo").css("display","inline");
+		});
+		$(".mainClinic:first-child").mouseout(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","block");
+			$(this).css("background","white");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_01.png");
+			$(this).find(".clinicIcon>img").attr("style='width:45px;'");
+			$(this).find("hr").css("border-top","2px solid #000000");
+			$(this).find("h1").css("color","black");
+			$(this).find(".barogo").css("display","none");
+		});
+		
+		$(".mainClinic:nth-child(2)").mouseover(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","none");
+			$(this).css("background","#6b5b95");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_2_hover.png");
+			
+			$(this).find("hr").css("border-top","2px solid white");
+			$(this).find("h1").css("color","white");
+			$(this).find(".barogo").css("display","inline");
+		});
+		$(".mainClinic:nth-child(2)").mouseout(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","block");
+			$(this).css("background","white");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_02.png");
+			$(this).find(".clinicIcon>img").attr("style='width:35px;'");
+			$(this).find("hr").css("border-top","2px solid #000000");
+			$(this).find("h1").css("color","black");
+			$(this).find(".barogo").css("display","none");
+		});
+		
+		$(".mainClinic:last-child").mouseover(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","none");
+			$(this).css("background","#00b4ae");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_3_hover.png");
+			$(this).find("hr").css("border-top","2px solid white");
+			$(this).find("h1").css("color","white");
+			$(this).find(".barogo").css("display","inline");
+		});
+		$(".mainClinic:last-child").mouseout(function(){
+			$(this).find("p:not(.clinicIcon)").css("display","block");
+			$(this).css("background","white");
+			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_03.png");
+			$(this).find(".clinicIcon>img").attr("style='width:31px;'");
+			$(this).find("hr").css("border-top","2px solid #000000");
+			$(this).find("h1").css("color","black");
+			$(this).find(".barogo").css("display","none");
+		});
+		
 	});
 </script>
 </head>
@@ -359,12 +400,7 @@
 					<p><span class="boldText">수술 없이도</span> 통증의 원인을</p>
 					<p>분석하여 빠르게 통증을 줄이는</p>
 					<p>유한통증의학과만의 <span class="boldText">비수술 클리닉</span></p>
-					<div class="clinicHoverDiv" style="background:#ec9631;">
-						<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_1_hover.png" style="width:45px;"></p>
-						<hr align="center">
-						<h1>비수술 클리닉</h1>
-						<a href="clinic01_01"><img src="${pageContext.request.contextPath}/resources/images/barogo.png"></a>
-					</div>
+					<a href="clinic01_01"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
 				</div>
 				<div class="mainClinic" style="border:7px solid #6b5b95;">
 					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_02.png" style="width:35px;"></p>
@@ -373,12 +409,7 @@
 					<p><span class="boldText">오랜기간 풍부한 임상경험</span>으로</p>
 					<p>빠른 통증치료와 만족감을 주는</p>
 					<p>유한통증의학과만의 <span class="boldText">대상포진 클리닉</span></p>
-					<div class="clinicHoverDiv" style="background:#6b5b95;">
-						<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_2_hover.png" style="width:35px;"></p>
-						<hr align="center">
-						<h1>대상포진 클리닉</h1>
-						<a href="clinic02"><img src="${pageContext.request.contextPath}/resources/images/barogo.png"></a>
-					</div>
+					<a href="clinic02"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
 				</div>
 				<div class="mainClinic" style="border:7px solid #00b4ae;">
 					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_03.png" style="width:31px;"></p>
@@ -387,12 +418,7 @@
 					<p>수술 부담감을 줄여주는</p>
 					<p><span class="boldText">스포츠재활치료</span>, <span class="boldText">주사치료</span>를 통한</p>
 					<p>유한통증의학과의 <span class="boldText">관절통증 클리닉</span></p>
-					<div class="clinicHoverDiv" style="background:#00b4ae;">
-						<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_3_hover.png" style="width:31px;"></p>
-						<hr align="center">
-						<h1>관절통증 클리닉</h1>
-						<a href="clinic03_01"><img src="${pageContext.request.contextPath}/resources/images/barogo.png"></a>
-					</div>
+					<a href="clinic03_01"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
 				</div>
 			</div><!-- content1Wrap end -->
 			<div class="content2Wrap">
