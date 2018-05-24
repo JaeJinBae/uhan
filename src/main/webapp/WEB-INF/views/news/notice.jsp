@@ -43,6 +43,8 @@
 		height:70px;
 		clear:both;
 		background: #0B8783;
+		position: relative;
+		z-index: 99;
 	}
 	section .mainBackground .navWrap .navUl{
 		width:1200px;
@@ -100,12 +102,71 @@
 		text-align: center;
 		clear:both;
 		position:relative;
-		z-index: -1;
 	}
 	.contentWrap>img{
 		width:700px;
 	}
+	/* quick menu */
+	.quick{
+		width:110px;
+		text-align: center;
+		position: absolute;
+		top:0;
+		right:-150px;
+		z-index: 999;
+	}
+	.quick ul li{
+		width:100%;
+		height:100px;
+		border-bottom:1px solid rgba(255,255,255, 0.5);
+		background: #becdcd;
+	}
+	.quick ul li:first-child{
+		background: #0b8783;
+	}
+	.quick ul li:first-child p{
+		color:white;
+		font-size:22px;
+		padding-top:17px;
+	}
+	.quick ul li a{
+		width:100px;
+		height:100px;
+		color:white;
+	}
+	.quick ul li a img{
+		margin-top:18px;
+		margin-bottom:12px;
+	}
+	.quick ul li:last-child a img{
+		margin-top:27px;
+		margin-bottom:5px;
+	}
+	.quick ul li a span{
+		font-size:14px;
+	}
+	.quick ul li:last-child a span{
+		font-size:16px;
+	}
 </style>
+<script type="text/javascript">
+	$(function(){
+        $(window).scroll(function() {
+            var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+            if(position>500){
+            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            }
+            if(position<=500){
+            	$(".quick").stop().animate({"top":0+"px"},1000);
+            }
+        });
+        
+        $(".quick ul li:last-child a").click(function(){
+        	$("html").animate({scrollTop:"0"},500);
+        	return false;
+        });
+	});
+</script>
 </head>
 <body>
 	<header>
@@ -138,6 +199,15 @@
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
 			<img src="${pageContext.request.contextPath}/resources/images/uhanFix.png">
+			<div class="quick">
+				<ul>
+					<li><p>Quick<br>Menu</p></li>
+					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
+					<li><a href="freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
+					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
+				</ul>
+			</div><!-- quick end -->
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

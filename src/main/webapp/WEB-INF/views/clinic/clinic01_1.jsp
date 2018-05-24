@@ -43,6 +43,8 @@
 		height:70px;
 		clear:both;
 		background: #0B8783;
+		position: relative;
+		z-index: 99;
 	}
 	section .mainBackground .navWrap .navUl{
 		width:1200px;
@@ -100,12 +102,115 @@
 		text-align: center;
 		clear:both;
 		position:relative;
-		z-index: -1;
 	}
 	.contentWrap>img{
 		width:80%;
 	}
+	/* quick menu */
+	.quick{
+		width:110px;
+		text-align: center;
+		position: absolute;
+		top:0;
+		right:-150px;
+		z-index: 999;
+	}
+	.quick ul li{
+		width:100%;
+		height:100px;
+		border-bottom:1px solid rgba(255,255,255, 0.5);
+		background: #becdcd;
+	}
+	.quick ul li:first-child{
+		background: #0b8783;
+	}
+	.quick ul li:first-child p{
+		color:white;
+		font-size:22px;
+		padding-top:17px;
+	}
+	.quick ul li a{
+		width:100px;
+		height:100px;
+		color:white;
+	}
+	.quick ul li a img{
+		margin-top:18px;
+		margin-bottom:12px;
+	}
+	.quick ul li:last-child a img{
+		margin-top:27px;
+		margin-bottom:5px;
+	}
+	.quick ul li a span{
+		font-size:14px;
+	}
+	.quick ul li:last-child a span{
+		font-size:16px;
+	}
+	.clinic_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.clinic_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.clinic_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	/* clinicNav */
+	.clinic_sub_nav{
+		width:100%;
+	}
+	.clinic_sub_nav ul{
+		width:100%;
+		margin:0 auto;
+		overflow: hidden;
+	}
+	.clinic_sub_nav ul li{
+		width:24.9%;
+		float:left;
+		background: #dcdcdc;
+	}
+	.clinic_sub_nav ul li a{
+		width:100%;
+		line-height:50px;
+		color:white;
+		font-size:20px;
+		color:#888686;
+	}
+	.clinic_sub_nav ul li:first-child{
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:first-child a{
+		color:white;
+	}
+	.content img{
+		width:80%;
+		/* clear:both; */
+	}
 </style>
+<script type="text/javascript">
+	$(function(){
+        $(window).scroll(function() {
+            var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+            if(position>500){
+            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            }
+            if(position<=500){
+            	$(".quick").stop().animate({"top":0+"px"},1000);
+            }
+        });
+        
+        $(".quick ul li:last-child a").click(function(){
+        	$("html").animate({scrollTop:"0"},500);
+        	return false;
+        });
+	});
+</script>
 </head>
 <body>
 	<header>
@@ -131,19 +236,34 @@
 							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
-					<li>
-						<a href="clinic01_01">꼬리뼈 레이저 내시경술<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
-						<ul class="sub_subDropdown">
-							<li><a href="clinic01_02">풍선 확장술</a></li>
-							<li><a href="clinic01_03">추간공확장술</a></li>
-							<li><a href="clinic01_04">신경성형술</a></li>
-						</ul>	
-					</li>
 				</ul><!-- navUl end -->
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/clinic01_1go.png">
+			<div class="quick"> 
+				<ul>
+					<li><p>Quick<br>Menu</p></li>
+					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
+					<li><a href="freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
+					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
+				</ul>
+			</div>
+			<div class="clinic_title">
+				<p>|</p>
+				<h1>비수술 클리닉</h1>
+			</div>
+			<div class="clinic_sub_nav">
+				<ul>
+					<li><a href="clinic01_01">꼬리뼈 레이저 내시경술</a></li>
+					<li><a href="clinic01_02">풍선확장술</a></li>
+					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="clinic01_03">추간공확장술</a></li>
+					<li><a href="clinic01_04">신경성형술</a></li>
+				</ul> 
+			</div>
+			<div class="content">
+				<img src="${pageContext.request.contextPath}/resources/images/clinic01_01.png">
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>
