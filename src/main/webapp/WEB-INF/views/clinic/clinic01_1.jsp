@@ -96,9 +96,9 @@
 	}
 	section .contentWrap{
 		width:100%;
-		max-width:1200px;
+		max-width:1100px;
 		margin:0 auto;
-		margin-top:100px;
+		margin-top:80px;
 		text-align: center;
 		clear:both;
 		position:relative;
@@ -111,7 +111,7 @@
 		width:110px;
 		text-align: center;
 		position: absolute;
-		top:0;
+		top:75px;
 		right:-150px;
 		z-index: 999;
 	}
@@ -164,6 +164,7 @@
 	/* clinicNav */
 	.clinic_sub_nav{
 		width:100%;
+		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
 		width:100%;
@@ -186,11 +187,80 @@
 		background: #00b4ae;
 	}
 	.clinic_sub_nav ul li:first-child a{
-		color:white;
+		color:white; 
 	}
-	.content img{
-		width:80%;
-		/* clear:both; */
+	
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
+		width:90%;
+		margin:0 auto;
+		margin-top:70px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:27%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #00938e;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#00938e;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:51%;
+		float:right;
+		text-align: left;
+		color:#2d2d2d;
+		font-size:18px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:18px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:15px;
+	}
+	.content00 .content_small_content .ccc img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc p{
+		float:left;
+		font-size:18px;
+		margin-top:9px;
+		line-height: 21px;
 	}
 </style>
 <script type="text/javascript">
@@ -198,16 +268,16 @@
         $(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
-            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            	$(".quick").stop().animate({"top":position-500+"px"},1000);	
             }
             if(position<=500){
-            	$(".quick").stop().animate({"top":0+"px"},1000);
+            	$(".quick").stop().animate({"top":75+"px"},1000);
             }
         });
         
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
-        	return false;
+        	return false; 
         });
 	});
 </script>
@@ -262,7 +332,76 @@
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic01_01.png">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h1 class="subTitle">꼬리뼈 레이저 내시경술</h1>
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>이란?</span></p>
+					</div>
+					<div class="content_small_content">
+						MRI로도 찾지 못한 병변의 문제를 정확하게 진단하고 치료할 수 있는<br>
+						시술로서 내시경과 레이저가 탑재된 1mm 가량의 카테터를 삽입해<br>
+						치료를 진행 합니다.<br>
+						신경성형술과 유사하게 환자의 꼬리뼈에 카테터를 삽입해 약물로<br>
+						증상을 개선하지만, 내시경 영상응로 문제가 되는 병변 부위를 직접<br>
+						확인하며 초정밀 레이저와 약물을 주입하여 치료하기 때문에 정확성,<br>
+						안전성을 높인 회복이 빠른 시술법입니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>적용질환</span></p>
+					</div>
+					<div class="content_small_content">
+						<ul>
+							<li>척추관협착증</li>
+							<li>허리디스크</li>
+							<li>급/만성 요통</li>
+						</ul>
+						<ul>
+							<li>척추 수술 후 계속되는 통증</li>
+							<li>원인을 찾을 수 없는 허리통증</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>장점</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point01.png">
+							<p>국소마취로 시술 후유증이 적고 시술 시간이 짧으며<br>빠른 회복이 가능합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point02.png">
+							<p style="margin-top:15px;">조직손상과 상처가 최소화되어 후유증이 적습니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>시술방법</span></p>
+					</div>
+					<div class="content_small_content">
+						(1) 꼬리뼈 부위 약 2~4mm 절개<br>
+						(2) 내시경과 레이저가 탑재된 특수 카테터 삽입<br>
+						(3) 레이저 치료 및 약물 주입
+					</div>
+				</div><!-- content00 end -->
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

@@ -148,6 +148,50 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.clinic_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.clinic_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.clinic_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	/* clinicNav */
+	.clinic_sub_nav{
+		width:100%;
+	}
+	.clinic_sub_nav ul{
+		width:100%;
+		margin:0 auto;
+		overflow: hidden;
+	}
+	.clinic_sub_nav ul li{
+		width:24.9%;
+		float:left;
+		background: #dcdcdc;
+	}
+	.clinic_sub_nav ul li a{
+		width:100%;
+		line-height:50px;
+		color:white;
+		font-size:20px;
+		color:#888686;
+	}
+	.clinic_sub_nav ul li:nth-child(2){
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:nth-child(2) a{
+		color:white;
+	}
+	.content img{
+		width:80%;
+		/* clear:both; */
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -192,19 +236,10 @@
 							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
-					<li>
-						<a href="clinic01_02">풍선 확장술<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
-						<ul class="sub_subDropdown">
-							<li><a href="clinic01_01">꼬리뼈 레이저 내시경술</a></li>
-							<li><a href="clinic01_03">추간공확장술</a></li>
-							<li><a href="clinic01_04">신경성형술</a></li>
-						</ul>	
-					</li>
 				</ul><!-- navUl end -->
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/clinic01_2poong.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -213,6 +248,21 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
+			</div><!-- quick end -->
+			<div class="clinic_title">
+				<p>|</p>
+				<h1>비수술 클리닉</h1>
+			</div>
+			<div class="clinic_sub_nav">
+				<ul>
+					<li><a href="clinic01_01">꼬리뼈 레이저 내시경술</a></li>
+					<li><a href="clinic01_02">풍선확장술</a></li>
+					<li style="border-right:1px solid white;"><a href="clinic01_03">추간공확장술</a></li>
+					<li><a href="clinic01_04">신경성형술</a></li>
+				</ul> 
+			</div>
+			<div class="content">
+				<img src="${pageContext.request.contextPath}/resources/images/clinic01_2poong.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>
