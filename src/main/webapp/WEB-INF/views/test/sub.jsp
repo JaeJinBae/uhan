@@ -189,8 +189,10 @@
 	.clinic_sub_nav ul li:first-child a{
 		color:white;
 	}
-	.content{
-		/* clear:both; */
+	.content ul li:before{
+		content:"-";
+		font-size:25px;
+		margin-right:10px;
 	}
 </style>
 <script type="text/javascript">
@@ -270,7 +272,13 @@
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic01_01.png">
+				<%-- <img src="${pageContext.request.contextPath}/resources/images/clinic01_01.png"> --%>
+				<ul>
+					<li>가나다라마바사 아자차카 타파하<br>가나다라마바사 아자차카 타파하</li>
+					<li>가나다라마바사 아자차카 타파하<br>가나다라마바사 아자차카 타파하</li>
+					<li>가나다라마바사 아자차카 타파하<br>가나다라마바사 아자차카 타파하</li>
+					<li>가나다라마바사 아자차카 타파하<br>가나다라마바사 아자차카 타파하</li>
+				</ul>
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

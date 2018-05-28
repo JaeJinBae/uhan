@@ -148,6 +148,37 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.content_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.content_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.content_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.bossIntro{
+		width:100%;
+		max-width:1100px;
+		margin:0 auto;
+		/* border:1px solid black; */
+		overflow: hidden;
+	}
+	.bossIntro .bossimg{
+		float:left;
+		width:50%;
+	}
+	.bossIntro .bosstext{
+		width:50%;
+		float:left;
+	}
+	.bossIntro .bosstext .diaIcon{
+		margin:0 auto;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -198,7 +229,6 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/subInfo01.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -208,6 +238,34 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
+			<div class="content_title">
+				<p>|</p>
+				<h1>의료진 소개</h1>
+			</div>
+			<div class="bossIntro">
+				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/info02img1.png">
+				<div class="bosstext">
+					<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+					<p>유한목 원장님</p>
+					<div class="bossyak">
+						약 력
+					</div>
+					<ul>
+						<li>- 현, 유한통증의학과의원 원장</li>
+						<li>- 대한통증학회 정회원 및 평의원</li>
+						<li>- 세계통증학회(IASP) 정회원</li>
+						<li>- 세계임상통증학회(WIP) 정회원</li>
+						<li>- 국제척추통증학회(ICSP) 정회원</li>
+						<li>- 경북대학교 외래교수</li>
+						<li>- 계명대학교 외래교수</li>
+						<li>- 서대구병원 병원장 및 통증센터장 역임</li>
+						<li>- 안계통증의학과의원 원장 역임</li>
+						<li>- 미국 머서대학교 임상교수 역임</li>
+						<li>- 침례병원 마취통증의학과 과장 역임</li>
+						<li>- 계명대학교 의과대학 및 대학원 졸업</li>
+					</ul>
+				</div>
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

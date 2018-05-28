@@ -96,22 +96,19 @@
 	}
 	section .contentWrap{
 		width:100%;
-		max-width:1200px;
+		max-width:1100px;
 		margin:0 auto;
-		margin-top:100px;
+		margin-top:80px;
 		text-align: center;
 		clear:both;
 		position:relative;
-	}
-	.contentWrap>img{
-		width:80%;
 	}
 	/* quick menu */
 	.quick{
 		width:110px;
 		text-align: center;
 		position: absolute;
-		top:0;
+		top:75px;
 		right:-150px;
 		z-index: 999;
 	}
@@ -164,6 +161,7 @@
 	/* clinicNav */
 	.clinic_sub_nav{
 		width:100%;
+		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
 		width:100%;
@@ -186,11 +184,85 @@
 		background: #00b4ae;
 	}
 	.clinic_sub_nav ul li:last-child a{
-		color:white;
+		color:white; 
 	}
-	.content img{
+	
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
 		width:80%;
-		/* clear:both; */
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:31%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #0d7586;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#0d7586;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:61%;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:15px;
+	}
+	.content00 .content_small_content .ccc img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 21px;
 	}
 </style>
 <script type="text/javascript">
@@ -198,16 +270,16 @@
         $(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
-            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            	$(".quick").stop().animate({"top":position-500+"px"},1000);	
             }
             if(position<=500){
-            	$(".quick").stop().animate({"top":0+"px"},1000);
+            	$(".quick").stop().animate({"top":75+"px"},1000);
             }
         });
         
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
-        	return false;
+        	return false; 
         });
 	});
 </script>
@@ -233,14 +305,14 @@
 						<a href="clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="clinic02">대상포진 클리닉</a></li>
-							<li><a href="clinic03_01">관절통증 클리닉</a></li> 
+							<li><a href="clinic03_01">관절통증 클리닉</a></li>
 						</ul>	
 					</li>
 				</ul><!-- navUl end -->
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<div class="quick">
+			<div class="quick"> 
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
@@ -248,7 +320,7 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div><!-- quick end -->
+			</div>
 			<div class="clinic_title">
 				<p>|</p>
 				<h1>비수술 클리닉</h1>
@@ -262,7 +334,83 @@
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic01_4sin.png">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h1 class="subTitle">신경성형술</h1>
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>신경성형술 <span>이란?</span></p>
+					</div>
+					<div class="content_small_content">
+						신경성형술이란, 미국 텍사스대 가보 라트 교수가 개발한 시술로써<br>
+						지름 1mm인 소형 카테터를 환부에 삽입한 뒤, 영상장비를 사용하여<br>
+						실시간으로 화인하며 신경의 유착을 풀고 유착방지 효소제와 항염증제<br>
+						등 특수 약물을 주입해 통증 유발 원인 질환을 치료하는 시술입니다.<br>
+						실시간 영상장치인 C-arm을 이용해 시술하므로 유착 부위를 정확히<br>
+						찾아 치료할 수 있습니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>신경성형술</p>
+						<p><span>적용질환</span></p>
+					</div>
+					<div class="content_small_content">
+						<ul>
+							<li>척추관협착증</li>
+							<li>목 디스크</li>
+							<li>허리 디스크</li>
+						</ul>
+						<ul>
+							<li>척추 수술 후 계속되는 통증</li>
+							<li>급/만성 요통 및 디스크 통증</li>
+							<li>손/발 저림</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>신경성형술 <span>장점</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point01_3.png">
+							<p>약 30분 정도의 짧은 시술시간과 빠른 회복이<br>가능합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point02_3.png">
+							<p style="margin-top:15px;">시술 통증이 적습니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point04.png">
+							<p>전신마취를 하지 않아도 되어 부담감을<br>느끼지 않습니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>1mm의 가느다란 관을 이용하므로 흉터가<br>남지 않습니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>신경성형술</p>
+						<p><span>시술방법</span></p>
+					</div>
+					<div class="content_small_content">
+						(1) 병변 부위 극소마취<br>
+						(2) 직경 1mm의 초소형 특수 카테터를 삽입<br>
+						(3) 병변 부위를 찾아내어 염증 및 유착 제거<br>
+						(4) 병변부위에 특수 약물을 주입하여 치료
+					</div>
+				</div><!-- content00 end -->
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

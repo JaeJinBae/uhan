@@ -164,6 +164,7 @@
 	/* clinicNav */
 	.clinic_sub_nav{
 		width:100%;
+		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
 		width:50%;
@@ -174,7 +175,7 @@
 		width:49.9%;
 		margin:0 auto;
 		float:left;
-		background: #dcdcdc;
+		background: #dcdcdc; 
 	}
 	.clinic_sub_nav ul li a{
 		width:100%;
@@ -189,8 +190,103 @@
 	.clinic_sub_nav ul li:last-child a{
 		color:white;
 	}
-	.content{
-		/* clear:both; */
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
+		width:80%;
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:31%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #0d7586;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#0d7586;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:61%;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:30px;
+	}
+	.content00 .content_small_content .ccc>img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc>p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 21px;
+	}
+	.ccc>h2{
+		font-size: 22px;
+	}
+	.content00 .content_small_content .ccc ul{
+		width:100%;
+	}
+	.content00 .content_small_content .ccc ul li{
+		width:100%;
+		list-style: none;
+	}
+	.content00 .content_small_content .ccc ul li:before{
+		content:"- ";
+	}
+	.content00 .content_small_content .ccc ul li p{
+		display:inline-block;
+		font-size: 19px;
+	}
+	.content00 .content_small_content .ccc p img{
+		margin-top:20px;
+		margin-bottom:10px;
 	}
 </style>
 <script type="text/javascript">
@@ -240,7 +336,7 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<div class="quick">
+			<div class="quick"> 
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
@@ -248,20 +344,87 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div><!-- quick end -->
+			</div>
 			<div class="clinic_title">
 				<p>|</p>
-				<h1>비수술 클리닉</h1>
+				<h1>관절통증 클리닉</h1>
 			</div>
 			<div class="clinic_sub_nav">
 				<ul>
-					<li><a href="clinic03_01">꼬리뼈 레이저 내시경술</a></li>
-					<li><a href="clinic03_02">풍선확장술</a></li>
+					<li><a href="clinic03_01">스포츠 재활치료</a></li>
+					<li><a href="clinic03_02">주사치료</a></li>
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic03_2jusa.png">
-			</div>
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h1 class="subTitle">주사치료</h1>
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>주사치료</p>
+					</div>
+					<div class="content_small_content">
+						유한통증의학과의 주사치료는 어깨, 무릎 등 퇴행성 관절 질환에<br>
+						적용하는 치료법으로 통증의 원인이 되는 신경을 제어해서 작은<br>
+						자극에도 반응하는 통증을 줄이는 원리입니다. 주사치료의 경우<br>
+						수술이 아닌 시술 이므로 짧은 시술시간과 함께 시술 후 약 1시간<br>
+						이후에는 일상으로 복귀하여 정상생활이 가능합니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_2img1.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>주사치료</p>
+						<p><span>적용질환</span></p>
+					</div>
+					<div class="content_small_content">
+						<ul>
+							<li>오십견</li>
+							<li>관절통</li>
+							<li>무릎 관절염</li>
+							<li>테니스엘보</li>
+							<li>인대손상</li>
+						</ul>
+						<ul>
+							<li>퇴행성 무릎 밑 어깨 질환</li>
+							<li>교통사고 후 만성 통증</li>
+							<li>습관성탈구</li>
+							<li>골프엘보</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>주사치료<span>종류</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<h2>· 연골주사치료</h2>
+							<p>
+								퇴행성 관절염 환자의 관절 내에 인체의 연골 및 활액의 구성성분인<br>
+								히알루론산 제재로 구성된 연골주사를 투여하는 방법입니다.<br>
+								히알루론산연골 구성성분으로 이루어진 점액질로서, 무릎내부의<br>
+								윤활작용을 개선 하고 염증과 통증을 줄여주며, 연골 보호와 항염증<br>
+								작용을 유도해 줍니다.<br>
+								<img src="${pageContext.request.contextPath}/resources/images/clinic03_2hyogwa.png"><br>
+								관절에 윤활작용, 관절 활액 점성과 탄력성 회복, 외부충격 흡수로<br>
+								뼈, 연골조직 보호, 통증감소 및 관절기능 회복
+							</p>
+						</div>
+						<div class="ccc">
+							<h2>· 인대강화주사치료</h2>
+							<p>
+								고농도 포도당액(인체 무해)을 인대, 힘줄과 같은 환부에 주사하여<br>
+								기능을 회복시켜주는 방법입니다.<br>
+								<img src="${pageContext.request.contextPath}/resources/images/clinic03_2hyogwa.png"><br>
+								손상된 인대, 힘줄 기능 회복, 자연적 시술법으로 합병증 걱정 감소
+							</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+			</div> 
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

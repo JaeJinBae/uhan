@@ -96,22 +96,19 @@
 	}
 	section .contentWrap{
 		width:100%;
-		max-width:1200px;
+		max-width:1100px;
 		margin:0 auto;
-		margin-top:100px;
+		margin-top:80px;
 		text-align: center;
 		clear:both;
 		position:relative;
-	}
-	.contentWrap>img{
-		width:80%;
 	}
 	/* quick menu */
 	.quick{
 		width:110px;
 		text-align: center;
 		position: absolute;
-		top:0;
+		top:75px;
 		right:-150px;
 		z-index: 999;
 	}
@@ -164,6 +161,7 @@
 	/* clinicNav */
 	.clinic_sub_nav{
 		width:100%;
+		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
 		width:100%;
@@ -186,11 +184,85 @@
 		background: #00b4ae;
 	}
 	.clinic_sub_nav ul li:nth-child(2) a{
-		color:white;
+		color:white; 
 	}
-	.content img{
+	
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
 		width:80%;
-		/* clear:both; */
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:31%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #006b93;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#006b93;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:61%;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:15px;
+	}
+	.content00 .content_small_content .ccc img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 21px;
 	}
 </style>
 <script type="text/javascript">
@@ -198,16 +270,16 @@
         $(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
-            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            	$(".quick").stop().animate({"top":position-500+"px"},1000);	
             }
             if(position<=500){
-            	$(".quick").stop().animate({"top":0+"px"},1000);
+            	$(".quick").stop().animate({"top":75+"px"},1000);
             }
         });
         
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
-        	return false;
+        	return false; 
         });
 	});
 </script>
@@ -240,7 +312,7 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<div class="quick">
+			<div class="quick"> 
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
@@ -248,7 +320,7 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div><!-- quick end -->
+			</div>
 			<div class="clinic_title">
 				<p>|</p>
 				<h1>비수술 클리닉</h1>
@@ -262,7 +334,73 @@
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic01_2poong.png">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h1 class="subTitle">풍선확장술(혈관 성형술)</h1>
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>풍선확장술 <span>이란?</span></p>
+					</div>
+					<div class="content_small_content">
+						풍선확장술이란, 혈관 성형술이라고도 불리며 체외에서 카테터를<br>
+						환자의 혈관 안에 넣고 혈관이 잘 보이도록 하는 조영제를 주사하여<br>
+						엑스선에서 혈관의 좁아진 부위를 찾고 이를 넓혀주는 비수술 시술<br>
+						입니다. 혈관을 열어주는데 사용하는 기국는 아주 가는 관에 풍선이<br>
+						달려 있는 카테터를 사용하여 좁혀진 혈관을 넓게 확장해 줍니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01poongimg.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>풍선확장술</p>
+						<p><span>적용질환</span></p>
+					</div>
+					<div class="content_small_content">
+						<ul>
+							<li>척추관협착증</li>
+							<li>전방전위증</li>
+							<li>급/만성 요통</li>
+						</ul>
+						<ul>
+							<li>척추 수술 후 계속되는 통증</li>
+							<li>손/발 저림</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>풍선확장술 <span>장점</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point01_1.png">
+							<p>국소마취로 시술 후유증이 적고 시술 시간이 짧으며<br>빠른 회복이 가능합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point02_1.png">
+							<p style="margin-top:15px;">조직손상과 상처가 최소화되어 후유증이 적습니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>풍선확장술</p>
+						<p><span>시술방법</span></p>
+					</div>
+					<div class="content_small_content">
+						(1) 병변 부위 극소맟위<br>
+						(2) 특수 소형 카테터를 삽입<br>
+						(3) 협착이 심한 부위까지 도달<br>
+						(4) 풍선을 부풀림으로서 혈관 확장
+					</div>
+				</div><!-- content00 end -->
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

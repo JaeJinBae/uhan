@@ -103,9 +103,6 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap>img{
-		width:80%;
-	}
 	/* quick menu */
 	.quick{
 		width:110px;
@@ -199,14 +196,14 @@
 		font-weight:500;
 	}
 	.content00{
-		width:90%;
+		width:80%;
 		margin:0 auto;
-		margin-top:70px;
+		margin-top:100px;
 		overflow: hidden;
 	}
 	
 	.content00 .content_small_title{
-		width:27%;
+		width:31%;
 		float:left;
 		text-align: left;
 	}
@@ -227,11 +224,12 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		width:51%;
+		width:61%;
 		float:right;
-		text-align: left;
+		text-align: left;  
 		color:#2d2d2d;
-		font-size:18px;
+		font-size:19px;
+		line-height: 35px;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -239,10 +237,14 @@
 	}
 	.content00 .content_small_content ul:first-child{
 		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
 	}
 	.content00 .content_small_content ul li{
 		list-style: disc;
-		font-size:18px;
+		font-size:19px;
 		color:#2d2d2d;
 		list-style-position: inside;
 	}
@@ -258,7 +260,7 @@
 	}
 	.content00 .content_small_content .ccc p{
 		float:left;
-		font-size:18px;
+		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
 	}
@@ -318,7 +320,7 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div>
+			</div><!-- quick end -->
 			<div class="clinic_title">
 				<p>|</p>
 				<h1>비수술 클리닉</h1>
@@ -350,7 +352,7 @@
 						안전성을 높인 회복이 빠른 시술법입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

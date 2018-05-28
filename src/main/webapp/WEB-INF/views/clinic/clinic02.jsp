@@ -96,22 +96,19 @@
 	}
 	section .contentWrap{
 		width:100%;
-		max-width:1200px;
+		max-width:1100px;
 		margin:0 auto;
-		margin-top:100px;
+		margin-top:80px;
 		text-align: center;
 		clear:both;
 		position:relative;
-	}
-	.contentWrap>img{
-		width:700px;
 	}
 	/* quick menu */
 	.quick{
 		width:110px;
 		text-align: center;
 		position: absolute;
-		top:0;
+		top:75px;
 		right:-150px;
 		z-index: 999;
 	}
@@ -147,6 +144,98 @@
 	}
 	.quick ul li:last-child a span{
 		font-size:16px;
+	}
+	.clinic_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.clinic_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.clinic_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
+		width:80%;
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:31%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #0d7586;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#0d7586;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:61%;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:15px;
+	}
+	.content00 .content_small_content .ccc img{
+		float:left;
+		width:21px;
+		margin-top:12px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 21px;
 	}
 </style>
 <script type="text/javascript">
@@ -196,8 +285,7 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/uhanFix.png">
-			<div class="quick">
+			<div class="quick"> 
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
@@ -206,6 +294,108 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div>
+			<div class="clinic_title">
+				<p>|</p>
+				<h1>대상포진 클리닉</h1>
+			</div>
+			<div class="content">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>이란?</span></p>
+					</div>
+					<div class="content_small_content">
+						피부에 물집 형태의 병적인 증상과 발진이 나타나며 해당 부위에<br>
+						극심한 통증을 유발하는 질환입니다. 수두-대상포진 바이러스가<br>
+						신경절 부위에 잠복해 있으며 아무런 증상과 지장이 없다가 면역력이<br>
+						떨어지게 되면 활성화되어 발병하게 됩니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic02desangimg.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>원인</span></p>
+					</div>
+					<div class="content_small_content">
+						과도한 업무, 스트레스, 잘못된 식습관, 수면부족 등 다양한 원인으로<br>
+						면역력이 약화된 환자에게서 발생하며 젊은 사람들에게는 드물게<br>
+						나타나고 50세 이상의 연령층 환자들이 많습니다.<br>
+						또한 수두를 앓았던 사람은 누구든지 대상포진이 발병할 수 있습니다.
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>증상</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num01.png">
+							<p>발진이 시작되기 며칠 전부터 발진이 일어날 피부주변이<br>따끔거리거나 가렵고 통증이 발생합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num02.png">
+							<p>통증, 발열, 가려움증, 두통, 구역, 피곤함 등 부위에 따라 다른<br>통증이 발생합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num03.png">
+							<p>피부에 따끔거리거나 화끈거리는 증상이 나타납니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num04.png">
+							<p>띠 모양으로 비푸발진이 나타나며 수포가 생깁니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num05.png">
+							<p>수포 발생 부위가 아물면 띠 모양으로 변색된 상흔을 남깁니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic02img2.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>발생부위</span></p>
+					</div>
+					<div class="content_small_content">
+						주로 가슴, 등, 엉덩이 몸통과 둔부쪽에 잘 나타나며 얼굴, 팔, 다리<br>
+						등 다양한 부위에서 발생 할 수 있습니다. 만약 대상포진이 귀에 발생<br>
+						하게 되면 안면신경 마비로 인해 입이 돌아갈 수도 있습니다. 통증은<br>
+						발생 부위에 따라 관절통, 편두통 등으로 오해하는 경우가 있습니다.<br>
+						2~3주의 급성기에 대상포진을 잘 치료해주어야 하며 이 기간이<br>
+						지나면 대상포진 후 신경통으로 극심한 통증이 발생됩니다.
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>예방법</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num01.png">
+							<p>영양분을 골고루 섭취하며 규칙적인 운동을 한다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num02.png">
+							<p>충분한 휴식 및 수면을 취하며 스트레스를 적절히 해소한다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num03.png">
+							<p>필요한 경우 비타민 제제를 복용하며 인체저항력을 해치는<br>과음을 삼가한다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num04.png">
+							<p>50세 이상 성인의 경우 대상포진 예방주사를 맞는 것이 좋다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/num05.png">
+							<p>수포 발생 부위가 아물면 띠 모양으로 변색된 상흔을 남깁니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+			</div><!-- content end -->
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

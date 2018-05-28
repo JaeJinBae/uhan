@@ -96,22 +96,19 @@
 	}
 	section .contentWrap{
 		width:100%;
-		max-width:1200px;
+		max-width:1100px;
 		margin:0 auto;
-		margin-top:100px;
+		margin-top:80px;
 		text-align: center;
 		clear:both;
 		position:relative;
-	}
-	.contentWrap>img{
-		width:80%;
 	}
 	/* quick menu */
 	.quick{
 		width:110px;
 		text-align: center;
 		position: absolute;
-		top:0;
+		top:75px;
 		right:-150px;
 		z-index: 999;
 	}
@@ -164,6 +161,7 @@
 	/* clinicNav */
 	.clinic_sub_nav{
 		width:100%;
+		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
 		width:100%;
@@ -186,11 +184,85 @@
 		background: #00b4ae;
 	}
 	.clinic_sub_nav ul li:nth-child(3) a{
-		color:white;
+		color:white; 
 	}
-	.content img{
+	
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
 		width:80%;
-		/* clear:both; */
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		width:32.2%;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #144d7f;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#144d7f;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		width:61%;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:15px;
+	}
+	.content00 .content_small_content .ccc img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 21px;
 	}
 </style>
 <script type="text/javascript">
@@ -198,16 +270,16 @@
         $(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
-            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            	$(".quick").stop().animate({"top":position-500+"px"},1000);	
             }
             if(position<=500){
-            	$(".quick").stop().animate({"top":0+"px"},1000);
+            	$(".quick").stop().animate({"top":75+"px"},1000);
             }
         });
         
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
-        	return false;
+        	return false; 
         });
 	});
 </script>
@@ -240,7 +312,7 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<div class="quick">
+			<div class="quick"> 
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
@@ -248,7 +320,7 @@
 					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div><!-- quick end -->
+			</div>
 			<div class="clinic_title">
 				<p>|</p>
 				<h1>비수술 클리닉</h1>
@@ -262,7 +334,73 @@
 				</ul> 
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/clinic01_3chu.png">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h1 class="subTitle">추간공확장술</h1>
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>추간공확장술 <span>이란?</span></p>
+					</div>
+					<div class="content_small_content">
+						쉽게 말해 협착이 많이 진행된 신경통로를 넓혀주는 시술입니다.<br>
+						자율신경, 림프관, 혈관, 신경계 등 신경이 잘 뻗어나가기 위해<br>
+						지나가는 통로인 추간공에 협착이 진행되면 유착과 신경손상이<br>
+						진행되므로 추간공 협착해소가 무조건 적으로 필요합니다.<br>
+						추간공확장술을 통해 추간공에 염증 유발 물질을 긁어내며 협착<br>
+						해소를 합니다. 확장키트를 옆구리 쪽으로 삽입하여 유착되고<br>
+						퇴하된 인대를 제거하여 좁아진 추간공을 확장합니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01chuimg.png">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>추간공확장술</p>
+						<p><span>적용질환</span></p>
+					</div>
+					<div class="content_small_content">
+						<ul>
+							<li>척추관협착증</li>
+							<li>다리저림</li>
+						</ul>
+						<ul>
+							<li>추간판 파열 디스크</li>
+							<li>급/만성 요통</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>추간공확장술 <span>장점</span></p>
+					</div>
+					<div class="content_small_content">
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point01_2.png">
+							<p>국소마취로 시술 후유증이 적고 시술 시간이 짧으며<br>빠른 회복이 가능합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point02_2.png">
+							<p style="margin-top:15px;">조직손상과 흉터 걱정없이 수술효과를 볼 수 있습니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>추간공확장술</p>
+						<p><span>시술방법</span></p>
+					</div>
+					<div class="content_small_content">
+						(1) 추간공의 염증 및 유착 확인<br>
+						(2) 시술을 통하여 염증 및 유착제거<br>
+						(3) 추간공을 확장
+					</div>
+				</div><!-- content00 end -->
 			</div>
 		</div><!-- contentWrap end -->
 	</section>
