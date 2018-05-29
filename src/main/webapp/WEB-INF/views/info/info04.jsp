@@ -204,9 +204,9 @@
 		margin-bottom:100px;
 	}
 	.content ul{
-		width:475.5px;
+		width:475.6px;
 		margin:0 auto;
-		margin-top:50px;
+		margin-top:85px;
 	}
 	.content ul li{
 		text-align: left;
@@ -229,7 +229,11 @@
 		line-height: 18px;
 	}
 	.content ul li:nth-child(3) p{
-	line-height: 45px;
+		line-height: 45px;
+	}
+	.content ul li p span{
+		font-size:20px;
+		font-weight: 600;
 	}
 </style>
 <script type="text/javascript">
@@ -314,11 +318,11 @@
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
 				<h2>우리의 선언</h2>
 				<ul>
-					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon1.png"><p>우리는 환자분을 따뜻하게 환대한다.</p></li>
-					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon2.png"><p>우리는 환자분의 말을 경청하고 공감한다.</p></li>
-					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon3.png"><p>우리는 환자분의 통증을 정확히 진단한다.</p></li>
-					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon4.png"><p>우리는 환자분의 통증 완화를 위해 최선을 다한다.</p></li>
-					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon5.png"><p>우리는 환자분과 통증완화에 도움되는 운동 및<br>심리적 지지를 한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon1.png"><p>우리는 <span>환자분을 따뜻하게 환대</span>한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon2.png"><p>우리는 <span>환자분의 말을 경청하고 공감</span>한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon3.png"><p>우리는 <span>환자분의 통증을 정확히 진단</span>한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon4.png"><p>우리는 <span>환자분의 통증 완화</span>를 위해 최선을 다한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon5.png"><p>우리는 <span>환자분과 통증완화에 도움되는 운동 및<br>심리적 지지</span>를 한다.</p></li>
 				</ul>
 			</div>
 		</div><!-- contentWrap end -->

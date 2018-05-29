@@ -65,6 +65,9 @@
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
+		width:120px;
+		margin:0 auto;
+		text-align: left;
 	}
 	.mainSubMenu li a{
 		font-size: 18px;
@@ -111,10 +114,10 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		$(".mainMenu>li").mouseover(function(){
+		$(".mainMenu").mouseover(function(){
 			$(".dropdown").css("display","block");
 		});
-		$(".mainMenu>li").mouseout(function(){
+		$(".mainMenu").mouseout(function(){
 			$(".dropdown").css("display","none");
 		});
 	});
