@@ -168,6 +168,69 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.content{
+		width:100%;
+	}
+	.content h2{
+		font-size:30px;
+		font-weight:500;
+	}
+	.content .diaIcon{
+		 margin-bottom:30px;
+	}
+	.content>img:not(.diaIcon){
+		margin-top:80px;
+		width:750px;
+	}
+	hr{ 
+		width:90%;
+		border:0;
+		border-top:2px solid gray;
+		margin:0 auto;
+		margin-top:100px;
+		margin-bottom:100px;
+	}
+	.content ul{
+		width:475.5px;
+		margin:0 auto;
+		margin-top:50px;
+	}
+	.content ul li{
+		text-align: left;
+		margin-top:35px;
+		overflow: hidden;
+	}
+	.content ul li img{
+		width:40px;
+		float:left;
+		margin-right:35px; 
+	}
+	.content ul li:nth-child(2) img{
+		margin-top:2px;
+	}
+	.content ul li p{
+		float:left;
+		font-size:20px;
+	}
+	.content ul li:nth-child(2) p{
+		line-height: 18px;
+	}
+	.content ul li:nth-child(3) p{
+	line-height: 45px;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -225,7 +288,6 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/subInfo04.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -235,6 +297,30 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
+			<div class="sub_title">
+				<p>|</p>
+				<h1>진료안내</h1>				
+			</div>
+			<div class="content">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h2>사명/비전</h2>
+				<img src="${pageContext.request.contextPath}/resources/images/info04img1.png">
+				<hr>
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h2>공유가치</h2>
+				<h2>(Core Value)</h2>
+				<img src="${pageContext.request.contextPath}/resources/images/info04img2.png">
+				<hr>
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h2>우리의 선언</h2>
+				<ul>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon1.png"><p>우리는 환자분을 따뜻하게 환대한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon2.png"><p>우리는 환자분의 말을 경청하고 공감한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon3.png"><p>우리는 환자분의 통증을 정확히 진단한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon4.png"><p>우리는 환자분의 통증 완화를 위해 최선을 다한다.</p></li>
+					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon5.png"><p>우리는 환자분과 통증완화에 도움되는 운동 및<br>심리적 지지를 한다.</p></li>
+				</ul>
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>
