@@ -38,6 +38,26 @@
 		height:346px;
 		float:left;
 	} 
+	.bgText{
+		width:1200px;
+		position: absolute;
+		top:170px;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+	}
+	.bgText>h1{
+		color:white;
+		font-size:40px;
+		font-weight:500;
+		margin-bottom:15px;
+	}
+	.bgText>p{
+		color:white;
+		font-size:20px;
+		font-weight: 300;
+	}
 	section .mainBackground .navWrap{
 		width:100%;
 		height:70px;
@@ -264,6 +284,13 @@
 	<section>
 		<div class="mainBackground">
 			<img class="bgImg" src="${pageContext.request.contextPath}/resources/images/news_top_bg.png">
+			<div class="bgText">
+				<h1>병원소개</h1>
+				<p>
+					환자와 소통하며 고객감동을 실천하고<br>
+					든든한 버팀목이 되어주는 유한통증의학과입니다.
+				</p>
+			</div>
 			<div class="navWrap">
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>

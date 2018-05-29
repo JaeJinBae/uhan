@@ -265,7 +265,7 @@
 		float:left;
 		font-size:19px;
 		margin-top:9px;
-		line-height: 21px;
+		line-height: 35px;
 	}
 	.ccc>h2{
 		font-size: 22px;
@@ -286,7 +286,10 @@
 	}
 	.content00 .content_small_content .ccc p img{
 		margin-top:20px;
-		margin-bottom:10px;
+	}
+	.ccc .dot{
+		font-size:26px;
+		font-weight:bold;
 	}
 </style>
 <script type="text/javascript">
@@ -401,7 +404,7 @@
 					</div>
 					<div class="content_small_content">
 						<div class="ccc">
-							<h2>· 연골주사치료</h2>
+							<h2><span class="dot">·</span> 연골주사치료</h2>
 							<p>
 								퇴행성 관절염 환자의 관절 내에 인체의 연골 및 활액의 구성성분인<br>
 								히알루론산 제재로 구성된 연골주사를 투여하는 방법입니다.<br>
@@ -414,7 +417,7 @@
 							</p>
 						</div>
 						<div class="ccc">
-							<h2>· 인대강화주사치료</h2>
+							<h2><span class="dot">·</span> 인대강화주사치료</h2>
 							<p>
 								고농도 포도당액(인체 무해)을 인대, 힘줄과 같은 환부에 주사하여<br>
 								기능을 회복시켜주는 방법입니다.<br>

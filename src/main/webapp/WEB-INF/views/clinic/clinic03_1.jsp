@@ -265,19 +265,24 @@
 	.ccc>h2{
 		font-size: 22px;
 	}
+	.ccc .dot{
+		font-size:26px;
+		font-weight:bold;
+	}
+	.ccc:last-child h2{
+		margin-top:30px;
+	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
 	}
 	.content00 .content_small_content .ccc ul li{
 		width:100%;
 		list-style: none;
+		line-height: 27px;
+		margin-top:10px;
 	}
 	.content00 .content_small_content .ccc ul li:before{
 		content:"- ";
-	}
-	.content00 .content_small_content .ccc ul li p{
-		display:inline-block;
-		font-size: 19px;
 	}
 </style>
 <script type="text/javascript">
@@ -361,7 +366,7 @@
 						관절염에는 특히나 재활치료가 필요합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img1.png">
+				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img1.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<!-- <hr>
@@ -372,7 +377,7 @@
 						스포츠재활치료는 녹이 슬어 문이 잘 열리고 닫히지 않는 것 같은<br>
 						관절염에 매우 종요한 치료방법입니다.<br>
 						적절한 운동과 함께하는 유한통증의학과의 스포츠재활치료는 녹이<br>
-						슨 부위에 윤활유를 바른 후 여러 번 닫았다 열었다 하는 동작을 반복
+						슨 부위에 윤활유를 바른 후 여러 번 닫았다 열었다 하는 동작을 반복<br>
 						하며 문이 잘 열리고 닫히게 하는 것처럼 관절의 부드러움을 되찾아<br>
 						환자분들의 통증을 개선시키는 치료입니다.
 						<br><br><br>
@@ -383,7 +388,7 @@
 						위해 유한통증의학과의 스포츠재활치료가 필요합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
+				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
@@ -392,17 +397,17 @@
 						<p><span>기대효과</span></p>
 					</div>
 					<div class="content_small_content">
-						<div class="ccc">
-							<h2>· 필요대상</h2>
-							<p>허리수술 또는 인공관절 수술을 받은 환자, 관절염 환자 등</p>
+						<div class="ccc"> 
+							<h2><span class="dot">·</span> 필요대상</h2>
+							<p>- 허리수술 또는 인공관절 수술을 받은 환자, 관절염 환자 등</p>
 						</div>
 						<div class="ccc">
-							<h2>· 기대효과</h2>
+							<h2><span class="dot">·</span> 기대효과</h2>
 							<ul>
-								<li><p>관절염 환자가 재활치료를 진행하면 관절 주위 근육들이 튼튼해지며</p><p>뼈와 연골 조직들이 건강해 집니다.</p></li>
-								<li><p>관절염 통증으로 인해 움직이지 않을 때 발생할 수 있는 관절 경직을</p><p>예방합니다.</p></li>
-								<li><p>몸의 컨디션을 높여주며 통증으로 생길 수 있는 우울증을 예방합니다.</p></li>
-								<li><p>인공관절 수술환자에게는 인공관절 수명을 늘려주고 통증을 완하시켜</p><p>빠른 일상행활복귀가 가능하게 합니다.</p></li>
+								<li>관절염 환자가 재활치료를 진행하면 관절 주위 근육들이 튼튼해지며<br>&nbsp;&nbsp;뼈와 연골 조직들이 건강해 집니다.</li>
+								<li>절염 통증으로 인해 움직이지 않을 때 발생할 수 있는 관절 경직을<br>&nbsp;&nbsp;예방합니다.</li>
+								<li>몸의 컨디션을 높여주며 통증으로 생길 수 있는 우울증을 예방합니다.</li>
+								<li>인공관절 수술환자에게는 인공관절 수명을 늘려주고 통증을 완하시켜<br>&nbsp;&nbsp;빠른 일상행활복귀가 가능하게 합니다.</li>
 							</ul>
 						</div>
 					</div>
