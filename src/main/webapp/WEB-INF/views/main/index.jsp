@@ -15,15 +15,263 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
-	@media only screen and (min-width:320px) and (max-width:414px){
-	header{
-		
+@media only screen and (min-width:320px){
+	#box1 ul li{
+		font-size: 12px;
+		width:97%;
 	}
-	section .mainBackground>.bgImg{
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:12px;
+		padding-bottom:3px;
+		margin:0 auto;
+		font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:12px;
+	}
+	#box1 ul li .smallText{
+		font-size: 10px;
+		font-weight:normal;
+	}
+	#box1{
+		margin-left: 2px;
+	}
+	
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 8px;
+		width:90%;
+	}
+	#box2 ul li{
+		font-size: 8px;
+		font-weight:normal;
+		color:white !important;
+	}
+	#box2 ul li:NTH-CHILD(1) img{
+		margin-top: 5px;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:97%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:15px;
+		height:20px;
+		float: left;
+		margin-right: 3px;
+	}
+	
+}
+
+@media only screen and (min-width:375px){
+	#box1 ul li{
+		font-size: 12px;
+		width:84%;
+	}
+	
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:12px;
+		padding-bottom:4px;
+		margin:0 auto;
+	font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:12px;
+	}
+	#box1 ul li .smallText{
+		font-size: 11px;
+		font-weight:normal;
+	}
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 10px;
+		width:90%;
+	}
+	#box2 ul li{
+		font-size: 10px;
+		font-weight:normal;
+		color:white !important;
+	}
+	#box2 ul li:NTH-CHILD(1) img{
+		margin-top: 7px;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:97%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:18px;
+		height:22px;
+		float: left;
+		margin-left: 5px;
+		margin-right: 7px;
+	}
+	
+	#box1{
+		margin-left: 5px;
+	}
+}
+@media only screen and (min-width:414px){
+	#box1 ul li{
+		font-size: 13px;
+		width:83%;
+	}
+	
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:13px;
+		padding-bottom:6px;
+		margin:0 auto;
+		font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:13px;
+	}
+	#box1 ul li .smallText{
+		font-size: 12px;
+		font-weight:normal;
+	}
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 10px;
+		width:95%;
+	}
+	#box2 ul li{
+		font-size: 12px;
+		font-weight: bold;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:97%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		font-weight:normal;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:20px;
+		height:25px;
+		float: left;
+		margin-left: 5px;
+		margin-right: 7px;
+	}
+	#box1{
+		margin-left: 5px;
+	}
+	
+}
+@media only screen and (min-width:320px) and (max-width:414px){
+	.mainBanner div img{
 		width:100%;
-		min-width:320px;
-		height:300px;
+		height:250px;
 	}
+	.contentWrap .clinicIcon img{
+		display: none;
+	}
+	.contentWrap hr{
+		margin:0px auto;
+		margin-top:25px;
+		margin-bottom:10px;
+		width:20px;
+	}
+	.contentWrap .mainClinic{
+		text-align:center;
+		height:150px;
+		margin-bottom:10px;
+		padding-bottom: 10px;
+	}
+	.contentWrap .mainClinic h1{
+		font-size: 20px;
+		margin-bottom:10px;
+		font-weight: bold;
+	}
+	.mainClinic .barogo{
+		display: none;
+	}
+	.mainClinic p{
+		font-size: 15px;
+		letter-spacing: -0.5px;
+		line-height: 20px;
+		color:#666666;
+	}
+	.boldText{
+		font-weight: bold;
+		font-size:15px;
+		color:#666666;
+	}
+	.contentWrap .content2Wrap .notice{
+		width:99%;
+		margin-top:20px;
+		margin-bottom:20px;
+		background: url(${pageContext.request.contextPath}/resources/images/noticeBg.png);
+	}
+	.contentWrap .content2Wrap .notice .noticeLogo{
+		width:40px !important;
+		height:40px;
+		float: left;
+		margin: 10px;
+	}
+	.notice .noticeTextDiv{
+		float:left;
+	}
+	.box{
+		width:48%;
+		margin:10px 3px;
+		float: left;
+		color: white;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.box hr{
+		border:0px;
+		border:1px solid white;
+		width: 8%;
+	}
+	.box h1{
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.box p{
+		color:#ec9631;
+		font-size: 17px;
+		padding: 5px 0px;
+	}
+	#box1 ul{
+		width:90%;
+		margin:0 auto;
+		text-align:center;
+	}
+	#box1 ul li:before{
+		content:"- ";
+	}
+	.bottomBannerWrap{
+		clear: both;
+	}
+	
+	
 }
 </style>
 <script type="text/javascript">
