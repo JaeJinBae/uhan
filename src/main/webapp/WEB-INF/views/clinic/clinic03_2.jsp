@@ -211,7 +211,7 @@
 		text-align: left;
 	}
 	.content00 .content_small_title hr{
-		width:100%;
+		width:68%;
 		border:0;
 		border-top:4px solid #0d7586;
 	}
