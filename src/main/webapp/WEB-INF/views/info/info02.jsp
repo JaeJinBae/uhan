@@ -165,20 +165,78 @@
 		width:100%;
 		max-width:1100px;
 		margin:0 auto;
-		/* border:1px solid black; */
 		overflow: hidden;
+		margin-bottom:100px;
 	}
 	.bossIntro .bossimg{
-		float:left;
 		width:50%;
+		margin-right:70px;
 	}
 	.bossIntro .bosstext{
-		width:50%;
-		float:left;
+		width:27%;
+		display:inline-block;
+		text-align: left;
 	}
-	.bossIntro .bosstext .diaIcon{
+	.bossIntro .bosstext .diaIcon{ 
+		margin-bottom:50px;
+	}
+	.bossname{
+		font-size:37px;
+		margin-bottom:40px;
+	}
+	.bossname span{
+		font-weight:bold;
+		font-size:37px;
+	}
+	.bossyak{
+		background: black;
+		color:white;
+		width:75px;
+		text-align: center;
+		margin-bottom:20px;
+		font-size:18px;
+		letter-spacing: 3px;
+	}
+	.bossIntro ul{
+		width:100%;
+	}
+	.bossIntro ul li{ 
+		font-size:18px;
+	}
+	hr{
+		width:100%;
+		border:0;
+		border-top:2px solid gray;
+	}
+	.bosscareer{
+		width:100%;
 		margin:0 auto;
 	}
+	.bosscareer .diaIcon{
+		margin-top:100px;
+		margin-bottom:40px;
+	}
+	.bosscareer h2{
+		font-size:30px;
+		font-weight:500;
+		margin-bottom:50px;
+	}
+	.bosscareer ol{
+		width:78.9%;
+		margin:0 auto;
+	}
+	.bosscareer ol li:not(:last-child){
+		list-style: decimal;
+		text-align: left;
+		font-size:18px;
+		line-height: 45px;
+	}
+	.bosscareer ol li:last-child{
+		list-style: decimal;
+		text-align: left;
+		font-size:18px;
+		margin-top:10px;
+	} 
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -246,7 +304,7 @@
 				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/info02img1.png">
 				<div class="bosstext">
 					<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-					<p>유한목 원장님</p>
+					<p class="bossname"><span>유한목</span> 원장님</p>
 					<div class="bossyak">
 						약 력
 					</div>
@@ -264,7 +322,19 @@
 						<li>- 침례병원 마취통증의학과 과장 역임</li>
 						<li>- 계명대학교 의과대학 및 대학원 졸업</li>
 					</ul>
-				</div>
+				</div><!-- bosstext end -->
+			</div><!-- bossIntro end -->
+			<hr>
+			<div class="bosscareer">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h2>시술 시연 사례</h2>
+				<ol>
+					<li>2008년 Texas Tech University Health Science 신경성형술 개발자이신 Gabor Racz 박사와 대구 경북 최초로 신경성형술 시연</li>
+					<li>2009년 Robert Wood Johson University Hospital YK Choi 박사와 국내 및 대구 경북 경막외내시경술 시연</li>
+					<li>2010년 미국의 Dr.Rostein과 레이저를 이용한 경막외 내시경술 시연</li>
+					<li>그외 국내 의료진과 함께 꼬리뼈를 이용한 레이저를 이용한 레이져 경막외 내시경술(SLED) 시연</li>
+					<li>지난 10년간 지역 최초로 신경성형술, 신경박리술, 경막외 내시경술을 도입하여 시술하였으며, 그 외 추간판내 고주파 열응고술<br>(IDET,L-DISQ, necleoplasty) 시술 및 수만건의 영상장치 유도하 척추시술</li>
+				</ol>
 			</div>
 		</div><!-- contentWrap end -->
 	</section>
