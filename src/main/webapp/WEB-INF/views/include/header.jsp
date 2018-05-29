@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style type="text/css">
-	*{
+@media only screen and (min-width:1100px){
+ *{
 		margin:0;
 		padding:0;
 	}
@@ -74,6 +75,26 @@
 		color:#00B4AE; 
 		/* font-weight: bold; */
 	}
+}
+
+@media only screen and (min-width:320px) and (max-width:414px){
+ *{
+		margin:0;
+		padding:0;
+	}
+	.headerWrap{
+		width:100%;
+		height:100px;
+		padding:10px;
+	}
+	.headerWrap .mainLogo img{
+		width:180px;
+	}
+	.headerWrap .mainMenu{
+		display: none;
+	}
+}
+	
 </style>
 <script type="text/javascript">
 	$(function(){
