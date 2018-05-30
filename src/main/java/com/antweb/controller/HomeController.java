@@ -13,11 +13,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.antweb.domain.BroadcastingVO;
+import com.antweb.domain.CommentVO;
 import com.antweb.domain.Criteria;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
 import com.antweb.domain.SearchCriteria;
+import com.antweb.service.BroadcastingService;
+import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
 
 
@@ -28,6 +33,12 @@ public class HomeController {
 
 	@Autowired
 	private NoticeService nService;
+
+	@Autowired
+	private BroadcastingService bService; 
+
+	@Autowired
+	private CommentService cService;
 	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
@@ -134,54 +145,111 @@ public class HomeController {
 		
 		return "clinic/clinic03_2";
 	}
-	//========================== news(병원소식)===============================
-	@RequestMapping(value="/notice", method=RequestMethod.GET)
-	public String notice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+
+	// ========================== news(병원소식)===============================
+	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	public String notice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("notice get");
-		
-		List<NoticeVO> list=nService.listSearch(cri);
-		
-		PageMaker pageMaker=new PageMaker();
+
+		List<NoticeVO> list = nService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
-		
+
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
-		
+
 		return "news/notice";
 	}
-	
-	@RequestMapping(value="/noticeRead", method=RequestMethod.GET)
-	public String readNotice(@PathVariable("bno") int bno, @PathVariable("page") int page, Model model) throws Exception{
+
+	@RequestMapping(value = "/noticeRead", method = RequestMethod.GET)
+	public String readNotice(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("noticeRead Get");
-		
-		NoticeVO vo=nService.selectOne(bno);
+
+		NoticeVO vo = nService.selectOne(bno);
 		nService.updateCnt(bno);
-		Criteria cri=new Criteria();
-		cri.setPage(page);
-		
-		model.addAttribute("item",vo); 
+		// Criteria cri=new Criteria();
+		// cri.setPage(page);
+
+		model.addAttribute("item", vo);
 		return "news/noticeRead";
 	}
-	@RequestMapping(value="/broadcasting")
-	public String broadcasting(){
-		
+
+	@RequestMapping(value = "/broadcasting")
+	public String broadcasting(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+		logger.info("broadcasting get");
+
+		List<BroadcastingVO> list = bService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
 		return "news/broadcasting";
 	}
-	@RequestMapping(value="/comment")
-	public String comment(){
-		
+
+	@RequestMapping(value = "/broadcastingRead", method = RequestMethod.GET)
+	public String readBroadcasting(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("broadcastingRead Get");
+
+		BroadcastingVO vo = bService.selectOne(bno);
+		nService.updateCnt(bno);
+		// Criteria cri=new Criteria();
+		// cri.setPage(page);
+
+		model.addAttribute("item", vo);
+		return "news/broadcastingRead";
+	}
+
+	@RequestMapping(value = "/comment")
+	public String comment(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+		logger.info("comment get");
+
+		List<CommentVO> list = cService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
 		return "news/comment";
 	}
-	@RequestMapping(value="/advice")
-	public String advice(){
-		
+
+	@RequestMapping(value = "/commentRead", method = RequestMethod.GET)
+	public String readNComment(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("commentRead Get");
+
+		CommentVO vo = cService.selectOne(bno);
+		nService.updateCnt(bno);
+		// Criteria cri=new Criteria();
+		// cri.setPage(page);
+
+		model.addAttribute("item", vo);
+		return "news/commentRead";
+	}
+
+	@RequestMapping(value = "/advice")
+	public String advice() {
+
 		return "news/advice";
 	}
-	@RequestMapping(value="/freqQuestion")
-	public String frequentlyQuestion(){
-		
+
+	@RequestMapping(value = "/freqQuestion")
+	public String frequentlyQuestion() {
+
 		return "news/freqQuestion";
 	}
+
+	
 }

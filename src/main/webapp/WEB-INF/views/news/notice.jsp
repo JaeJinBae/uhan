@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -206,6 +207,9 @@
 		padding:8px 5px;
 		border-bottom:1px solid #e3e3e3;
 	}
+	.tbl_board table tr:not(first-child) td:nth-child(2){
+		text-align: left;
+	}
 	.tbl_board table td:not(.title){
 		text-align: center;
 	}
@@ -330,15 +334,24 @@
 						<th>등록일</th> 
 						<th>조회</th>
 					</tr>
-					<c:forEach var="item" items="${list}">
-						<tr>
-							<td>${item.bno}</td>
-							<td class="title"><a href="noticeRead/${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
-							<td>${item.writer}</td>
-							<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-							<td>${item.cnt}</td>
-						</tr>	
-					</c:forEach>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<tr>
+									<td>${item.bno}</td>
+									<td class="title"><a href="noticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td>${item.writer}</td>
+									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
+									<td>${item.cnt}</td>
+								</tr>	
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</table>
 				<div class="page">
 					<ul>

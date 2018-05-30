@@ -181,6 +181,35 @@
 		font-weight: 500;
 	}
 	/* readNotice */
+	.notice_content{
+		width:90%;
+		margin:0 auto;
+	}
+	.notice_content hr{
+		width:100%;
+		margin:0 auto;
+		border:0;
+		border-top:2px solid #00B4AE;
+	}
+	.notice_content .nTitle{
+		font-size:25px;
+		text-align: left;
+		padding:15px;
+	}
+	.notice_content .nRegdate{
+		width:100%;
+		text-align:left;
+		border-top:1px solid #e3e3e3;
+		border-bottom:1px solid #e3e3e3;
+		padding:10px 0;	
+		margin-bottom:50px;
+	}
+	.notice_content .nRegdate span{
+		margin-left:15px;
+	}
+	.notice_content .nContent{
+		margin-bottom:50px;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -259,56 +288,17 @@
 				<p>|</p>
 				<h1>공지사항</h1>				
 			</div>
-			<%-- <div class="tbl_board">
-				<table>
-					<tr class="tbl_header">
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>등록일</th> 
-						<th>조회</th>
-					</tr>
-					<c:forEach var="item" items="${list}">
-						<tr>
-							<td>${item.bno}</td>
-							<td class="title"><a href="">${item.title}</a></td>
-							<td>${item.writer}</td>
-							<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-							<td>${item.cnt}</td>
-						</tr>	
-					</c:forEach>
-				</table>
-				<div class="page">
-					<ul>
-						<c:if test="${pageMaker.prev}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
-						</c:if>
-						
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
-						</c:forEach>
-						
-						<c:if test="${pageMaker.next}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
-						</c:if>
-						
-					</ul>
-				</div><!-- page end -->
-				<div class="box-body">
-						<select name="searchType">
-							<option value="n">선택해주세요.</option>
-							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
-							<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
-							<option value="r" ${cri.searchType=='r'?'selected':''}>작성일</option>
-						</select> 
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
-						<button id="searchBtn">검색</button>
-					</div>
-			</div><!-- tbl_board --> --%>
+			<div class="notice_content">
+				<hr>
+				<p class="nTitle">${item.title}</p>
+				<p class="nRegdate"><span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span></p>
+				<div class="nContent">
+					${item.content}
+				</div>
+				<hr>
+				<p><a href="${pageContext.request.contextPath}/notice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p>
+			</div>
 		</div><!-- contentWrap end -->
-		<div class="notice_content">
-			${item.content}
-		</div>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>

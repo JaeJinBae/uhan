@@ -23,7 +23,7 @@ public class AdminController {
 	public String adminMain(){
 		logger.info("adminMain GET");
 		
-		return "admin/adminMain";
+		return "admin/adminNotice";
 	}
 	
 	@RequestMapping(value="/aBoard")
