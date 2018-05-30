@@ -15,175 +15,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
-@media only screen and (min-width:320px){
-	#box1 ul li{
-		font-size: 12px;
-		width:97%;
-	}
-	#box1 ul li{
-		color:#c1c2cc;
-		margin-top:12px;
-		padding-bottom:3px;
-		margin:0 auto;
-		font-weight:normal;
-		text-align:left;
-	}
-	#box1 ul li .number{
-		font-weight:normal;
-		font-size:12px;
-	}
-	#box1 ul li .smallText{
-		font-size: 10px;
-		font-weight:normal;
-	}
-	#box1{
-		margin-left: 2px;
-	}
-	
-	#box2 ul{
-		margin:0 auto;
-		text-align:center;
-		margin-top: 8px;
-		width:90%;
-	}
-	#box2 ul li{
-		font-size: 8px;
-		font-weight:normal;
-		color:white !important;
-	}
-	#box2 ul li:NTH-CHILD(1) img{
-		margin-top: 5px;
-	}
-	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
-		padding-top: 10px;
-	}
-	#box2 ul li{
-		width:97%;
-		border-bottom: 1px solid rgba(255,255,255,0.4);
-		text-align: left;
-		padding-bottom: 14px;
-	}
-	#box2 ul li img{
-		width:15px;
-		height:20px;
-		float: left;
-		margin-right: 3px;
-	}
-	
-}
+@media only screen and (min-width:320px) and (max-width:374px){
 
-@media only screen and (min-width:375px){
-	#box1 ul li{
-		font-size: 12px;
-		width:84%;
-	}
-	
-	#box1 ul li{
-		color:#c1c2cc;
-		margin-top:12px;
-		padding-bottom:4px;
-		margin:0 auto;
-	font-weight:normal;
-		text-align:left;
-	}
-	#box1 ul li .number{
-		font-weight:normal;
-		font-size:12px;
-	}
-	#box1 ul li .smallText{
-		font-size: 11px;
-		font-weight:normal;
-	}
-	#box2 ul{
-		margin:0 auto;
-		text-align:center;
-		margin-top: 10px;
-		width:90%;
-	}
-	#box2 ul li{
-		font-size: 10px;
-		font-weight:normal;
-		color:white !important;
-	}
-	#box2 ul li:NTH-CHILD(1) img{
-		margin-top: 7px;
-	}
-	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
-		padding-top: 10px;
-	}
-	#box2 ul li{
-		width:97%;
-		border-bottom: 1px solid rgba(255,255,255,0.4);
-		text-align: left;
-		padding-bottom: 14px;
-	}
-	#box2 ul li img{
-		width:18px;
-		height:22px;
-		float: left;
-		margin-left: 5px;
-		margin-right: 7px;
-	}
-	
-	#box1{
-		margin-left: 5px;
-	}
-}
-@media only screen and (min-width:414px){
-	#box1 ul li{
-		font-size: 13px;
-		width:83%;
-	}
-	
-	#box1 ul li{
-		color:#c1c2cc;
-		margin-top:13px;
-		padding-bottom:6px;
-		margin:0 auto;
-		font-weight:normal;
-		text-align:left;
-	}
-	#box1 ul li .number{
-		font-weight:normal;
-		font-size:13px;
-	}
-	#box1 ul li .smallText{
-		font-size: 12px;
-		font-weight:normal;
-	}
-	#box2 ul{
-		margin:0 auto;
-		text-align:center;
-		margin-top: 10px;
-		width:95%;
-	}
-	#box2 ul li{
-		font-size: 12px;
-		font-weight: bold;
-	}
-	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
-		padding-top: 10px;
-	}
-	#box2 ul li{
-		width:97%;
-		border-bottom: 1px solid rgba(255,255,255,0.4);
-		text-align: left;
-		font-weight:normal;
-		padding-bottom: 14px;
-	}
-	#box2 ul li img{
-		width:20px;
-		height:25px;
-		float: left;
-		margin-left: 5px;
-		margin-right: 7px;
-	}
-	#box1{
-		margin-left: 5px;
-	}
-	
-}
-@media only screen and (min-width:320px) and (max-width:414px){
 	.mainBanner div img{
 		width:100%;
 		height:250px;
@@ -223,10 +56,12 @@
 		color:#666666;
 	}
 	.contentWrap .content2Wrap .notice{
-		width:99%;
-		margin-top:20px;
-		margin-bottom:20px;
-		background: url(${pageContext.request.contextPath}/resources/images/noticeBg.png);
+		width:93%;
+		margin:0 auto;
+		margin-top:25px;
+		margin-bottom:18px;
+		border: 1px solid #e3e3e3;
+		padding:10px;
 	}
 	.contentWrap .content2Wrap .notice .noticeLogo{
 		width:40px !important;
@@ -234,8 +69,75 @@
 		float: left;
 		margin: 10px;
 	}
+	.contentWrap .content2Wrap .notice .noticeLogo{
+		width:45px !important;
+		height:45px;
+		float: left;
+		margin:7px 7px 7px 10px;
+	}
 	.notice .noticeTextDiv{
 		float:left;
+		margin-top: 9px;
+	}
+	.notice .noticeTextDiv h1{
+		font-weight:bold;
+		font-size: 18px;
+		margin-bottom:3px;
+		font-family: 'Nanum Square';
+	}
+	.notice .noticeTextDiv p{
+		color:#666666;
+		font-weight:500;
+		font-family: 'Nanum Square';
+		font-size: 12px;
+	}
+	.notice .noticeMoreBtn{
+		float:right;
+		margin-top:20px;
+		margin-right:16px;
+	}
+	.notice .noticeMoreBtn img{
+		width:35px !important;
+		height:35px;
+	}
+	.notice hr{
+		clear: both;
+		width:93%;
+		margin-top: 73px;
+		border:0;
+		height:1px;
+		background: #c2c2c3;
+	}
+	.notice table{
+		width:93%;
+		margin: 0 auto;
+		margin-top: 7px;
+	}
+	.notice table tr{
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+	.notice table tr td:FIRST-CHILD{
+		padding-left: 7px;
+	}
+	.notice table tr td:LAST-CHILD{
+		text-align: right;
+	}
+	.notice table tr td img{
+		margin-right: 5px;
+	}
+	.notice table tr td{
+		padding-top:5px;
+		color:#666666;
+		font-size: 12px;
+		font-family: 'Nanum Square';
+	}
+	.notice table tr td a{
+		color:#666666;
+		font-size: 12px;
+		font-family: 'Nanum Square'; 
+		display: inline-block;
 	}
 	.box{
 		width:48%;
@@ -270,12 +172,584 @@
 	.bottomBannerWrap{
 		clear: both;
 	}
+	#box1 ul li{
+		font-size: 12px;
+		width:100%;
+	}
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:12px;
+		padding-bottom:3px;
+		margin:0 auto;
+		font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:12px;
+	}
+	#box1 ul li .smallText{
+		font-size: 10px;
+		font-weight:normal;
+	}
+	#box1{
+		margin-left: 2px;
+	}
 	
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 8px;
+		width:90%;
+	}
+	#box2 ul li{
+		font-size: 8px;
+		font-weight:normal;
+		color:white !important;
+	}
+	#box2 ul li:NTH-CHILD(1) img{
+		margin-top: 5px;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:100%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:15px;
+		height:20px;
+		float: left;
+		margin-right: 3px;
+	}
+	.bottomBanner{
+		width:100%;
+	}
+	.slick-slide img{
+		max-width:100%;
+		display: block;
+	}
+	.mobileContent{
+		margin-top:290px;
+		padding:20px;
+		background: url("${pageContext.request.contextPath}/resources/images/bottomBannerBg.png");
+	}
+	.mobileContent h1{
+		color:#00b4ae;
+		font-size: 20px;
+		margin-bottom: 5px;
+		font-family: 'Nanum Square';
+	}
+	.mobileContent h2 a{
+		color:#666666;
+		font-size: 17px;
+	}
+	.mobileContent hr{
+		border:0;
+		height:1px;
+		background: #dcdcdc;
+		margin: 8px 0px;
+	}
+	.mobileContent p{
+		color:#919191;
+		letter-spacing: -1px;
+	}
 	
+}
+
+@media only screen and (min-width:375px) and (max-width:413px){
+	.mainBanner div img{
+		width:100%;
+		height:250px;
+	}
+	.contentWrap .clinicIcon img{
+		display: none;
+	}
+	.contentWrap hr{
+		margin:0px auto;
+		margin-top:25px;
+		margin-bottom:10px;
+		width:20px;
+	}
+	.contentWrap .mainClinic{
+		text-align:center;
+		height:150px;
+		margin-bottom:10px;
+		padding-bottom: 10px;
+	}
+	.contentWrap .mainClinic h1{
+		font-size: 20px;
+		margin-bottom:10px;
+		font-weight: bold;
+	}
+	.mainClinic .barogo{
+		display: none;
+	}
+	.mainClinic p{
+		font-size: 15px;
+		letter-spacing: -0.5px;
+		line-height: 20px;
+		color:#666666;
+	}
+	.boldText{
+		font-weight: bold;
+		font-size:15px;
+		color:#666666;
+	}
+	.contentWrap .content2Wrap .notice{
+		width:93%;
+		margin:0 auto;
+		margin-top:25px;
+		margin-bottom:18px;
+		border:1px solid #e3e3e3;
+		padding: 10px;
+	}
+	.contentWrap .content2Wrap .notice .noticeLogo{
+		width:50px !important;
+		height:50px;
+		float: left;
+		margin:10px 10px 10px 13px;
+	}
+	.notice .noticeTextDiv{
+		float:left;
+		margin-top: 12px;
+	}
+	.notice .noticeTextDiv h1{
+		font-weight:bold;
+		font-size: 18px;
+		margin-bottom:6px;
+		font-family: 'Nanum Square';
+	}
+	.notice .noticeTextDiv p{
+		color:#666666;
+		font-weight:500;
+		font-family: 'Nanum Square';
+	}
+	.notice .noticeMoreBtn{
+		float:right;
+		margin-top:20px;
+		margin-right:16px;
+	}
+	.notice .noticeMoreBtn img{
+		width:38px !important;
+		height:38px;
+	}
+	.notice hr{
+		clear: both;
+		width:93%;
+		margin-top: 80px;
+		border:0;
+		height:1px;
+		background: #c2c2c3;
+	}
+	.notice table{
+		width:93%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.notice table tr{
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+	.notice table tr td:FIRST-CHILD{
+		padding-left: 10px;
+	}
+	.notice table tr td:LAST-CHILD{
+		text-align: right;
+	}
+	.notice table tr td img{
+		margin-right: 8px;
+	}
+	.notice table tr td{
+		padding-top:5px;
+		color:#666666;
+		font-size: 13px;
+		font-family: 'Nanum Square';
+	}
+	.notice table tr td a{
+		color:#666666;
+		font-size: 13px;
+		font-family: 'Nanum Square'; 
+		display: inline-block;
+	}
+	.box{
+		width:48%;
+		margin:10px 3px;
+		float: left;
+		color: white;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.box hr{
+		border:0px;
+		border:1px solid white;
+		width: 8%;
+	}
+	.box h1{
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.box p{
+		color:#ec9631;
+		font-size: 17px;
+		padding: 5px 0px;
+	}
+	#box1 ul{
+		width:88%;
+		margin:0 auto;
+		text-align:center;
+	}
+	#box1 ul li:before{
+		content:"- ";
+	}
+	.bottomBannerWrap{
+		clear: both;
+	}
+	
+	#box1 ul li{
+		font-size: 12px;
+		width:93%;
+	}
+	
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:12px;
+		padding-bottom:4px;
+		margin:0 auto;
+	font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:12px;
+	}
+	#box1 ul li .smallText{
+		font-size: 11px;
+		font-weight:normal;
+	}
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 10px;
+		width:90%;
+	}
+	#box2 ul li{
+		font-size: 10px;
+		font-weight:normal;
+		color:white !important;
+	}
+	#box2 ul li:NTH-CHILD(1) img{
+		margin-top: 5px;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:100%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:18px;
+		height:22px;
+		float: left;
+		margin-left: 2px;
+		margin-right: 5px;
+	}
+	
+	#box1{
+		margin-left: 5px;
+	}
+		.bottomBanner{
+		width:100%;
+	}
+	.slick-slide img{
+		max-width:100%;
+		display: block;
+	}
+	
+	.mobileContent{
+		margin-top:290px;
+		padding:20px;
+		background: url("${pageContext.request.contextPath}/resources/images/bottomBannerBg.png");
+	}
+	.mobileContent h1{
+		color:#00b4ae;
+		font-size: 20px;
+		margin-bottom: 5px;
+		font-family: 'Nanum Square';
+	}
+	.mobileContent h2 a{
+		color:#666666;
+		font-size: 17px;
+	}
+	.mobileContent hr{
+		border:0;
+		height:1px;
+		background: #dcdcdc;
+		margin: 8px 0px;
+	}
+	.mobileContent p{
+		color:#919191;
+		letter-spacing: -1px;
+	}
+}
+@media only screen and (min-width:414px) and (max-width:420px){
+	.mainBanner div img{
+		width:100%;
+		height:250px;
+	}
+	.contentWrap .clinicIcon img{
+		display: none;
+	}
+	.contentWrap hr{
+		margin:0px auto;
+		margin-top:25px;
+		margin-bottom:10px;
+		width:20px;
+	}
+	.contentWrap .mainClinic{
+		text-align:center;
+		height:150px;
+		margin-bottom:10px;
+		padding-bottom: 10px;
+	}
+	.contentWrap .mainClinic h1{
+		font-size: 20px;
+		margin-bottom:10px;
+		font-weight: bold;
+	}
+	.mainClinic .barogo{
+		display: none;
+	}
+	.mainClinic p{
+		font-size: 15px;
+		letter-spacing: -0.5px;
+		line-height: 20px;
+		color:#666666;
+	}
+	.boldText{
+		font-weight: bold;
+		font-size:15px;
+		color:#666666;
+	}
+	.contentWrap .content2Wrap .notice{
+		width:93%;
+		margin:0 auto;
+		margin-top:20px;
+		margin-bottom:18px;
+		border: 1px solid #e3e3e3;
+		padding:10px;
+	}
+	.contentWrap .content2Wrap .notice .noticeLogo{
+		width:50px !important;
+		height:50px;
+		float: left;
+		margin:10px 10px 10px 13px;
+	}
+	.notice .noticeTextDiv{
+		float:left;
+		margin-top: 12px;
+	}
+	.notice .noticeTextDiv h1{
+		font-weight:bold;
+		font-size: 18px;
+		margin-bottom:6px;
+		font-family: 'Nanum Square';
+	}
+	.notice .noticeTextDiv p{
+		color:#666666;
+		font-weight:500;
+		font-family: 'Nanum Square';
+	}
+	.notice .noticeMoreBtn{
+		float:right;
+		margin-top:20px;
+		margin-right:16px;
+	}
+	.notice .noticeMoreBtn img{
+		width:40px !important;
+		height:40px;
+	}
+	.notice hr{
+		clear: both;
+		width:93%;
+		margin-top: 80px;
+		border:0;
+		height:1px;
+		background: #c2c2c3;
+	}
+	.notice table{
+		width:93%;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+	.notice table tr{
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+	}
+	.notice table tr td:FIRST-CHILD{
+		padding-left: 10px;
+	}
+	.notice table tr td:LAST-CHILD{
+		text-align: right;
+	}
+	.notice table tr td img{
+		margin-right: 8px;
+	}
+	.notice table tr td{
+		padding-top:5px;
+		color:#666666;
+		font-size: 13px;
+		font-family: 'Nanum Square';
+	}
+	.notice table tr td a{
+		color:#666666;
+		font-size: 13px;
+		font-family: 'Nanum Square'; 
+		display: inline-block;
+	}
+	.box{
+		width:48%;
+		margin:10px 3px;
+		float: left;
+		color: white;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.box hr{
+		border:0px;
+		border:1px solid white;
+		width: 8%;
+	}
+	.box h1{
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.box p{
+		color:#ec9631;
+		font-size: 17px;
+		padding: 5px 0px;
+	}
+	#box1 ul{
+		width:90%;
+		margin:0 auto;
+		text-align:center;
+	}
+	#box1 ul li:before{
+		content:"- ";
+	}
+	.bottomBannerWrap{
+		clear: both;
+	}
+	#box1 ul li{
+		font-size: 13px;
+		width:90%;
+	}
+	
+	#box1 ul li{
+		color:#c1c2cc;
+		margin-top:13px;
+		padding-bottom:6px;
+		margin:0 auto;
+		font-weight:normal;
+		text-align:left;
+	}
+	#box1 ul li .number{
+		font-weight:normal;
+		font-size:13px;
+	}
+	#box1 ul li .smallText{
+		font-size: 12px;
+		font-weight:normal;
+	}
+	#box2 ul{
+		margin:0 auto;
+		text-align:center;
+		margin-top: 10px;
+		width:98%;
+	}
+	#box2 ul li{
+		font-size: 12px;
+		font-weight: bold;
+	}
+	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
+		padding-top: 10px;
+	}
+	#box2 ul li{
+		width:100%;
+		border-bottom: 1px solid rgba(255,255,255,0.4);
+		text-align: left;
+		font-weight:normal;
+		padding-bottom: 14px;
+	}
+	#box2 ul li img{
+		width:20px;
+		height:25px;
+		float: left;
+		margin-left: 5px;
+		margin-right: 7px;
+	}
+	#box1{
+		margin-left: 5px;
+	}
+	
+	.bottomBanner{
+		width:100%;
+	}
+	.slick-slide img{
+		max-width:100%;
+		display: block;
+	}
+	.mobileContent{
+		margin-top:290px;
+		padding:20px;
+		background: url("${pageContext.request.contextPath}/resources/images/bottomBannerBg.png");
+	}
+	.mobileContent h1{
+		color:#00b4ae;
+		font-size: 20px;
+		margin-bottom: 5px;
+		font-family: 'Nanum Square';
+	}
+	.mobileContent h2 a{
+		color:#666666;
+		font-size: 17px;
+	}
+	.mobileContent hr{
+		border:0;
+		height:1px;
+		background: #dcdcdc;
+		margin: 8px 0px;
+	}
+	.mobileContent p{
+		color:#919191;
+		letter-spacing: -1px;
+	}
 }
 </style>
 <script type="text/javascript">
+
 	$(function(){
+		detectmob();
+		if(detectmob()==true){
+			$(".bottomContent").css("display","none");
+			$(".contentDiv").prepend("<div class='mobileContent'><h1>Welcome to Our Clinic</h1><h2><a href='info03'>병원시설 둘러보기</a></h2><hr><p>언제나 평안하고 깨끗한 시설로 환자분을</p><p>맞이하는 유한통증의학과입니다.</p></div>");
+			
+			$(".mainClinic").click(function(){
+				var a = $(this).find("a").attr("href");
+				location.href=a;
+			});
+		}else{
+			$(".bottomContent").css("display","block");
+			$(".mobileContent").css("display","none");
+		}
 		$(".mainBanner").slick({
 			arrows:false,
 			infinite:true,
@@ -302,64 +776,74 @@
 		$(".noticeMoreBtn>img").mouseout(function(){
 			$(this).attr("src","/resources/images/more_btn.png");
 		});
-		
-		//mainClinic Hover
-		$(".mainClinic:first-child").mouseover(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","none");
-			$(this).css("background","#ec9631");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_1_hover.png");
-			$(this).find("hr").css("border-top","2px solid white");
-			$(this).find("h1").css("color","white");
-			$(this).find(".barogo").css("display","inline");
-		});
-		$(".mainClinic:first-child").mouseout(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","block");
-			$(this).css("background","white");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_01.png");
-			$(this).find(".clinicIcon>img").attr("style='width:45px;'");
-			$(this).find("hr").css("border-top","2px solid #000000");
-			$(this).find("h1").css("color","black");
-			$(this).find(".barogo").css("display","none");
-		});
-		
-		$(".mainClinic:nth-child(2)").mouseover(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","none");
-			$(this).css("background","#6b5b95");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_2_hover.png");
+		if(detectmob()==false){
+			//mainClinic Hover
+			$(".mainClinic:first-child").mouseover(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","none");
+				$(this).css("background","#ec9631");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_1_hover.png");
+				$(this).find("hr").css("border-top","2px solid white");
+				$(this).find("h1").css("color","white");
+				$(this).find(".barogo").css("display","inline");
+			});
+			$(".mainClinic:first-child").mouseout(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","block");
+				$(this).css("background","white");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_01.png");
+				$(this).find(".clinicIcon>img").attr("style='width:45px;'");
+				$(this).find("hr").css("border-top","2px solid #000000");
+				$(this).find("h1").css("color","black");
+				$(this).find(".barogo").css("display","none");
+			});
 			
-			$(this).find("hr").css("border-top","2px solid white");
-			$(this).find("h1").css("color","white");
-			$(this).find(".barogo").css("display","inline");
-		});
-		$(".mainClinic:nth-child(2)").mouseout(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","block");
-			$(this).css("background","white");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_02.png");
-			$(this).find(".clinicIcon>img").attr("style='width:35px;'");
-			$(this).find("hr").css("border-top","2px solid #000000");
-			$(this).find("h1").css("color","black");
-			$(this).find(".barogo").css("display","none");
-		});
-		
-		$(".mainClinic:last-child").mouseover(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","none");
-			$(this).css("background","#00b4ae");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_3_hover.png");
-			$(this).find("hr").css("border-top","2px solid white");
-			$(this).find("h1").css("color","white");
-			$(this).find(".barogo").css("display","inline");
-		});
-		$(".mainClinic:last-child").mouseout(function(){
-			$(this).find("p:not(.clinicIcon)").css("display","block");
-			$(this).css("background","white");
-			$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_03.png");
-			$(this).find(".clinicIcon>img").attr("style='width:31px;'");
-			$(this).find("hr").css("border-top","2px solid #000000");
-			$(this).find("h1").css("color","black");
-			$(this).find(".barogo").css("display","none");
-		});
+			$(".mainClinic:nth-child(2)").mouseover(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","none");
+				$(this).css("background","#6b5b95");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_2_hover.png");
+				
+				$(this).find("hr").css("border-top","2px solid white");
+				$(this).find("h1").css("color","white");
+				$(this).find(".barogo").css("display","inline");
+			});
+			$(".mainClinic:nth-child(2)").mouseout(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","block");
+				$(this).css("background","white");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_02.png");
+				$(this).find(".clinicIcon>img").attr("style='width:35px;'");
+				$(this).find("hr").css("border-top","2px solid #000000");
+				$(this).find("h1").css("color","black");
+				$(this).find(".barogo").css("display","none");
+			});
+			
+			$(".mainClinic:last-child").mouseover(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","none");
+				$(this).css("background","#00b4ae");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_3_hover.png");
+				$(this).find("hr").css("border-top","2px solid white");
+				$(this).find("h1").css("color","white");
+				$(this).find(".barogo").css("display","inline");
+			});
+			$(".mainClinic:last-child").mouseout(function(){
+				$(this).find("p:not(.clinicIcon)").css("display","block");
+				$(this).css("background","white");
+				$(this).find(".clinicIcon>img").attr("src","${pageContext.request.contextPath}/resources/images/icon_03.png");
+				$(this).find(".clinicIcon>img").attr("style='width:31px;'");
+				$(this).find("hr").css("border-top","2px solid #000000");
+				$(this).find("h1").css("color","black");
+				$(this).find(".barogo").css("display","none");
+			});
+			
+		}
 		
 	});
+	
+	function detectmob() { 
+		 if(window.innerWidth <= 800) {
+		     return true;
+		   } else {
+		     return false;
+		   }
+	}
 </script>
 </head>
 <body>

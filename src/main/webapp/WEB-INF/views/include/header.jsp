@@ -92,10 +92,11 @@
 		position:relative;
 		width:100%;
 		height:50px;
-		padding:25px 0px 0px 20px;
+		padding:25px 0px 0px 0px;
 	}
 	.headerWrap .mainLogo img{
 		width:180px;
+		margin-left: 20px;
 	}
 	.headerWrap .mainMenu{
 		display: none;
@@ -103,7 +104,7 @@
 	.headerWrap .mobileMenu img{
 		position:absolute;
 		top:20px;
-		right:30px;
+		right:5px;
 		display:inline;
 		width:40px;
 		height:40px;
@@ -120,13 +121,19 @@
 		$(".mainMenu").mouseout(function(){
 			$(".dropdown").css("display","none");
 		});
+		
+		$(".mobileMenu").click(function(e){
+			e.preventDefault();
+		});
+		
+
 	});
 </script>
 </head>
 <body>
 <div class="headerWrap">
 	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
-	<a class="mobileMenu" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/moblieMenu.png"></a>
+	<a class="mobileMenu" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/mobileMenu.png"></a>
 	<ul class="mainMenu">
 		<li>
 			<a href="info01">병원소개</a>
