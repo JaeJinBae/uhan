@@ -14,7 +14,7 @@
 		color:black;
 		text-decoration: none;
 	}
-	#tbl_board{
+	.tbl_board{
 		width:1024px;
 		height:700px;
 		margin:0 auto;
@@ -22,25 +22,25 @@
 		padding-top:30px;
 		position:relative;
 	}
-	#tbl_board table{
+	.tbl_board table{
 		width:800px;
 		margin:0 auto;
 		border-collapse: collapse;
 		font-size:0.95em; 
 	}
-	#tbl_board table .tbl_header th{
+	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
 		padding:8px 5px;
 	}
-	#tbl_board table .tbl_header th:nth-child(2){
+	.tbl_board table .tbl_header th:nth-child(2){
 		width:400px;
 	}
-	#tbl_board table td{
+	.tbl_board table td{
 		padding:8px 5px;
 		border-bottom:1px solid #e3e3e3;
 	}
-	#tbl_board table td:not(.title){
+	.tbl_board table td:not(.title){
 		text-align: center;
 	}
 	.replyCnt{
@@ -49,29 +49,29 @@
 	.title>a:hover{
 		color:red;
 	}
-	#btnWrite{
+	.btnWrite{
 		margin-top:15px;
 		float:right;
 		position:absolute;
 		right:120px;
 	}
-	#btnWrite>p{
+	.btnWrite>p{
 		padding:5px 15px;
 		background: #00B4AE;
 		border-radius: 10px;
 	}
-	#btnWrite>p>a{
+	.btnWrite>p>a{
 		color:white;
 	}
 	img{
 		width:12px;
 	}
-	#page{
+	.page{
 		clear:both;
 		width:626px; 
 		margin:70px auto;
 	}
-	#page ul li{
+	.page ul li{
 		width:45px;
 		height:40px;
 		margin:0 auto;
@@ -80,21 +80,21 @@
 		text-align:center;
 		border:1px solid #e9e9e9;
 	}
-	#page ul li:nth-child(2){
+	.page ul li:nth-child(2){
 		background: #00B4AE;
 	}
-	#page ul li:nth-child(2)>a{
+	.page ul li:nth-child(2)>a{
 		font-weight: bold;
 		color:white;
 	}
-	#page ul li a{
+	.page ul li a{
 		font-size:1.1em;
 		line-height: 40px;
 	}
 </style>
 </head> 
 <body>
-	<div id="tbl_board">
+	<div class="tbl_board">
 		<table>
 			<tr class="tbl_header">
 				<th>번호</th>
@@ -137,10 +137,10 @@
 				<td>5</td>
 			</tr>
 		</table>
-		<div id="btnWrite">
-			<p><a href="">글쓰기</a></p>
+		<div class="btnWrite">
+			<p><a href="#">글쓰기</a></p>
 		</div>
-		<div id="page">
+		<div class="page">
 			<ul>
 				<li><a href="#">&laquo;</a></li>
 				<li><a href="#">1</a></li>
@@ -155,7 +155,7 @@
 				<li><a href="#">10</a></li>
 				<li><a href="#">&raquo;</a></li>
 			</ul>
-		</div>
-	</div>
+		</div><!-- page end -->
+	</div><!-- tbl_board -->
 </body>
 </html>

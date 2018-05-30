@@ -1,13 +1,24 @@
 package com.antweb.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.antweb.domain.Criteria;
+import com.antweb.domain.NoticeVO;
+import com.antweb.domain.PageMaker;
+import com.antweb.domain.SearchCriteria;
+import com.antweb.service.NoticeService;
 
 
 @Controller
@@ -15,6 +26,9 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
+	@Autowired
+	private NoticeService nService;
+	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
 		logger.info("home");
@@ -121,10 +135,34 @@ public class HomeController {
 		return "clinic/clinic03_2";
 	}
 	//========================== news(병원소식)===============================
-	@RequestMapping(value="/notice")
-	public String notice(){
+	@RequestMapping(value="/notice", method=RequestMethod.GET)
+	public String notice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("notice get");
+		
+		List<NoticeVO> list=nService.listSearch(cri);
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "news/notice";
+	}
+	
+	@RequestMapping(value="/noticeRead", method=RequestMethod.GET)
+	public String readNotice(@PathVariable("bno") int bno, @PathVariable("page") int page, Model model) throws Exception{
+		logger.info("noticeRead Get");
+		
+		NoticeVO vo=nService.selectOne(bno);
+		nService.updateCnt(bno);
+		Criteria cri=new Criteria();
+		cri.setPage(page);
+		
+		model.addAttribute("item",vo);
+		return "news/noticeRead";
 	}
 	@RequestMapping(value="/broadcasting")
 	public String broadcasting(){

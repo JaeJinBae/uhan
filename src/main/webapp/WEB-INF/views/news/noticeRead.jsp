@@ -180,69 +180,7 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* 공지사항 */
-	.tbl_board{
-		width:1024px;
-		height:700px;
-		margin:0 auto;
-		padding-top:30px;
-		position:relative;
-	}
-	.tbl_board table{
-		width:800px;
-		margin:0 auto;
-		border-collapse: collapse;
-		font-size:0.95em; 
-	}
-	.tbl_board table .tbl_header th{
-		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
-		padding:8px 5px;
-	}
-	.tbl_board table .tbl_header th:nth-child(2){
-		width:400px;
-	}
-	.tbl_board table td{
-		padding:8px 5px;
-		border-bottom:1px solid #e3e3e3;
-	}
-	.tbl_board table td:not(.title){
-		text-align: center;
-	}
-	.replyCnt{
-		font-weight: 600;
-	}
-	.title>a:hover{
-		color:red;
-	}
-	.title>img{
-		width:12px;
-	}
-	.page{
-		clear:both;
-		width:626px; 
-		margin:70px auto;
-	}
-	.page ul li{
-		width:45px;
-		height:40px;
-		margin:0 auto;
-		list-style: none;
-		display: inline-block;
-		text-align:center;
-		border:1px solid #e9e9e9;
-	}
-	.active1{
-		background: #00B4AE;
-	}
-	.active2{
-		font-weight: bold;
-		color:white;
-	}
-	.page ul li a{
-		font-size:1.1em;
-		line-height: 40px;
-	}
+	/* readNotice */
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -321,7 +259,7 @@
 				<p>|</p>
 				<h1>공지사항</h1>				
 			</div>
-			<div class="tbl_board">
+			<%-- <div class="tbl_board">
 				<table>
 					<tr class="tbl_header">
 						<th>번호</th>
@@ -333,7 +271,7 @@
 					<c:forEach var="item" items="${list}">
 						<tr>
 							<td>${item.bno}</td>
-							<td class="title"><a href="noticeRead/${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+							<td class="title"><a href="">${item.title}</a></td>
 							<td>${item.writer}</td>
 							<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 							<td>${item.cnt}</td>
@@ -366,8 +304,11 @@
 						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
 						<button id="searchBtn">검색</button>
 					</div>
-			</div><!-- tbl_board -->
+			</div><!-- tbl_board --> --%>
 		</div><!-- contentWrap end -->
+		<div class="notice_content">
+			${item.content}
+		</div>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>
