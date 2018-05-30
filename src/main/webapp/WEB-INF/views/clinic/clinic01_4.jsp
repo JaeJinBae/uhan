@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -284,6 +285,162 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+}
+@media only screen and (min-width:320px) and (max-width:680px){
+	html{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	.clinic_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.clinic_title h1{
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 550;
+	}
+	.clinic_sub_nav{
+		margin-top:40px;
+		width:100%;
+	}
+	.clinic_sub_nav ul{
+		width:100%;
+		overflow: hidden;
+	}
+	.clinic_sub_nav ul li{
+		float: left;
+		height:40px;
+		line-height:40px;
+		text-align: center;
+		background: #dcdcdc;
+	}
+	.clinic_sub_nav ul li a{
+		color:#888686;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(1) {
+		width: 38%;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(4) a{
+		color:white;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(3){
+		width:22%;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(2){
+		width:19%;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(4){
+		width:20%;
+		background: #00b4ae;
+	}
+	.content{
+		text-align: center;
+	}
+	.content .diaIcon{
+		width:35px !important;
+		margin-bottom: 10px;
+	}
+	.content h1.subTitle{
+		font-weight: 550;
+		font-size: 1.5em;
+		margin-bottom: 30px;
+	}
+	.content00 hr{
+		display: none;
+	}
+	.content00 .content_small_title{
+		overflow: hidden;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+	 .content00 .content_small_title p{
+		margin-left: 5px;
+	} 
+	.content00 .content_small_title p:LAST-CHILD span{
+		color:black;
+		font-size: 1em;
+		font-weight: 600;
+	}
+	.content00 .content_small_title p{
+		color:#00938e;
+		font-weight: 550;
+		text-align: left;
+		display:inline;
+		float: left;
+		font-size: 1.4em;
+	}
+	.content00 .content_small_content{
+		width:370px;
+		margin:0 auto;
+		font-size:1em;
+		text-align: justify;
+		line-height: 25px;
+	}
+	
+	.content img{
+		margin-top:30px !important;
+		width: 100% !important;
+	}
+	.content_small_content ul li:BEFORE{
+		content: "●";
+		font-size: 0.5em;
+		margin-right: 5px;
+		margin-left: 10px;
+	}
+	.content_small_content ul li{
+		margin-bottom: 5px;
+	}
+	.content_small_content .ccc{
+		overflow: hidden;
+	}
+	.content_small_content .ccc img{
+		margin-top:10px !important;
+		width:45px !important;
+		float: left;
+		margin-left: 10px;
+	}
+	.content_small_content .ccc p{
+		margin-top:10px;
+		line-height: 20px;
+		margin-left: 60px;
+	}
+ 	.last_content{
+		width:70% !important;
+		margin-left: 15px !important;
+	} 
+}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -431,7 +588,7 @@
 						<p>신경성형술</p>
 						<p><span>시술방법</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content last_content">
 						(1) 병변 부위 극소마취<br>
 						(2) 직경 1mm의 초소형 특수 카테터를 삽입<br>
 						(3) 병변 부위를 찾아내어 염증 및 유착 제거<br>

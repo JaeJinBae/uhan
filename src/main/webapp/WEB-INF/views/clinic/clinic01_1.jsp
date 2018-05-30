@@ -286,9 +286,10 @@
 		line-height: 21px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:414px){
-	body{
+@media only screen and (min-width:320px) and (max-width:680px){
+	html{
 		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
 	}
 	.quick{
 		display: none;
@@ -296,30 +297,30 @@
 	.navWrap{
 		display: none;
 	}
-	.mainBackground{
-		position: relative;
-		margin-bottom: 20px;
-	}
 	.mainBackground img{
 		width:100%;
 		min-height:160px;
 		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
 	}
 	.mainBackground .bgText{
 		position: absolute;
 		top:30px;
 		left:15px;
 		color:white;
-		width:100%;
+		width:90%;
 	}
 	.mainBackground .bgText h1{
 		font-weight: 400;
 		margin-bottom: 15px;
-		font-size: 30px;
+		font-size: 1.5em;
 	}
 	.mainBackground .bgText p{
 		font-weight: 300;
-		letter-spacing: 1px;
+		letter-spacing: 0.1em;
 	}
 	.clinic_title p{
 		text-align: center;
@@ -327,23 +328,21 @@
 	}
 	.clinic_title h1{
 		text-align: center;
-		font-size: 20px;
+		font-size: 1rem;
 		font-weight: 550;
-		margin-bottom: 15px;
 	}
 	.clinic_sub_nav{
+		margin-top:40px;
 		width:100%;
-		margin: 0 auto;
 	}
 	.clinic_sub_nav ul{
 		width:100%;
-		margin:0 auto;
 		overflow: hidden;
 	}
 	.clinic_sub_nav ul li{
 		float: left;
-		height:30px;
-		line-height:30px;
+		height:40px;
+		line-height:40px;
 		text-align: center;
 		background: #dcdcdc;
 	}
@@ -357,7 +356,6 @@
 	.clinic_sub_nav ul li:NTH-CHILD(1) a{
 		color:white;
 	}
-	
 	.clinic_sub_nav ul li:NTH-CHILD(3){
 		width:22%;
 	}
@@ -368,33 +366,79 @@
 		width:20%;
 	}
 	.content{
-		margin-top:30px;
 		text-align: center;
 	}
-	.content img.diaIcon{
-		width:35px;
+	.content .diaIcon{
+		width:35px !important;
 		margin-bottom: 10px;
 	}
 	.content h1.subTitle{
-	font-weight: 550;
-		font-size: 20px;
+		font-weight: 550;
+		font-size: 1.5em;
+		margin-bottom: 30px;
 	}
-	.content00{
-		width:96%;
-		margin:0 auto;
-		overflow: hidden;
+	.content00 hr{
+		display: none;
 	}
 	.content00 .content_small_title{
-		width:22%;
-		float: left;
+		overflow: hidden;
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+	 .content00 .content_small_title p{
+		margin-left: 5px;
+	} 
+	.content00 .content_small_title p:LAST-CHILD span{
+		color:black;
+		font-size: 1em;
+		font-weight: 600;
 	}
 	.content00 .content_small_title p{
 		color:#00938e;
+		font-weight: 550;
+		text-align: left;
+		display:inline;
+		float: left;
+		font-size: 1.4em;
 	}
 	.content00 .content_small_content{
-		width:78%;
-		float: right;
+		width:370px;
+		margin:0 auto;
+		font-size:1em;
+		text-align: justify;
+		line-height: 25px;
 	}
+	.content img{
+		margin-top:30px !important;
+		width: 100% !important;
+	}
+	.content_small_content ul li:BEFORE{
+		content: "●";
+		font-size: 0.5em;
+		margin-right: 5px;
+		margin-left: 10px;
+	}
+	.content_small_content ul li{
+		margin-bottom: 5px;
+	}
+	.content_small_content .ccc{
+		overflow: hidden;
+	}
+	.content_small_content .ccc img{
+		margin-top:10px !important;
+		width:45px !important;
+		float: left;
+		margin-left: 10px;
+	}
+	.content_small_content .ccc p{
+		margin-top:10px;
+		line-height: 20px;
+		margin-left: 60px;
+	}
+ 	.last_content{
+		width:80% !important;
+		margin-left: 15px !important;
+	} 
 }
 </style>
 <script type="text/javascript">
@@ -537,7 +581,7 @@
 						<p>꼬리뼈 레이저</p>
 						<p>내시경술 <span>시술방법</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content last_content">
 						(1) 꼬리뼈 부위 약 2~4mm 절개<br>
 						(2) 내시경과 레이저가 탑재된 특수 카테터 삽입<br>
 						(3) 레이저 치료 및 약물 주입

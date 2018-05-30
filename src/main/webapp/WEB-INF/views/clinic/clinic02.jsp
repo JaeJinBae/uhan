@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -257,6 +258,97 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+}
+@media only screen and (min-width:320px) and (max-width:680px){
+	html{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	.clinic_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.clinic_title h1{
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 550;
+	}
+	.content00 .content_small_title{
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	.content00 .content_small_title hr{
+		display: none;
+	}
+	.content00 .content_small_title p span{
+		color:black;
+		font-size: 1em;
+		font-weight: 600;
+	}
+	.content00 .content_small_title p{
+		color:#00938e;
+		font-weight: 550;
+		text-align: left;
+		display:inline;
+		font-size: 1.4em;
+		margin-left: 5px;
+	}
+	.content00 .content_small_content{
+		width:370px;
+		margin:0 auto;
+		font-size:1em;
+		text-align: justify;
+		line-height: 25px;
+	}
+	.content img{
+		margin-top: 30px !important;
+		width:100% !important;
+	}
+	.content_small_content .ccc {
+		overflow: hidden;
+	}
+	.content_small_content .ccc img{
+		margin-top:7px !important;
+		width:18px !important;
+		float: left;
+	}
+	.content_small_content .ccc p{
+		width:93%;
+		float:right;
+		margin-top:0px !important;
+	}
+}
 </style>
 <script type="text/javascript">
 	$(function(){
