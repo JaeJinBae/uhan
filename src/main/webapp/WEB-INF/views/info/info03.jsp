@@ -7,7 +7,10 @@
 <title>병원 둘러보기 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
 	body{
@@ -168,6 +171,42 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.bigImg{
+		width:700px;
+		margin:0 auto;
+	}
+	.bigImg img{ 
+		width: 700px;
+	}
+	.bigImg .imgText{
+		width:100%;
+		background: rgba(255,255,255, 0.5);
+		color:white;
+		position: absolute;
+		bottom:0;
+	}
+	.smallImg{
+		width:800px;
+		margin:0 auto;
+		margin-top:100px;
+	}
+	.smallImg div img{
+		width:200px;
+	}
+	
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -184,6 +223,22 @@
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
         	return false;
+        });
+
+        $(".bigImg").slick({
+        	slidesToShow:1,
+        	slidesToScroll:1,
+        	arrows:false,
+        	fade:true,
+        	asNavFor:".smallImg"
+        });
+        $(".smallImg").slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+        	asNavFor:".bigImg",
+        	dots:true,
+        	centerMode:true,
+        	focusOnSelect:true
         });
 	});
 </script>
@@ -225,7 +280,6 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/uhanFix.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -235,6 +289,32 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
+			<div class="sub_title">
+				<p>|</p>
+				<h1>병원 둘러보기</h1>				
+			</div>
+			<div class="bigImg">
+				<div><img src="${pageContext.request.contextPath}/resources/images/h01.JPG" alt="유한통증의학과"><div class="imgText">내부사진1</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h02.JPG" alt="유한통증의학과"><div class="imgText">내부사진2</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h03.JPG" alt="유한통증의학과"><div class="imgText">내부사진3</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h04.JPG" alt="유한통증의학과"><div class="imgText">내부사진4</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h05.JPG" alt="유한통증의학과"><div class="imgText">내부사진5</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h06.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h07.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h08.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h09.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
+			</div>
+			<div class="smallImg">
+				<div><img src="${pageContext.request.contextPath}/resources/images/h01.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h02.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h03.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h04.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h05.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h06.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h07.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h08.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h09.JPG" alt="유한통증의학과"></div>
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>
