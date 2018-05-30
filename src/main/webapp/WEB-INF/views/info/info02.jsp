@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -257,6 +258,121 @@
 		font-size:18px;
 		margin-top:10px;
 	} 
+}
+@media only screen and (min-width:320px) and (max-width:680px){
+	html{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	.content_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.content_title h1{
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 550;
+	}
+	.bossIntro .bossimg{
+		width:100%;
+		margin-bottom: 10px;
+	}
+	.bossIntro .bosstext{
+		width:65%;
+		margin:0 auto;
+		text-align: left;
+	}
+	.bossIntro .bosstext .bossname span{
+		font-size: 1em;
+		text-align:center;
+		font-weight: 600;
+	}
+	.bossIntro .bosstext .bossname{
+		font-size: 2em;
+		text-align:center;
+		font-weight: 500;
+	}
+	.bossIntro .bosstext ul li{
+		letter-spacing: 0.1em;
+		margin-bottom: 10px;
+	}
+	.bossIntro .bosstext .bossyak{
+		margin-top:20px;
+		margin-bottom:10px;
+		width:60px;
+		background: black;
+		color:white;
+		text-align: center;
+	}
+	.bossIntro .bosstext .diaIcon{
+		width:40px !important;
+		display: block;
+		margin: 0 auto;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	hr{
+		width:90%;
+		margin: 0 auto;
+		margin-top: 30px;
+		border:0;
+		height:1px;
+		background: #dcdcdc;
+	}
+	.bosscareer .diaIcon{
+		width:40px !important;
+		display: block;
+		margin: 0 auto;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.bosscareer h2{
+		font-size: 1.5em;
+		font-weight: 600;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.bosscareer{
+		width:80%;
+		margin: 0 auto;
+	}
+	.bosscareer ol li:not(:LAST-CHILD){
+		list-style: decimal;
+		line-height: 30px;
+	}
+
+}
 </style>
 <script type="text/javascript">
 	$(function(){

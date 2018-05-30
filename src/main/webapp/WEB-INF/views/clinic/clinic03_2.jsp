@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -311,6 +312,141 @@
 		font-size:26px;
 		font-weight:bold;
 	}
+}
+@media only screen and (min-width:320px) and (max-width:680px){
+	html{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	.clinic_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.clinic_title h1{
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 550;
+	}
+	.clinic_sub_nav{
+		margin-top: 40px;
+	}
+	.clinic_sub_nav ul{
+		width:100%;
+			margin:0 auto;
+	}
+	.clinic_sub_nav ul li{
+		width:50%;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		float: left;
+	}
+	.clinic_sub_nav ul li a{
+		width:99%;
+		color:#888686;
+		background:#dcdcdc;
+		display: block;
+		font-size: 1.2em;
+	}
+	.clinic_sub_nav ul li:LAST-CHILD a{
+	 	color:white;
+	 	background: #00b4ae;
+	}
+	.content{
+		text-align: center;
+	}
+	.content .diaIcon{
+		margin-top:30px;
+		width:35px !important;
+		margin-bottom: 10px;
+	}
+	.content .subTitle{
+		font-weight: 550;
+		font-size: 1.5em;
+		margin-bottom: 30px;
+	}
+	
+	.content00 .content_small_title{
+		margin-bottom: 10px;
+		margin-top: 20px;
+	}
+	.content00 .content_small_content ul li{
+		margin-bottom: 5px;
+	}
+		.content_small_content ul li:BEFORE{
+		content: "●";
+		font-size: 0.5em;
+		margin-right: 5px;
+		margin-left: 10px;
+	}
+	.content00 .content_small_title hr{
+		display: none;
+	}
+	.content00 .content_small_title p{
+		color:#00938e;
+		font-weight: 550;
+		text-align: left;
+		font-size: 1.4em;
+		margin-left: 5px;
+	}
+	.content00 .content_small_title p span{
+		font-size: 1em;
+		font-weight: 550;
+		color:black;
+	}
+	.content00 .content_small_content{
+		clear:both;
+		width:370px;
+		margin:0 auto;
+		font-size: 1em;
+		text-align: justify;
+		line-height: 25px;
+	}
+	.content00 .content_small_content .ccc img{
+		width:50px !important;
+		margin-top: 10px !important;
+	}
+	.content img{
+		margin-top: 30px !important;
+		width:100% !important;
+	}
+	.content00 .content_small_title p:NTH-CHILD(2){
+		float: left;
+		margin-right: 5px;
+		font-size: 1.2em;
+	}
+}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -406,7 +542,7 @@
 					<div class="content_small_title">
 						<hr>
 						<p>주사치료</p>
-						<p><span>적용질환</span></p>
+						<p><span class="f">적용질환</span></p>
 					</div>
 					<div class="content_small_content">
 						<ul>
