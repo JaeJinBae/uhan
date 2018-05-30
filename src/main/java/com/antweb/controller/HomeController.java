@@ -161,7 +161,7 @@ public class HomeController {
 		Criteria cri=new Criteria();
 		cri.setPage(page);
 		
-		model.addAttribute("item",vo);
+		model.addAttribute("item",vo); 
 		return "news/noticeRead";
 	}
 	@RequestMapping(value="/broadcasting")
