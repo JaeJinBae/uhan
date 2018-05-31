@@ -22,7 +22,7 @@
 		font-size:15px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:414px){
+@media only screen and (min-width:320px) and (max-width:767px){
  *{
 		margin:0;
 		padding:0;

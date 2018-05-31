@@ -237,7 +237,7 @@
 		font-weight: 600;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:680px){
+@media only screen and (min-width:320px) and (max-width:767px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;

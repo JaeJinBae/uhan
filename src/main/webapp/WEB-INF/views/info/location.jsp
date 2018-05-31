@@ -216,8 +216,11 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.info3_li_m{
+		display: none;
+	}
 }
-@media only screen and (min-width:320px) and (max-width:680px){
+@media only screen and (min-width:320px) and (max-width:767px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;
@@ -255,7 +258,7 @@
 	}
 	.contentWrap .title p{
 		text-align: center;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	.contentWrap .title p:LAST-CHILD{
 		text-align: center;
@@ -265,8 +268,51 @@
 	#map{
 		width:97% !important;
 		margin:0 auto;
-		height:200px !important;
+		height:250px !important;
 	}
+	.addr{
+		margin-top:15px;
+		margin-bottom:30px;
+		font-size:1.2em;
+		text-align: center;
+		font-weight: 550;
+	}
+	.addrInfo{
+		width:95%;
+		margin: 0 auto;
+		margin-top: 15px;
+		overflow: hidden;	
+	}
+	.info2{
+		text-align: center;
+	}
+	.info2 img{
+		width:50px;
+	}
+	.info3 ul{
+		margin-top: 15px;
+	}
+	.info3 ul li:BEFORE{
+		content:"●";
+		font-size: 0.3em;
+		margin-right: 8px;
+	}
+	.info3 ul li{
+		padding: 10px 0px;
+		font-weight: 550;
+	}
+	 .line{
+	 	display:block;
+		width:90%;
+		height:1px;
+		margin:0 auto;
+		margin-top:30px;
+		margin-bottom: 30px;
+	} 
+	#info3_li_pc{
+		display: none;
+	}
+	
 }
 </style>
 <script type="text/javascript">
@@ -354,7 +400,8 @@
 				</div>
 				<div class="info3">
 					<ul>
-						<li>(설화명곡방면에서 오실 때) 1호선 '안심'방면 반월당에서 하차 후 2호선 환승 범어역 하차</li>
+						<li id="info3_li_pc">(설화명곡방면에서 오실 때) 1호선 '안심'방면 반월당에서 하차 후 2호선 환승 범어역 하차</li>
+						<li class="info3_li_m">(설화명곡방면에서 오실 때) 1호선 '안심'방면 반월당에서<br/><br/> &nbsp; &nbsp; &nbsp; 하차 후 2호선 환승 범어역 하차</li>
 						<li>2호선 범어역 2번출구 도보 5분 내</li>
 					</ul>
 				</div>

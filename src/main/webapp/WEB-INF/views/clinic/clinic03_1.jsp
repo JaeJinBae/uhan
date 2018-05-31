@@ -392,6 +392,7 @@
 	.content00 .content_small_title{
 		margin-bottom: 10px;
 		margin-top: 20px;
+		overflow: hidden;
 	}
 	.content00 .content_small_title hr{
 		display: none;
@@ -414,11 +415,26 @@
 		margin-top: 30px !important;
 		width:100% !important;
 	}
+	.content00 .content_small_title p:NTH-CHILD(2){
+		float:left;
+	}
 	.content00 .content_small_title p:NTH-CHILD(3){
 		float: left;
-		margin-right: 5px;
-		font-size: 1.2em;
 	}
+	.content00 .content_small_title p:NTH-CHILD(3) span{
+		font-size: 1em;
+		font-weight: 550;
+		color:black;
+	}
+	.content00 .content_small_title p:NTH-CHILD(4){
+	float: left;
+	}
+	.content00 .content_small_title p:NTH-CHILD(4) span{
+		font-size: 1em;
+		font-weight: 550;
+		color:black;
+	}
+	
 }
 </style>
 <script type="text/javascript">

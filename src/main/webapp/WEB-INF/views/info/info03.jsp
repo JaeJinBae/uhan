@@ -13,6 +13,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -206,7 +207,78 @@
 	.smallImg div img{
 		width:200px;
 	}
-	
+}
+@media only screen and (min-width:320px) and (max-width:680px){
+
+	body{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	.sub_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.sub_title{
+		margin-bottom: 15px;
+	}
+	.sub_title h1{
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 550;
+	}
+	.bigImg{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.bigImg img{
+		width:100%;
+	}
+	.bigImg .imgText{
+		width:100%;
+		background: rgba(255,255,255,0.5);
+		color:white;
+		position: absolute;
+		bottom:0;
+		text-align: center;
+	}
+	.smallImg{
+		width:100%;
+	}
+	.smallImg img{
+		display: none;
+	}
+}
 </style>
 <script type="text/javascript">
 	$(function(){
