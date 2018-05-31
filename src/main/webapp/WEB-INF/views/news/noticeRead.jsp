@@ -297,7 +297,7 @@
 				</div>
 				<hr>
 				<p><a href="${pageContext.request.contextPath}/notice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p>
-			</div>
+			</div><!-- notice_content end -->
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

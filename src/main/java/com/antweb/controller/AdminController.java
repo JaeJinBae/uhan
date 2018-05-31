@@ -1,5 +1,12 @@
 package com.antweb.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -7,9 +14,23 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.antweb.service.BoardService;
+import com.antweb.domain.BoardVO;
+import com.antweb.domain.BroadcastingVO;
+import com.antweb.domain.CommentVO;
+import com.antweb.domain.NoticeVO;
+import com.antweb.domain.PageMaker;
+import com.antweb.domain.SearchCriteria;
+import com.antweb.service.BroadcastingService;
+import com.antweb.service.CommentService;
+import com.antweb.service.NoticeService;
 
 @Controller
 @RequestMapping("/admin/*")
@@ -17,98 +38,352 @@ public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
 	@Autowired
-	private BoardService service;
+	private NoticeService nService;
+
+	@Autowired
+	private BroadcastingService bService; 
+
+	@Autowired
+	private CommentService cService;
 	
 	@RequestMapping(value="/")
-	public String adminMain(){
-		logger.info("adminMain GET");
+	public String adminMain(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminNotice GET");
+		
+		List<NoticeVO> list = nService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/adminNotice";
 	}
 	
-	@RequestMapping(value="/aBoard")
-	public String board(){
-		logger.info("admin Board Main");
+	@RequestMapping(value="/adminNotice")
+	public String adminNotice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminNotice GET");
 		
-		return "/admin/adminBoard";
+		List<NoticeVO> list = nService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/adminNotice";
 	}
 	
-	@RequestMapping(value="/statistics")
-	public String statistics(HttpServletRequest req, Model model){
-		logger.info("admin statistics Main");
-		String uri=req.getRequestURI();
-		model.addAttribute("uri",uri);
-		return "/admin/adminStatistics";
-	}
-	/*@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String home(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		logger.info("home입니다.");
+	@RequestMapping(value = "/adminNoticeRead", method = RequestMethod.GET)
+	public String adminNoticeRead(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminNoticeRead Get");
+
+		NoticeVO vo = nService.selectOne(bno);
+		nService.updateCnt(bno);
 		
-		List<BoardVO> list = bservice.listSearch(cri);
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/adminNoticeRead";
+	}
+	
+	@RequestMapping(value = "/adminNoticeRegister", method = RequestMethod.GET)
+	public String adminNoticeRegisterGet() {
+		logger.info("adminNoticeRegister Get");
+		
+		return "admin/adminNoticeRegister";
+	}
+	
+	@RequestMapping(value = "/adminNoticeRegister", method = RequestMethod.POST)
+	public String adminNoticeRegisterPost(NoticeVO vo) {
+		logger.info("adminNoticeRegister post");
+		nService.insert(vo);
+
+		return "redirect:/admin/adminNotice";
+	}
+	
+	@RequestMapping(value = "/adminNoticeUpdate", method = RequestMethod.GET)
+	public String adminNoticeUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminNoticeUpdate get");
+		
+		NoticeVO vo = nService.selectOne(bno);
 		
 		PageMaker pageMaker=new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(bservice.listSearchCount(cri));
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
 		
-		model.addAttribute("list", list);
+		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker",pageMaker);
-		return "home";
+		
+		
+		return "admin/adminNoticeUpdate";
 	}
 
-	@RequestMapping(value = "/read/{bno}/{page}")
-	public String read(@PathVariable("bno") int bno, @PathVariable("page") int page, Model model) throws Exception {
-		logger.info("read");
-
-		BoardVO vo = bservice.selectOne(bno);
-		bservice.updateCnt(bno);
-		Criteria cri=new Criteria();
-		cri.setPage(page);
-		List<ReplyVO> list=rservice.listReplyPage(bno, cri);
+	@RequestMapping(value = "/adminNoticeUpdate", method = RequestMethod.POST)
+	public String modifyPost(NoticeVO vo,int page,@ModelAttribute("cri") SearchCriteria cri,RedirectAttributes rtts, Model model) throws Exception {
+		logger.info("adminNoticeUpdate post");
 		
+		nService.update(vo);
+		
+		rtts.addAttribute("bno", vo.getBno());
+		
+		PageMaker pageMaker=new PageMaker();
+		
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
+		rtts.addAttribute("page",page);
+		
+		
+		return "redirect:/admin/adminNoticeRead";
+	}
+	
+	@RequestMapping(value = "/adminNoticeDelete", method = RequestMethod.GET) 
+	public String adminNoticeDelete(int bno, SearchCriteria cri,RedirectAttributes rtts) throws Exception {
+		logger.info("delete");
+		
+		nService.delete(bno);//게시글, 파일 삭제
+		rtts.addAttribute("perPageNum",cri.getPerPageNum());
+		rtts.addAttribute("page",cri.getPage());
+
+		return "redirect:/admin/adminNotice";
+	}
+	
+	
+	@RequestMapping(value = "/adminBroadcasting")
+	public String broadcasting(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+		logger.info("adminBroadcasting get");
+
+		List<BroadcastingVO> list = bService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "admin/adminBroadcasting";
+	}
+
+	@RequestMapping(value = "/adminBroadcastingRead", method = RequestMethod.GET)
+	public String readBroadcasting(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminBroadcastingRead Get");
+
+		BroadcastingVO vo = bService.selectOne(bno);
+		bService.updateCnt(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/adminBroadcastingRead";
+	}
+	
+	@RequestMapping(value = "/adminBroadcastingRegister", method = RequestMethod.GET)
+	public String adminBroadcastingeRegisterGet() {
+		logger.info("adminBroadcastingRegister Get");
+		
+		return "admin/adminBroadcastingRegister";
+	}
+	
+	@RequestMapping(value = "/adminBroadcastingRegister", method = RequestMethod.POST)
+	public String adminBroadcastingRegisterPost(BroadcastingVO vo) {
+		logger.info("adminBroadcastingRegister post");
+		bService.insert(vo);
+
+		return "redirect:/admin/adminBroadcasting";
+	}
+	
+	@RequestMapping(value = "/adminBroadcastingUpdate", method = RequestMethod.GET)
+	public String adminBroadcastingUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminBroadcastingUpdate get");
+		
+		BroadcastingVO vo = bService.selectOne(bno);
 		
 		PageMaker pageMaker=new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(rservice.count(bno));
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
-		model.addAttribute("list",list);
 		model.addAttribute("pageMaker",pageMaker);
 		
-		return "readForm";
+		
+		return "admin/adminBroadcastingUpdate";
+	}
+
+	@RequestMapping(value = "/adminBroadcastingUpdate", method = RequestMethod.POST)
+	public String modifyPost(BroadcastingVO vo,int page,@ModelAttribute("cri") SearchCriteria cri,RedirectAttributes rtts, Model model) throws Exception {
+		logger.info("adminBroadcastingUpdate post");
+		
+		logger.info("page: "+page);
+		
+		bService.update(vo);
+		
+		rtts.addAttribute("bno", vo.getBno());
+		
+		PageMaker pageMaker=new PageMaker();
+		
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+		
+		rtts.addAttribute("page",page);
+		
+		
+		return "redirect:/admin/adminBroadcastingRead";
 	}
 	
-	@RequestMapping(value="/pwcheck/{bno}", method=RequestMethod.GET)
-	public String pwcheckGet(@PathVariable("bno") int bno, Model model){
-		logger.info("pwcheck Get");
+	@RequestMapping(value = "/adminBroadcastingDelete", method = RequestMethod.GET) 
+	public String adminBroadcastingDelete(int bno, SearchCriteria cri,RedirectAttributes rtts) throws Exception {
+		logger.info("adminBroadcastingDelete");
 		
-		BoardVO vo=bservice.selectOne(bno);
-		if(vo.getPwtype().equals("x")){
-			logger.info(vo.getPwtype());
-			model.addAttribute("bno",bno);
-			model.addAttribute("page",1);
-			return "redirect:/read/"+bno+"/"+1;
-		}
+		bService.delete(bno);//게시글, 파일 삭제
+		rtts.addAttribute("perPageNum",cri.getPerPageNum());
+		rtts.addAttribute("page",cri.getPage());
+
+		return "redirect:/admin/adminBroadcasting";
+	}
+	
+	
+
+	@RequestMapping(value = "/adminComment")
+	public String comment(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+		logger.info("adminComment get");
+
+		List<CommentVO> list = cService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "admin/adminComment";
+	}
+
+	@RequestMapping(value = "/adminCommentRead", method = RequestMethod.GET)
+	public String readNComment(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminCommentRead Get");
+
+		CommentVO vo = cService.selectOne(bno);
+		cService.updateCnt(bno);
 		
-		model.addAttribute("vo",vo);
-		return "pwcheck";
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/adminCommentRead";
+	}
+	
+	@RequestMapping(value = "/adminCommentRegister", method = RequestMethod.GET)
+	public String adminCommentRegisterGet() {
+		logger.info("adminCommentRegister Get");
+		
+		return "admin/adminCommentRegister";
+	}
+	
+	@RequestMapping(value = "/adminCommentRegister", method = RequestMethod.POST)
+	public String adminCommentRegisterPost(CommentVO vo) {
+		logger.info("adminCommentRegister post");
+		cService.insert(vo);
+
+		return "redirect:/admin/adminComment";
+	}
+	
+	@RequestMapping(value = "/adminCommentUpdate", method = RequestMethod.GET)
+	public String adminCommentUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminCommentUpdate get");
+		
+		CommentVO vo = cService.selectOne(bno);
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker",pageMaker);
+		
+		
+		return "admin/adminCommentUpdate";
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String registerGet() {
-		logger.info("registerGet");
-
-		return "registerForm";
+	@RequestMapping(value = "/adminCommentUpdate", method = RequestMethod.POST)
+	public String modifyPost(CommentVO vo,int page,@ModelAttribute("cri") SearchCriteria cri,RedirectAttributes rtts, Model model) throws Exception {
+		logger.info("adminCommentUpdate post");
+		
+		cService.update(vo);
+		
+		rtts.addAttribute("bno", vo.getBno());
+		
+		PageMaker pageMaker=new PageMaker();
+		
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		rtts.addAttribute("page",page);
+		
+		return "redirect:/admin/adminCommentRead";
 	}
+	
+	@RequestMapping(value = "/adminCommentDelete", method = RequestMethod.GET) 
+	public String adminCommentDelete(int bno, SearchCriteria cri,RedirectAttributes rtts) throws Exception {
+		logger.info("adminCommentDelete");
+		
+		cService.delete(bno);//게시글, 파일 삭제
+		rtts.addAttribute("perPageNum",cri.getPerPageNum());
+		rtts.addAttribute("page",cri.getPage());
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registerPost(BoardVO vo) {
-		logger.info("registerPost");
-		bservice.insert(vo);
-
-		return "redirect:/board";
+		return "redirect:/admin/adminComment";
 	}
+	
+	/*@RequestMapping(value = "/adminAdvice")
+	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 
+		logger.info("adminAdvice get");
+
+		List<AdviceVO> list = cService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "admin/adminComment";
+	}*/
+	
 	@ResponseBody
 	@RequestMapping("imgUpload")
 	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
@@ -142,94 +417,21 @@ public class AdminController {
 		map.put("uploaded", 1);
 		map.put("fileName", fileName);
 		map.put("url", fileUrl);
-		
-		// 외부 ftp접속해서 파일 업로드==================================================================================================================================
-		String serverIp = "112.175.85.200";//호스트 주소(ex. http://아이디.iud.cdn3.cafe24.com)
-		int serverPort = 21;//포트번호
-		String user = "test7425";//ftp아이디
-		String password = "qowowls12!";//ftp비밀번호
 
-		FileInputStream fis = null;
-		FTPClient ftpClient = new FTPClient();
-
-		File fileObj = multipartToFile(upload);
-
-		try {
-			ftpClient.connect(serverIp, serverPort);// ftp연결
-			ftpClient.setControlEncoding("utf-8");// ftp인코딩설정
-			int reply = ftpClient.getReplyCode();// 응답코드받기
-			if (!FTPReply.isPositiveCompletion(reply)) {
-				ftpClient.disconnect();
-				throw new Exception(serverIp + "FTP 서버 연결 실패");
-			}
-
-			ftpClient.setSoTimeout(1000 * 20);
-			ftpClient.login(user, password);
-			ftpClient.changeWorkingDirectory("www");//디렉토리변경(저장할 폴더로 이동)
-			ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
-			ftpClient.enterLocalActiveMode();
-
-			fis = new FileInputStream(fileObj);
-			ftpClient.storeFile(upload.getOriginalFilename(), fis);
-		} finally {
-			if (ftpClient.isConnected()) {
-				ftpClient.disconnect();
-			}
-			if (fis != null) {
-				fis.close();
-			}
-		}
-
-		map.put("uploaded", 1);
-		map.put("fileName", fileName);
-		map.put("url", "http://test7425.cdn3.cafe24.com/"+fileName);
 
 		return map;
 	}
 	
-	public File multipartToFile(MultipartFile multipart) throws IllegalStateException, IOException {
-		File convFile = new File(multipart.getOriginalFilename());
-		multipart.transferTo(convFile);
-		return convFile;
-	}
-
-	@RequestMapping("/delete/{bno}")
-	public String delete(@PathVariable("bno") int bno) throws Exception {
-		logger.info("delete");
-		
-		rservice.deleteByBno(bno);
-		bservice.delete(bno);
-		
-		return "redirect:/";
+	
+	
+	@RequestMapping(value="/statistics")
+	public String statistics(HttpServletRequest req, Model model){
+		logger.info("admin statistics Main");
+		String uri=req.getRequestURI();
+		model.addAttribute("uri",uri);
+		return "/admin/adminStatistics";
 	}
 	
-	@RequestMapping(value="/update/{bno}", method=RequestMethod.GET)
-	public String updateGet(@PathVariable("bno") int bno, Model model){
-		BoardVO vo=bservice.selectOne(bno);
-		model.addAttribute("obj",vo);
-		
-		return "updateForm";
-	}
 	
-	@RequestMapping(value="/update",method=RequestMethod.POST)
-	public String updatePost(BoardVO vo){
-		bservice.update(vo);
-		
-		return "redirect:/";
-	}
-
-	@RequestMapping("/login")
-	public String loginGet(){
-		logger.info("loginGet");
-		
-		return "login";
-	}
-	
-	@RequestMapping(value="manager2", method=RequestMethod.GET)
-	public String managerGet(){
-		logger.info("managerGet");
-		
-		return "manager";
-	}*/
 
 }
