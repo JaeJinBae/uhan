@@ -385,7 +385,7 @@ public class AdminController {
 	}*/
 	
 	@ResponseBody
-	@RequestMapping("imgUpload")
+	@RequestMapping("/imgUpload")
 	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
 			throws Exception {
 		logger.info("image upload!!!!!");
