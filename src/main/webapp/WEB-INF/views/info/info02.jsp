@@ -336,7 +336,7 @@
 		text-align: center;
 	}
 	.bossIntro .bosstext .diaIcon{
-		width:40px !important;
+		width:30px !important;
 		display: block;
 		margin: 0 auto;
 		margin-top: 15px;
@@ -351,7 +351,7 @@
 		background: #dcdcdc;
 	}
 	.bosscareer .diaIcon{
-		width:40px !important;
+		width:30px !important;
 		display: block;
 		margin: 0 auto;
 		margin-top: 15px;
