@@ -8,6 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과 관리자페이지</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
 		margin:0;
@@ -19,18 +23,20 @@
 		text-decoration: none;
 	}
 	.contentWrap{
-		width:95%;
+		width:100%;
 		min-width:1280px;
-		height:700px;
+		/* height:700px; */
 		margin:0 auto;
-		border:1px solid black;
 		padding:20px;
 		background: lightgray;
+		overflow: hidden;
 	}
 	.contentWrap .leftMenu{
 		width:250px; 
 		height:100%;
 		margin-right:20px;
+		padding-top:15px;
+		padding-bottom:15px;
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
@@ -41,6 +47,8 @@
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -49,12 +57,14 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
-		font-weight: bold;
+		/* font-weight: bold; */
+		font-size:17px;
 	}
 	.contentWrap .centerMenu{
 		width:70%;
@@ -67,7 +77,8 @@
 	
 	/* 공지사항 */
 	.tbl_board{
-		width:1024px;
+		width:90%;
+		max-width:860px;
 		height:700px;
 		margin:0 auto;
 		padding-top:30px;
@@ -76,20 +87,24 @@
 	.tbl_board table{
 		width:800px;
 		margin:0 auto;
-		border-collapse: collapse;
-		font-size:0.95em; 
+		border-collapse: collapse; 
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
-		padding:8px 5px;
+		padding:8px 13px;
+		font-size:15px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
 		width:400px;
 	}
 	.tbl_board table td{
-		padding:8px 5px;
-		border-bottom:1px solid #e3e3e3;
+		padding:8px 13px;
+		border-bottom:1px solid lightgray;
+		font-size:15px;
+	}
+	.tbl_board table td a{
+		font-size:15px;
 	}
 	.tbl_board table tr:not(first-child) td:nth-child(2){
 		text-align: left;
@@ -110,6 +125,7 @@
 		clear:both;
 		width:626px; 
 		margin:70px auto;
+		text-align: center;
 	}
 	.page ul li{
 		width:45px;
@@ -131,7 +147,23 @@
 		font-size:1.1em;
 		line-height: 40px;
 	}
+	.registerBtn{
+		float:right;
+		margin-right:35px;
+		margin-top:31px;
+	}
 </style>
+<script type="text/javascript">
+	$(function(){
+		//게시판 검색
+        $("#searchBtn").click(function(){
+    		var searchType=$("select[name='searchType']").val();
+    		var keyword=$("input[name='keyword']").val();
+    		location.href="adminNotice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    	});
+		
+	});
+</script>
 </head>
 <body>
 	<jsp:include page="include/header.jsp"/>
@@ -139,10 +171,10 @@
 		<div class="leftMenu">
 			<h2>게시판 리스트</h2>
 			<ul> 
-				<li> <a href="#"> 게시판1</a></li>
-				<li> <a href="#"> 게시판2</a></li>
-				<li> <a href="#"> 게시판3</a></li>
-				<li> <a href="#"> 게시판4</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/" style="font-weight:bold;"> 공지사항</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
@@ -154,6 +186,7 @@
 						<th>글쓴이</th>
 						<th>등록일</th> 
 						<th>조회</th>
+						<th>비고</th>
 					</tr>
 					<c:choose>
 					    <c:when test="${fn:length(list) == 0}">
@@ -165,15 +198,20 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.bno}</td>
-									<td class="title"><a href="noticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td class="title"><a href="adminNoticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
 									<td>${item.writer}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 									<td>${item.cnt}</td>
+									<td>
+										<a href="${pageContext.request.contextPath}/admin/adminNoticeUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
+										<a href="${pageContext.request.contextPath}/admin/adminNoticeDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+									</td>
 								</tr>	
 							</c:forEach>
 					    </c:otherwise> 
 					</c:choose>
 				</table>
+				<p class="registerBtn"><a href="adminNoticeRegister${pageMaker.makeSearch(pageMaker.cri.page)}"><button>글쓰기</button></a></p>
 				<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">
@@ -190,7 +228,7 @@
 						
 					</ul>
 				</div><!-- page end -->
-				<div class="box-body">
+				<div class="box-body" style="text-align:center;">
 						<select name="searchType">
 							<option value="n">선택해주세요.</option>
 							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
@@ -201,7 +239,7 @@
 						<button id="searchBtn">검색</button>
 					</div>
 			</div><!-- tbl_board -->
-		</div>
+		</div><!-- centerMenu end -->
 	</div>
 </body>
 </html>

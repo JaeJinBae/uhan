@@ -17,7 +17,7 @@ public class NoticeDaoTest {
 	@Autowired
 	private NoticeDao dao;
 	
-	@Test
+	//@Test
 	public void selectAll(){
 		dao.selectAll();
 	}
@@ -36,10 +36,10 @@ public class NoticeDaoTest {
 		dao.insert(vo);
 	}
 	
-	//@Test
+	@Test
 	public void update(){
 		NoticeVO vo=new NoticeVO();
-		vo.setBno(2);
+		vo.setBno(20);
 		vo.setTitle("ㅋㅋㅋ");
 		vo.setWriter("sadf");
 		vo.setContent("ㅋㅋ이바이");

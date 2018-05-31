@@ -148,9 +148,9 @@ public class HomeController {
 
 	// ========================== news(병원소식)===============================
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
-	public String notice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+	public String notice(@ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rttr, Model model) throws Exception {
 		logger.info("notice get");
-
+		
 		List<NoticeVO> list = nService.listSearch(cri);
 
 		PageMaker pageMaker = new PageMaker();
@@ -161,7 +161,7 @@ public class HomeController {
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "news/notice";
+		return "/news/notice";
 	}
 
 	@RequestMapping(value = "/noticeRead", method = RequestMethod.GET)
@@ -172,8 +172,13 @@ public class HomeController {
 		nService.updateCnt(bno);
 		// Criteria cri=new Criteria();
 		// cri.setPage(page);
-
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
 		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		return "news/noticeRead";
 	}
 
@@ -201,11 +206,15 @@ public class HomeController {
 
 		BroadcastingVO vo = bService.selectOne(bno);
 		nService.updateCnt(bno);
-		// Criteria cri=new Criteria();
-		// cri.setPage(page);
-
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
 		model.addAttribute("item", vo);
-		return "news/broadcastingRead";
+		model.addAttribute("pageMaker", pageMaker);
+		return "news/noticeRead";
 	}
 
 	@RequestMapping(value = "/comment")
@@ -232,11 +241,15 @@ public class HomeController {
 
 		CommentVO vo = cService.selectOne(bno);
 		nService.updateCnt(bno);
-		// Criteria cri=new Criteria();
-		// cri.setPage(page);
-
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		
 		model.addAttribute("item", vo);
-		return "news/commentRead";
+		model.addAttribute("pageMaker", pageMaker);
+		return "news/noticeRead";
 	}
 
 	@RequestMapping(value = "/advice")

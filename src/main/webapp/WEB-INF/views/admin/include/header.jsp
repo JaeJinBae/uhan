@@ -15,7 +15,6 @@
 		min-width:1024px;
 		color:skyblue;
 		background: #17161C;
-		margin-bottom:20px;
 	}
 	#headerDiv #logo{
 		width:300px;
@@ -47,6 +46,7 @@
 		font-weight:bold;
 		text-decoration: none;
 		display: inline-block;
+		font-size:20px;
 	}
 	#headerDiv #headerMenu>ul>li a:hover{
 		background: white;
@@ -64,10 +64,8 @@
 		</div>
 		<div id="headerMenu"> 
 			<ul>
-				<li><a href="aBoard" title="게시판 관리">게시판 관리</a></li>
-				<li><a href="statistics" title="통계">통계</a></li>
-				<li><a href="#" title="메뉴3">메뉴3</a></li>
-				<li><a href="#" title="메뉴4">메뉴4</a></li>
+				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리">게시판 관리</a></li>
+				<li><a href="statistics" title="통계">통 계</a></li>
 			</ul>
 		</div>
 	</div>
