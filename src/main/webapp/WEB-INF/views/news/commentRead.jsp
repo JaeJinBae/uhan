@@ -2,12 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>시술후기 | 유한통증의학과</title>
+<title>공지사항 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -126,9 +125,6 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap>img{
-		width:700px;
-	}
 	/* quick menu */
 	.quick{
 		width:110px;
@@ -184,76 +180,41 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* 공지사항 */
-	.tbl_board{
-		width:1024px;
-		height:700px;
+	/* readNotice */
+	.notice_content{
+		width:90%;
 		margin:0 auto;
-		padding-top:30px;
-		position:relative;
 	}
-	.tbl_board table{
-		width:800px;
+	.notice_content hr{
+		width:100%;
 		margin:0 auto;
-		border-collapse: collapse;
-		font-size:0.95em; 
+		border:0;
+		border-top:2px solid #00B4AE;
 	}
-	.tbl_board table .tbl_header th{
-		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
-		padding:8px 5px;
-	}
-	.tbl_board table .tbl_header th:nth-child(2){
-		width:400px;
-	}
-	.tbl_board table td{
-		padding:8px 5px;
-		border-bottom:1px solid #e3e3e3;
-	}
-	.tbl_board table tr:not(first-child) td:nth-child(2){
+	.notice_content .nTitle{
+		font-size:25px;
 		text-align: left;
+		padding:15px;
 	}
-	.tbl_board table td:not(.title){
-		text-align: center;
+	.notice_content .nRegdate{
+		width:100%;
+		text-align:left;
+		border-top:1px solid #e3e3e3;
+		border-bottom:1px solid #e3e3e3;
+		padding:10px 0;	
+		margin-bottom:50px;
 	}
-	.replyCnt{
-		font-weight: 600;
+	.notice_content .nRegdate span{
+		margin-left:15px;
 	}
-	.title>a:hover{
-		color:red;
-	}
-	.title>img{
-		width:12px;
-	}
-	.page{
-		clear:both;
-		width:626px; 
-		margin:70px auto;
-	}
-	.page ul li{
-		width:45px;
-		height:40px;
-		margin:0 auto;
-		list-style: none;
-		display: inline-block;
-		text-align:center;
-		border:1px solid #e9e9e9;
-	}
-	.active1{
-		background: #00B4AE;
-	}
-	.active2{
-		font-weight: bold;
-		color:white;
-	}
-	.page ul li a{
-		font-size:1.1em;
-		line-height: 40px;
+	.notice_content .nContent{
+		margin-bottom:50px;
 	}
 </style>
 <script type="text/javascript">
 	$(function(){
-        $(window).scroll(function() {
+		//quick menu
+		$(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
             	$(".quick").stop().animate({"top":position-450+"px"},1000);	
@@ -262,7 +223,6 @@
             	$(".quick").stop().animate({"top":0+"px"},1000);
             }
         });
-        
         $(".quick ul li:last-child a").click(function(){
         	$("html").animate({scrollTop:"0"},500);
         	return false;
@@ -303,10 +263,10 @@
 						</ul>
 					</li>
 					<li>
-						<a href="comment">시술후기<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="notice">공지사항<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="notice">공지사항</a></li>
 							<li><a href="broadcasting">언론보도</a></li>
+							<li><a href="comment">시술후기</a></li>
 							<li><a href="advice">진료/비용 상담</a></li>
 							<li><a href="freqQuestion">자주하는 질문</a></li>
 						</ul>	
@@ -328,61 +288,16 @@
 				<p>|</p>
 				<h1>시술후기</h1>				
 			</div>
-			<div class="tbl_board">
-				<table>
-					<tr class="tbl_header">
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>등록일</th> 
-						<th>조회</th>
-					</tr>
-					<c:choose>
-					    <c:when test="${fn:length(list) == 0}">
-				        	<tr>
-				        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
-				        	</tr>
-					    </c:when>
-					    <c:otherwise>
-					        <c:forEach var="item" items="${list}">
-								<tr>
-									<td>${item.bno}</td>
-									<td class="title"><a href="noticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
-									<td>${item.writer}</td>
-									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-									<td>${item.cnt}</td>
-								</tr>	
-							</c:forEach>
-					    </c:otherwise> 
-					</c:choose>
-				</table>
-				<div class="page">
-					<ul>
-						<c:if test="${pageMaker.prev}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
-						</c:if>
-						
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
-						</c:forEach>
-						
-						<c:if test="${pageMaker.next}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
-						</c:if>
-						
-					</ul>
-				</div><!-- page end -->
-				<div class="box-body">
-						<select name="searchType">
-							<option value="n">선택해주세요.</option>
-							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
-							<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
-							<option value="r" ${cri.searchType=='r'?'selected':''}>작성일</option>
-						</select> 
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
-						<button id="searchBtn">검색</button>
-					</div>
-			</div><!-- tbl_board -->
+			<div class="notice_content">
+				<hr>
+				<p class="nTitle">${item.title}</p>
+				<p class="nRegdate"><span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span></p>
+				<div class="nContent">
+					${item.content}
+				</div>
+				<hr>
+				<p><a href="${pageContext.request.contextPath}/notice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p>
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

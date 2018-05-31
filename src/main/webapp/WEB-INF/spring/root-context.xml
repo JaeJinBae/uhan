@@ -45,6 +45,11 @@
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
 	</bean>
 	
+	<!-- 객체를 넣을 때 사용 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+	
 	<context:component-scan base-package="com.antweb.persistence"></context:component-scan>
 	<context:component-scan base-package="com.antweb.service"></context:component-scan>
 	

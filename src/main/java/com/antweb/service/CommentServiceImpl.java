@@ -1,30 +1,38 @@
 package com.antweb.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.antweb.domain.CommentVO;
+import com.antweb.domain.SearchCriteria;
+import com.antweb.persistence.CommentDao;
+
 @Service
-public class BoardServiceImpl implements BoardService{
+public class CommentServiceImpl implements CommentService {
 
-	/*@Autowired
-	private BoardDao dao;
-
+	@Autowired
+	private CommentDao dao;
+	
 	@Override
-	public List<BoardVO> selectAll() {
+	public List<CommentVO> selectAll() {
 		return dao.selectAll();
 	}
 
 	@Override
-	public BoardVO selectOne(int bno) {
+	public CommentVO selectOne(int bno) {
 		return dao.selectOne(bno);
 	}
 
 	@Override
-	public void insert(BoardVO vo) {
+	public void insert(CommentVO vo) {
 		dao.insert(vo);
+		
 	}
 
 	@Override
-	public void update(BoardVO vo) {
+	public void update(CommentVO vo) {
 		dao.update(vo);
 	}
 	
@@ -39,18 +47,15 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+	public List<CommentVO> listSearch(SearchCriteria cri) throws Exception {
 		return dao.listSearch(cri);
 	}
-	
+
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
-	}*/
+	}
 
 	
 
-	
-	
-	
 }
