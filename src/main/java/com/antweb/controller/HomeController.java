@@ -3,6 +3,7 @@ package com.antweb.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.JOptionPane;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContext;
 
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
@@ -72,8 +74,8 @@ public class HomeController {
 	public String home(Model model, HttpServletRequest req) {
 		logger.info("home");
 		String old_url = req.getHeader("referer");
-		logger.info(old_url);
-		
+		//logger.info(old_url);
+		logger.info("Browser : "+getBrowser(req));
 		return "main/index";
 	}
 
@@ -263,6 +265,33 @@ public class HomeController {
 
 		return "news/freqQuestion";
 	}
-
+	
+	private String getBrowser(HttpServletRequest request){
+		String agent = request.getHeader("User-Agent");
+		String browser = null;
+		String old_url = request.getHeader("referer"); 
+		JOptionPane.showMessageDialog(null, old_url);
+		if(agent !=null){
+			if(agent.indexOf("Trident")>-1){
+				browser = "MSIE";
+			}else if(agent.indexOf("Chrome")>-1){
+				
+				if(agent.indexOf("Android")>-1 && agent.indexOf("Mobile")>-1){
+					browser = "Android";
+				}else{
+					browser = "Chrome";
+				}
+				
+			}else if(agent.indexOf("Opera")>-1){
+				browser = "Opera";
+			}else if(agent.indexOf("iPhone")>-1 && agent.indexOf("Mobile")>-1){
+				browser = "iPhone";
+			}
+		}
+		logger.info("agent : "+agent);
+		logger.info("browser : "+browser);
+		logger.info("url : "+old_url);
+		return browser;
+	}
 	
 }
