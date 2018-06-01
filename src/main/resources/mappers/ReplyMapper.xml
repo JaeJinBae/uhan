@@ -3,16 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.antweb.mappers.ReplyMapper">
-
-	<select id="list" resultType="ReplyVO">
-		select * from reply where bno=#{bno} order by rno desc
+	
+	<select id="select" resultType="ReplyVO">
+		select * from reply where bno=#{bno}
 	</select>
 	
-	<select id="listPage" resultType="ReplyVO">
-		select * from reply where bno=#{bno} order by rno desc limit #{cri.pageStart}, #{cri.perPageNum}
-	</select>
-	
-	<insert id="create">
+	<insert id="insert">
 		insert into reply (bno, replytext, replyer) values(#{bno}, #{replytext}, #{replyer})
 	</insert>
 	
@@ -24,15 +20,4 @@
 		delete from reply where rno=#{rno}
 	</delete>
 	
-	<delete id="deleteByBno">
-		delete from reply where bno=#{bno}
-	</delete>
-	
-	<select id="count" resultType="int">
-		select count(bno) from reply where bno=#{bno}
-	</select>
-	
-	<select id="getBno" resultType="int">
-		select bno from reply where rno=#{rno}
-	</select>
 </mapper>

@@ -10,6 +10,7 @@ public interface AdviceDao {
 	public AdviceVO selectOne(int bno);
 	public void insert(AdviceVO vo);
 	public void update(AdviceVO vo);
+	public void updateState(int bno);
 	public void updateCnt(int bno);
 	public void delete(int bno);
 	public List<AdviceVO> listSearch(SearchCriteria cri) throws Exception;

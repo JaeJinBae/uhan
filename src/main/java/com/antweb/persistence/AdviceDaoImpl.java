@@ -39,6 +39,11 @@ public class AdviceDaoImpl implements AdviceDao {
 	}
 
 	@Override
+	public void updateState(int bno) {
+		session.update(namespace+".updateState", bno);	
+	}
+	
+	@Override
 	public void updateCnt(int bno) {
 		session.update(namespace+".updateCnt",bno);
 		
@@ -67,11 +72,5 @@ public class AdviceDaoImpl implements AdviceDao {
 		
 		session.update(namespace+".updateReplyCnt",map);
 	}
-
-	
-
-
-	
-		
 
 }

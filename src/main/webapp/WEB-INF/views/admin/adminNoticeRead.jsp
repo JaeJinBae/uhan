@@ -21,6 +21,7 @@
 	.contentWrap{
 		width:100%;
 		min-width:1280px;
+		/* height:700px; */
 		margin:0 auto;
 		padding:20px;
 		background: lightgray;
@@ -42,6 +43,8 @@
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -50,12 +53,14 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
-		font-weight: bold;
+		/* font-weight: bold; */
+		font-size:17px;
 	}
 	.contentWrap .centerMenu{
 		width:70%;

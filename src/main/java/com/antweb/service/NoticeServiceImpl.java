@@ -28,7 +28,6 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public void insert(NoticeVO vo) {
 		dao.insert(vo);
-		
 	}
 
 	@Override

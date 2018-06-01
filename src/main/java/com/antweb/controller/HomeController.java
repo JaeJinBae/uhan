@@ -3,29 +3,33 @@ package com.antweb.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.JOptionPane;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.support.RequestContext;
 
 import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
+import com.antweb.domain.ReplyVO;
 import com.antweb.domain.SearchCriteria;
 import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
+import com.antweb.service.ReplyService;
 
 
 @Controller
@@ -44,6 +48,9 @@ public class HomeController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private ReplyService rService;
 	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
@@ -79,6 +86,10 @@ public class HomeController {
 		String old_url = req.getHeader("referer");
 		//logger.info(old_url);
 		//logger.info("Browser : "+getBrowser(req));
+		
+		List<NoticeVO> list=nService.selectAll();
+		model.addAttribute("list", list);
+		
 		return "main/index";
 	}
 
@@ -257,7 +268,7 @@ public class HomeController {
 		return "news/noticeRead";
 	}
 
-	@RequestMapping(value = "/advice")
+	@RequestMapping(value = "/advice", method=RequestMethod.GET)
 	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("advice get");
 		
@@ -266,12 +277,85 @@ public class HomeController {
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
 		
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "news/advice";
+	}
+	
+	@RequestMapping(value = "/adviceRegister", method = RequestMethod.GET)
+	public String adviceRegisterGet() {
+		logger.info("adviceRegister Get");
+		
+		return "news/adviceRegister";
+	}
+	
+	@RequestMapping(value = "/adviceRegister", method = RequestMethod.POST)
+	public String adviceRegisterPost(AdviceVO vo) {
+		logger.info("adviceRegister post");
+		aService.insert(vo);
+		
+		return "redirect:/advice";
+	}
+	
+	@RequestMapping(value = "/advicePWtype", method = RequestMethod.GET)
+	public String advicePWcheck(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("advicePWcheck Get");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		String pwtype=vo.getPwtype();
+		if(pwtype.equals("o")){
+			logger.info("go Read");
+			return "news/adviceRead";
+		}
+		
+		return "news/advicePWcheck";
+	}
+	
+	@RequestMapping(value = "/advicePWcheck2", method = RequestMethod.POST)
+	public ResponseEntity<String> advicePWCheckPost(@RequestBody AdviceVO voo) {
+		logger.info("advicePWcheck post");
+		
+		ResponseEntity<String> entity=null;
+		try{
+			AdviceVO vo=aService.selectOne(voo.getBno());
+			String realPW=vo.getPw();
+			
+			if(realPW.equals(voo.getPw())){
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+				return entity;
+			}else{
+				entity=new ResponseEntity<String>("no",HttpStatus.BAD_REQUEST);
+				return entity;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/adviceRead/{bno}")
+	public String adviceRead(@PathVariable("bno") int bno,  Model model) throws Exception {
+		
+		AdviceVO vo=aService.selectOne(bno);
+		ReplyVO rvo=rService.select(bno);
+		
+		model.addAttribute("item",vo);
+		model.addAttribute("reply", rvo);
+		
+		return "news/adviceRead";
 	}
 
 	@RequestMapping(value = "/freqQuestion")

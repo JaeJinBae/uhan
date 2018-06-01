@@ -8,6 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과 관리자페이지</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
 		margin:0;
@@ -21,6 +26,7 @@
 	.contentWrap{
 		width:100%;
 		min-width:1280px;
+		/* height:700px; */
 		margin:0 auto;
 		padding:20px;
 		background: lightgray;
@@ -42,6 +48,8 @@
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -50,12 +58,14 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
-		font-weight: bold;
+		/* font-weight: bold; */
+		font-size:17px;
 	}
 	.contentWrap .centerMenu{
 		width:70%;
@@ -135,9 +145,15 @@
 	/* readNotice */
 	.notice_content{
 		width:90%;
-		margin:0 auto;
-		padding:60px 20px;
+		margin:10px auto;
+		padding:15px 20px;
+		padding-bottom:50px;
 		background: white;
+	}
+	.notice_content>h2{
+		font-size:25px;
+		margin-left:15px;
+		margin-bottom:15px;
 	}
 	.notice_content hr{
 		width:100%;
@@ -165,6 +181,45 @@
 		margin-bottom:50px;
 		padding:0 15px;
 	}
+	/* 글쓰기 */
+	#form1{
+		width:90%;
+		margin:0 auto; 
+		padding:30px 20px;
+		background: white;
+		margin-bottom:10px;
+	}
+	#container{
+		width:95%;
+		margin:0 auto;
+	}
+	#container>h2{
+		font-size:30px;
+		margin-bottom:30px;
+		margin-top:20px;
+	}
+	#header{
+		width:100%;
+		margin-bottom:30px;
+	}
+	#title{
+		width:50%;
+		line-height: 20px;
+	}
+	
+	.btn{
+		width:300px;
+		height:40px;
+		font-size: 1.2em;
+		margin:0 auto;
+		margin-top:40px;
+		margin-bottom:50px;
+		text-align: center;
+	}
+	.btn input, a button{
+		width:145px;
+		height:40px;
+	}
 </style>
 </head>
 <body>
@@ -181,20 +236,61 @@
 		</div>
 		<div class="centerMenu">
 			<div class="notice_content">
+				<h2>게시글</h2>
 				<hr>
 				<p class="nTitle">제목: ${item.title}</p>
-				<p class="nRegdate"><span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span></p>
+				<p class="nRegdate">
+					<span>작성자: ${item.writer}</span>
+					<span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span>
+					<span>조회수: ${item.cnt}</span>
+				</p>
 				<div class="nContent">
 					${item.content}
 				</div>
 				<hr>
 				<p>
-					<a href="${pageContext.request.contextPath}/admin/adminNotice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
-					<a href="${pageContext.request.contextPath}/admin/adminNoticeUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
-					<a href="${pageContext.request.contextPath}/admin/adminNoticeDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+					<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
+					<a href="${pageContext.request.contextPath}/admin/adminAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
+					<a href="${pageContext.request.contextPath}/admin/adminAdviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
 				</p>
 			</div><!-- notice_content end -->
-		</div>
+			<c:if test="${item.state=='답변대기'}">
+				<form id="form1" method="post" action="adminAdviceAddReply">
+					<div id="container">
+						<h2>답변</h2>
+						<p>작성자: <input type="text" name="replyer" value="관리자"></p>
+						<br> 
+						<input type="hidden" name="bno" value="${item.bno}">
+						<textarea id="editor1" name="replytext">
+						    
+						</textarea>
+						<script>
+							CKEDITOR.replace('replytext',{filebrowserUploadUrl:"${pageContext.request.contextPath}/imgUpload",height:400});
+						</script>
+						<div class="btn">
+							<input type="submit" value="저장">
+							<a href="${pageContext.request.contextPath}/admin/adminAdvice"><button type="button">뒤로가기</button></a>
+						</div>
+					</div>
+				</form>
+			</c:if>
+			<c:if test="${item.state=='답변완료'}">
+				<div class="notice_content">
+					<h2>답변</h2>
+					<hr>
+					<p class="nRegdate"><span>작성일: <fmt:formatDate type="date" value="${reply.regdate}"/></span></p>
+					<div class="nContent">
+						${reply.replytext}
+					</div>
+					<hr>
+					<p>
+						<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+					</p>
+				</div><!-- notice_content end -->
+			</c:if>
+		</div><!-- centerMenu end -->
 	</div>
 </body>
 </html>

@@ -23,19 +23,20 @@
 		text-decoration: none;
 	}
 	.contentWrap{
-		width:95%;
+		width:100%;
 		min-width:1280px;
-		height:700px;
+		/* height:700px; */
 		margin:0 auto;
-		border:1px solid black;
 		padding:20px;
 		background: lightgray;
+		overflow: hidden;
 	}
 	.contentWrap .leftMenu{
 		width:250px; 
 		height:100%;
 		margin-right:20px;
-		border:1px solid red;
+		padding-top:15px;
+		padding-bottom:15px;
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
@@ -46,6 +47,8 @@
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -54,20 +57,22 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
-		font-weight: bold;
+		/* font-weight: bold; */
+		font-size:17px;
 	}
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
 		height:100%;
-		border:1px solid red;
 		border-radius:10px;
 		float:left;
+		background: #e3e3e3;
 	}
 	/* 공지사항 */
 	.tbl_board{
@@ -90,7 +95,7 @@
 		font-size:15px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
-		width:400px;
+		width:327px;
 	}
 	.tbl_board table td{
 		padding:8px 13px;
@@ -180,6 +185,7 @@
 						<th>글쓴이</th>
 						<th>등록일</th> 
 						<th>조회</th>
+						<th>답변상태</th>
 						<th>비고</th>
 					</tr>
 					<c:choose>
@@ -196,6 +202,7 @@
 									<td>${item.writer}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 									<td>${item.cnt}</td>
+									<td>${item.state}</td>
 									<td>
 										<a href="${pageContext.request.contextPath}/admin/adminAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
 										<a href="${pageContext.request.contextPath}/admin/adminAdviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>

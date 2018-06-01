@@ -22,15 +22,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.antweb.domain.BoardVO;
+import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
+import com.antweb.domain.ReplyVO;
 import com.antweb.domain.SearchCriteria;
+import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
+import com.antweb.service.ReplyService;
 
 @Controller
 @RequestMapping("/admin/*")
@@ -45,6 +48,12 @@ public class AdminController {
 
 	@Autowired
 	private CommentService cService;
+	
+	@Autowired
+	private AdviceService aService;
+	
+	@Autowired
+	private ReplyService rService;
 	
 	@RequestMapping(value="/")
 	public String adminMain(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
@@ -366,23 +375,50 @@ public class AdminController {
 		return "redirect:/admin/adminComment";
 	}
 	
-	/*@RequestMapping(value = "/adminAdvice")
+	@RequestMapping(value = "/adminAdvice", method=RequestMethod.GET)
 	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-
-		logger.info("adminAdvice get");
-
-		List<AdviceVO> list = cService.listSearch(cri);
-
+		logger.info("advice get");
+		
+		List<AdviceVO> list = aService.listSearch(cri);
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(cService.listSearchCount(cri));
-
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "admin/adminComment";
-	}*/
+		return "admin/adminAdvice";
+	}
+	
+	@RequestMapping(value = "/adminAdviceRead", method = RequestMethod.GET)
+	public String adminAdviceRead(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adminAdviceRead Get");
+
+		AdviceVO vo = aService.selectOne(bno);
+		ReplyVO rvo=rService.select(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("reply", rvo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/adminAdviceRead";
+	}
+	
+	@RequestMapping(value="/adminAdviceAddReply", method=RequestMethod.POST)
+	public String adminAdviceAddReply(ReplyVO vo) throws Exception{
+		logger.info("adminAdviceAddReply POSt");
+		
+		rService.insert(vo);
+		
+		
+		return "redirect:/admin/adminAdvice";
+	}
 	
 	@ResponseBody
 	@RequestMapping("/imgUpload")

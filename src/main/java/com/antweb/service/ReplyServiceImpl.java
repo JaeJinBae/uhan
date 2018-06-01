@@ -1,12 +1,8 @@
 package com.antweb.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.antweb.domain.Criteria;
 import com.antweb.domain.ReplyVO;
 import com.antweb.persistence.AdviceDao;
 import com.antweb.persistence.ReplyDao;
@@ -18,47 +14,27 @@ public class ReplyServiceImpl implements ReplyService {
 	private ReplyDao dao;
 	
 	@Autowired
-	private AdviceDao boardDao;
-	
+	private AdviceDao adviceDao;
+
 	@Override
-	public List<ReplyVO> listReply(int bno) throws Exception {
-		return dao.list(bno);
+	public ReplyVO select(int bno) throws Exception {
+		return dao.select(bno);
 	}
 
 	@Override
-	@Transactional
-	public void addReply(ReplyVO vo) throws Exception {
-		dao.create(vo);
-		boardDao.updateReplyCnt(vo.getBno(), 1);
+	public void insert(ReplyVO vo) throws Exception {
+		dao.insert(vo);
+		adviceDao.updateState(vo.getBno());
 	}
 
 	@Override
-	public void modifyReply(ReplyVO vo) throws Exception {
+	public void update(ReplyVO vo) throws Exception {
 		dao.update(vo);
 	}
 
 	@Override
-	@Transactional
-	public void removeReply(int rno) throws Exception {
-		int bno=dao.getBno(rno);
+	public void delete(int rno) throws Exception {
 		dao.delete(rno);
-		boardDao.updateReplyCnt(bno, -1);
-
 	}
-
-	@Override
-	public List<ReplyVO> listReplyPage(int bno, Criteria cri) throws Exception {
-		return dao.listPage(bno, cri);
-	}
-
-	@Override
-	public int count(int bno) throws Exception {
-		return dao.count(bno);
-	}
-
-	@Override
-	public void deleteByBno(int bno) throws Exception {
-		dao.deleteByBno(bno);
-	}
-
+	
 }

@@ -6,11 +6,8 @@ import com.antweb.domain.Criteria;
 import com.antweb.domain.ReplyVO;
 
 public interface ReplyService {
-	public List<ReplyVO> listReply(int bno) throws Exception;
-	public void addReply(ReplyVO vo) throws Exception;
-	public void modifyReply(ReplyVO vo) throws Exception;
-	public void removeReply(int rno) throws Exception;
-	public List<ReplyVO> listReplyPage(int bno, Criteria cri) throws Exception;
-	public int count(int bno) throws Exception;
-	public void deleteByBno(int bno) throws Exception;
+	public ReplyVO select(int bno) throws Exception;
+	public void insert(ReplyVO vo) throws Exception;
+	public void update(ReplyVO vo) throws Exception;
+	public void delete(int rno) throws Exception;
 }

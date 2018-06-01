@@ -361,7 +361,7 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.bno}</td>
-									<td class="title"><a href="Advicepwcheck${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td class="title"><a href="advicePWtype${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
 									<td>${item.writer}</td>
 									<td>${item.state}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>

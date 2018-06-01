@@ -21,7 +21,11 @@
 	</update>
 	
 	<update id="updateCnt">
-		update advice set count=(count+1) where bno=#{bno}
+		update advice set cnt=(cnt+1) where bno=#{bno}
+	</update>
+	
+	<update id="updateState">
+		update advice set state='답변완료' where bno=#{bno}
 	</update>
 	
 	<update id="updateReplyCnt">
