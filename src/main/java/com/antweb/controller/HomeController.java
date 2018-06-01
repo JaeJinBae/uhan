@@ -78,7 +78,7 @@ public class HomeController {
 		logger.info("home");
 		String old_url = req.getHeader("referer");
 		//logger.info(old_url);
-		logger.info("Browser : "+getBrowser(req));
+		//logger.info("Browser : "+getBrowser(req));
 		return "main/index";
 	}
 
