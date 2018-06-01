@@ -271,7 +271,7 @@
 <script type="text/javascript">
 
 	$(function(){
-	
+		alert(document.referrer);
 		detectmob();
 		if(detectmob()==true){
 

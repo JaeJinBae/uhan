@@ -284,7 +284,7 @@ public class HomeController {
 		String agent = request.getHeader("User-Agent");
 		String browser = null;
 		String old_url = request.getHeader("referer"); 
-		JOptionPane.showMessageDialog(null, old_url);
+		
 		if(agent !=null){
 			if(agent.indexOf("Trident")>-1){
 				browser = "MSIE";
