@@ -190,15 +190,15 @@
 		position:relative;
 	}
 	.tbl_board table{
-		width:800px;
+		width:100%;
 		margin:0 auto;
-		border-collapse: collapse;
-		font-size:0.95em; 
+		border-collapse: collapse; 
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
 		padding:8px 5px;
+		font-size:16px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
 		width:400px;

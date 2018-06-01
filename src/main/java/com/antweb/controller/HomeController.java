@@ -10,17 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
-import com.antweb.domain.Criteria;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
 import com.antweb.domain.SearchCriteria;
+import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
@@ -39,6 +39,9 @@ public class HomeController {
 
 	@Autowired
 	private CommentService cService;
+	
+	@Autowired
+	private AdviceService aService;
 	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
@@ -253,8 +256,19 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/advice")
-	public String advice() {
-
+	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("advice get");
+		
+		List<AdviceVO> list = aService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "news/advice";
 	}
 

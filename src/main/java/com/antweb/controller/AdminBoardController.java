@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.antweb.service.BoardService;
+import com.antweb.service.AdviceService;
 
 @Controller
 @RequestMapping("/admin/*")
@@ -14,7 +14,7 @@ public class AdminBoardController {
 	private static final Logger logger = LoggerFactory.getLogger(AdminBoardController.class);
 
 	@Autowired
-	private BoardService service;
+	private AdviceService service;
 	
 	
 	/*@RequestMapping(value = "/board", method = RequestMethod.GET)
