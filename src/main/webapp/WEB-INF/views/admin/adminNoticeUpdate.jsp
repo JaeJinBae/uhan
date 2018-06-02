@@ -190,7 +190,6 @@
     		var keyword=$("input[name='keyword']").val();
     		location.href="adminNotice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
-		
 	});
 </script>
 </head>

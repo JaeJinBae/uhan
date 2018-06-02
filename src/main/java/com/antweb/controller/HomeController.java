@@ -220,16 +220,16 @@ public class HomeController {
 		logger.info("broadcastingRead Get");
 
 		BroadcastingVO vo = bService.selectOne(bno);
-		nService.updateCnt(bno);
+		bService.updateCnt(bno);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker", pageMaker);
-		return "news/noticeRead";
+		return "news/broadcastingRead";
 	}
 
 	@RequestMapping(value = "/comment")
@@ -255,16 +255,16 @@ public class HomeController {
 		logger.info("commentRead Get");
 
 		CommentVO vo = cService.selectOne(bno);
-		nService.updateCnt(bno);
+		cService.updateCnt(bno);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
-		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setTotalCount(cService.listSearchCount(cri));
 		
 		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker", pageMaker);
-		return "news/noticeRead";
+		return "news/commentRead";
 	}
 
 	@RequestMapping(value = "/advice", method=RequestMethod.GET)
@@ -338,14 +338,18 @@ public class HomeController {
 			String realPW=vo.getPw();
 			
 			if(realPW.equals(voo.getPw())){
+				logger.info("패스워드 맞음");
 				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
 				return entity;
 			}else{
-				entity=new ResponseEntity<String>("no",HttpStatus.BAD_REQUEST);
+				logger.info("패스워드 틀림");
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
 				return entity;
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
+			entity=new ResponseEntity<String>("no",HttpStatus.BAD_REQUEST);
+			
 		}
 		
 		return entity;

@@ -195,6 +195,7 @@
 		border-collapse: collapse; 
 	}
 	.tbl_board table .tbl_header th{
+		width:50px;
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
 		padding:8px 5px;
@@ -330,7 +331,7 @@
 					<tr class="tbl_header">
 						<th>번호</th>
 						<th>제목</th>
-						<th>글쓴이</th>
+						<th>작성자</th>
 						<th>등록일</th> 
 						<th>조회</th>
 					</tr>

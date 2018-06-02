@@ -205,10 +205,26 @@
 		margin-bottom:50px;
 	}
 	.notice_content .nRegdate span{
+		margin-left:100px;
+	}
+	.notice_content .nRegdate span:first-child{
 		margin-left:15px;
 	}
 	.notice_content .nContent{
 		margin-bottom:50px;
+	}
+	
+	.golist{
+		width:100%;
+		text-align: right;
+		margin-top:20px;
+	}
+	.golist a{
+		width: 50px;
+	    background: #00B4AE;
+	    text-align: center;
+	    font-size: 15px;
+	    color: white;
 	}
 </style>
 <script type="text/javascript">
@@ -232,7 +248,7 @@
         $("#searchBtn").click(function(){
     		var searchType=$("select[name='searchType']").val();
     		var keyword=$("input[name='keyword']").val();
-    		location.href="notice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    		location.href="comment${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
         
 	});
@@ -263,10 +279,10 @@
 						</ul>
 					</li>
 					<li>
-						<a href="notice">공지사항<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="comment">시술후기<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
+							<li><a href="notice">공지사항</a></li>
 							<li><a href="broadcasting">언론보도</a></li>
-							<li><a href="comment">시술후기</a></li>
 							<li><a href="advice">진료/비용 상담</a></li>
 							<li><a href="freqQuestion">자주하는 질문</a></li>
 						</ul>	
@@ -291,12 +307,16 @@
 			<div class="notice_content">
 				<hr>
 				<p class="nTitle">${item.title}</p>
-				<p class="nRegdate"><span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span></p>
+				<p class="nRegdate">
+					<span>작성자: ${item.writer}</span>
+					<span>작성일: <fmt:formatDate type="date" value="${item.regdate}"/></span>
+					<span>조회수: ${item.cnt}</span>
+				</p>
 				<div class="nContent">
 					${item.content}
 				</div>
 				<hr>
-				<p><a href="${pageContext.request.contextPath}/notice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p>
+				<p class="golist"><a href="${pageContext.request.contextPath}/comment${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p>
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

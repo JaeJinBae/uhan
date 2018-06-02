@@ -193,15 +193,16 @@
 		position:relative;
 	}
 	.tbl_board table{
-		width:800px;
+		width:100%;
 		margin:0 auto;
 		border-collapse: collapse;
-		font-size:0.95em; 
 	}
 	.tbl_board table .tbl_header th{
+		width:50px;
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
 		padding:8px 5px;
+		font-size:16px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
 		width:400px;
@@ -272,7 +273,7 @@
         $("#searchBtn").click(function(){
     		var searchType=$("select[name='searchType']").val();
     		var keyword=$("input[name='keyword']").val();
-    		location.href="notice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    		location.href="broadcasting${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
         
 	});
@@ -347,7 +348,7 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.bno}</td>
-									<td class="title"><a href="noticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td class="title"><a href="broadcastingRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
 									<td>${item.writer}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 									<td>${item.cnt}</td>
@@ -360,7 +361,7 @@
 				<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
+							<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
 						</c:if>
 						
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
@@ -368,7 +369,7 @@
 						</c:forEach>
 						
 						<c:if test="${pageMaker.next}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+							<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
 						</c:if>
 						
 					</ul>

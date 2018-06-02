@@ -222,7 +222,7 @@
         	var bno=$("input[type='hidden']").val();
         	var sendData={bno:bno,pw:pw};
 			$.ajax({
-				url:"advicePWcheck2?",
+				url:"advicePWcheck2",
 				type:"post",
 				headers:{"Content-Type":"application/json"},
 				dataType:"text",
@@ -231,6 +231,8 @@
 					console.log(result);
 					if(result=='ok'){
 						location.href="${pageContext.request.contextPath}/adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno="+bno;
+					}else{
+						alert("비밀번호가 틀립니다.");
 					}
 				}
 			})
