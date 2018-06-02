@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
@@ -41,7 +41,7 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
@@ -67,18 +67,29 @@
 		/* font-weight: bold; */
 		font-size:17px;
 	}
+	.contentWrap .leftMenu ul li:last-child a{
+		font-weight:bold;
+	}
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
+		margin-bottom:30px;
 	}
 	
 	/* 공지사항 */
 	.tbl_board{
-		width:90%;
+		width:1024px;
 		height:700px;
 		margin:0 auto;
 		padding-top:30px;
@@ -87,24 +98,20 @@
 	.tbl_board table{
 		width:800px;
 		margin:0 auto;
-		border-collapse: collapse; 
+		border-collapse: collapse;
+		font-size:0.95em; 
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
-		padding:8px 13px;
-		font-size:15px;
+		padding:8px 5px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
 		width:400px;
 	}
 	.tbl_board table td{
-		padding:8px 13px;
+		padding:8px 5px;
 		border-bottom:1px solid #e3e3e3;
-		font-size:15px;
-	}
-	.tbl_board table td a{
-		font-size:15px;
 	}
 	.tbl_board table tr:not(first-child) td:nth-child(2){
 		text-align: left;
@@ -125,7 +132,6 @@
 		clear:both;
 		width:626px; 
 		margin:70px auto;
-		text-align: center;
 	}
 	.page ul li{
 		width:45px;
@@ -147,15 +153,56 @@
 		font-size:1.1em;
 		line-height: 40px;
 	}
-	/* 글쓰기 */
-	#container{
-		width:900px;
-		margin:0 auto;
+	/* readNotice */
+	.notice_content{
+		width:90%;
+		margin:10px auto;
+		padding:15px 20px;
+		padding-bottom:50px;
+		background: white;
 	}
-	#container>h2{
-		font-size:30px;
+	.notice_content>h2{
+		font-size:25px;
+		margin-left:15px;
+		margin-bottom:15px;
+	}
+	.notice_content hr{
+		width:100%;
+		margin:0 auto;
+		border:0;
+		border-top:2px solid #00B4AE;
+	}
+	.notice_content .nTitle{
+		font-size:25px;
+		text-align: left;
+		padding:15px;
+	}
+	.notice_content .nRegdate{
+		width:100%;
+		text-align:left;
+		border-top:1px solid lightgray;
+		border-bottom:1px solid lightgray;
+		padding:10px 0;	
 		margin-bottom:50px;
-		margin-top:30px;
+	}
+	.notice_content .nRegdate span{
+		margin-left:15px;
+	}
+	.notice_content .nContent{
+		margin-bottom:50px;
+		padding:0 15px;
+	}
+	/* 글쓰기 */
+	#form1{
+		width:90%;
+		margin:0 auto; 
+		padding:0 20px;
+		background: white;
+		margin-bottom:10px;
+	}
+	#container{
+		width:95%;
+		margin:0 auto;
 	}
 	#header{
 		width:100%;
@@ -175,22 +222,8 @@
 		margin-bottom:50px;
 		text-align: center;
 	}
-	.btn input, a button{
-		width:145px;
-		height:40px;
-	}
+	
 </style>
-<script type="text/javascript">
-	$(function(){
-		//게시판 검색
-        $("#searchBtn").click(function(){
-    		var searchType=$("select[name='searchType']").val();
-    		var keyword=$("input[name='keyword']").val();
-    		location.href="adminAdvice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
-    	});
-		
-	});
-</script>
 </head>
 <body>
 	<jsp:include page="include/header.jsp"/>
@@ -198,32 +231,29 @@
 		<div class="leftMenu">
 			<h2>게시판 리스트</h2>
 			<ul> 
-				<li> <a href="${pageContext.request.contextPath}/admin/" style="font-weight:bold;"> 공지사항</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/"> 공지사항</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
-			<form id="form1" method="post" action="adminAdviceRegister">
+			<h1 class="boardTitle">&lt;진료/비용상담 관리&gt;</h1>
+			<form id="form1" method="post" action="adminAdviceReplyUpdate${pageMaker.makeSearch(pageMaker.cri.page)}">
 				<div id="container">
-					<h2>시술후기 글쓰기</h2>
-					<p>작성자: <input type="text" name="writer" value="관리자"></p>
+					<p>작성자: <input type="text" name="replyer" value="관리자"></p>
 					<br> 
-					<div id="header">
-						<span>제목:</span>
-						<input id="title" type="text" name="title">
-					</div>
-					
-					<textarea id="editor1" name="content">
-					    
+					<input type="hidden" name="bno" value="${reply.bno}">
+					<input type="hidden" name="rno" value="${reply.rno}">
+					<textarea id="editor1" name="replytext">
+					    ${reply.replytext}
 					</textarea>
 					<script>
-						CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/imgUpload",height:500});
+						CKEDITOR.replace('replytext',{filebrowserUploadUrl:"${pageContext.request.contextPath}/imgUpload",height:400});
 					</script>
 					<div class="btn">
 						<input type="submit" value="저장">
-						<a href="${pageContext.request.contextPath}/admin/adminAdvice"><button type="button">뒤로가기</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminAdviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${reply.bno}"><button type="button">뒤로가기</button></a>
 					</div>
 				</div>
 			</form>

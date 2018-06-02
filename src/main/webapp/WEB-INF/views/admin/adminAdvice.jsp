@@ -40,7 +40,7 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
@@ -72,8 +72,16 @@
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
 	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
+	}
+	
 	/* 공지사항 */
 	.tbl_board{
 		width:90%;
@@ -146,11 +154,11 @@
 		font-size:1.1em;
 		line-height: 40px;
 	}
-	.registerBtn{
+	/* .registerBtn{
 		float:right;
 		margin-right:35px;
 		margin-top:31px;
-	}
+	} */
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -177,6 +185,7 @@
 			</ul>
 		</div>
 		<div class="centerMenu">
+			<h1 class="boardTitle">&lt;진료/비용상담 관리&gt;</h1>
 			<div class="tbl_board">
 				<table>
 					<tr class="tbl_header">
@@ -212,11 +221,10 @@
 					    </c:otherwise> 
 					</c:choose>
 				</table>
-				<p class="registerBtn"><a href="adminAdviceRegister${pageMaker.makeSearch(pageMaker.cri.page)}"><button>글쓰기</button></a></p>
 				<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
+							<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1)}">&laquo;</a></li>
 						</c:if>
 						
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
@@ -224,7 +232,7 @@
 						</c:forEach>
 						
 						<c:if test="${pageMaker.next}">
-							<li><a href="?${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+							<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
 						</c:if>
 						
 					</ul>

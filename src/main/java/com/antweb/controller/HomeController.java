@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -315,8 +314,14 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		String pwtype=vo.getPwtype();
+		
 		if(pwtype.equals("o")){
 			logger.info("go Read");
+			
+			ReplyVO rvo=rService.select(bno);
+			
+			model.addAttribute("reply", rvo);
+			
 			return "news/adviceRead";
 		}
 		
@@ -346,16 +351,68 @@ public class HomeController {
 		return entity;
 	}
 	
-	@RequestMapping(value="/adviceRead/{bno}")
-	public String adviceRead(@PathVariable("bno") int bno,  Model model) throws Exception {
+	@RequestMapping(value="/adviceRead")
+	public String adviceRead(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		
 		AdviceVO vo=aService.selectOne(bno);
 		ReplyVO rvo=rService.select(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
 		
 		model.addAttribute("item",vo);
 		model.addAttribute("reply", rvo);
 		
 		return "news/adviceRead";
+	}
+	
+	@RequestMapping(value="/adviceUpdate", method=RequestMethod.GET)
+	public String adviceUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adviceUpdate");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		
+		model.addAttribute("item",vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "news/adviceUpdate";
+	}
+	
+	@RequestMapping(value="/adviceUpdate", method=RequestMethod.POST)
+	public String adviceUpdatePost(AdviceVO vo, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adviceUpdate Post");
+		
+		aService.update(vo);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		
+		return "redirect:/adviceRead"+pageMaker.makeSearch(cri.getPage())+"&bno="+vo.getBno();
+	}
+	
+	@RequestMapping(value="/adviceDelete")
+	public String adviceDelete(int bno, @ModelAttribute("cri") SearchCriteria cri) throws Exception{
+		logger.info("adviceDelete");
+		aService.delete(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		
+		return "redirect:/advice"+pageMaker.makeSearch(cri.getPage());
 	}
 
 	@RequestMapping(value = "/freqQuestion")

@@ -41,7 +41,7 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
@@ -67,13 +67,23 @@
 		/* font-weight: bold; */
 		font-size:17px;
 	}
+	.contentWrap .leftMenu ul li:last-child a{
+		font-weight:bold;
+	}
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
 	}
 	
 	/* 공지사항 */
@@ -147,7 +157,7 @@
 		width:90%;
 		margin:10px auto;
 		padding:15px 20px;
-		padding-bottom:50px;
+		padding-bottom:30px;
 		background: white;
 	}
 	.notice_content>h2{
@@ -181,6 +191,10 @@
 		margin-bottom:50px;
 		padding:0 15px;
 	}
+	.notice_content > .btnWrap{
+		text-align: center;
+		margin-top:30px;
+	}
 	/* 글쓰기 */
 	#form1{
 		width:90%;
@@ -212,14 +226,11 @@
 		height:40px;
 		font-size: 1.2em;
 		margin:0 auto;
-		margin-top:40px;
+		margin-top:30px;
 		margin-bottom:50px;
 		text-align: center;
 	}
-	.btn input, a button{
-		width:145px;
-		height:40px;
-	}
+	
 </style>
 </head>
 <body>
@@ -235,6 +246,7 @@
 			</ul>
 		</div>
 		<div class="centerMenu">
+			<h1 class="boardTitle">&lt;진료/비용상담 관리&gt;</h1>
 			<div class="notice_content">
 				<h2>게시글</h2>
 				<hr>
@@ -248,7 +260,7 @@
 					${item.content}
 				</div>
 				<hr>
-				<p>
+				<p class="btnWrap">
 					<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
 					<a href="${pageContext.request.contextPath}/admin/adminAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
 					<a href="${pageContext.request.contextPath}/admin/adminAdviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
@@ -283,10 +295,10 @@
 						${reply.replytext}
 					</div>
 					<hr>
-					<p>
+					<p class="btnWrap">
 						<a href="${pageContext.request.contextPath}/admin/adminAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
-						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
-						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${reply.bno}"><button>수정</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminAdviceReplyDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${reply.bno}"><button>삭제</button></a>
 					</p>
 				</div><!-- notice_content end -->
 			</c:if>

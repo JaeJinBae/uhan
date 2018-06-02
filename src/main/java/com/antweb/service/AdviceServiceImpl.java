@@ -8,12 +8,14 @@ import org.springframework.stereotype.Service;
 import com.antweb.domain.AdviceVO;
 import com.antweb.domain.SearchCriteria;
 import com.antweb.persistence.AdviceDao;
+import com.antweb.persistence.ReplyDao;
 
 @Service
 public class AdviceServiceImpl implements AdviceService{
 
 	@Autowired
 	private AdviceDao dao;
+	
 
 	@Override
 	public List<AdviceVO> selectAll() {
@@ -39,6 +41,11 @@ public class AdviceServiceImpl implements AdviceService{
 	@Override
 	public void updateCnt(int bno) {
 		dao.updateCnt(bno);
+	}
+	
+	@Override
+	public void updateStateWait(int bno) {
+		dao.updateStateWait(bno);
 	}
 
 	@Override

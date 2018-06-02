@@ -28,6 +28,10 @@
 		update advice set state='답변완료' where bno=#{bno}
 	</update>
 	
+	<update id="updateStateWait">
+		update advice set state='답변대기' where bno=#{bno}
+	</update>
+	
 	<update id="updateReplyCnt">
 		update advice set replycnt = replycnt + #{amount} where bno = #{bno}
 	</update>

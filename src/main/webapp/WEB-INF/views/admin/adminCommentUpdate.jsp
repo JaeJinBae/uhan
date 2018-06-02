@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
@@ -41,7 +41,7 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
@@ -67,13 +67,24 @@
 		/* font-weight: bold; */
 		font-size:17px;
 	}
+	.contentWrap .leftMenu ul li:nth-child(3) a{
+		font-weight:bold;
+	}
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
+		margin-bottom:30px;
 	}
 	
 	/* 공지사항 */
@@ -152,11 +163,6 @@
 		width:900px;
 		margin:0 auto;
 	}
-	#container>h2{
-		font-size:30px;
-		margin-bottom:50px;
-		margin-top:30px;
-	}
 	#header{
 		width:100%;
 		margin-bottom:30px;
@@ -175,10 +181,7 @@
 		margin-bottom:50px;
 		text-align: center;
 	}
-	.btn input, a button{
-		width:145px;
-		height:40px;
-	}
+	
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -198,16 +201,16 @@
 		<div class="leftMenu">
 			<h2>게시판 리스트</h2>
 			<ul> 
-				<li> <a href="${pageContext.request.contextPath}/admin/" style="font-weight:bold;"> 공지사항</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/"> 공지사항</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
+			<h1 class="boardTitle">&lt;시술후기 관리&gt;</h1>
 			<form id="form1" method="post" action="adminCommentUpdate">
 				<div id="container">
-					<h2>공지사항 수정</h2>
 					<input type="hidden" value="${pageMaker.cri.page}" name="page">
 					<input type="hidden" value="${pageMaker}" name="pageMaker"> 
 					<input type="hidden" value="${item.bno}" name="bno">
@@ -226,7 +229,7 @@
 					</script>
 					<div class="btn">
 						<input type="submit" value="저장">
-						<a href="${pageContext.request.contextPath}/admin/adminCommnt"><button type="button">뒤로가기</button></a>
+						<a href="${pageContext.request.contextPath}/admin/adminComment"><button type="button">뒤로가기</button></a>
 					</div>
 				</div>
 			</form>

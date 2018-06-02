@@ -13,11 +13,11 @@
 	</insert>
 	
 	<update id="update">
-		update reply set replytext=#{replytext}, updatedate=now() where rno=#{rno}
+		update reply set replytext=#{replytext} where rno=#{rno}
 	</update>
 	
 	<delete id="delete">
-		delete from reply where rno=#{rno}
+		delete from reply where bno=#{bno}
 	</delete>
 	
 </mapper>

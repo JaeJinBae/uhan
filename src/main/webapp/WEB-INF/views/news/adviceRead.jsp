@@ -326,8 +326,8 @@
 					<!-- <a href="adviceUpdate"><button>수정</button></a>
 					<a href="adviceDelete"><button>삭제</button></a> -->
 					<c:if test="${item.pwtype=='x'}">
-						<a href="adviceUpdate"><button>수정</button></a>
-						<a href="adviceDelete"><button>삭제</button></a>
+						<a href="adviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
+						<a href="adviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
 					</c:if>
 				</div>
 			</div><!-- custom end -->
@@ -348,9 +348,9 @@
 					${reply.replytext}
 				</div>
 				</c:if>
-				<c:if test="${item.state=='답변대기'}">
+<%-- 				<c:if test="${item.state=='답변대기'}">
 					
-				</c:if>
+				</c:if> --%>
 				
 			</div><!-- reply end -->
 		</div><!-- contentWrap end -->

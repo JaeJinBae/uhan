@@ -11,6 +11,7 @@ public interface AdviceService {
 	public void insert(AdviceVO vo);
 	public void update(AdviceVO vo);
 	public void updateCnt(int bno);
+	public void updateStateWait(int bno);
 	public void delete(int bno);
 	public List<AdviceVO> listSearch(SearchCriteria cri) throws Exception;
 	public int listSearchCount(SearchCriteria cri) throws Exception;

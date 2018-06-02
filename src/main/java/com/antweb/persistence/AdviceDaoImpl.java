@@ -50,6 +50,11 @@ public class AdviceDaoImpl implements AdviceDao {
 	}
 	
 	@Override
+	public void updateStateWait(int bno) {
+		session.update(namespace+".updateStateWait",bno);
+	}
+	
+	@Override
 	public void delete(int bno) {
 		session.delete(namespace+".delete",bno);
 	}

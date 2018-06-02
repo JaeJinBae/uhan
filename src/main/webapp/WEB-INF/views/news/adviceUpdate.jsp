@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorBasic/ckeditor.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style type="text/css">
 	body{
@@ -184,92 +185,61 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* 공지사항 */
-	.tbl_board{
-		width:1024px;
-		height:700px;
-		margin:0 auto;
-		padding-top:30px;
-		position:relative;
-	}
-	.tbl_board table{
+	.registerForm{
 		width:100%;
 		margin:0 auto;
-		border-collapse: collapse;
 	}
-	.tbl_board table .tbl_header th{
-		width:50px;
-		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
-		padding:8px 5px;
-		font-size:16px;
+	.registerForm #f1{ 
+		width:100%;
+		max-width:1000px;
+		margin:0 auto;
 	}
-	.tbl_board table .tbl_header th:nth-child(2){
-		width:400px;
+	.registerForm #f1 table{
+		width:100%;
+		border-top:5px solid #e3e3e3;
 	}
-	.tbl_board table td{
-		padding:8px 5px;
+	#f1 table tr td{
+		font-size:14px;
 		border-bottom:1px solid #e3e3e3;
+		padding:10px 0;
 	}
-	.tbl_board table tr:not(first-child) td:nth-child(2){
+	#f1 table tr td:first-child{
+		width:8%;
+		text-align: right;
+	}
+	#f1 table tr td:nth-child(2){
+		width:70%;
 		text-align: left;
+		padding-left:30px;
 	}
-	.tbl_board table td:not(.title){
-		text-align: center;
+	#f1 table tr:nth-child(4) td:last-child input{
+		width:600px;
 	}
-	.replyCnt{
-		font-weight: 600;
+	#f1 table tr:last-child td{
+		padding-top:20px;
 	}
-	.title>a:hover{
-		color:red;
+	.star{
+		color:#0b8783;
+		/* font-size:20px; */
 	}
-	.title>img{
-		width:12px;
+	.stick{
+		margin-left:10px;
+		color:lightgray;
 	}
-	.writeBtn{
+	.warn{
+		margin-left:15px;
+	}
+	.btnWrap{
 		width:100%;
-		margin:30px auto;
-		text-align:right;
+		margin-top:10px;
 	}
-	.writeBtn>a{
+	.btnWrap .goListBtn>button{
 		width:50px;
-		font-size:15px;
-		padding:5px;
-		background: #00b4ae;
-		color:white;
-		border-radius: 5px;
-		text-align: center;	
 	}
-	.page{
-		clear:both;
-		width:626px; 
-		margin:70px auto;
+	.btnWrap .submitBtn{
+		width:50px;
 	}
-	.page ul li{
-		width:45px;
-		height:40px;
-		margin:0 auto;
-		list-style: none;
-		display: inline-block;
-		text-align:center;
-		border:1px solid #e9e9e9;
-	}
-	.active1{
-		background: #00B4AE;
-	}
-	.active2{
-		font-weight: bold;
-		color:white;
-	}
-	.page ul li a{
-		font-size:1.1em;
-		line-height: 40px;
-	}
-	.lockImg{
-		width:15px;
-		margin-right:10px;
-	}
-	#searchBtn{
+	.btnWrap .cancelBtn>button{
 		width:50px;
 	}
 </style>
@@ -294,7 +264,7 @@
         $("#searchBtn").click(function(){
     		var searchType=$("select[name='searchType']").val();
     		var keyword=$("input[name='keyword']").val();
-    		location.href="advice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    		location.href="notice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
 	});
 </script>
@@ -349,69 +319,45 @@
 				<p>|</p>
 				<h1>진료/비용 상담</h1>				
 			</div>
-			<div class="tbl_board">
-				<table>
-					<tr class="tbl_header">
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>상태</th>
-						<th>등록일</th> 
-						<th>조회</th>
-					</tr>
-					<c:choose>
-					    <c:when test="${fn:length(list) == 0}">
-				        	<tr>
-				        		<td colspan="6" style=" text-align: center;">등록된 게시물이 없습니다.</td>
-				        	</tr>
-					    </c:when>
-					    <c:otherwise>
-					        <c:forEach var="item" items="${list}">
-								<tr>
-									<td>${item.bno}</td>
-									<td class="title">
-										<c:if test="${item.pwtype=='x'}">
-											<img class="lockImg" src="${pageContext.request.contextPath}/resources/images/lock1.PNG">
-										</c:if>
-										<a href="advicePWtype${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a>
-									</td>
-									<td>${item.writer}</td>
-									<td>${item.state}</td>
-									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-									<td>${item.cnt}</td>
-								</tr>	
-							</c:forEach>
-					    </c:otherwise> 
-					</c:choose>
-				</table>
-				<p class="writeBtn"><a href="adviceRegister">글쓰기</a></p>
-				<div class="page">
-					<ul>
-						<c:if test="${pageMaker.prev}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
-						</c:if>
-						
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
-						</c:forEach>
-						
-						<c:if test="${pageMaker.next}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
-						</c:if>
-						
-					</ul>
-				</div><!-- page end -->
-				<div class="box-body">
-						<select name="searchType">
-							<option value="n">선택해주세요.</option>
-							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
-							<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
-							<option value="r" ${cri.searchType=='r'?'selected':''}>작성일</option>
-						</select> 
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
-						<button id="searchBtn">검색</button>
+			<div class="registerForm">
+				<form id="f1" method="post" action="adviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}">
+					<input type="hidden" name="bno" value="${item.bno}">
+					<table>
+						<tr>
+							<td><span class="star">*</span> 공개여부<span class="stick">|</span></td>
+							<td>
+								<input type="radio" name="pwtype" value="o">공개 &nbsp;&nbsp;
+								<input type="radio" name="pwtype" value="x" checked="checked">비공개
+							</td>
+						</tr>
+						<tr>
+							<td><span class="star">*</span> 비밀번호<span class="stick">|</span></td>
+							<td><input type="text" name="pw" readonly><span class="warn">※ 비공개 선택 시 비밀번호는 필수 입니다.</span></td> 
+						</tr>
+						<tr>
+							<td><span class="star">*</span> 작성자<span class="stick">|</span></td>
+							<td><input type="text" name="writer" value="${item.writer}"></td>
+						</tr>
+						<tr>
+							<td><span class="star">*</span> 제목<span class="stick">|</span></td>
+							<td><input type="text" name="title" value="${item.title}"></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<textarea id="editor1" name="content">${item.content}</textarea>
+								<script>
+									CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload"});
+								</script>
+							</td>
+						</tr>
+					</table>
+					<div class="btnWrap">
+						<a href="advice${pageMaker.makeSearch(pageMaker.cri.page)}" class="goListBtn"><button type="button">목록</button></a>
+						<input type="submit" value="등록" class="submitBtn">
+						<a href="adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}" class="cancelBtn"><button type="button">취소</button></a>
 					</div>
-			</div><!-- tbl_board -->
+				</form>
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

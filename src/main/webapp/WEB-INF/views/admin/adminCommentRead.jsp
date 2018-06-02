@@ -8,6 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과 관리자페이지</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
 		margin:0;
@@ -21,6 +25,7 @@
 	.contentWrap{
 		width:100%;
 		min-width:1280px;
+		/* height:700px; */
 		margin:0 auto;
 		padding:20px;
 		background: lightgray;
@@ -35,13 +40,15 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -50,11 +57,16 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
+		/* font-weight: bold; */
+		font-size:17px;
+	}
+	.contentWrap .leftMenu ul li:nth-child(3) a{
 		font-weight: bold;
 	}
 	.contentWrap .centerMenu{
@@ -63,7 +75,14 @@
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
 	}
 	
 	/* 공지사항 */
@@ -180,6 +199,7 @@
 			</ul>
 		</div>
 		<div class="centerMenu">
+			<h1 class="boardTitle">&lt;시술후기 관리&gt;</h1>
 			<div class="notice_content">
 				<hr>
 				<p class="nTitle">제목: ${item.title}</p>

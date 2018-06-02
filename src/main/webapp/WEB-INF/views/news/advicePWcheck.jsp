@@ -230,7 +230,7 @@
 				success:function(result){
 					console.log(result);
 					if(result=='ok'){
-						location.href="${pageContext.request.contextPath}/adviceRead/"+bno;
+						location.href="${pageContext.request.contextPath}/adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno="+bno;
 					}
 				}
 			})

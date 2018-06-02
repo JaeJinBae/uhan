@@ -8,6 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>유한통증의학과 관리자페이지</title>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 	*{ 
 		margin:0;
@@ -36,7 +40,7 @@
 		border-radius: 10px; 
 		float:left;
 		text-align: center;
-		background:darkgray;
+		background:white;;
 	}
 	.contentWrap .leftMenu h2{
 		width:220px;
@@ -62,13 +66,23 @@
 		/* font-weight: bold; */
 		font-size:17px;
 	}
+	.contentWrap .leftMenu ul li:first-child a{
+		font-weight: bold;
+	}
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: #e3e3e3;
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
 	}
 	
 	/* 공지사항 */
@@ -140,7 +154,7 @@
 	/* readNotice */
 	.notice_content{
 		width:90%;
-		margin:0 auto;
+		margin:10px auto;
 		padding:60px 20px;
 		background: white;
 	}
@@ -179,12 +193,13 @@
 			<h2>게시판 리스트</h2>
 			<ul> 
 				<li> <a href="${pageContext.request.contextPath}/admin/"> 공지사항</a></li>
-				<li> <a href="#"> 언론보도</a></li>
-				<li> <a href="#"> 시술후기</a></li>
-				<li> <a href="#"> 진료/비용 상담</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
+			<h1 class="boardTitle">&lt;공지사항 관리&gt;</h1>
 			<div class="notice_content">
 				<hr>
 				<p class="nTitle">제목: ${item.title}</p>

@@ -420,6 +420,91 @@ public class AdminController {
 		return "redirect:/admin/adminAdvice";
 	}
 	
+	@RequestMapping(value="/adminAdviceUpdate", method=RequestMethod.GET)
+	public String adminAdviceUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdviceUpdate Get");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/adminAdviceUpdate";
+	}
+	
+	@RequestMapping(value="/adminAdviceUpdate", method=RequestMethod.POST)
+	public String adminAdviceUpdatePost(AdviceVO vo,  @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdvicePost");
+		
+		aService.update(vo);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		
+		return "redirect:/admin/adminAdviceRead"+pageMaker.makeSearch(cri.getPage())+"&bno="+vo.getBno();
+	}
+	
+	@RequestMapping(value="/adminAdviceDelete")
+	public String adminAdviceDelete(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdviceDelete");
+		
+		aService.delete(bno);
+		rService.delete(bno);
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCri(cri);
+		
+		return "redirect:/admin/adminAdvice"+pageMaker.makeSearch(cri.getPage());
+	}
+	
+	@RequestMapping(value="/adminAdviceReplyUpdate", method=RequestMethod.GET)
+	public String adminAdviceReplyUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdviceReplyUpdate Get");
+		
+		ReplyVO rvo=rService.select(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("reply", rvo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/adminAdviceReplyUpdate";
+	}
+	
+	@RequestMapping(value="/adminAdviceReplyUpdate", method=RequestMethod.POST)
+	public String adminAdviceReplyUpdatePost(ReplyVO vo, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdviceReplyUpdate Post");
+		
+		rService.update(vo);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+
+		
+		return "redirect:/admin/adminAdviceRead"+pageMaker.makeSearch(cri.getPage())+"&bno="+vo.getBno();
+	}
+	
+	@RequestMapping(value="/adminAdviceReplyDelete")
+	public String adminAdviceReplyDelete(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adminAdviceReplyDelete");
+		
+		rService.delete(bno);
+		aService.updateStateWait(bno);
+		
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setCri(cri);
+		
+		return "redirect:/admin/adminAdviceRead"+pageMaker.makeSearch(cri.getPage())+"&bno="+bno;
+	}
+	
 	@ResponseBody
 	@RequestMapping("/imgUpload")
 	public Map<String, Object> imgaeUpload(HttpServletRequest req, @RequestParam MultipartFile upload, Model model)
