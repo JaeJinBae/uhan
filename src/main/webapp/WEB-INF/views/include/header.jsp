@@ -88,7 +88,7 @@
 		display: none;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:767px){
+@media only screen and (min-width:320px) and (max-width:768px){
  *{
 		margin:0;
 		padding:0;

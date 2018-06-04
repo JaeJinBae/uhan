@@ -71,7 +71,7 @@
 	.mainClinic h1{
 		font-size:27px;
 		margin-bottom:20px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 		font-weight: bold;
 	}
 	.mainClinic p{
@@ -115,12 +115,12 @@
 	.notice .noticeTextDiv h1{
 		font-size:25px;
 		margin-bottom:8px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	.notice .noticeTextDiv p{
 		font-size:15px;
 		color:#666666;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 		font-weight: 500;
 	}
 	.notice .noticeMoreBtn{
@@ -144,10 +144,10 @@
 		padding-top:10px;
 		color:#666666;
 		font-size:15px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	.notice table tr td a{
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 		color:#666666;
 		font-size:15px;
 	}
@@ -180,7 +180,7 @@
 	.content2Wrap .box h1{
 		font-weight: normal;
 		font-size: 21px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 		font-weight: 500;
 	}
 	#box1 p{
@@ -203,7 +203,7 @@
 		color:#c1c2cc;
 		letter-spacing: -2px;
 		line-height: 1.2;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	#box1 ul li .number{
 		letter-spacing: 1px;
@@ -222,7 +222,7 @@
 		padding-bottom:18px;
 		margin-top:17px;
 		font-size:14px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	#box2 ul li:first-child{
 		margin-top:15px;
@@ -258,7 +258,7 @@
 		color:#00b4ae;
 		font-size: 30px;
 		margin-bottom:12px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	.bottomContent>h2{
 		margin-bottom:14px;

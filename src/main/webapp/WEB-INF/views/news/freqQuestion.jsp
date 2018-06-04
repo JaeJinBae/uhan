@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 	body{
 		font-family: 'Noto Sans', sans-serif;
@@ -27,7 +27,7 @@
 	section{
 		width:100%;
 		margin-top:54px;
-		margin-bottom:100px;
+		margin-bottom:150px;
 	}
 	section .mainBackground{
 		width:100%;

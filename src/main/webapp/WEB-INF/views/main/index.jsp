@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <title>인사말 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=5">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -88,12 +88,12 @@
 		font-weight:bold;
 		font-size: 1.5em;
 		margin-bottom:3px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare', sans-serif;
 	}
 	.notice .noticeTextDiv p{
 		color:#666666;
 		font-weight:500;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 		font-size: 1em;
 	}
 	.notice .noticeMoreBtn{
@@ -135,12 +135,12 @@
 		padding-top:5px;
 		color:#666666;
 		font-size: 1em;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	.notice table tr td a{
 		color:#666666;
 		font-size: 1em;
-		font-family: 'Nanum Square'; 
+		font-family: 'NanumSquare'; 
 		display: inline-block;
 	}
 	.box{
@@ -251,7 +251,7 @@
 		color:#00b4ae;
 		font-size: 1.5em;
 		margin-bottom: 5px;
-		font-family: 'Nanum Square';
+		font-family: 'NanumSquare';
 	}
 	.mobileContent h2 a{
 		color:#666666;
@@ -447,18 +447,6 @@
 								<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 							</tr>
 						</c:forEach>
-						<%-- <tr>
-							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
-							<td>2018-05-21</td>
-						</tr>
-						<tr>
-							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
-							<td>2018-05-21</td>
-						</tr>
-						<tr>
-							<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="#">ABCDEFGHIjklmnopqrstuvwxyz</a></td>
-							<td>2018-05-21</td>
-						</tr> --%>
 					</table>
 				</div>
 				<div class="box" id="box1" style="background: #3c416c;">

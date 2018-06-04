@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <title>비수술 클리닉 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=-10">
 <style type="text/css">
-@media only screen and (min-width:1100px){
+@media only screen and (min-width:451px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -35,7 +37,6 @@
 	}
 	section .mainBackground>.bgImg{
 		width:100%;
-		/* min-width:1200px; */
 		height:346px;
 		float:left;
 	}
@@ -207,7 +208,10 @@
 	.clinic_sub_nav ul li:first-child a{
 		color:white; 
 	}
-	
+	.content{
+		width:85%;
+		margin:0 auto;
+	}
 	.content .diaIcon{
 		width:45px;
 		margin-bottom:30px;
@@ -217,14 +221,15 @@
 		font-weight:500;
 	}
 	.content00{
-		width:80%;
+		width:100%;
 		margin:0 auto;
 		margin-top:100px;
 		overflow: hidden;
 	}
 	
 	.content00 .content_small_title{
-		width:31%;
+		/* width:31%; */
+		width:288px;
 		float:left;
 		text-align: left;
 	}
@@ -245,7 +250,8 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		width:61%;
+		/* width:61%; */
+		width:568px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
@@ -261,7 +267,7 @@
 		width:140px;
 	}
 	.content00 .content_small_content ul:last-child{
-		width:268px;
+		width:272px;
 	}
 	.content00 .content_small_content ul li{
 		list-style: disc;
@@ -286,7 +292,7 @@
 		line-height: 21px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:767px){
+@media only screen and (min-width:320px) and (max-width:450px){
 	html{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;

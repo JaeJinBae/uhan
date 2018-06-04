@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
-@media only screen and (min-width:1100px){
+@media only screen and (min-width:451px){
 	#footer1{
 		width:100%;
 		height:100px;
@@ -22,7 +22,7 @@
 		font-size:15px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:767px){
+@media only screen and (min-width:320px) and (max-width:450px){
  *{
 		margin:0;
 		padding:0;
