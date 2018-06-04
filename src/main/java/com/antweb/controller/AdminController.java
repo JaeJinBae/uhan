@@ -3,9 +3,13 @@ package com.antweb.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.SimpleFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,6 +38,7 @@ import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
+import com.antweb.service.StatisticsService;
 
 @Controller
 @RequestMapping("/admin/*")
@@ -54,6 +59,9 @@ public class AdminController {
 	
 	@Autowired
 	private ReplyService rService;
+	
+	@Autowired
+	private StatisticsService sService;
 	
 	@RequestMapping(value="/")
 	public String adminMain(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
@@ -543,13 +551,19 @@ public class AdminController {
 		return map;
 	}
 	
-	
-	
 	@RequestMapping(value="/statistics")
 	public String statistics(HttpServletRequest req, Model model){
 		logger.info("admin statistics Main");
 		String uri=req.getRequestURI();
 		model.addAttribute("uri",uri);
+		
+		model.addAttribute("total",sService.total());
+		
+		Date today = new Date();
+		model.addAttribute("today",today);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		model.addAttribute("todayCount",sService.selectCount("%"+sdf.format(today)+"%"));
+		
 		return "/admin/adminStatistics";
 	}
 	

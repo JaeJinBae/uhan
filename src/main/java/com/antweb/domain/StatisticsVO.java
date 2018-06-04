@@ -4,14 +4,22 @@ import java.util.Date;
 
 public class StatisticsVO {
 	int sno;
+	String url;
 	String browser;
-	String os;
+	String device;
 	Date connectdate;
+	
 	public int getSno() {
 		return sno;
 	}
 	public void setSno(int sno) {
 		this.sno = sno;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 	public String getBrowser() {
 		return browser;
@@ -19,11 +27,11 @@ public class StatisticsVO {
 	public void setBrowser(String browser) {
 		this.browser = browser;
 	}
-	public String getOs() {
-		return os;
+	public String getDevice() {
+		return device;
 	}
-	public void setOs(String os) {
-		this.os = os;
+	public void setDevice(String device) {
+		this.device = device;
 	}
 	public Date getConnectdate() {
 		return connectdate;
@@ -31,21 +39,10 @@ public class StatisticsVO {
 	public void setConnectdate(Date connectdate) {
 		this.connectdate = connectdate;
 	}
-	
-	public StatisticsVO(int sno, String browser, String os, Date connectdate) {
-		super();
-		this.sno = sno;
-		this.browser = browser;
-		this.os = os;
-		this.connectdate = connectdate;
-	}
-	public StatisticsVO() {
-		super();
-	}
 	@Override
 	public String toString() {
-		return String.format("StatisticsVO [sno=%s, browser=%s, os=%s, connectdate=%s]", sno, browser, os, connectdate);
+		return String.format("StatisticsVO [sno=%s, url=%s, browser=%s, device=%s, connectdate=%s]", sno, url, browser,
+				device, connectdate);
 	}
-	
-	
+		
 }

@@ -24,11 +24,13 @@ import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
 import com.antweb.domain.ReplyVO;
 import com.antweb.domain.SearchCriteria;
+import com.antweb.domain.StatisticsVO;
 import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
+import com.antweb.service.StatisticsService;
 
 
 @Controller
@@ -50,6 +52,9 @@ public class HomeController {
 	
 	@Autowired
 	private ReplyService rService;
+	
+	@Autowired
+	private StatisticsService sService;
 	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
@@ -81,14 +86,10 @@ public class HomeController {
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpServletRequest req) {
-		logger.info("home");
-		String old_url = req.getHeader("referer");
-		//logger.info(old_url);
-		//logger.info("Browser : "+getBrowser(req));
-		
+		logger.info("home");	
 		List<NoticeVO> list=nService.selectAll();
 		model.addAttribute("list", list);
-		
+		sService.insert(getUser(req));
 		return "main/index";
 	}
 
@@ -425,32 +426,59 @@ public class HomeController {
 		return "news/freqQuestion";
 	}
 	
-	private String getBrowser(HttpServletRequest request){
+	private StatisticsVO getUser(HttpServletRequest request){
 		String agent = request.getHeader("User-Agent");
 		String browser = null;
+		String device = "";
 		String old_url = request.getHeader("referer"); 
+		
+		StatisticsVO vo = new StatisticsVO();
 		
 		if(agent !=null){
 			if(agent.indexOf("Trident")>-1){
 				browser = "MSIE";
+				device  ="PC";
 			}else if(agent.indexOf("Chrome")>-1){
 				
 				if(agent.indexOf("Android")>-1 && agent.indexOf("Mobile")>-1){
-					browser = "Android";
+					device  ="Mobile";
+					if(agent.indexOf("SamsungBrowser")>-1){
+						browser="SamsungBrowser";
+					}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+						browser="naver app";
+					}else{
+						browser="etc";
+					}
 				}else{
 					browser = "Chrome";
+					device  ="PC";
 				}
 				
 			}else if(agent.indexOf("Opera")>-1){
 				browser = "Opera";
+				device  ="PC";
 			}else if(agent.indexOf("iPhone")>-1 && agent.indexOf("Mobile")>-1){
-				browser = "iPhone";
+				device  ="Mobile";
+				if(agent.indexOf("Safari")>-1){
+					browser="Safari";
+				}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+					browser="Naver App";
+				}else{
+					browser="etc";
+				}
 			}
 		}
-		logger.info("agent : "+agent);
-		logger.info("browser : "+browser);
-		logger.info("url : "+old_url);
-		return browser;
+		
+		if(old_url==null){
+			vo.setUrl("직접");
+		}else{
+			vo.setUrl(old_url);
+		}
+		
+		vo.setBrowser(browser);
+		vo.setDevice(device);
+		
+		return vo;
 	}
-	
+		
 }
