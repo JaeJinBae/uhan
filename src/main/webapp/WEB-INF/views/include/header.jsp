@@ -88,7 +88,97 @@
 		display: none;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:768px){
+@media only screen and (min-width:768px) and (max-width:1099px){
+	*{
+		margin:0;
+		padding:0;
+	}
+	.headerWrap{
+		width:768px;
+		height:75px;
+		margin:0 auto;
+		border:1px solid #e3e3e3;
+		background: white;
+		position: relative;
+		z-index: 99;
+	}
+	.headerWrap>.mainLogo{
+		/* height:37px; */
+		margin-top:25px;
+		margin-left:30px;
+		float:left;
+	}
+	.headerWrap>.mainLogo>img{
+		width:160px;
+	}
+	.mainMenu{
+		width:550px;
+		float:right;
+		height:75px;
+	}
+	.mainMenu > li{
+		width:33.2%;
+		height:20px;
+		float: left; 
+		text-align: center;
+		margin-top:29px;
+		line-height: 20px;
+	}
+	.mainMenu>li:nth-child(2){ 
+		border-left:1px solid #dcdcdc;
+		border-right:1px solid #dcdcdc;
+	}
+	.mainMenu>li>a{ 
+		font-size: 18px;
+		height:23px;
+		display: inline;
+		padding-bottom:20px;
+	}
+	.mainMenu>li:hover>a{
+		border-bottom:4px solid #00B4AE;
+	}
+	.mainMenu .dropdown{
+		display: none;
+		height:240px;
+		background: #fafafa;
+		padding-top:30px;
+		margin-top:25px;
+	}
+	.mainMenu .dropdown:nth-child(2){
+		width:182.3px;
+		border-left:1px solid #fafafa;
+		border-right:1px solid #fafafa;
+	}
+	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
+		height:200px;
+		border-right:1px solid #E1F3F2;
+	}
+	.mainMenu .mainSubMenu>li{
+		line-height: 40px;
+		width:100px;
+		margin:0 auto;
+		text-align: left;
+	}
+	.mainSubMenu li a{
+		font-size: 16px;
+		width:135px; 
+		font-weight: 300;
+	}
+	.mainSubMenu li:hover a{
+		color:#00B4AE; 
+		/* font-weight: bold; */
+	}
+	.mobileMenu{
+		display: none;
+	}
+	.menuClose{
+		display: none;
+	}
+	.arrow{
+		display: none;
+	}
+}
+@media only screen and (min-width:320px) and (max-width:767px){
  *{
 		margin:0;
 		padding:0;
@@ -275,8 +365,6 @@
 		});
 	});	
 </script>
-</head>
-<body>
 <div class="headerWrap">
 	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 	<a class="mobileMenu" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/mobileMenu.png"></a>
