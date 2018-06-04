@@ -24,7 +24,7 @@
 		font-size: 20px;
 	} 
 	.mainBanner>div>img{
-		width:100%;
+		width:100%; 
 		height:250px;
 		z-index:-9999;
 	}
