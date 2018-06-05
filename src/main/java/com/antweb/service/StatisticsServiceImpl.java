@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.antweb.domain.Criteria;
+import com.antweb.domain.SearchCriteria;
 import com.antweb.domain.StatisticsVO;
 import com.antweb.persistence.StatisticsDao;
 
@@ -27,8 +29,13 @@ public class StatisticsServiceImpl implements StatisticsService {
 	}
 
 	@Override
-	public int selectCount(String connectdate) {
-		return dao.selectCount(connectdate);
+	public int selectCount(String keyword) {
+		return dao.selectCount(keyword);
+	}
+
+	@Override
+	public List<StatisticsVO> selectByDate(SearchCriteria cri) {
+		return dao.selectByDate(cri);
 	}
 
 }

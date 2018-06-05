@@ -431,7 +431,7 @@ public class HomeController {
 		String browser = null;
 		String device = "";
 		String old_url = request.getHeader("referer"); 
-		
+	
 		StatisticsVO vo = new StatisticsVO();
 		
 		if(agent !=null){
@@ -459,6 +459,16 @@ public class HomeController {
 				device  ="PC";
 			}else if(agent.indexOf("iPhone")>-1 && agent.indexOf("Mobile")>-1){
 				device  ="Mobile";
+				if(agent.indexOf("Safari")>-1){
+					browser="Safari";
+				}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+					browser="Naver App";
+				}else{
+					browser="etc";
+				}
+			}else if(agent.indexOf("iPad")>-1 && agent.indexOf("Mobile")>-1){
+				device = "Tablet Pc";
+				
 				if(agent.indexOf("Safari")>-1){
 					browser="Safari";
 				}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){

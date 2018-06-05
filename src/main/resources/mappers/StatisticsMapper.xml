@@ -9,7 +9,18 @@
 	<select id="total" resultType="int">
 		select count(*) from statistics
 	</select>
+	<select id="totalCount" resultType="int">
+		select count(*) from statistics
+	</select>
 	<select id="selectCount" resultType="int">
 		select count(*) from statistics where connectdate like #{connectdate}
 	</select>
+	<select id="selectByDate" resultType="StatisticsVO">
+		select * from statistics <include refid="search"></include> order by connectdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+			where connectdate like concat('%',#{keyword},'%')
+	</sql>
+	
 </mapper>
