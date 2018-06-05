@@ -514,7 +514,7 @@
 		width:272px;
 	}
 	.content00 .content_small_content ul li{
-		list-style: disc;
+		list-style: disc; 
 		font-size:19px;
 		color:#2d2d2d;
 		list-style-position: inside;
