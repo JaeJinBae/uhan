@@ -17,7 +17,9 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-
+@media only screen and(min-width:768) and (max-width:1099px){
+	
+}
 @media only screen and (min-width:320px) and (max-width:767px){
 	body{
 		font-family: 'Noto Sans', sans-serif;

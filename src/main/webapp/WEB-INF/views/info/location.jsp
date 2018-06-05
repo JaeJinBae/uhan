@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=uFwNagnnR3Ef3GygBT7t&submodules=drawing"></script>
 <style type="text/css">
-@media only screen and (min-width:451px){
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -220,7 +220,186 @@
 		display: none;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:768px) and (max-width:1099px){
+	body{
+		font-family: 'Noto Sans', sans-serif;
+	}
+	header{
+		width:100%;
+		height:75px;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+		z-index: 99;
+	}
+	section{
+		width:100%;
+		margin-top:27px;
+		margin-bottom:100px;
+	}
+	section .mainBackground{
+		width:100%;
+	}
+	section .mainBackground>.bgImg{
+		width:100%;
+		height:346px;
+		float:left;
+	} 
+	.bgText{
+		width:95%;
+		height:180px;
+		position: absolute;
+		top:170px;
+		left:15px;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+	}
+	.bgText>h1{
+		color:white;
+		font-size:40px;
+		font-weight:500;
+		margin-bottom:15px;
+	}
+	.bgText>p{
+		color:white;
+		font-size:20px;
+		font-weight: 300;
+	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:70px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 99;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:1200px;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:70px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 20px;
+		color:white;
+		line-height: 70px;
+		margin:0 40px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:55px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
+	section .contentWrap{
+		width:100%;
+		max-width:1200px;
+		margin:0 auto;
+		margin-top:100px;
+		text-align: center;
+		clear:both;
+		position:relative;
+	}
+	.contentWrap .title{
+		margin-top:50px;
+		margin-bottom:50px;
+	}
+	.contentWrap .title p{
+		font-size: 1.5em;
+		margin-bottom:10px;
+		color:#333333;
+	}
+	.contentWrap .title p:nth-child(2){
+		font-weight: bold; 
+		font-size: 1.6em;
+	}
+	#map{
+		width:100% !important;
+	}
+	.addr{
+		font-size: 2em;
+		margin-top:20px;
+		margin-bottom:100px;
+		font-weight: bold;
+		color:#333333;
+		
+	}
+	.addrInfo{
+		width:99%;
+		height:200px;
+		margin:0 auto;
+		margin-bottom:50px;
+	}
+	.info2{
+		float:left;
+		margin-left:10px;
+	}
+	.info2>p{ 
+		font-size:15px;
+	}
+	.info2:last-child{
+		margin-top:30px;
+	}
+	.info3{
+		float:right;
+		width:560px;
+		margin:0 auto;
+		margin-top:50px;
+	}
+	.info3>ul>li{
+		list-style: disc;
+		text-align: left;
+		font-weight: bold;
+		font-size: 15px;
+		margin-bottom:10px;
+	}
+	.line{
+		width:920px;
+		margin-bottom:50px;
+	}
+	/* quick menu */
+	.quick{
+		display:none;
+	}
+	.info3_li_m{
+		display: none;
+	}
+}
+@media only screen and (min-width:320px) and (max-width:767px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;

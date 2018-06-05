@@ -8,10 +8,9 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-<meta name="viewport" content="width=1517, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-@media only screen and (min-width:451px){
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -206,7 +205,7 @@
 		margin-bottom:100px;
 	}
 	.content ul{
-		width:475.6px;
+		width:508px;
 		margin:0 auto;
 		margin-top:85px;
 	}
@@ -238,7 +237,193 @@
 		font-weight: 600;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:768px) and (max-width:1099px){
+	body{
+		font-family: 'Noto Sans', sans-serif;
+	}
+	header{
+		width:100%;
+		height:75px;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+		z-index: 99;
+	}
+	section{
+		width:100%;
+		margin-top:27px;
+		margin-bottom:100px;
+	}
+	section .mainBackground{
+		width:100%;
+	}
+	section .mainBackground>.bgImg{
+		width:100%;
+		height:346px;
+		float:left;
+	} 
+	.bgText{
+		width:95%;
+		height:180px;
+		position: absolute;
+		top:170px;
+		left:15px;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+	}
+	.bgText>h1{
+		color:white;
+		font-size:40px;
+		font-weight:500;
+		margin-bottom:15px;
+	}
+	.bgText>p{
+		color:white;
+		font-size:20px;
+		font-weight: 300;
+	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:70px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 99;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:100%;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:70px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 20px;
+		color:white;
+		line-height: 70px;
+		margin:0 40px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:55px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
+	section .contentWrap{
+		width:100%;
+		max-width:1200px;
+		margin:0 auto;
+		margin-top:100px;
+		text-align: center;
+		clear:both;
+		position:relative;
+	}
+	/* quick menu */
+	.quick{
+		display:none;
+	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.content{
+		width:100%;
+	}
+	.content h2{
+		font-size:30px;
+		font-weight:500;
+	}
+	.content .diaIcon{
+		 margin-bottom:30px;
+	}
+	.content>img:not(.diaIcon){
+		margin-top:80px;
+		width:750px;
+	}
+	hr{ 
+		width:90%;
+		border:0;
+		border-top:2px solid gray;
+		margin:0 auto;
+		margin-top:100px;
+		margin-bottom:100px;
+	}
+	.content ul{
+		width:508px;
+		margin:0 auto;
+		margin-top:85px;
+	}
+	.content ul li{
+		text-align: left;
+		margin-top:35px;
+		overflow: hidden;
+	}
+	.content ul li img{
+		width:40px;
+		float:left;
+		margin-right:35px; 
+	}
+	.content ul li:nth-child(2) img{
+		margin-top:2px;
+	}
+	.content ul li p{
+		float:left;
+		font-size:20px;
+	}
+	.content ul li:nth-child(2) p{
+		line-height: 18px;
+	}
+	.content ul li:nth-child(3) p{
+		line-height: 45px;
+	}
+	.content ul li p span{
+		font-size:20px;
+		font-weight: 600;
+	}
+}
+@media only screen and (min-width:320px) and (max-width:767px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;

@@ -207,7 +207,10 @@
 	.clinic_sub_nav ul li:last-child a{
 		color:white; 
 	}
-	
+	.content{
+		width:85%;
+		margin:0 auto;
+	}
 	.content .diaIcon{
 		width:45px;
 		margin-bottom:30px;
@@ -217,14 +220,15 @@
 		font-weight:500;
 	}
 	.content00{
-		width:80%;
+		width:100%;
 		margin:0 auto;
 		margin-top:100px;
 		overflow: hidden;
 	}
 	
 	.content00 .content_small_title{
-		width:31%;
+		/* width:31%; */
+		width:271px;
 		float:left;
 		text-align: left;
 	}
@@ -245,7 +249,8 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		width:61%;
+		/* width:61%; */
+		width:581px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
