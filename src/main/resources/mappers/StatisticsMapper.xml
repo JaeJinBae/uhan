@@ -9,7 +9,24 @@
 	<select id="total" resultType="int">
 		select count(*) from statistics
 	</select>
-	<select id="selectCount" resultType="int">
-		select count(*) from statistics where connectdate like #{connectdate}
+	<select id="totalCount" resultType="int">
+		select count(*) from statistics
 	</select>
+	<select id="selectCount" resultType="int">
+		select count(*) from statistics	<include refid="search"></include>
+	</select>
+	<select id="selectByDate" resultType="StatisticsVO">
+		select * from statistics <include refid="search"></include> order by connectdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	<sql id="search">
+			where connectdate like concat('%',#{keyword},'%')
+	</sql>
+	
+	<select id="selectByBrowser" resultType="int">
+		select count(*) from  statistics <include refid="searchBrowser"></include>
+	</select>
+
+	<sql id="searchBrowser">
+			where connectdate like concat('%',#{keyword},'%') and browser like concat('%',#{browser},'%')
+	</sql>
 </mapper>
