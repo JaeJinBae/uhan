@@ -54,6 +54,22 @@
 	}
 </style>
 </head>
+<script>
+	$(function(){
+		var d = new Date();
+		var year = d.getFullYear();
+		var month  = d.getMonth()+1;
+		var date = d.getDate();
+		if(month<10){
+			month = "0"+month;
+		}
+		if(date<10){
+			date = "0"+date;
+		}
+		$("#statistics").attr("href","statistics?keyword="+year+"-"+month+"-"+date);
+		
+	});
+</script>
 <body>
 	<div id="headerDiv">
 		<div id="logo">
@@ -65,7 +81,7 @@
 		<div id="headerMenu"> 
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리">게시판 관리</a></li>
-				<li><a href="statistics" title="통계">통 계</a></li>
+				<li><a href="statistics" title="통계" id="statistics">통 계</a></li>
 			</ul>
 		</div>
 	</div>

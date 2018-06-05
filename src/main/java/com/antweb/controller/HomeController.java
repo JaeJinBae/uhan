@@ -436,7 +436,7 @@ public class HomeController {
 		
 		if(agent !=null){
 			if(agent.indexOf("Trident")>-1){
-				browser = "MSIE";
+				browser = "Explorer";
 				device  ="PC";
 			}else if(agent.indexOf("Chrome")>-1){
 				
@@ -445,7 +445,7 @@ public class HomeController {
 					if(agent.indexOf("SamsungBrowser")>-1){
 						browser="SamsungBrowser";
 					}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
-						browser="naver app";
+						browser="Naver App";
 					}else{
 						browser="etc";
 					}

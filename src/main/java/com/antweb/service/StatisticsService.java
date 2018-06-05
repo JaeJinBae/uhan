@@ -11,4 +11,5 @@ public interface StatisticsService {
 	public int total();
 	public int selectCount(String keyword);
 	public List<StatisticsVO> selectByDate(SearchCriteria cri);
+	public int selectByBrowser(String keyword,String browser);
 }

@@ -566,21 +566,46 @@ public class AdminController {
 		Date today = new Date();
 		model.addAttribute("today",today);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		
-		model.addAttribute("todayCount",sService.selectCount(cri.getKeyword()));
+		makePage(model,cri);
 		List<StatisticsVO> list = sService.selectByDate(cri);
 		model.addAttribute("list", list);
-		
-		makePage(model,cri);
+		model.addAttribute("keyword", cri.getKeyword());
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		cri.setKeyword(sdf.format(today));
+		model.addAttribute("todayCount",sService.selectCount(cri.getKeyword()));
 		
 		return "/admin/adminStatistics";
 	}
-	
+	@RequestMapping(value="statisticsBrowser")
+	public String searchDate(String keyword,Model model,@ModelAttribute("cri") SearchCriteria cri){
+		logger.info("admin browser statistics");
+		
+		Date today = new Date();
+		model.addAttribute("today",today);
+		
+		model.addAttribute("total",sService.total());
+		model.addAttribute("keyword",cri.getKeyword());
+		model.addAttribute("keyCount",sService.selectCount(keyword));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		cri.setKeyword(sdf.format(today));
+		model.addAttribute("todayCount",sService.selectCount(cri.getKeyword()));
+		
+		model.addAttribute("chrome", sService.selectByBrowser(keyword,"Chrome"));
+		model.addAttribute("ex", sService.selectByBrowser(keyword,"Explorer"));
+		model.addAttribute("safari", sService.selectByBrowser(keyword,"Safari"));
+		model.addAttribute("sambrowser", sService.selectByBrowser(keyword,"SamsungBrowser"));
+		model.addAttribute("naver", sService.selectByBrowser(keyword,"Naver App"));
+		model.addAttribute("opera", sService.selectByBrowser(keyword,"Opera"));
+		model.addAttribute("etc", sService.selectByBrowser(keyword,"etc"));
+		
+		return "/admin/adminStatisticsBrowser";
+	}
 		private void makePage(Model model,SearchCriteria cri){
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		int totalcount = sService.selectCount(cri.getKeyword());
+		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(totalcount);
 		model.addAttribute("pageMaker",pageMaker);
 	}

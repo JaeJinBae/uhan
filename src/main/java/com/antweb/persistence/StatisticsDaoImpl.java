@@ -39,4 +39,12 @@ public class StatisticsDaoImpl implements StatisticsDao {
 		return session.selectList(namespace+".selectByDate",cri);
 	}
 
+	@Override
+	public int selectByBrowser(String keyword, String browser) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("keyword", keyword);
+		map.put("browser", browser);
+		return session.selectOne(namespace+".selectByBrowser",map);
+	}
+
 }

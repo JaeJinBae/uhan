@@ -38,4 +38,9 @@ public class StatisticsServiceImpl implements StatisticsService {
 		return dao.selectByDate(cri);
 	}
 
+	@Override
+	public int selectByBrowser(String keyword, String browser) {
+		return dao.selectByBrowser(keyword, browser);
+	}
+
 }

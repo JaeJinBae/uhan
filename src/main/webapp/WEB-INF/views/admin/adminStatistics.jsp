@@ -101,36 +101,38 @@
 	}
 </style>
 <script type="text/javascript">
+	
+	var d = new Date();
+	var year = d.getFullYear();
+	var month  = d.getMonth()+1;
+	var date = d.getDate();
+	
+	if(month<10){
+		month = "0"+month;
+	}
+	if(date<10){
+		date = "0"+date;
+	}
+	
 	$(function(){	
- 		$("#searchBtn").click(function(){
+		
+		var keyword = "${keyword}";
+		
+		$("#year").val(keyword.substring(0, 4));
+		$("#month").val(keyword.substring(5,7));
+		$("#date").val(keyword.substring(8,10));
+		
+		$("#searchBtn").click(function(){
  			
  			var number = /[^0-9]/;
- 			
- 			
+ 				
  			var year = $("#year").val();
  			var month = $("#month").val();
  			var date = $("#date").val();
- 			
- 			if(number.test(year)){
- 				alert("숫자만 입력가능 합니다!");
- 				$("#year").focus();
- 				return;
- 			}
- 			
- 			if(number.test(month)){
- 				alert("숫자만 입력가능 합니다!");
- 				$("#month").focus();
- 				return;
- 			}
- 			
- 			if(number.test(date)){
- 				alert("숫자만 입력가능 합니다!");
- 				$("#date").focus();
- 				return;
- 			}
  		
  			
  			if(year=="" && month==""&& date==""){
+ 				alert("날짜를 입력해 주세요");
  				return "admin/adminStatistics";
  			}
  			
@@ -152,12 +154,28 @@
  			}else{
  				search = year+"-"+month+"-"+date;
  			}
- 			alert(search);
+ 			if(year!=""&&month==""&&date==""){
+ 				alert("년도분석");
+ 			}else{
+ 				$("#searchBtn").attr("href","statistics${pageMaker.makeQuery(1)}&searchType=&keyword="+search);
+ 			}
  			
- 			location.href = "statistic${pageMaker.makeQuery(1)}&searchType=&keyword="+search; 
+ 			
  		});
- 		
+		
+		goMain();
+		goBrowser();
 	});
+	
+	function goMain(){
+		$("#statisticsDate").attr("href","statistics?keyword="+year+"-"+month+"-"+date);
+	}
+	function goBrowser(){
+		$("#goBrowser").attr("href","statisticsBrowser?keyword="+year+"-"+month+"-"+date);
+	}
+	function goOs(){
+		$("#goOs").attr("href","statisticsOs?keyword?keyword="+year+"-"+month+"-"+date);
+	}
 </script>
 </head>
 <body>
@@ -166,16 +184,13 @@
 		<div class="leftMenu">
 			<h2>통계 리스트</h2>
 			<ul> 
-				<li> <a href="#"> 날짜별 방문 통계</a></li>
-				<li> <a href="#"> 브라우저 통계</a></li>
-				<li> <a href="#"> OS 통계</a></li>
+				<li> <a href="#" id="statisticsDate"> 날짜별 방문 통계</a></li>
+				<li> <a href="#" id="goBrowser"> 브라우저 통계</a></li>
+				<li> <a href="#" id="goOs"> OS 통계</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
 			<fmt:formatDate value="${today }" pattern="yyyy년 MM월 dd일" var="now"/>
-			<fmt:formatDate value="${today }" pattern="yyyy" var="year"/>
-			<fmt:formatDate value="${today }" pattern="MM" var="month"/>
-			<fmt:formatDate value="${today }" pattern="dd" var="date"/>
 			<table border="1">
 				<tr>
 					<th colspan="2" id="now">오늘날짜 : ${now }</th>
@@ -188,7 +203,7 @@
 					<td><input type="text" placeholder="MM" value="${month }" id="month"></td>
 					<td>-</td>
 					<td><input type="text" placeholder="dd" value="${date }" id="date"></td>
-					<td><button id="searchBtn">검색</button></td>
+					<td><a href="" id="searchBtn">검색</a></td>
 				</tr>
 			</table>		
 			<table  border="1" id="userInfo">
@@ -209,7 +224,7 @@
 					</tr>
 				</c:forEach>
 				</c:if>
-				<c:if test="${list.size() < 0 }">
+				<c:if test="${list.size() == 0 }">
 					<tr>
 						<td colspan="4">방문자가 없습니다.</td>
 					</tr>
@@ -219,20 +234,23 @@
 			<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1)}">&laquo;</a></li>
+							<li><a href="${pageMaker.makeQuery(pageMaker.startPage-1)}&searchType=&keyword=${keyword }">&laquo;</a></li>
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
+							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeQuery(idx)}&searchType=&keyword=${keyword }" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
 						</c:forEach>
 						
 						<c:if test="${pageMaker.next}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
+							<li><a href="${pageMaker.makeQuery(pageMaker.endPage+1)}&searchType=&keyword=${keyword }">&raquo;</a></li>
 						</c:if>
 						
 					</ul>
 				</div><!-- page end -->
 		
 		</div>
+		<script>
+			
+		</script>
 	</div>
 </body>
 </html>
