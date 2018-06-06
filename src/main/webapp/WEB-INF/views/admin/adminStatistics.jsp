@@ -13,15 +13,10 @@
 		margin:0;
 		padding:0;
 	}
-	a{
-		display:inline-block;
-		color:black;
-		text-decoration: none;
-	}
-	/* .contentWrap{
+
+		.contentWrap{
 		width:100%;
 		min-width:1280px;
-		height:700px;
 		margin:0 auto;
 		padding:20px;
 		background: lightgray;
@@ -43,6 +38,8 @@
 		margin:0 auto;
 		margin-bottom:15px;
 		background: url('${pageContext.request.contextPath}/resources/images/arrow2.gif') no-repeat 10px center;
+		font-size:26px;
+		font-weight:bold;
 	}
 	.contentWrap .leftMenu ul{
 		width:80%;
@@ -51,12 +48,15 @@
 	}
 	.contentWrap .leftMenu ul li{
 		list-style:none;
+		margin-bottom:10px;
 	}
 	.contentWrap .leftMenu ul li:before{
 		content:">";
 	}
 	.contentWrap .leftMenu ul li a{
-		font-weight: bold;
+		text-decoration:none;
+		color:black;
+		font-size:17px;
 	}
 	.contentWrap .centerMenu{
 		width:70%;
@@ -64,10 +64,60 @@
 		height:100%;
 		border-radius:10px;
 		float:left;
-		background: white;
-	} */
-	table{
+		background:white;
+	}
+	.boardTitle{
+		width:90%;
+		max-width:860px;
+		margin:0 auto;
+		font-size:20px;
+		margin-top:33px;
+	}
+	#tableDiv{
+		padding-top: 30px;
 		width:100%;
+		height:700px;
+	}
+	#tableDiv .t{
+		width:800px;
+		margin: 0 auto;
+		border-collapse: collapse;
+		margin-bottom: 30px;
+	}
+	#tableDiv .t .tbl_header{
+		border-top: 2px solid #e3e3e3;
+		border-bottom: 2px solid #00B4AE;
+		font-size: 15px;
+	}
+	#tableDiv .t th{
+		padding:8px 13px;
+	}
+	#tableDiv .t td{
+		text-align: center;
+		padding:8px 13px;
+	}
+	#tableDiv .t td input{
+		height:23px;
+	}
+	#tableDiv .t .tbl_bottom{
+		border-bottom: 1px solid #e3e3e3;
+	}
+	#tableDiv .info_t tr{
+		border-bottom: 1px solid #e3e3e3;
+	}
+	#tableDiv .t .bar{
+		width:5px;
+		padding:8px 0px;
+	}
+	#tableDiv .t td #searchBtn{
+		width:35px;
+		height:30px;
+		color:white;
+		background-color: #00B4AE;
+		text-decoration: none;
+		font-size: 15px;
+		padding:5px;
+		border-radius:5px;
 	}
 	.page{
 		clear:both;
@@ -122,31 +172,43 @@
 		$("#month").val(keyword.substring(5,7));
 		$("#date").val(keyword.substring(8,10));
 		
-		$("#searchBtn").click(function(){
+		$("#searchBtn").click(function(e){
  			
- 			var number = /[^0-9]/;
+			var reg =/^[\d]{4}$/;
+ 			var reg2 = /^[\d]{2}$/;
  				
  			var year = $("#year").val();
  			var month = $("#month").val();
  			var date = $("#date").val();
  		
  			
- 			if(year=="" && month==""&& date==""){
- 				alert("날짜를 입력해 주세요");
- 				return "admin/adminStatistics";
- 			}
- 			
- 			if((year==""&&month!=""&&date!="")||(year==""&&month!="")||(year==""&&date!="")){
- 				alert("년도를 먼저 입력해 주세요");
+ 			if(!reg.test(year)){
+ 				alert("년도를 올바르게 입력하세요(4자리(ex 2020), 숫자)");
  				$("#year").focus();
- 				return;
+ 				e.preventDefault();
  			}
- 			
+ 			if(!reg2.test(month)){
+ 				alert("월을 올바르게 입력하세요(2자리(ex 01), 숫자)");
+ 				$("#month").focus();
+ 				e.preventDefault();
+ 			}
+ 			if(!reg2.test(date)){
+ 				alert("일을 올바르게 입력하세요(2자리(ex 01), 숫자)");
+ 				$("#date").focus();
+ 				e.preventDefault();
+ 			}
+
+ 			if(year==""){
+ 				alert("년도를 입력해 주세요");
+ 				$("#year").focus();
+ 				e.preventDefault();
+ 			}
  			if(year!=""&&month==""&&date!=""){
  				alert("월을 입력해 주세요");
  				$("#month").focus();
- 				return;
- 			} 		
+ 				e.preventDefault();
+ 			} 	
+ 			
  			var search ="";
  			
  			if(date==""){
@@ -155,7 +217,16 @@
  				search = year+"-"+month+"-"+date;
  			}
  			if(year!=""&&month==""&&date==""){
- 				alert("년도분석");
+ 				
+ 				$.ajax({
+ 					url:"statisticsYear",
+ 					type:"post",
+ 					dataType:"json",
+ 					data:{"year":year},
+ 					success:function(result){
+ 						console.log(result);
+ 					}
+ 				})
  			}else{
  				$("#searchBtn").attr("href","statistics${pageMaker.makeQuery(1)}&searchType=&keyword="+search);
  			}
@@ -165,6 +236,7 @@
 		
 		goMain();
 		goBrowser();
+		goOs();
 	});
 	
 	function goMain(){
@@ -174,7 +246,7 @@
 		$("#goBrowser").attr("href","statisticsBrowser?keyword="+year+"-"+month+"-"+date);
 	}
 	function goOs(){
-		$("#goOs").attr("href","statisticsOs?keyword?keyword="+year+"-"+month+"-"+date);
+		$("#goOs").attr("href","statisticsOs?keyword="+year+"-"+month+"-"+date);
 	}
 </script>
 </head>
@@ -184,34 +256,36 @@
 		<div class="leftMenu">
 			<h2>통계 리스트</h2>
 			<ul> 
-				<li> <a href="#" id="statisticsDate"> 날짜별 방문 통계</a></li>
+				<li> <a href="#" id="statisticsDate" style="font-weight:bold;"> 날짜별 방문 통계</a></li>
 				<li> <a href="#" id="goBrowser"> 브라우저 통계</a></li>
 				<li> <a href="#" id="goOs"> OS 통계</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
+		<h1 class="boardTitle">&lt;날짜별 통계&gt;</h1>
 			<fmt:formatDate value="${today }" pattern="yyyy년 MM월 dd일" var="now"/>
-			<table border="1">
-				<tr>
+			<div id="tableDiv">
+				<table class="t">
+				<tr class="tbl_header">
 					<th colspan="2" id="now">오늘날짜 : ${now }</th>
 					<th colspan="2" id="total">전체 접속자 : ${total }명 </th>
 					<th colspan="2" id="today">오늘방문자 : ${todayCount }명</th>
 				</tr>
-				<tr>
-					<td><input type="text" placeholder="yyyy" value="${year }" id="year"></td>
-					<td>-</td>
-					<td><input type="text" placeholder="MM" value="${month }" id="month"></td>
-					<td>-</td>
-					<td><input type="text" placeholder="dd" value="${date }" id="date"></td>
+				<tr class="tbl_bottom">
+					<td><input type="text" placeholder="yyyy" value="${year }" id="year" maxlength="4"></td>
+					<td class="bar">-</td>
+					<td><input type="text" placeholder="MM" value="${month }" id="month" maxlength="2"></td>
+					<td class="bar">-</td>
+					<td><input type="text" placeholder="dd" value="${date }" id="date" maxlength="2"></td>
 					<td><a href="" id="searchBtn">검색</a></td>
 				</tr>
 			</table>		
-			<table  border="1" id="userInfo">
-				<tr id="userInfo_tr">
-					<td>접속경로</td>
-					<td>브라우저</td>
-					<td>디바이스</td>
-					<td>일시</td>
+			<table class="t info_t">
+				<tr class="tbl_header">
+					<th>접속경로</th>
+					<th>브라우저</th>
+					<th>디바이스</th>
+					<th>일시</th>
 				</tr>
 				<c:if test="${list.size() > 0 }">
 					<c:forEach var="list" items="${list }">
@@ -230,7 +304,6 @@
 					</tr>
 				</c:if>
 			</table>
-			
 			<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">
@@ -247,10 +320,11 @@
 					</ul>
 				</div><!-- page end -->
 		
-		</div>
-		<script>
+			</div>
 			
-		</script>
+			
+			
+		</div>
 	</div>
 </body>
 </html>

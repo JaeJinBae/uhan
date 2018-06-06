@@ -476,6 +476,9 @@ public class HomeController {
 				}else{
 					browser="etc";
 				}
+			}else{
+				browser="etc";
+				device = "etc";
 			}
 		}
 		

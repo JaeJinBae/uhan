@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,6 +71,7 @@
 		font-size:20px;
 		margin-top:33px;
 	}
+	
 	#tableDiv{
 		padding-top: 30px;
 		width:100%;
@@ -94,18 +95,11 @@
 		text-align: center;
 		padding:8px 13px;
 	}
-	#tableDiv .t td input{
-		height:23px;
-	}
 	#tableDiv .t .tbl_bottom{
 		border-bottom: 1px solid #e3e3e3;
 	}
 	#tableDiv .info_t tr{
 		border-bottom: 1px solid #e3e3e3;
-	}
-	#tableDiv .t .bar{
-		width:5px;
-		padding:8px 0px;
 	}
 	#tableDiv .t td #searchBtn{
 		width:35px;
@@ -117,15 +111,21 @@
 		padding:5px;
 		border-radius:5px;
 	}
+	#tableDiv .t td input{
+		height:23px;
+	}
+	#tableDiv .t .bar{
+		width:5px;
+		padding:8px 0px;
+	}
 </style>
 </head>
 <script>
-	
 	var d = new Date();
 	var year = d.getFullYear();
 	var month  = d.getMonth()+1;
 	var date = d.getDate();
-	
+
 	if(month<10){
 		month = "0"+month;
 	}
@@ -136,40 +136,31 @@
 		goMain();
 		goBrowser();
 		goOs();
-		
-		var total  = "${keyCount}";
-		var chrome = 0;
-		var ex =0;
-		var safari =0;
-		var sambrowser =0;
-		var naver =0;
-		var opera =0;
-		var etc =0;
-		
-		if(total!=0){
-			chrome = ("${chrome}"/total)*100;
-			ex = ("${ex}"/total)*100;
-			safari = ("${safari}"/total)*100;
-			sambrowser = ("${sambrowser}"/total)*100;
-			naver = ("${naver}"/total)*100;
-			opera = ("${opera}"/total)*100;
-			etc = ("${etc}"/total)*100;
-		}
-		
-		
-		$("#chrome").text(chrome.toFixed(1)+"%");
-		$("#ex").text(ex.toFixed(1)+"%");
-		$("#safari").text(safari.toFixed(1)+"%");
-		$("#sambrowser").text(sambrowser.toFixed(1)+"%");
-		$("#naver").text(naver.toFixed(1)+"%");
-		$("#opera").text(opera.toFixed(1)+"%");
-		$("#etc").text(etc.toFixed(1)+"%");
-		
 		var keyword = "${keyword}";
 		
 		$("#year").val(keyword.substring(0, 4));
 		$("#month").val(keyword.substring(5,7));
 		$("#date").val(keyword.substring(8,10));
+		
+		var total  = "${keyCount}";
+		
+		var pc = 0;
+		var mobile =0;
+		var tablet =0;
+		var etc =0;
+		
+		if(total!=0){
+			pc = ("${pc}"/total)*100;
+			mobile = ("${mobile}"/total)*100;
+			tablet = ("${tablet}"/total)*100;
+			etc = ("${etc}"/total)*100;
+		}
+		
+			$("#pc").text(pc.toFixed(1)+"%");
+			$("#mobile").text(mobile.toFixed(1)+"%");
+			$("#tablet").text(tablet.toFixed(1)+"%");
+			$("#etc").text(etc.toFixed(1)+"%");
+		
 		
 		$("#searchBtn").click(function(e){
 			var year = $("#year").val();
@@ -184,7 +175,7 @@
  				$("#year").focus();
  				e.preventDefault();
  			}
- 			/* if(!reg2.test(month)){
+ 		/* 	if(!reg2.test(month)){
  				alert("월을 올바르게 입력하세요(2자리(ex 01), 숫자)");
  				$("#month").focus();
  				e.preventDefault();
@@ -194,6 +185,7 @@
  				$("#date").focus();
  				e.preventDefault();
  			} */
+
  			if(year==""){
  				alert("년도를 입력해 주세요");
  				$("#year").focus();
@@ -205,7 +197,6 @@
  				e.preventDefault();
  			} 	
  			
- 			
  			var search ="";
  			
  			if(date==""){
@@ -214,12 +205,11 @@
  				search = year+"-"+month+"-"+date;
  			}
  			
- 			$("#searchBtn").attr("href","statisticsBrowser?keyword="+search);
+ 			$("#searchBtn").attr("href","statisticsOs?keyword="+search);
  			
 		});
 		
 	});
-	
 	function goMain(){	
 		$("#statisticsDate").attr("href","statistics?keyword="+year+"-"+month+"-"+date);
 	}
@@ -237,12 +227,12 @@
 			<h2>통계 리스트</h2>
 			<ul> 
 				<li> <a href="#"  id="statisticsDate"> 날짜별 방문 통계</a></li>
-				<li> <a href="#" id="goBrowser" style="font-weight:bold;"> 브라우저 통계</a></li>
-				<li> <a href="#" id="goOs"> OS 통계</a></li>
+				<li> <a href="#" id="goBrowser"> 브라우저 통계</a></li>
+				<li> <a href="#" id="goOs" style="font-weight:bold;"> OS 통계</a></li>
 			</ul>
 		</div>
 		<div class="centerMenu">
-		<h1 class="boardTitle">&lt;브라우저 통계&gt;</h1>
+			<h1 class="boardTitle">&lt;OS 통계&gt;</h1>
 			<fmt:formatDate value="${today }" pattern="yyyy년 MM월 dd일" var="now"/>
 			<div id="tableDiv">
 				<table class="t">
@@ -262,32 +252,20 @@
 			</table>
 			<table class="t info_t">
 				<tr class="tbl_header">
-					<th>브라우저</th>
+					<th>디바이스</th>
 					<th>비율</th>
 				</tr>
 				<tr>
-					<td>Chrome</td>
-					<td id="chrome"></td>
+					<td>PC</td>
+					<td id="pc"></td>
 				</tr>
 				<tr>
-					<td>Explorer</td>
-					<td id="ex"></td>
+					<td>Mobile</td>
+					<td id="mobile"></td>
 				</tr>
 				<tr>
-					<td>Safari</td>
-					<td id="safari"></td>
-				</tr>
-				<tr>
-					<td>SamsungBrowser</td>
-					<td id="sambrowser"></td>
-				</tr>
-				<tr>
-					<td>Naver App</td>
-					<td id="naver"></td>
-				</tr>
-				<tr>
-					<td>Opera</td>
-					<td id="opera"></td>
+					<td>Tablet Pc</td>
+					<td id="tablet"></td>
 				</tr>
 				<tr>
 					<td>etc</td>

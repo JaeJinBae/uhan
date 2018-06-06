@@ -18,15 +18,24 @@
 	<select id="selectByDate" resultType="StatisticsVO">
 		select * from statistics <include refid="search"></include> order by connectdate desc limit #{pageStart},#{perPageNum}
 	</select>
+
+	<select id="selectByBrowser" resultType="int">
+		select count(*) from  statistics <include refid="searchBrowser"></include>
+	</select>
+	
+	<select id="selectByDevice" resultType="int">
+		select count(*) from statistics <include refid="searchDevice"></include>
+	</select>
+	
 	<sql id="search">
 			where connectdate like concat('%',#{keyword},'%')
 	</sql>
 	
-	<select id="selectByBrowser" resultType="int">
-		select count(*) from  statistics <include refid="searchBrowser"></include>
-	</select>
-
 	<sql id="searchBrowser">
 			where connectdate like concat('%',#{keyword},'%') and browser like concat('%',#{browser},'%')
+	</sql>
+	
+	<sql id="searchDevice">
+		where connectdate like concat('%',#{keyword},'%') and device like concat('%',#{device},'%')
 	</sql>
 </mapper>

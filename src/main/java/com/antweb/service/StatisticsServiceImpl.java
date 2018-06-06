@@ -43,4 +43,9 @@ public class StatisticsServiceImpl implements StatisticsService {
 		return dao.selectByBrowser(keyword, browser);
 	}
 
+	@Override
+	public int selectByDevice(String keyword, String device) {
+		return dao.selectByDevice(keyword, device);
+	}
+
 }

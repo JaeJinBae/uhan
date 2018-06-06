@@ -47,4 +47,12 @@ public class StatisticsDaoImpl implements StatisticsDao {
 		return session.selectOne(namespace+".selectByBrowser",map);
 	}
 
+	@Override
+	public int selectByDevice(String keyword, String device) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("keyword", keyword);
+		map.put("device", device);
+		return session.selectOne(namespace+".selectByDevice",map);
+	}
+
 }

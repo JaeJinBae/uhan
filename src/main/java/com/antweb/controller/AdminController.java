@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpOutputMessage;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -577,19 +580,19 @@ public class AdminController {
 		return "/admin/adminStatistics";
 	}
 	@RequestMapping(value="statisticsBrowser")
-	public String searchDate(String keyword,Model model,@ModelAttribute("cri") SearchCriteria cri){
+	public String statisticsBrowser(String keyword,Model model){
 		logger.info("admin browser statistics");
 		
 		Date today = new Date();
 		model.addAttribute("today",today);
 		
 		model.addAttribute("total",sService.total());
-		model.addAttribute("keyword",cri.getKeyword());
+		model.addAttribute("keyword",keyword);
 		model.addAttribute("keyCount",sService.selectCount(keyword));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		cri.setKeyword(sdf.format(today));
-		model.addAttribute("todayCount",sService.selectCount(cri.getKeyword()));
+	
+		model.addAttribute("todayCount",sService.selectCount(sdf.format(today)));
 		
 		model.addAttribute("chrome", sService.selectByBrowser(keyword,"Chrome"));
 		model.addAttribute("ex", sService.selectByBrowser(keyword,"Explorer"));
@@ -601,6 +604,55 @@ public class AdminController {
 		
 		return "/admin/adminStatisticsBrowser";
 	}
+	@RequestMapping(value="statisticsOs")
+	public String statisticsOs(String keyword,Model model){
+		
+		Date today = new Date();
+		model.addAttribute("today",today);
+		
+		model.addAttribute("total",sService.total());
+		model.addAttribute("keyword",keyword);
+		model.addAttribute("keyCount",sService.selectCount(keyword));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		model.addAttribute("todayCount",sService.selectCount(sdf.format(today)));
+		
+		model.addAttribute("pc", sService.selectByDevice(keyword, "PC"));
+		model.addAttribute("mobile", sService.selectByBrowser(keyword,"Mobile"));
+		model.addAttribute("tablet", sService.selectByBrowser(keyword,"Tablet Pc"));
+		model.addAttribute("etc", sService.selectByDevice(keyword, "etc"));
+		
+		return "/admin/adminStatisticsOs";
+		
+	}
+	@ResponseBody
+	@RequestMapping(value="statisticsYear",method=RequestMethod.POST)
+	private ResponseEntity<List<HashMap<String,Object>>> statisticsYear(String year){
+		
+		ResponseEntity<List<HashMap<String,Object>>> entity = null;
+		HashMap<String,Object> map = new HashMap<>();
+		String key="";
+		for(int i=1;i<13;i++){
+			
+			if(i<10){
+				key = year+"-0"+i;
+			}else{
+				key = year+"-"+i;
+			}
+			map.put(key,sService.selectCount(key));
+		}
+		map.put("total", sService.selectCount(year));
+		try{
+			List<HashMap<String,Object>> list = new ArrayList<>();
+			list.add(map);
+			entity = new ResponseEntity<List<HashMap<String,Object>>>(list,HttpStatus.OK);
+		}catch(Exception e){
+			e.printStackTrace();
+			entity = new ResponseEntity<List<HashMap<String,Object>>>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}
+	
 		private void makePage(Model model,SearchCriteria cri){
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
