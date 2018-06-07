@@ -265,7 +265,7 @@
 		var num=0;
 			$(".mainMenu").find(".mainMenu_li > a").bind("touchstart",function(e){
 					
-				if(window.innerWidth <= 800){
+				if(window.innerWidth <= 767){
 					if(num==1){
 						$(".arrow").attr("src","${pageContext.request.contextPath}/resources/images/arrow_down.png");
 						$(".dropdown .mainSubMenu").css("display","none");	
@@ -294,7 +294,7 @@
 			});
 			
 			$(".mainMenu").find(".mainMenu_li img").bind("touchstart",function(e){
-				if(window.innerWidth <= 800){
+				if(window.innerWidth <= 767){
 					if(num==1){
 						$(".arrow").attr("src","${pageContext.request.contextPath}/resources/images/arrow_down.png");
 						$(".dropdown .mainSubMenu").css("display","none");	

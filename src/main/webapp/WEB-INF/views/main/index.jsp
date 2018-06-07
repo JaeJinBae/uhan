@@ -12,265 +12,12 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=5">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css?ver=3"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css?ver=6"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-@media only screen and(min-width:768) and (max-width:1099px){
-	
-}
-@media only screen and (min-width:320px) and (max-width:767px){
-	body{
-		font-family: 'Noto Sans', sans-serif;
-		font-size: 20px;
-	} 
-	.mainBanner>div>img{
-		width:100%; 
-		height:250px;
-		z-index:-9999;
-	}
-	.contentWrap .clinicIcon img{
-		display: none;
-	}
-	.contentWrap hr{
-		margin:0px auto;
-		margin-top:25px;
-		margin-bottom:10px;
-		width:20px;
-	}
-	.contentWrap .mainClinic{
-		text-align:center;
-		height:150px;
-		margin-bottom:10px;
-		padding-bottom: 10px;
-	}
-	.contentWrap .mainClinic h1{
-		font-size: 1.5em;
-		margin-bottom:10px;
-		font-weight: bold;
-	}
-	.mainClinic .barogo{
-		display: none;
-	}
-	.mainClinic p{
-		font-size: 1.2em;
-		letter-spacing: 0.5px;
-		line-height: 20px;
-		color:#666666;
-	}
-	.boldText{
-		font-weight: bold;
-		font-size:1em;
-		color:#666666;
-	}
-	.contentWrap .content2Wrap .notice{
-		width:90%;
-		margin:0 auto;
-		margin-top:25px;
-		margin-bottom:18px;
-		border: 1px solid #e3e3e3;
-		padding:20px 15px;
-	}
-	.contentWrap .content2Wrap .notice .noticeLogo{
-		width:45px !important;
-		height:45px;
-		float: left;
-	}
-	.contentWrap .content2Wrap .notice .noticeLogo{
-		width:45px !important;
-		height:45px;
-		float: left;
-		margin-right: 7px;
-	}
-	.notice .noticeTextDiv{
-		float:left;
-	}
-	.notice .noticeTextDiv h1{
-		font-weight:bold;
-		font-size: 1.5em;
-		margin-bottom:3px;
-		font-family: 'NanumSquare', sans-serif;
-	}
-	.notice .noticeTextDiv p{
-		color:#666666;
-		font-weight:500;
-		font-family: 'NanumSquare';
-		font-size: 1em;
-	}
-	.notice .noticeMoreBtn{
-		float:right;
-		margin-top: 5px;
-	}
-	.notice .noticeMoreBtn img{
-		width:40px !important;
-		height:40px;
-	}
-	.notice hr{
-		clear: both;
-		width:100%;
-		margin-top: 60px;
-		border:0;
-		height:1px;
-		background: #c2c2c3;
-	}
-	.notice table{
-		width:93%;
-		margin: 0 auto;
-		margin-top: 7px;
-	}
-	.notice table tr{
-		display: table-row;
-		vertical-align: inherit;
-		border-color: inherit;
-	}
-	.notice table tr td:FIRST-CHILD{
-		padding-left: 7px;
-	}
-	.notice table tr td:LAST-CHILD{
-		text-align: right;
-	}
-	.notice table tr td img{
-		margin-right: 5px;
-	}
-	.notice table tr td{
-		padding-top:5px;
-		color:#666666;
-		font-size: 1em;
-		font-family: 'NanumSquare';
-	}
-	.notice table tr td a{
-		color:#666666;
-		font-size: 1em;
-		font-family: 'NanumSquare'; 
-		display: inline-block;
-	}
-	.box{
-		width:48%;
-		margin:10px 3px;
-		float: left;
-		color: white;
-		text-align: center;
-		padding-bottom: 20px;
-		height:200px;
-	}
-	.box hr{
-		border:0px;
-		border:1px solid white;
-		width: 8%;
-	}
-	.box h1{
-		font-weight: 300;
-		font-size: 1.2em;
-	}
-	.box p{
-		color:#ec9631;
-		font-size: 1.5em;
-		padding: 5px 0px;
-	}
-	#box1 ul{
-		width:82%;
-		margin:0 auto;
-		text-align:center;
-	}
-	#box1 ul li:before{
-		content:"- ";
-	}
-	.bottomBannerWrap{
-		clear: both;
-	}
-	#box1 ul li{
-		font-size: 0.9em;
-		width:100%;
-	}
-	#box1 ul li{
-		color:#c1c2cc;
-		margin-top:12px;
-		padding-bottom:3px;
-		margin:0 auto;
-		font-weight:normal;
-		text-align:left;
-	}
-	#box1 ul li .number{
-		font-weight:normal;
-		font-size:1em;
-	}
-	#box1 ul li .smallText{
-		font-size: 1em;
-		font-weight:normal;
-	}
-	#box1{
-		margin-left: 5px;
-	}
-	#box2 ul{
-		margin:0 auto;
-		text-align:center;
-		margin-top: 8px;
-		width:90%;
-	}
-	#box2 ul li{
-		font-size: 0.8em;
-		font-weight:normal;
-		color:white !important;
-	}
-	#box2 ul li{
-		width:100%;
-		border-bottom: 1px solid rgba(255,255,255,0.4);
-		text-align: left;
-	}
-	#box2 ul li img{
-		width:15px;
-		height:20px;
-		float: left;
-		margin-right: 5px;
-	}
-	#box2 ul li:NTH-CHILD(1){
-		height:50px;
-	}
-	#box2 ul li:NTH-CHILD(1) img{
-		margin-top: 5px;
-	}
-	#box2 ul li:NTH-CHILD(2) img,#box2 ul li:NTH-CHILD(3) img{
-		margin-top: 13px;
-	}
-	#box2 ul li:NTH-CHILD(2), #box2 ul li:NTH-CHILD(3){
-		height:40px;
-		line-height: 40px;
-	}
-	.bottomBanner{
-		width:100%;
-	}
-	.slick-slide img{
-		max-width:100%;
-		display: block;
-	}
-	.mobileContent{
-		margin-top:290px;
-		padding:20px;
-		background: url("${pageContext.request.contextPath}/resources/images/bottomBannerBg.png");
-	}
-	.mobileContent h1{
-		color:#00b4ae;
-		font-size: 1.5em;
-		margin-bottom: 5px;
-		font-family: 'NanumSquare';
-	}
-	.mobileContent h2 a{
-		color:#666666;
-		font-size: 1.4em;
-	}
-	.mobileContent hr{
-		border:0;
-		height:1px;
-		background: #dcdcdc;
-		margin: 8px 0px;
-	}
-		.mobileContent p{
-		color:#919191;
-		padding-bottom:2px;
-		letter-spacing: -1px;
-	}
-}
+
 </style>
 <script type="text/javascript">
 
@@ -278,7 +25,6 @@
 		
 		detectmob();
 		if(detectmob()==true){
-
 			$("#box2 ul li").eq(0).css("height","50px");
 			$("#box2 ul li").eq(0).find("img").css("margin-top","5px");
 			$("#box2 ul li").eq(1).css({"height":"40px","line-height":"40px"});
@@ -385,10 +131,12 @@
 	});
 	
 	function detectmob() { 
-		 if(window.innerWidth <= 800) {
-		     return true;
+		 if(window.innerWidth <= 767) {
+		     alert("767px 보다 작아요");
+			 return true;
 		   } else {
-		     return false;
+			 alert("767px 보다 커요");
+		     return false; 
 		   }
 	}
 </script>
@@ -470,7 +218,7 @@
 					<h1>CONTACT US</h1>
 					<ul>
 						<li><img src="${pageContext.request.contextPath}/resources/images/location_icon.png">대구광역시 수성구 달구벌대로<br>2372, 4층(범어동)</li>
-						<li><img src="${pageContext.request.contextPath}/resources/images/tel_icon.png">진료예약 : 053.753.6001</li>
+						<li style="color:white;"><img src="${pageContext.request.contextPath}/resources/images/tel_icon.png">진료예약 :&nbsp;053.753.6001</li>
 						<li><img src="${pageContext.request.contextPath}/resources/images/fax_icon.png">FAX : 053.123.4567</li>
 					</ul>
 				</div>

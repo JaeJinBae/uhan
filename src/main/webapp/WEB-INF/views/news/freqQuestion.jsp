@@ -168,6 +168,50 @@
 	.quick ul li:last-child a span{
 		font-size:16px;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	/* 자주하는 질문 */
+	.collapsibleWrap{
+		padding:0;
+		width:882px;
+		margin: 50px auto;
+		list-style: none;
+	}
+	.collapsible{
+		margin-bottom:3px;
+	}
+	.collapsible_title{
+		padding:10px 15px;
+		background: rgb(245, 245, 245);
+		border:1px solid #e3e3e3;
+		border-radius: 4px;
+		text-align: left;
+	}
+	.collapsible_title>a{
+		display:block;
+		font-size:18px;
+	}
+	.content{
+		font-size:15px;
+		padding:15px;
+		border:1px solid #e3e3e3;
+		text-align: left;
+	}
+	.selected{
+		text-decoration: underline;
+		font-weight: bold;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -185,6 +229,29 @@
         	$("html").animate({scrollTop:"0"},500);
         	return false;
         });
+        
+        //collapsible menu
+		$(".collapsible:eq(0) a").addClass("selected");
+		
+		//첫번째 collapsible 클래스를 제외한 나머지 collapsible 클래스를 선택하여, 그 아래의 content클래스를 찾아 숨긴다.
+		$(".collapsible").not(":eq(0)").find(".content").hide();
+		
+		$(".collapsible .collapsible_title a").click(function(){
+			//나를 제외한 것들을 removeClass한다.
+			$(".collapsible .collapsible_title a").not(this).removeClass("selected");
+			
+			$(this).toggleClass("selected");
+			
+			var $target=$(this).parents(".collapsible").find(".content");
+			$target.slideToggle(300);
+			
+			//선택한 애를 제외한 나머지 content class는 닫겨야 한다.
+			var $other=$(".collapsible .collapsible_title a").not(this).parents(".collapsible").find(".content");
+			$other.slideUp(300);
+			
+			return false;//link차단
+			
+		});
 	});
 </script>
 </head>
@@ -225,7 +292,6 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/uhanFix.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -235,6 +301,81 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
+			<div class="sub_title">
+				<p>|</p>
+				<h1>자주하는 질문</h1>				
+			</div>			
+			<ul class="collapsibleWrap">
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 통증의학과 클리닉은 어떤 사람들이 가나요?</a></h2>
+					<p class="content">
+						우선 통증으로 고통받는 분이라면 누구나 방문 할 수 있습니다.<br>
+						머리, 목, 어깨, 허리, 다리 등 신체 어떤 곳에서나 통증을 겪고 계신 분들이 방문 합니다.<br>
+						이러한 분들 중에서도 특히, 수술이 싫고 빠른 일상생활로의 복귀를 원하시는 분,
+						급성 통증이 있는 분, 오랫 동안 여러 병원을 가봤지만 통증 완화가 안되는 만성통증을 느끼는 분, 연세가 많고 여러 질환을 앓고 있어 부작용이 걱정되시는 분들이 많이 찾으십니다. 
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 허리디스크 자가 진단법이 있나요?</a></h2>
+					<p class="content">
+						  간단한 허리디스크 자가 진단법을 알려드리겠습니다.<br>
+						 천장을 바라보며 누워 무릎을 쫙 펴고 한쪽 다리만을 들어봅니다.<br>
+						 이때 엉치부터 무릎, 종아리, 발등 쪽으로 당겨지는 증상 또는 통증이 생기며, 양쪽 다리를 번갈아 가며 들어 올렸을 때  들어 올릴 수 있는 각도 차이가 심한 경우 허리디스크를 의심해 보아야 합니다.  
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 젊은 나이인데 허리디스크가 발생할 수 있나요?</a></h2>
+					<p class="content">
+						예 발생할 수 있습니다.<br>
+			        	많은 분들이 허리디스크는 중장년층에서 많이 발생하는 것으로 알고 계실텐데요. 그렇지 않습니다.<br>
+			        	나이에 따른 퇴행성 변화가 원인이 되는 경우도 있지만 나이와 무관하게 반복적인 외상이나 선천적인 원인등으로 디스크 질환이 발병 할 수 있습니다.<br>
+			        	최근들어서는 소아에게 추간판 탈출증이 빈번하게 발생합니다. 하지만 젊은층은 시술 후 결과가 매우 좋습니다.<br>
+			        	그렇기 때문에 다리 통증, 저림, 요통 등의 증상이 있다면 늦지않게 병원을 방문하여 적절한 시기에 치료받는 것이 매우 중요합니다.  
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 시술만으로 치료가 되지않는 경우 수술을 해야 하나요?</a></h2>
+					<p class="content">
+						유한통증의학과 유한목원장님은 수술을 전문으로 오랜기간 연구와 풍부한 임상경험을 가진 의사입니다. 특히 대구경북 최초로 꼬리뼈 레이저 시술, 신경성형술 등을 진행하셨습니다.
+			        	보통 생각하시는 것과 다르게 수술이 필요한 경우는 매우 적습니다.
+			        	본원의 치료로 완쾌가 되지 않는 분들도 드물게 계십니다. 이러한 경우에는 원장님께서 상세하게 설명을 드리고 안내해 드립니다. 
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 시술 후 운동과 일상생활이 바로 가능한가요?</a></h2>
+					<p class="content">
+						시술 후 운동은 환자의 상태에 따라 다릅니다. 운동은 가능하나 필요에따라 가능 한 운동과 하지말아야 할 운동이 나누어집니다. 극심한 무리가 가는 운동은 삼가하시는 것을 권장해드리며 
+			        	일상생활은 시술 후 바로 가능하며 본원에서는 큰 무리가 없는 일상생활을 권장해드리고 있습니다.
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 허리통증에 휴식과 운동 중 어느것이 좋을까요?</a></h2>
+					<p class="content">
+						예전에는 허리 통증이 있을 시 누워서 쉬는게 좋다고 하였지만 연구 분석 결과 장기간 누워있게 되면 좋지 않은것으로 밝혀졌습니다. 우리 몸은 움직여야 힘을 발생할 수 있는데 오랜 기간 누워있게 되면
+			        	근력이 약해져 힘을 낼 수가 없게 되며 허리곡선에 영향을 줄 수 있습니다.<br>
+			        	일반적으로 일상생활을 하면 허리가 굴곡지게 되고, 운동 부족, 좌식 생활등으로 인해 허리를 받치는 근육이 서서히 약하지게 됩니다. 그렇기 때문에 근력강화를 하는 방법으로 운동만큼 좋은것은 없습니다.
+			        	하지만 통상적으로 허리통증 발생 2일 까지는 무리하지 않고 쉬어주는 것이 좋습니다.
+			        	전문 치료사 지도 하에 기구를 이용한 운동을 해주면 더욱 좋습니다.
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 오십견은 어떻게 치료하나요?</a></h2>
+					<p class="content">
+						오십견은 관정낭이라는 어깨 관절을 감싸고 있는 부위에 염증이 발생하여 통증이 오며 어깨가 점점 굳어지는 질환입니다.<br>
+			        	주사치료와 약물 치료를 병행하여 진행하며 호전이 없는 경우 충격파 치료를 겸하게 됩니다. 그러면 대부분이 회복을 합니다.<br>
+			        	하지만 하루종일 극심한 통증이 이어지는 경우는 관절낭에 염증이 아주 심하므로 재활운동을 하면 안됩니다. 극심한 염증에 재활운동을 더하면 오히려 고통이 더욱 커지며 굳어지게 됩니다.<br>
+			        	이런 경우 어깨에 자극을 최소화 해주고 어깨주변을 차갑게보다 따듯하게 해주어 근율을 풀어주는 것이 통증완화에 도움이 됩니다.  
+					</p>
+				</li>
+				<li class="collapsible">
+					<h2 class="collapsible_title"><a href="#">Q. 연골주사와 뼈주사는 무엇이 다르나요?</a></h2>
+					<p class="content">
+						쉽게 말해 뼈주사는 염증을 억제해주는 주사이고, 연골 주사는 연골 영양제로서 관절을 부드럽게 해주는 주사입니다.
+			        	뼈주사는 스테로이드 성분을 가지고 강한 염증 억제 작용을 합니다. 연골 주사는 히알루론산(Hyaluronate)이라는 연골을 구성하고 있는 성분을 가지있으며 이 성분으로 관절을 부드럽게 해줍니다.
+			        	스테로이드 성분이 있는 뼈주사는 자주 맞으면 힘줄이 약해지거나 연골이 약해지는 부작용이 발생할 수 있으므로 최소 6개월의 간격을 두고 맞는 것이 좋습니다. 
+					</p>
+				</li>
+			</ul><!-- collapsibleWrap end -->
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

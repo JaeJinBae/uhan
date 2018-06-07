@@ -56,7 +56,7 @@
 		}
 	});
 	function detectmob() { 
-		 if(window.innerWidth <= 800) {
+		 if(window.innerWidth <= 767) {
 		     return true;
 		   } else {
 		     return false;
