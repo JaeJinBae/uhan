@@ -10,7 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-@media only screen and (min-width:451px){
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -258,6 +258,275 @@
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
+	}
+	/* 적용질환 */
+	.content00 .content_small_content ul{
+		float:left;
+	}
+	.content00 .content_small_content ul:first-child{
+		margin-right:40px;
+		width:140px;
+	}
+	.content00 .content_small_content ul:last-child{
+		width:268px;
+	}
+	.content00 .content_small_content ul li{
+		list-style: disc;
+		font-size:19px;
+		color:#2d2d2d;
+		list-style-position: inside;
+	}
+	.content00 .content_small_content .ccc{
+		width:100%; 
+		overflow: hidden;
+		margin-bottom:30px;
+	}
+	.content00 .content_small_content .ccc>img{
+		float:left;
+		width:80px;
+		margin-right:20px; 
+	}
+	.content00 .content_small_content .ccc>p{
+		float:left;
+		font-size:19px;
+		margin-top:9px;
+		line-height: 35px;
+	}
+	.ccc>h2{
+		font-size: 22px;
+	}
+	.content00 .content_small_content .ccc ul{
+		width:100%;
+	}
+	.content00 .content_small_content .ccc ul li{
+		width:100%;
+		list-style: none;
+	}
+	.content00 .content_small_content .ccc ul li:before{
+		content:"- ";
+	}
+	.content00 .content_small_content .ccc ul li p{
+		display:inline-block;
+		font-size: 19px;
+	}
+	.content00 .content_small_content .ccc p img{
+		margin-top:20px;
+	}
+	.ccc .dot{
+		font-size:26px;
+		font-weight:bold;
+	}
+}
+@media only screen and (min-width:768px) and (max-width:1099px){
+	body{
+		font-family: 'Noto Sans', sans-serif;
+	}
+	header{
+		width:100%;
+		height:75px;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+		z-index: 99;
+	}
+	section{
+		width:100%;
+		margin-top:27px;
+		margin-bottom:100px;
+	}
+	section .mainBackground{
+		width:100%;
+	}
+	section .mainBackground>.bgImg{
+		width:100%;
+		/* min-width:1200px; */
+		height:346px;
+		float:left;
+	} 
+	.bgText{
+		width:95%x;
+		position: absolute;
+		top:170px;
+		left:15px;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+	}
+	.bgText>h1{
+		color:white;
+		font-size:40px;
+		font-weight:500;
+		margin-bottom:15px;
+	}
+	.bgText>p{
+		color:white;
+		font-size:20px;
+		font-weight: 300;
+	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:70px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 99;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:100%;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:70px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 20px;
+		color:white;
+		line-height: 70px;
+		margin:0 40px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:55px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
+	section .contentWrap{
+		width:100%;
+		max-width:1100px;
+		margin:0 auto;
+		margin-top:80px;
+		text-align: center;
+		clear:both;
+		position:relative;
+	}
+	/* quick menu */
+	.quick{
+		display:none;
+	}
+	.clinic_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.clinic_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.clinic_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	/* clinicNav */
+	.clinic_sub_nav{
+		width:100%;
+		margin-bottom:80px;
+	}
+	.clinic_sub_nav ul{
+		width:50%;
+		margin:0 auto;
+		overflow: hidden;
+	}
+	.clinic_sub_nav ul li{
+		width:49.9%;
+		margin:0 auto;
+		float:left;
+		background: #dcdcdc; 
+	}
+	.clinic_sub_nav ul li a{
+		width:100%;
+		line-height:50px;
+		color:white;
+		font-size:20px;
+		color:#888686;
+	}
+	.clinic_sub_nav ul li:last-child{
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:last-child a{
+		color:white;
+	}
+	.content{
+		width:85%;
+		margin:0 auto;
+	}
+	.content .diaIcon{
+		width:45px;
+		margin-bottom:30px;
+	}
+	.content .subTitle{
+		font-size:32px;
+		font-weight:500;
+	}
+	.content00{
+		width:100%;
+		margin:0 auto;
+		margin-top:100px;
+		overflow: hidden;
+	}
+	
+	.content00 .content_small_title{
+		/* width:21%; */
+		width:207px;
+		float:left;
+		text-align: left;
+	}
+	.content00 .content_small_title hr{
+		width:100%;
+		border:0;
+		border-top:4px solid #0d7586;
+	}
+	.content00 .content_small_title p{
+		font-size:35px;
+		color:#0d7586;
+		font-weight:500;
+	}
+	.content00 .content_small_title span{
+		font-size:35px;
+		color:black;
+		font-weight:500;
+	}
+	/* 시술 이란? */
+	.content00 .content_small_content{
+		/* width:61%; */
+		width:555px;
+		float:right;
+		text-align: left;  
+		color:#2d2d2d;
+		font-size:19px;
+		line-height: 35px;
+		margin-top:50px;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
