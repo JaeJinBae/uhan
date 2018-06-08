@@ -256,6 +256,15 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -500,6 +509,15 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63; 
+		font-weight:600;
+		text-decoration: underline;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -781,7 +799,8 @@
 						달려 있는 카테터를 사용하여 좁혀진 혈관을 넓게 확장해 줍니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01poongimg.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_02img.png">
+				<p class="imgText"><span>3만건 이상</span>의 시술 경험으로 정확한 치료!</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

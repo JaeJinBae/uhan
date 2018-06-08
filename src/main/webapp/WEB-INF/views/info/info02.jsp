@@ -711,7 +711,7 @@
 			</div>
 		</div><!-- contentWrap end -->
 		<div class="mobile_ContentWrap">
-			<img src="${pageContext.request.contextPath}/resources/mobileImage/mInfo2.png">
+			<img src="${pageContext.request.contextPath}/resources/mobileImage/bossIntro.png"><!-- mInfo2 -->
 		</div>
 	</section>
 	<footer>

@@ -256,6 +256,15 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -290,7 +299,7 @@
 		line-height: 21px;
 	}
 }
-@media only screen and (min-width:678px) and (max-width:1099px){
+@media only screen and (min-width:768px) and (max-width:1099px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -502,6 +511,15 @@
 		line-height: 35px;
 		margin-top:50px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -536,7 +554,7 @@
 		line-height: 21px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:320px) and (max-width:767px){
 	html{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;
@@ -784,7 +802,8 @@
 						퇴하된 인대를 제거하여 좁아진 추간공을 확장합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01chuimg.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_03img.png">
+				<p class="imgText">풍부한 임상경험으로 <span>정확한 진단! 바른치료!</span></p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

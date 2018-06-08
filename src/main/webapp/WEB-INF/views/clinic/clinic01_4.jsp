@@ -247,6 +247,7 @@
 		color:black;
 		font-weight:500;
 	}
+	
 	/* 시술 이란? */
 	.content00 .content_small_content{
 		/* width:61%; */
@@ -256,6 +257,15 @@
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -502,6 +512,15 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -785,7 +804,8 @@
 						찾아 치료할 수 있습니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01sinimg.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_04img.png">
+				<p class="imgText"><span>국내 최초</span> '신경성형술' Racz박사와 시연</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

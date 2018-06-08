@@ -291,6 +291,14 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -536,6 +544,14 @@
 		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -787,7 +803,8 @@
 						안전성을 높인 회복이 빠른 시술법입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_01img.png">
+				<p class="imgText"><span>대구 경북 최초</span> '꼬리뼈 레이저 내시경술' 유한목 원장, 최영국 박사 시연</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
