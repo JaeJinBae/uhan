@@ -628,7 +628,8 @@ public class AdminController {
 	@ResponseBody
 	@RequestMapping(value="statisticsYear",method=RequestMethod.POST)
 	private ResponseEntity<List<HashMap<String,Object>>> statisticsYear(String year){
-		
+		logger.info("statisticsYear");
+	
 		ResponseEntity<List<HashMap<String,Object>>> entity = null;
 		HashMap<String,Object> map = new HashMap<>();
 		String key="";

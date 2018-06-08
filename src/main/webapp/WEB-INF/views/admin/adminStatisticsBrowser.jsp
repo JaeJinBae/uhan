@@ -183,34 +183,39 @@
  				alert("년도를 올바르게 입력하세요(4자리(ex 2020), 숫자)");
  				$("#year").focus();
  				e.preventDefault();
+ 				return;
  			}
- 			/* if(!reg2.test(month)){
- 				alert("월을 올바르게 입력하세요(2자리(ex 01), 숫자)");
- 				$("#month").focus();
- 				e.preventDefault();
- 			}
- 			if(!reg2.test(date)){
- 				alert("일을 올바르게 입력하세요(2자리(ex 01), 숫자)");
- 				$("#date").focus();
- 				e.preventDefault();
- 			} */
+ 		
  			if(year==""){
  				alert("년도를 입력해 주세요");
  				$("#year").focus();
  				e.preventDefault();
+ 				return;
  			}
  			if(year!=""&&month==""&&date!=""){
  				alert("월을 입력해 주세요");
  				$("#month").focus();
  				e.preventDefault();
+ 				return;
  			} 	
  			
  			
  			var search ="";
  			
- 			if(date==""){
+ 			if(date==""&&month!=""&&year!=""){
+ 				if(!reg2.test(month)||!reg.test(year)){
+ 					alert("년나 월을 올바르게 입력했는지 확인해주세요((ex 2020 01), 숫자)");
+ 					e.preventDefault();
+ 					return;
+ 				}
  				search = year+"-"+month;
- 			}else{
+ 			}
+ 			if(date!=""&&month!=""&&year!=""){
+ 				if(!reg2.test(month)||!reg.test(year)||!reg2.test(date)){
+ 					alert("년 월 일 을 올바르게 입력했는지 확인해주세요((ex 2020 01 01), 숫자)");
+ 					e.preventDefault();
+ 					return;
+ 				}
  				search = year+"-"+month+"-"+date;
  			}
  			

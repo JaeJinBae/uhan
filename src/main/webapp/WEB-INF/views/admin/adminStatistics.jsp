@@ -61,6 +61,7 @@
 	.contentWrap .centerMenu{
 		width:70%;
 		min-width:700px;
+		overflow:auto;
 		height:100%;
 		border-radius:10px;
 		float:left;
@@ -139,9 +140,11 @@
 	}
 	.active2{
 		font-weight: bold;
-		color:white;
+		color:white !important;
 	}
 	.page ul li a{
+		text-decoration:none;
+		color:black;
 		font-size:1.1em;
 		line-height: 40px;
 		display: block;
@@ -181,43 +184,45 @@
  			var month = $("#month").val();
  			var date = $("#date").val();
  		
- 			
- 			if(!reg.test(year)){
- 				alert("년도를 올바르게 입력하세요(4자리(ex 2020), 숫자)");
- 				$("#year").focus();
- 				e.preventDefault();
- 			}
- 			if(!reg2.test(month)){
- 				alert("월을 올바르게 입력하세요(2자리(ex 01), 숫자)");
- 				$("#month").focus();
- 				e.preventDefault();
- 			}
- 			if(!reg2.test(date)){
- 				alert("일을 올바르게 입력하세요(2자리(ex 01), 숫자)");
- 				$("#date").focus();
- 				e.preventDefault();
- 			}
-
  			if(year==""){
  				alert("년도를 입력해 주세요");
  				$("#year").focus();
  				e.preventDefault();
+ 				return;
  			}
  			if(year!=""&&month==""&&date!=""){
  				alert("월을 입력해 주세요");
  				$("#month").focus();
  				e.preventDefault();
+ 				return;
  			} 	
  			
  			var search ="";
  			
- 			if(date==""){
+ 			if(date==""&&month!=""&&year!=""){
+ 				if(!reg2.test(month)||!reg.test(year)){
+ 					alert("년나 월을 올바르게 입력했는지 확인해주세요((ex 2020 01), 숫자)");
+ 					e.preventDefault();
+ 					return;
+ 				}
  				search = year+"-"+month;
- 			}else{
+ 			}
+ 			if(date!=""&&month!=""&&year!=""){
+ 				if(!reg2.test(month)||!reg.test(year)||!reg2.test(date)){
+ 					alert("년 월 일 을 올바르게 입력했는지 확인해주세요((ex 2020 01 01), 숫자)");
+ 					e.preventDefault();
+ 					return;
+ 				}
  				search = year+"-"+month+"-"+date;
  			}
  			if(year!=""&&month==""&&date==""){
+ 				e.preventDefault();
  				
+ 				if(!reg.test(year)){
+ 					alert("년도를 올바르게 입력하세요(4자리(ex 2020), 숫자)");
+ 	 				$("#year").focus();
+ 	 				return;
+ 				}
  				$.ajax({
  					url:"statisticsYear",
  					type:"post",
@@ -225,6 +230,36 @@
  					data:{"year":year},
  					success:function(result){
  						console.log(result);
+ 						$(".info_t").empty();
+ 						$(".page").remove();
+ 						
+ 						var rateT = result[0]["total"];
+ 						
+ 						var t = "<tr class='tbl_header'><th>"+year+"년도 월별</th><th>년도별 접속비율</th></tr><tr>";
+ 					
+ 						for(var i=1;i<13;i++){
+ 							var rate =0;
+ 							
+ 							if(i<10){
+ 								if(rateT !=0){
+ 									rate = (result[0][year+"-0"+i]/rateT)*100;	
+ 		 						}
+ 								t+="<td>"+year+"-0"+i+"</td>";
+ 								t+="<td>"+rate.toFixed(1)+"%</td></tr>";
+ 							}else{
+ 								if(rateT !=0){
+ 									rate = (result[0][year+"-"+i]/rateT)*100;
+ 								}
+ 								t+="<td>"+year+"-"+i+"</td>";
+ 								t+="<td>"+rate.toFixed(1)+"%</td></tr>";
+ 							}
+ 							
+ 							
+ 						}
+ 					
+
+ 						$(".info_t").append(t);
+ 						
  					}
  				})
  			}else{

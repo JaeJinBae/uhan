@@ -19,8 +19,19 @@
 	#headerDiv #logo{
 		width:300px;
 		height:80px;
-		border:1px solid red;
+		color:white;
+		line-height: 80px;
+		margin-left: 30px;
+	/* 	overflow: hidden; */
 	}
+	#headerDiv #logo h2 {
+    font-size: 2.0em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    float: left;
+	}
+	
+
 	#headerDiv #headerMenu{
 		width:100%;
 		min-width:1024px;
@@ -74,9 +85,7 @@
 	<div id="headerDiv">
 		<div id="logo">
 			<h2>유한통증의학과 관리자</h2>
-			<div>
-				
-			</div>
+			<a href="/uhan/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" id="home"></a>
 		</div>
 		<div id="headerMenu"> 
 			<ul>
