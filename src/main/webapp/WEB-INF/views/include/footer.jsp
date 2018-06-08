@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
-@media only screen and (min-width:451px){
+@media only screen and (min-width:1100px){
 	#footer1{
 		width:100%;
 		height:100px;
@@ -21,8 +21,35 @@
 	#footer1>table tr td{
 		font-size:15px;
 	}
+	#footer1 table td a{
+		color:#828282;
+	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:768px) and (max-width:1099px){
+	#footer1{
+		width:100%;
+		height:100px;
+		background: #1D1E1D;
+		color:#828282;
+		text-align: center;
+		line-height: 30px;
+		padding-top:10px;
+	}
+	#footer1 p{
+		font-size:15px;
+	}
+	#footer1>table{ 
+		width:435px;
+		margin:0 auto;
+	}
+	#footer1>table tr td{
+		font-size:15px;
+	}
+	#footer1 table td a{
+		color:#828282;
+	}
+}
+@media only screen and (min-width:320px) and (max-width:767px){
  *{
 		margin:0;
 		padding:0;
@@ -42,8 +69,11 @@
 		padding-left: 20px;
 	}
 	#footer1 table{
-	font-size:12px;
+		font-size:12px;
 		padding-left: 18px;
+	}
+	#footer1 table td a{
+		color:#828282;
 	}
 
 }
