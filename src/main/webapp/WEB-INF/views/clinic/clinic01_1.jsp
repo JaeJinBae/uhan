@@ -291,6 +291,14 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -537,6 +545,14 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -619,78 +635,14 @@
 	}
 	.content{
 		text-align: center;
+		display:none;
 	}
-	.content .diaIcon{
-		width:35px !important;
-		margin-bottom: 10px;
+	.mContent{
+		width:100%;
 	}
-	.content h1.subTitle{
-		font-weight: 550;
-		font-size: 1.5em;
-		margin-bottom: 30px;
+	.mContent>img{
+		width:100%;
 	}
-	.content00 hr{
-		display: none;
-	}
-	.content00 .content_small_title{
-		overflow: hidden;
-		margin-bottom: 10px;
-		margin-top: 20px;
-	}
-	 .content00 .content_small_title p{
-		margin-left: 5px;
-	} 
-	.content00 .content_small_title p:LAST-CHILD span{
-		color:black;
-		font-size: 1em;
-		font-weight: 600;
-	}
-	.content00 .content_small_title p{
-		color:#00938e;
-		font-weight: 550;
-		text-align: left;
-		display:inline;
-		float: left;
-		font-size: 1.4em;
-	}
-	.content00 .content_small_content{
-		width:370px;
-		margin:0 auto;
-		font-size:1em;
-		text-align: justify;
-		line-height: 25px;
-	}
-	.content img{
-		margin-top:30px !important;
-		width: 100% !important;
-	}
-	.content_small_content ul li:BEFORE{
-		content: "●";
-		font-size: 0.5em;
-		margin-right: 5px;
-		margin-left: 10px;
-	}
-	.content_small_content ul li{
-		margin-bottom: 5px;
-	}
-	.content_small_content .ccc{
-		overflow: hidden;
-	}
-	.content_small_content .ccc img{
-		margin-top:10px !important;
-		width:45px !important;
-		float: left;
-		margin-left: 10px;
-	}
-	.content_small_content .ccc p{
-		margin-top:10px;
-		line-height: 20px;
-		margin-left: 60px;
-	}
- 	.last_content{
-		width:80% !important;
-		margin-left: 15px !important;
-	} 
 }
 </style>
 <script type="text/javascript">
@@ -787,7 +739,8 @@
 						안전성을 높인 회복이 빠른 시술법입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01goimg1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_01img.png">
+				<p class="imgText"><span>대구 경북 최초</span> '꼬리뼈 레이저 내시경술' 유한목 원장, 최영국 박사 시연</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
@@ -839,6 +792,9 @@
 						(3) 레이저 치료 및 약물 주입
 					</div>
 				</div><!-- content00 end -->
+			</div><!-- content end -->
+			<div class="mContent">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_01img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

@@ -525,49 +525,14 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	.content00 .content_small_title{
-		margin-top: 20px;
-		margin-bottom: 10px;
+	.content{
+		display:none;
 	}
-	.content00 .content_small_title hr{
-		display: none;
+	.mContent{
+		width:100%;
 	}
-	.content00 .content_small_title p span{
-		color:black;
-		font-size: 1em;
-		font-weight: 600;
-	}
-	.content00 .content_small_title p{
-		color:#00938e;
-		font-weight: 550;
-		text-align: left;
-		display:inline;
-		font-size: 1.4em;
-		margin-left: 5px;
-	}
-	.content00 .content_small_content{
-		width:370px;
-		margin:0 auto;
-		font-size:1em;
-		text-align: justify;
-		line-height: 25px;
-	}
-	.content img{
-		margin-top: 30px !important;
-		width:100% !important;
-	}
-	.content_small_content .ccc {
-		overflow: hidden;
-	}
-	.content_small_content .ccc img{
-		margin-top:7px !important;
-		width:18px !important;
-		float: left;
-	}
-	.content_small_content .ccc p{
-		width:93%;
-		float:right;
-		margin-top:0px !important;
+	.mContent>img{
+		width:100%;
 	}
 }
 </style>
@@ -737,6 +702,9 @@
 					</div>
 				</div><!-- content00 end -->
 			</div><!-- content end -->
+			<div class="mContent">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic02img.png">
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

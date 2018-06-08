@@ -247,6 +247,7 @@
 		color:black;
 		font-weight:500;
 	}
+	
 	/* 시술 이란? */
 	.content00 .content_small_content{
 		/* width:61%; */
@@ -256,6 +257,15 @@
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -503,6 +513,15 @@
 		line-height: 35px;
 		margin-top:50px;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -617,80 +636,14 @@
 		background: #00b4ae;
 	}
 	.content{
-		text-align: center;
+		display:none;
 	}
-	.content .diaIcon{
-		width:35px !important;
-		margin-bottom: 10px;
+	.mContent{
+		width:100%;
 	}
-	.content h1.subTitle{
-		font-weight: 550;
-		font-size: 1.5em;
-		margin-bottom: 30px;
+	.mContent>img{
+		width:100%;
 	}
-	.content00 hr{
-		display: none;
-	}
-	.content00 .content_small_title{
-		overflow: hidden;
-		margin-bottom: 10px;
-		margin-top: 20px;
-	}
-	 .content00 .content_small_title p{
-		margin-left: 5px;
-	} 
-	.content00 .content_small_title p:LAST-CHILD span{
-		color:black;
-		font-size: 1em;
-		font-weight: 600;
-	}
-	.content00 .content_small_title p{
-		color:#00938e;
-		font-weight: 550;
-		text-align: left;
-		display:inline;
-		float: left;
-		font-size: 1.4em;
-	}
-	.content00 .content_small_content{
-		width:370px;
-		margin:0 auto;
-		font-size:1em;
-		text-align: justify;
-		line-height: 25px;
-	}
-	
-	.content img{
-		margin-top:30px !important;
-		width: 100% !important;
-	}
-	.content_small_content ul li:BEFORE{
-		content: "●";
-		font-size: 0.5em;
-		margin-right: 5px;
-		margin-left: 10px;
-	}
-	.content_small_content ul li{
-		margin-bottom: 5px;
-	}
-	.content_small_content .ccc{
-		overflow: hidden;
-	}
-	.content_small_content .ccc img{
-		margin-top:10px !important;
-		width:45px !important;
-		float: left;
-		margin-left: 10px;
-	}
-	.content_small_content .ccc p{
-		margin-top:10px;
-		line-height: 20px;
-		margin-left: 60px;
-	}
- 	.last_content{
-		width:70% !important;
-		margin-left: 15px !important;
-	} 
 }
 </style>
 <script type="text/javascript">
@@ -785,7 +738,8 @@
 						찾아 치료할 수 있습니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01sinimg.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_04img.png">
+				<p class="imgText"><span>국내 최초</span> '신경성형술' Racz박사와 시연</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
@@ -846,6 +800,9 @@
 						(4) 병변부위에 특수 약물을 주입하여 치료
 					</div>
 				</div><!-- content00 end -->
+			</div><!-- content end -->
+			<div class="mContent">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_04img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

@@ -348,15 +348,14 @@
 		});
 		
 		$(".menuClose").click(function(e){
-			
 			$(".mainLogo").find("img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
-			 $(".mainLogo").find("img").css({"margin-top":"25px","width":"180px","height":"30px","margin-left":"20px"});
+			$(".mainLogo").find("img").css({"margin-top":"25px","width":"180px","height":"30px","margin-left":"20px"});
 			$(".mobileMenu").css("display","block");
 			$(".menuClose").css("display","none");
 			$(".headerWrap").css("background","white");
 			$(".mainMenu").slideUp("slow", function() {
-				$(".mainMenu").css("display","none");
-			});
+			$(".mainMenu").css("display","none");
+		});
 			
 			e.preventDefault();
 		});
