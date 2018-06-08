@@ -388,7 +388,7 @@
 		margin-bottom:10px;
 	}
 	.line{
-		width:920px;
+		width:750px;
 		margin-bottom:50px;
 	}
 	/* quick menu */

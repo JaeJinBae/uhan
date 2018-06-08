@@ -179,7 +179,7 @@
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
- *{
+	*{
 		margin:0;
 		padding:0;
 	}
@@ -194,12 +194,11 @@
 		margin-top: 25px;
 	}
 	.headerWrap .mainMenu{
-		 margin-top: 10.5px; 
+		margin-top: 10.5px; 
 		display: none;
 		position:relative;
 		z-index: 1;
 		width:100%;
-		
 	}
 	.headerWrap .mainMenu li{
 		background:white;
@@ -227,15 +226,15 @@
 		position: relative;
 	}
 	.mainMenu > li > a{
-		 display:block; 
+		display:block; 
 		border-bottom: 1px solid #dcdcdc;
-			height:30px;
+		height:30px;
 		line-height:30px;
 		padding:18px 28px;
 		font-size: 1.8em;
 	}
 	.mainMenu li .dropdown{
-	background-color:#fafafa;
+		background-color:#fafafa;
 	}
 	.dropdown .mainSubMenu li{
 		background-color:#fafafa;
@@ -257,8 +256,6 @@
 		right:8px;
 	}
 }
-
-
 </style>
 <script type="text/javascript">
 	$(function(){
