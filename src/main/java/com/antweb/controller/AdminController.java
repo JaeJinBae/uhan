@@ -618,8 +618,8 @@ public class AdminController {
 		model.addAttribute("todayCount",sService.selectCount(sdf.format(today)));
 		
 		model.addAttribute("pc", sService.selectByDevice(keyword, "PC"));
-		model.addAttribute("mobile", sService.selectByBrowser(keyword,"Mobile"));
-		model.addAttribute("tablet", sService.selectByBrowser(keyword,"Tablet Pc"));
+		model.addAttribute("mobile", sService.selectByDevice(keyword,"Mobile"));
+		model.addAttribute("tablet", sService.selectByDevice(keyword,"Tablet Pc"));
 		model.addAttribute("etc", sService.selectByDevice(keyword, "etc"));
 		
 		return "/admin/adminStatisticsOs";
