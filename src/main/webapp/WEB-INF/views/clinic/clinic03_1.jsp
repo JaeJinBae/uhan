@@ -646,64 +646,14 @@
 	 	background: #00b4ae;
 	}
 	.content{
-		text-align: center;
+		display:none;
 	}
-	.content .diaIcon{
-		margin-top:30px;
-		width:35px !important;
-		margin-bottom: 10px;
+	.mContent{
+		width:100%;
 	}
-	.content .subTitle{
-		font-weight: 550;
-		font-size: 1.5em;
-		margin-bottom: 30px;
+	.mContent>img{
+		width:100%;
 	}
-	.content00 .content_small_title{
-		margin-bottom: 10px;
-		margin-top: 20px;
-		overflow: hidden;
-	}
-	.content00 .content_small_title hr{
-		display: none;
-	}
-	.content00 .content_small_title p{
-		color:#00938e;
-		font-weight: 550;
-		text-align: left;
-		font-size: 1.4em;
-		margin-left: 5px;
-	}
-	.content00 .content_small_content{
-		width:370px;
-		margin:0 auto;
-		font-size: 1em;
-		text-align: justify;
-		line-height: 25px;
-	}
-	.content img{
-		margin-top: 30px !important;
-		width:100% !important;
-	}
-	.content00 .content_small_title p:NTH-CHILD(2){
-		float:left;
-	}
-	.content00 .content_small_title p:NTH-CHILD(3){
-		float: left;
-	}
-	.content00 .content_small_title p:NTH-CHILD(3) span{
-		font-size: 1em;
-		font-weight: 550;
-		color:black;
-	}
-	.content00 .content_small_title p:NTH-CHILD(4){
-	float: left;
-	}
-	.content00 .content_small_title p:NTH-CHILD(4) span{
-		font-size: 1em;
-		font-weight: 550;
-		color:black;
-	}
-	
 }
 </style>
 <script type="text/javascript">
@@ -840,7 +790,10 @@
 						</div>
 					</div>
 				</div><!-- content00 end -->
-			</div> 
+			</div> <!-- content end -->
+			<div class="mContent">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic03_01img.png">
+			</div>
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

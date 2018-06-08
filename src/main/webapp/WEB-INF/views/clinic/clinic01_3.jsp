@@ -634,79 +634,14 @@
 		width:20%;
 	}
 	.content{
-		text-align: center;
+		display:none;
 	}
-	.content .diaIcon{
-		width:35px !important;
-		margin-bottom: 10px;
+	.mContent{
+		width:100%;
 	}
-	.content h1.subTitle{
-		font-weight: 550;
-		font-size: 1.5em;
-		margin-bottom: 30px;
+	.mContent>img{
+		width:100%;
 	}
-	.content00 hr{
-		display: none;
-	}
-	.content00 .content_small_title{
-		overflow: hidden;
-		margin-bottom: 10px;
-		margin-top: 20px;
-	}
-	 .content00 .content_small_title p{
-		margin-left: 5px;
-	} 
-	.content00 .content_small_title p:LAST-CHILD span{
-		color:black;
-		font-size: 1em;
-		font-weight: 600;
-	}
-	.content00 .content_small_title p{
-		color:#00938e;
-		font-weight: 550;
-		text-align: left;
-		display:inline;
-		float: left;
-		font-size: 1.4em;
-	}
-	.content00 .content_small_content{
-		width:370px;
-		margin:0 auto;
-		font-size:1em;
-		text-align: justify;
-		line-height: 25px;
-	}
-	.content img{
-		margin-top:30px !important;
-		width: 100% !important;
-	}
-	.content_small_content ul li:BEFORE{
-		content: "●";
-		font-size: 0.5em;
-		margin-right: 5px;
-		margin-left: 10px;
-	}
-	.content_small_content ul li{
-		margin-bottom: 5px;
-	}
-	.content_small_content .ccc{
-		overflow: hidden;
-	}
-	.content_small_content .ccc img{
-		margin-top:10px !important;
-		width:45px !important;
-		float: left;
-		margin-left: 10px;
-	}
-	.content_small_content .ccc p{
-		margin-top:10px;
-		line-height: 20px;
-		margin-left: 60px;
-	}
- 	.last_content{
-		width:80% !important;
-		margin-left: 15px !important;
-	} 
 }
 </style>
 <script type="text/javascript">
@@ -853,6 +788,9 @@
 						(3) 추간공을 확장
 					</div>
 				</div><!-- content00 end -->
+			</div><!-- content end -->
+			<div class="mContent">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_03img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

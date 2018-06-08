@@ -449,7 +449,124 @@
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
-
+	html{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 20px;
+	}
+	.quick{
+		display: none;
+	}
+	.navWrap{
+		display: none;
+	}
+	.mainBackground img{
+		width:100%;
+		min-height:160px;
+		max-height: 160px;
+	}
+	.mainBackground{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	.mainBackground .bgText{
+		position: absolute;
+		top:30px;
+		left:15px;
+		color:white;
+		width:90%;
+	}
+	.mainBackground .bgText h1{
+		font-weight: 400;
+		margin-bottom: 15px;
+		font-size: 1.5em;
+	}
+	.mainBackground .bgText p{
+		font-weight: 300;
+		letter-spacing: 0.1em;
+	}
+	/* quick menu */
+	.quick{
+		display:none;
+	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:30px;
+		font-weight: 500;
+	}
+	/* 공지사항 */
+	.tbl_board{
+		width:645px;
+		margin:0 auto;
+		padding-top:30px;
+		position:relative;
+	}
+	.tbl_board table{
+		width:100%;
+		margin:0 auto;
+		border-collapse: collapse; 
+	}
+	.tbl_board table .tbl_header th{
+		width:70px;
+		border-top:2px solid #e3e3e3;
+		border-bottom:2px solid #00B4AE;
+		padding:8px 5px;
+		font-size:16px;
+	}
+	.tbl_board table .tbl_header th:nth-child(2){
+		width:400px;
+	}
+	.tbl_board table td{
+		padding:8px 5px;
+		border-bottom:1px solid #e3e3e3;
+	}
+	.tbl_board table tr:not(first-child) td:nth-child(2){
+		text-align: left;
+	}
+	.tbl_board table td:not(.title){
+		text-align: center;
+	}
+	.replyCnt{
+		font-weight: 600;
+	}
+	.title>a:hover{
+		color:red;
+	}
+	.title>img{
+		width:12px;
+	}
+	.page{
+		clear:both;
+		width:626px; 
+		margin:70px auto;
+	}
+	.page ul li{
+		width:45px;
+		height:40px;
+		margin:0 auto;
+		list-style: none;
+		display: inline-block;
+		text-align:center;
+		border:1px solid #e9e9e9;
+	}
+	.active1{
+		background: #00B4AE;
+	}
+	.active2{
+		font-weight: bold;
+		color:white;
+	}
+	.page ul li a{
+		font-size:1.1em;
+		line-height: 40px;
+	}
 }
 </style>
 <script type="text/javascript">
