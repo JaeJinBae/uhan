@@ -413,13 +413,11 @@
 	.quick{
 		display: none;
 	}
-	.navWrap{
-		display: none;
-	}
-	.mainBackground img{
+	.mainBackground>img{
 		width:100%;
 		min-height:160px;
 		max-height: 160px;
+		float:left;
 	}
 	.mainBackground{
 		position: relative;
@@ -441,6 +439,69 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:45px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 10;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:100%;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:45px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		width:45%;
+		text-align: left;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 17px;
+		color:white;
+		line-height: 45px;
+		margin:0 15px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 51px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:25px;
+		width:20px;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
+		margin-left:47px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:40px; 
+		line-height: 40px !important;
+		font-size: 16px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
 	.sub_title p{
 		text-align: center;
 		margin-bottom: 10px;
@@ -449,6 +510,55 @@
 		text-align: center;
 		font-size: 1rem;
 		font-weight: 550;
+	}
+	/* readNotice */
+	.notice_content{
+		width:95%;
+		margin:0 auto;
+		margin-top:30px;
+	}
+	.notice_content hr{
+		width:100%;
+		margin:0 auto;
+		border:0;
+		border-top:2px solid #00B4AE;
+	}
+	.notice_content .nTitle{
+		font-size:20px;
+		text-align: left;
+		padding:5px;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	.notice_content .nRegdate{
+		width:100%;
+		text-align:left;
+		border-top:1px solid #e3e3e3;
+		border-bottom:1px solid #e3e3e3;
+		padding:10px 0;	
+		margin-bottom:20px;
+	}
+	.notice_content .nRegdate span{
+		margin-left:20px;
+	}
+	.notice_content .nRegdate span:first-child{
+		margin-left:15px;
+	}
+	.notice_content .nContent{
+		margin-bottom:20px;
+		margin-left:10px;
+	}
+	.golist{
+		width:100%;
+		text-align: right;
+		margin-top:20px;
+	}
+	.golist a{
+		width: 50px;
+	    background: #00B4AE;
+	    text-align: center;
+	    font-size: 15px;
+	    color: white;
 	}
 }
 </style>

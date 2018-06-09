@@ -586,7 +586,7 @@
 		font-weight:bold;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:320px) and (max-width:767px){
 	html{
 		font-family: 'Noto Sans', sans-serif;
 		font-size: 20px;
@@ -594,13 +594,11 @@
 	.quick{
 		display: none;
 	}
-	.navWrap{
-		display: none;
-	}
-	.mainBackground img{
+	.mainBackground>img{
 		width:100%;
 		min-height:160px;
 		max-height: 160px;
+		float:left;
 	}
 	.mainBackground{
 		position: relative;
@@ -621,6 +619,69 @@
 	.mainBackground .bgText p{
 		font-weight: 300;
 		letter-spacing: 0.1em;
+	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:45px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 10;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:100%;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:45px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		width:47%;
+		text-align: left;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 17px;
+		color:white;
+		line-height: 45px;
+		margin:0 15px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 51px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:25px;
+		width:20px;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
+		margin-left:5px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:40px; 
+		line-height: 40px !important;
+		font-size: 16px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
 	}
 	.clinic_title p{
 		text-align: center;

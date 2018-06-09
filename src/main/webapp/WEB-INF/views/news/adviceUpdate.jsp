@@ -468,6 +468,12 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:25px;
+		text-align: center;
+	}
 	.sub_title p{
 		text-align: center;
 		margin-bottom: 10px;
@@ -476,6 +482,63 @@
 		text-align: center;
 		font-size: 1rem;
 		font-weight: 550;
+	}
+	.registerForm{
+		width:100%;
+		margin:0 auto;
+	}
+	.registerForm #f1{ 
+		width:100%;
+		margin:0 auto;
+	}
+	.registerForm #f1 table{
+		width:100%;
+		border-top:5px solid #e3e3e3;
+	}
+	#f1 table tr td{
+		font-size:14px;
+		border-bottom:1px solid #e3e3e3;
+		padding:10px 0;
+	}
+	#f1 table tr td:first-child{
+		width:23%;
+		text-align: right;
+	}
+	#f1 table tr td:nth-child(2){
+		width:75%;
+		text-align: left;
+		padding-left:10px;
+	}
+	#f1 table tr:nth-child(4) td:last-child input{
+		width:85%;
+	}
+	#f1 table tr:last-child td{
+		padding-top:20px;
+	}
+	.star{
+		color:#0b8783;
+		/* font-size:20px; */
+	}
+	.stick{
+		margin-left:10px;
+		color:lightgray;
+	}
+	.warn{
+		margin-left:15px;
+		display:block;
+	}
+	.btnWrap{
+		width:100%;
+		margin-top:10px;
+	}
+	.btnWrap .goListBtn>button{
+		width:50px;
+	}
+	.btnWrap .submitBtn{
+		width:50px;
+	}
+	.btnWrap .cancelBtn>button{
+		width:50px;
 	}
 }
 </style>

@@ -128,9 +128,6 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap>img{
-		width:700px;
-	}
 	/* quick menu */
 	.quick{
 		width:110px;
@@ -382,6 +379,12 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:25px;
+		text-align: center;
+	}
 	.sub_title p{
 		text-align: center;
 		margin-bottom: 10px;
@@ -390,6 +393,21 @@
 		text-align: center;
 		font-size: 1rem;
 		font-weight: 550;
+	}
+	.checkWrap{
+		width:90%;
+		margin:0 auto;
+		background: #e3e3e3;
+		padding:30px 15px;
+	}
+	hr{
+		margin:15px 0;
+	}
+	.btnOK{
+		margin-left:10px;
+	}
+	.pwinput{
+		width:135px;
 	}
 }
 </style>
@@ -492,7 +510,7 @@
 				<p>글 작성시 입력하신 비밀번호를 입력해주세요.</p>
 				<hr>
 				<input type="hidden" value="${item.bno}">
-				비밀번호 <input type="password"><button class="btnOK">확인</button>&nbsp;<a href="advice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록으로</button></a>
+				비밀번호 <input type="password" class="pwinput"><button class="btnOK">확인</button>&nbsp;<a href="advice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록으로</button></a>
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

@@ -276,7 +276,6 @@
 						$(".arrow").attr("src","${pageContext.request.contextPath}/resources/images/arrow_down.png");
 						$(".dropdown .mainSubMenu").css("display","none");	
 						$(".dropdown").css("border","0");
-						
 					}
 				
 					var arrow =$(this).parent("li").find(".arrow").attr("src").split("/");

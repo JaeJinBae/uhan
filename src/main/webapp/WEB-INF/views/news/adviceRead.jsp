@@ -418,6 +418,7 @@
 		padding:20px 15px;
 		text-align: left;
 	}
+	
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -455,6 +456,12 @@
 		font-weight: 300;
 		letter-spacing: 0.1em;
 	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:25px;
+		text-align: center;
+	}
 	.sub_title p{
 		text-align: center;
 		margin-bottom: 10px;
@@ -463,6 +470,66 @@
 		text-align: center;
 		font-size: 1rem;
 		font-weight: 550;
+	}
+	.custom{
+		width:100%;
+		margin:0 auto;
+	}
+	.custom>table{
+		width:361px;
+		margin:0 auto;
+		border-top:5px solid #e3e3e3;
+		border-bottom:5px solid #e3e3e3;
+		text-align:left;
+	}
+	.custom>table td{
+		padding:10px 1px;
+	}
+	.custom>table tr:first-child td{
+		border-bottom:2px solid #e3e3e3;
+	}
+	.custom>table tr:last-child td{
+		width:150px;
+		display:inline-block;
+		padding:0;
+	}
+	.customContent{
+		width:91%;
+		margin:0 auto;
+		padding:20px 15px;
+		text-align: left;
+	}
+	.btnWrap{
+		margin-top:50px;
+	}
+	.reply{
+		width:100%;
+		margin:100px auto;
+	}
+	.reply>table{
+		width:361px;
+		margin:0 auto;
+		border-top:5px solid #e3e3e3;
+		border-bottom:5px solid #e3e3e3;
+		text-align:left;
+	}
+	.reply>table td{
+		padding:10px 1px;
+	}
+	.reply>table tr:first-child td{
+		border-bottom:2px solid #e3e3e3;
+	}
+	.reply>table tr:last-child td{
+		width:150px;
+		display:inline-block;
+		padding:0;
+	}
+	.replyContent{
+		width:91%;
+		max-width:970px;
+		margin:0 auto;
+		padding:20px 15px;
+		text-align: left;
 	}
 }
 </style>
@@ -544,7 +611,7 @@
 						<td>작성자: ${item.writer}</td>
 						<td>등록일: <fmt:formatDate type="date" value="${item.regdate}"/>
 						<td>답변상태: ${item.state}</td>
-						<td>조회수: ${item.cnt}</td>
+						<td>조회: ${item.cnt}</td>
 					</tr>
 				</table>
 				<div class="customContent">
