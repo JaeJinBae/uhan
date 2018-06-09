@@ -81,7 +81,14 @@
 		font-size:20px;
 		margin-top:33px;
 	}
-	
+	#headerDiv #headerMenu #boardCtr{
+		background: white;
+		color:black;
+	}
+	#headerDiv #headerMenu #board{
+		background: white;
+		color:black;
+	}
 	/* 공지사항 */
 	.tbl_board{
 		width:90%;

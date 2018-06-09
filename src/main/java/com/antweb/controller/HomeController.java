@@ -89,7 +89,13 @@ public class HomeController {
 		logger.info("home");	
 		List<NoticeVO> list=nService.selectAll();
 		model.addAttribute("list", list);
-		sService.insert(getUser(req));
+		StatisticsVO vo = getUser(req);
+		if(vo.getUrl().indexOf("http://www.uhan-hospital.com/")>-1){
+			logger.info("같은 홈페이지");
+		}else{
+			sService.insert(getUser(req));
+		}
+		
 		return "main/index";
 	}
 

@@ -22,6 +22,10 @@
 		color:black;
 		text-decoration: none;
 	}
+	#headerDiv #headerMenu #boardCtr{
+		background: white;
+		color:black;
+	}
 	.contentWrap{
 		width:100%;
 		min-width:1280px;

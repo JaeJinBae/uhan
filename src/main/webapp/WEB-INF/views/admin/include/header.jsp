@@ -22,16 +22,21 @@
 		color:white;
 		line-height: 80px;
 		margin-left: 30px;
-	/* 	overflow: hidden; */
+		position:  relative;
 	}
 	#headerDiv #logo h2 {
-    font-size: 2.0em;
+    font-size: 25px;
     font-weight: bold;
-    letter-spacing: 0.1em;
-    float: left;
+    letter-spacing: 3px;
 	}
-	
-
+	#headerDiv #logo a{
+		position: absolute;
+		left:283px;
+		top:13px;
+	}
+	#headerDiv #logo a img{
+		width:40px;
+	}
 	#headerDiv #headerMenu{
 		width:100%;
 		min-width:1024px;
@@ -89,7 +94,7 @@
 		</div>
 		<div id="headerMenu"> 
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리">게시판 관리</a></li>
+				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리" id="boardCtr">게시판 관리</a></li>
 				<li><a href="statistics" title="통계" id="statistics">통 계</a></li>
 			</ul>
 		</div>
