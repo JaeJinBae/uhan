@@ -316,6 +316,9 @@
 		font-size:26px;
 		font-weight:bold;
 	}
+	.mContent{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -584,6 +587,9 @@
 	.ccc .dot{
 		font-size:26px;
 		font-weight:bold;
+	}
+	.mContent{
+		display:none;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){

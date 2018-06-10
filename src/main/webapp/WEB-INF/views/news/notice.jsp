@@ -250,6 +250,15 @@
 		font-size:1.1em;
 		line-height: 40px;
 	}
+	#searchBtn{
+		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -446,6 +455,15 @@
 	.page ul li a{
 		font-size:1.1em;
 		line-height: 40px;
+	}
+	#searchBtn{
+		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -646,6 +664,15 @@
 	.box-body> #searchBtn{
 		width:50px;
 		text-align: center;
+	}
+	#searchBtn{
+		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 }
 </style>

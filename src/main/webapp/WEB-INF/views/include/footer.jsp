@@ -9,14 +9,17 @@
 		color:#828282;
 		text-align: center;
 		line-height: 30px;
-		padding-top:10px;
+		padding-top:25px;
+		padding-bottom:15px;
 	}
 	#footer1 p{
 		font-size:15px;
+		opacity:0.7;
 	}
 	#footer1>table{ 
 		width:435px;
 		margin:0 auto;
+		opacity:0.7;
 	}
 	#footer1>table tr td{
 		font-size:15px;
@@ -33,14 +36,17 @@
 		color:#828282;
 		text-align: center;
 		line-height: 30px;
-		padding-top:10px;
+		padding-top:15px;
+		padding-bottom:15px;
 	}
 	#footer1 p{
 		font-size:15px;
+		opacity:0.7;
 	}
 	#footer1>table{ 
 		width:435px;
 		margin:0 auto;
+		opacity:0.7;
 	}
 	#footer1>table tr td{
 		font-size:15px;
@@ -67,10 +73,12 @@
 	#footer1 p{
 		font-size:12px;
 		padding-left: 20px;
+		opacity:0.7;
 	}
 	#footer1 table{
 		font-size:12px;
 		padding-left: 18px;
+		opacity:0.7;
 	}
 	#footer1 table td a{
 		color:#828282;

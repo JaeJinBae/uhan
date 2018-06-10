@@ -225,7 +225,7 @@
 					    
 					</textarea>
 					<script>
-						CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload",height:500});
+						CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload",height:500});
 					</script>
 					<div class="btn">
 						<input type="submit" value="저장">

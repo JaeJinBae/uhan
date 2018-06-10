@@ -299,6 +299,9 @@
 		color: #070b63;
 		font-weight:600;
 	}
+	.mContent{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -552,6 +555,9 @@
 		font-size:25px;
 		color: #070b63;
 		font-weight:600;
+	}
+	.mContent{
+		display:none;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){

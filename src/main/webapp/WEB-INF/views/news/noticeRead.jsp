@@ -12,7 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
-@media only screen and (min-width:1100x){
+@media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}

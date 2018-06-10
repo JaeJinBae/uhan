@@ -298,6 +298,9 @@
 		margin-top:9px;
 		line-height: 21px;
 	}
+	.mContent{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -552,6 +555,9 @@
 		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
+	}
+	.mContent{
+		display:none;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){

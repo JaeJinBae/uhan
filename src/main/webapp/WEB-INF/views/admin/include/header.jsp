@@ -90,7 +90,7 @@
 	<div id="headerDiv">
 		<div id="logo">
 			<h2>유한통증의학과 관리자</h2>
-			<a href="/uhan/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" id="home"></a>
+			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" id="home"></a>
 		</div>
 		<div id="headerMenu"> 
 			<ul>

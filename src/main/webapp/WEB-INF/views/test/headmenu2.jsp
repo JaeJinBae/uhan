@@ -218,7 +218,7 @@
 		right:5px;
 		display:inline;
 		width:40px;
-		height:50px; 
+		height:50px;
 	}
 	.menuClose{
 		display: none; 
@@ -346,10 +346,11 @@
 			$(".menuClose").css("display","block");
 			
 			$(".headerWrap").css("background","#00b4ae");
-			/* $(".mainMenu").slideDown("slow", function() {
+			$(".mainMenu").slideDown("slow", function() {
 				$(".mainMenu").css("display","block");
-			}); */
-			$(".mainMenu").animate({display:'block'});
+			 	
+			
+			});
 			
 			e.preventDefault();
 		});

@@ -308,6 +308,9 @@
 	.content00 .content_small_content .ccc ul li:before{
 		content:"- ";
 	}
+	.mContent{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -573,6 +576,9 @@
 	}
 	.content00 .content_small_content .ccc ul li:before{
 		content:"- ";
+	}
+	.mContent{
+		display:none;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
