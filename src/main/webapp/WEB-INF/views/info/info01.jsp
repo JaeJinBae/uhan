@@ -124,9 +124,6 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap>img{
-		width:700px;
-	}
 	/* quick menu */
 	.quick{
 		width:110px;
@@ -168,6 +165,77 @@
 	}
 	.quick ul li:last-child a span{
 		font-size:16px;
+	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.content{
+		width:100%;
+	}
+	.content h2{
+		font-size:30px;
+		font-weight:500;
+	}
+	.content .diaIcon{
+		 margin-bottom:30px;
+	}
+	.slogan{
+		margin-top:50px;
+		margin-bottom:50px;
+	}
+	.slogan>h1, .slogan>h1>span, .color1, .color2{
+		font-size:50px;
+		font-weight:500;
+	}
+	.slogan>h1>.color1{
+		color:#04a19f;
+		font-weight:600;
+	}
+	.slogan>h1>.color2{
+		color:#06807e;
+		font-weight:600;
+	}
+	.mobile_ContentWrap{
+		display:none;
+	}
+	.content0{
+		font-size:20px;
+		margin-bottom:25px;
+	}
+	.content1{
+		margin-bottom:25px;
+	}
+	.content1>p{
+		font-size:25px;
+	}
+	.content2{
+		font-size:20px;
+		margin-bottom:25px;
+		color:#2d2d2d;
+	}
+	.content2>span{
+		font-size:20px;
+		font-weight:600;
+		color:black;
+	}
+	.content3>li{
+		font-size:20px;
+		color:#2d2d2d;
+	}
+	.boldblack{
+		font-size:20px;
+		color:black;
+		font-weight: 500;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -270,7 +338,29 @@
 	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
 		display: block;
 	}
-	.contentWrap img{
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	.sub_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.sub_title h1{
+		text-align: center;
+		font-size: 19.5px;
+		font-weight: 550;
+	}
+	.content{
+		display:none;
+	}
+	.mobile_ContentWrap{
+		width:100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	.mobile_ContentWrap> img{
 		width:100%;
 	}
 }
@@ -331,7 +421,6 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/uhanFix.png">
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
@@ -341,7 +430,69 @@
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
+			<div class="sub_title">
+				<p>|</p>
+				<h1>인사말</h1>				
+			</div>
+			<div class="content">
+				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+				<h2>병원장 인사말</h2>
+				
+				<div class="slogan">
+					<h1>'<span class="color1">생명</span>을 최우선으로</h1>
+					<h1><span class="color2">사람</span>을 최우선으로'</h1>
+				</div>
+				
+				<p class="content0">인도 고대의 길가메쉬 서사시에 인생의 삵에 대해서 이런 글귀가 있습니다.</p>
+				
+				<div class="content1">
+					<p>'인생의 처음과 끝은 정해져 있으니,</p>
+					<p>의미있는 일을 하고 놀고</p>
+					<p>사랑을 나누는 것이 인생의 정답이다.'</p>
+				</div>
+				
+				<div class="content2">
+					우리병원 설립 미션과 비젼의 시작은 사람의 생명에 있습니다.<br>
+					생명을 최우선으로 그래서 찾아오는 환자 한분 한분의 통증 원인 발견과<br>
+					치료, 더 나아가 예방을 하는데 최우선으로 하겠다는 우리의 미션을<br>
+					실현하기 위해서 여기 대구 범어동에서 시작하였습니다.<br>
+					대구 범어동에서 시작된 우리의 꿈이 소외된 아시아지역까지 확대 될 수 있도록<br>
+					<span>'생명을 최우선으로 사람을 최우선으로'</span>하는 병원을 만들어 나아가겠습니다. 
+				</div>
+				
+				<ul class="content3">
+					<li>
+						<span class="boldblack">첫째,</span> 사람들이 살면서 제일 많이 겪는 허리통증, 목통증(척추통증),<br>
+						 대상포진 및 극심한 통증인 대상포진 후 신경통, 어깨와 무릎 등의<br>
+						 여러 관절통증 치료를 위해서 전문성을 키우겠습니다.
+					</li>
+					<li>
+						<span class="boldblack">둘째,</span> 통증으로 고통받는 사람을 치유함에 믿음과 신뢰를 간직하겠습니다.
+					</li>
+					<li>
+						<span class="boldblack">셋째,</span> 직원 및 환자와 소통하고 함께 나누겠습니다.
+					</li>
+					<li>
+						<span class="boldblack">넷째,</span> 지역사회 공동체와 함께 하여 행복한 세상을 만드는데<br>
+						작은 보탬이 되도록 노력하겠습니다.
+					</li>
+				</ul>
+				
+				<div class="content4">
+					처음의 다짐이 지속될 수 있도록 지켜봐 주시고<br>
+					또 그런 병원이 되도록 소통하고 지역사회와<br>
+					함께 나누는 병원이 되도록 노력하겠습니다.
+				</div>
+				<img src="${pageContext.request.contextPath}/resources/images/info01img.png">
+				<div class="content5">
+					2018년 5월 8일<br>
+					유한마취통증의학과 직원 모두의 마음을 담아 여러분께 드립니다.
+				</div>
+			</div><!-- content end -->
 		</div><!-- contentWrap end -->
+		<div class="mobile_ContentWrap">
+			<img src="${pageContext.request.contextPath}/resources/mobileImage/info01img.png">
+		</div>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>

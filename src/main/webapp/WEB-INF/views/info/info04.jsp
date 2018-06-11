@@ -236,6 +236,9 @@
 		font-size:20px;
 		font-weight: 600;
 	}
+	.mobile_ContentWrap{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -421,6 +424,9 @@
 	.content ul li p span{
 		font-size:20px;
 		font-weight: 600;
+	}
+	.mobile_ContentWrap{
+		display:none;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -664,8 +670,11 @@
 					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon4.png"><p>우리는 <span>환자분의 통증 완화</span>를 위해 최선을 다한다.</p></li>
 					<li><img src="${pageContext.request.contextPath}/resources/images/info04icon5.png"><p>우리는 <span>환자분과 통증완화에 도움되는 운동 및<br>심리적 지지</span>를 한다.</p></li>
 				</ul>
-			</div>
+			</div><!-- content end -->
 		</div><!-- contentWrap end -->
+		<div class="mobile_ContentWrap">
+			<img src="${pageContext.request.contextPath}/resources/mobileImage/info04img.png"><!-- mInfo2 -->
+		</div>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>
