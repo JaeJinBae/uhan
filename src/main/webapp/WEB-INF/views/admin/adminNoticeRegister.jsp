@@ -195,6 +195,17 @@
     		var keyword=$("input[name='keyword']").val();
     		location.href="adminNotice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
+        //예외처리
+    	$("#form1").submit(function(){
+
+    		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
+    			alert("작성자를 입력해주세요.");
+    			return false;
+    		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
+    			alert("제목을 입력해주세요.");
+    			return false;
+    		}
+    	})
 	});
 </script>
 </head>

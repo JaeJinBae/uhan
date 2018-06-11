@@ -645,13 +645,16 @@
         	$("html").animate({scrollTop:"0"},500);
         	return false;
         });
-        
-        //게시판 검색
-        $("#searchBtn").click(function(){
-    		var searchType=$("select[name='searchType']").val();
-    		var keyword=$("input[name='keyword']").val();
-    		location.href="notice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
-    	});
+      //예외처리
+    	$("#f1").submit(function(){
+    		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
+    			alert("작성자를 입력해주세요.");
+    			return false;
+    		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
+    			alert("제목을 입력해주세요.");
+    			return false;
+    		}
+    	})
 	});
 </script>
 </head>
@@ -739,7 +742,7 @@
 					</table>
 					<div class="btnWrap">
 						<a href="advice${pageMaker.makeSearch(pageMaker.cri.page)}" class="goListBtn"><button type="button">목록</button></a>
-						<input type="submit" value="등록" class="submitBtn">
+						<input type="submit" value="수정" class="submitBtn">
 						<a href="adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}" class="cancelBtn"><button type="button">취소</button></a>
 					</div>
 				</form>

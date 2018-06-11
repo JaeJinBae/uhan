@@ -667,13 +667,31 @@
         	$("html").animate({scrollTop:"0"},500);
         	return false;
         });
+        //공개여부
+        $("input[name='pwtype']").change(function(){
+        	if($(this).val()=="o"){
+        		$("input[name='pw']").val("");
+        		$("input[name='pw']").attr("readonly",true);
+        	}else{
+        		$("input[name='pw']").attr("readonly",false);
+        	}
+        })
+        //예외처리
+    	$("#f1").submit(function(){
+    		var pwtype = $("input[name=pwtype]").val();
+    		
+    		if(($("input[name='pw']").val()==""||$("input[name='pw']").val()==null)&&pwtype=="x"){
+    			alert("비밀번호를 입력해주세요.");
+    			return false;
+    		}else if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
+    			alert("작성자를 입력해주세요.");
+    			return false;
+    		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
+    			alert("제목을 입력해주세요.");
+    			return false;
+    		}
+    	})
         
-        //게시판 검색
-        $("#searchBtn").click(function(){
-    		var searchType=$("select[name='searchType']").val();
-    		var keyword=$("input[name='keyword']").val();
-    		location.href="notice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
-    	});
 	});
 </script>
 </head>
@@ -739,7 +757,7 @@
 						</tr>
 						<tr>
 							<td><span class="star">*</span> 비밀번호<span class="stick">|</span></td>
-							<td><input type="text" name="pw" style="width:150px;"><span class="warn">※ 비공개 선택 시 비밀번호는 필수 입니다.</span></td> 
+							<td><input type="password" name="pw" style="width:150px;"><span class="warn">※ 비공개 선택 시 비밀번호는 필수 입니다.</span></td> 
 						</tr>
 						<tr>
 							<td><span class="star">*</span> 작성자<span class="stick">|</span></td>
@@ -760,7 +778,7 @@
 					</table>
 					<div class="btnWrap">
 						<a href="advice" class="goListBtn"><button type="button">목록</button></a>
-						<input type="submit" value="등록" class="submitBtn">
+						<input type="submit" value="등록" class="submitBtn" id="registerBtn">
 						<a href="advice" class="cancelBtn"><button type="button">취소</button></a>
 					</div>
 				</form>

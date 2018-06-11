@@ -743,10 +743,13 @@
         
         //게시판 검색
         $("#searchBtn").click(function(){
-    		var searchType=$("select[name='searchType']").val();
-    		var keyword=$("input[name='keyword']").val();
+    		var s=$("select[name='searchType']").val();
+    		var searchType = encodeURIComponent(s);
+    		var k=$("input[name='keyword']").val();
+    		var keyword = encodeURIComponent(k);
     		location.href="advice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
+        
 	});
 </script>
 </head>
