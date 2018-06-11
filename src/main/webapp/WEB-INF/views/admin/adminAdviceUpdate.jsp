@@ -187,14 +187,7 @@
 	
 </style>
 <script type="text/javascript">
-	$(function(){
-		//게시판 검색
-        $("#searchBtn").click(function(){
-    		var searchType=$("select[name='searchType']").val();
-    		var keyword=$("input[name='keyword']").val();
-    		location.href="adminAdvice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
-    	});
-		
+	$(function(){		
       //예외처리
     	$("#form1").submit(function(){
 
