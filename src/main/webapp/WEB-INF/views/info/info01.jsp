@@ -53,11 +53,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -306,11 +308,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -507,10 +511,12 @@
 		font-weight: 400;
 		margin-bottom: 15px;
 		font-size: 1.5em;
+		opacity:0.9;
 	}
 	.mainBackground .bgText p{
 		font-weight: 300;
 		letter-spacing: 0.1em;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -737,8 +743,7 @@
 				
 				<div class="content5">
 					2018년 5월 8일<br>
-					유한마취통증의학과 직원 모두의 마음을 담아 여러분께 드립니다.<br><br>
-					- 유한마취통증의학과 직원 일동 -
+					유한마취통증의학과 직원 모두의 마음을 담아 여러분께 드립니다.
 				</div>
 			</div><!-- content end -->
 		</div><!-- contentWrap end -->

@@ -55,11 +55,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -269,11 +271,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -432,10 +436,12 @@
 		font-weight: 400;
 		margin-bottom: 15px;
 		font-size: 1.5em;
+		opacity:0.9;
 	}
 	.mainBackground .bgText p{
 		font-weight: 300;
 		letter-spacing: 0.1em;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;

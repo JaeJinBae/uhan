@@ -56,11 +56,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -194,6 +196,8 @@
 	}
 	.bigImg .imgText{
 		width:100%;
+		height:50px;
+		line-height:50px;
 		background: rgba(255,255,255, 0.5);
 		color:white;
 		position: absolute;
@@ -252,11 +256,13 @@
 		font-size:40px;
 		font-weight:500;
 		margin-bottom:15px;
+		opacity:0.9;
 	}
 	.bgText>p{
 		color:white;
 		font-size:20px;
 		font-weight: 300;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -395,10 +401,12 @@
 		font-weight: 400;
 		margin-bottom: 15px;
 		font-size: 1.5em;
+		opacity:0.9;
 	}
 	.mainBackground .bgText p{
 		font-weight: 300;
 		letter-spacing: 0.1em;
+		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
 		width:100%;
@@ -584,15 +592,14 @@
 				<h1>병원 둘러보기</h1>				
 			</div>
 			<div class="bigImg">
-				<div><img src="${pageContext.request.contextPath}/resources/images/h01.JPG" alt="유한통증의학과"><div class="imgText">내부사진1</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h02.JPG" alt="유한통증의학과"><div class="imgText">내부사진2</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h03.JPG" alt="유한통증의학과"><div class="imgText">내부사진3</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h04.JPG" alt="유한통증의학과"><div class="imgText">내부사진4</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h05.JPG" alt="유한통증의학과"><div class="imgText">내부사진5</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h06.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h07.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h08.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h09.JPG" alt="유한통증의학과"><div class="imgText">내부사진6</div></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h01.JPG" alt="유한통증의학과"></div><!-- <div class="imgText">데스크</div> -->
+				<div><img src="${pageContext.request.contextPath}/resources/images/h02.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h03.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h04.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h05.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h06.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h07.JPG" alt="유한통증의학과"></div>
+				<div><img src="${pageContext.request.contextPath}/resources/images/h08.JPG" alt="유한통증의학과"></div>
 			</div>
 			<div class="smallImg">
 				<div><img src="${pageContext.request.contextPath}/resources/images/h01.JPG" alt="유한통증의학과"></div>
@@ -603,7 +610,6 @@
 				<div><img src="${pageContext.request.contextPath}/resources/images/h06.JPG" alt="유한통증의학과"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/images/h07.JPG" alt="유한통증의학과"></div>
 				<div><img src="${pageContext.request.contextPath}/resources/images/h08.JPG" alt="유한통증의학과"></div>
-				<div><img src="${pageContext.request.contextPath}/resources/images/h09.JPG" alt="유한통증의학과"></div>
 			</div>
 		</div><!-- contentWrap end -->
 	</section>
