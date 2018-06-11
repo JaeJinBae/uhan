@@ -554,7 +554,7 @@
 		width:20px;
 	}
 	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
-		margin-left:66px;
+		margin-left:65px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -618,12 +618,10 @@
         	$("html").animate({scrollTop:"0"},500);
         	return false;
         });
-        
-        $(".navUl>li>a").bind("touchstart",function(e){
-        	alert("touch");
-        	
-        	e.preventDefault();
+        $(".navUl>li>a").click(function(){
+        	return false;
         });
+
 	});
 </script>
 </head>

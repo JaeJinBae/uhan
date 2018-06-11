@@ -359,6 +359,9 @@
 			
 			e.preventDefault();
 		});
+		$(".navUl>li>a").click(function(){
+        	return false;
+        });
 	});	
 </script>
 <div class="headerWrap">

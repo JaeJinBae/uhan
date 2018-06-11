@@ -253,7 +253,7 @@
 					    ${reply.replytext}
 					</textarea>
 					<script>
-						CKEDITOR.replace('replytext',{filebrowserUploadUrl:"${pageContext.request.contextPath}/imgUpload",height:400});
+						CKEDITOR.replace('replytext',{filebrowserUploadUrl:"/admin/imgUpload",height:400});
 					</script>
 					<div class="btn">
 						<input type="submit" value="저장">
