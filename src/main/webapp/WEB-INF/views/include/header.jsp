@@ -228,10 +228,10 @@
 	.mainMenu > li > a{
 		display:block; 
 		border-bottom: 1px solid #dcdcdc;
-		height:30px;
-		line-height:30px;
+		height:26px;
+		line-height:26px;
 		padding:18px 28px;
-		font-size: 1.8em;
+		font-size: 1.5em;
 	}
 	.mainMenu li .dropdown{
 		background-color:#fafafa;
@@ -245,7 +245,7 @@
 		color:#888686;
 		height:35px;
 		line-height:35px;
-		font-size: 1.5em;		
+		font-size: 1.3em;		
 	}
 	.mainMenu  li .dropdown .mainSubMenu{
 	 	 display:none;  
@@ -359,7 +359,7 @@
 			
 			e.preventDefault();
 		});
-		$(".navUl>li>a").click(function(){
+		$(".navUl>li:not(:first-child)>a").click(function(){
         	return false;
         });
 	});	

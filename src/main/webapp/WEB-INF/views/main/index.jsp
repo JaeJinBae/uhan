@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -188,15 +189,25 @@
 						<h1>공지사항</h1>
 						<p>유한통증의학과의 새로운 소식입니다.</p>
 					</div>
-					<a class="noticeMoreBtn" href="#"><img src="${pageContext.request.contextPath}/resources/images/more_btn.png" style="width:46px;"></a>
+					<a class="noticeMoreBtn" href="${pageContext.request.contextPath}/notice"><img src="${pageContext.request.contextPath}/resources/images/more_btn.png" style="width:46px;"></a>
 					<hr>
 					<table>
-						<c:forEach var="item" items="${list}" end="2">
+						<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}" end="2">
 							<tr>
-								<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="notice">${item.title}</a></td>
+								<td><img src="${pageContext.request.contextPath}/resources/images/list.png"><a href="${pageContext.request.contextPath}/noticeRead?bno=${item.bno}">${item.title}</a></td>
 								<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 							</tr>
 						</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
+						
 					</table>
 				</div>
 				<div class="box" id="box1" style="background: #3c416c;">
@@ -235,7 +246,7 @@
 				</div>
 				<div class="bottomContent">
 					<h1>Welcome to Our Clinic</h1>
-					<h2><a href="info03">병원시설 둘러보기</a></h2>
+					<h2><a href="${pageContext.request.contextPath}/info03">병원시설 둘러보기</a></h2>
 					<hr id="bottomLine">
 					<p class="bottomContentText">언제나 편안하고 깨끗한 시설로 환자분을</p>
 					<p class="bottomContentText">맞이하는 유한통증의학과입니다.</p>

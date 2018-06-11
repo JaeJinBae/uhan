@@ -209,7 +209,7 @@
 		width:200px;
 	}
 }
-@media only screen and (min-width:678px) and (max-width:1099px){
+@media only screen and (min-width:768px) and (max-width:1099px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
 	}
@@ -365,7 +365,7 @@
 		width:200px;
 	}
 }
-@media only screen and (min-width:320px) and (max-width:450px){
+@media only screen and (min-width:320px) and (max-width:767px){
 
 	body{
 		font-family: 'Noto Sans', sans-serif;
