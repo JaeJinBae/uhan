@@ -461,6 +461,7 @@
 	.btnWrap .cancelBtn>button{
 		width:50px;
 	}
+	input[type=submit] {-webkit-appearance:none;}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -647,6 +648,7 @@
 	.btnWrap .cancelBtn>button{
 		width:50px;
 	}
+	input[type=submit] {-webkit-appearance:none;}
 }
 </style>
 <script type="text/javascript">

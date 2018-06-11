@@ -234,14 +234,26 @@
 		width:100%;
 		margin-top:10px;
 	}
+	.btnWrap button{
+		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
+	}
 	.btnWrap .goListBtn>button{
 		width:50px;
 	}
 	.btnWrap .submitBtn{
 		width:50px;
-	}
-	.btnWrap .cancelBtn>button{
-		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -422,15 +434,28 @@
 		width:100%;
 		margin-top:10px;
 	}
+	.btnWrap button{
+		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
+	}
 	.btnWrap .goListBtn>button{
 		width:50px;
 	}
 	.btnWrap .submitBtn{
 		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
-	.btnWrap .cancelBtn>button{
-		width:50px;
-	}
+	input[type=submit] {-webkit-appearance:none;}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -601,6 +626,7 @@
 	.btnWrap .cancelBtn>button{
 		width:50px;
 	}
+	input[type=submit] {-webkit-appearance:none;}
 }
 </style>
 <script type="text/javascript">

@@ -190,8 +190,8 @@
 		 margin-bottom:30px;
 	}
 	.slogan{
-		margin-top:50px;
-		margin-bottom:50px;
+		margin-top:70px;
+		margin-bottom:70px;
 	}
 	.slogan>h1, .slogan>h1>span, .color1, .color2{
 		font-size:50px;
@@ -210,17 +210,18 @@
 	}
 	.content0{
 		font-size:20px;
-		margin-bottom:25px;
+		margin-bottom:50px;
 	}
 	.content1{
-		margin-bottom:25px;
+		margin-bottom:50px;
 	}
 	.content1>p{
 		font-size:25px;
+		font-weight: 500;
 	}
 	.content2{
 		font-size:20px;
-		margin-bottom:25px;
+		margin-bottom:50px;
 		color:#2d2d2d;
 	}
 	.content2>span{
@@ -228,18 +229,254 @@
 		font-weight:600;
 		color:black;
 	}
+	.content3{
+		width:644px;
+		margin:0 auto;
+		margin-bottom:50px;
+	}
 	.content3>li{
 		font-size:20px;
 		color:#2d2d2d;
+		text-align: left;
+		margin-bottom:10px;
 	}
-	.boldblack{
+	.boldblack{ 
 		font-size:20px;
 		color:black;
-		font-weight: 500;
+		font-weight: 600;
+		float:left;
+	}
+	.listtext{
+		display:inline-block;
+		font-size:20px;
+	}
+	.content4{
+		font-size:20px;
+		margin-bottom:50px;
+	}
+	.content5{
+		font-size:20px;
+		margin-top:50px;
+	}
+	.info01img{
+		width:85%;
+		margin:0 auto;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
-
+	body{
+		font-family: 'Noto Sans', sans-serif;
+	}
+	header{
+		width:100%;
+		height:75px;
+		position: absolute;
+		top: 0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+		z-index: 99;
+	}
+	section{
+		width:100%;
+		margin-top:27px;
+		margin-bottom:100px;
+	}
+	section .mainBackground{
+		width:100%;
+	}
+	section .mainBackground>.bgImg{
+		width:100%;
+		height:346px;
+		float:left;
+	} 
+	.bgText{
+		width:95%;
+		height:180px;
+		position: absolute;
+		top:170px;
+		left:15px;
+		right:0;
+		bottom:0;
+		margin:0 auto;
+	}
+	.bgText>h1{
+		color:white;
+		font-size:40px;
+		font-weight:500;
+		margin-bottom:15px;
+	}
+	.bgText>p{
+		color:white;
+		font-size:20px;
+		font-weight: 300;
+	}
+	section .mainBackground .navWrap{
+		width:100%;
+		height:70px;
+		clear:both;
+		background: #0B8783;
+		position: relative;
+		z-index: 99;
+	}
+	section .mainBackground .navWrap .navUl{
+		width:100%;
+		margin:0 auto;
+	}
+	section .mainBackground .navWrap .navUl>li{
+		height:70px;
+		border-left:1px solid #3C9F9C;
+		float:left;
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li a{  
+		font-size: 20px;
+		color:white;
+		line-height: 70px;
+		margin:0 40px;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child{
+		text-align: center;
+	}
+	section .mainBackground .navWrap .navUl>li:last-child{
+		border-right:1px solid #3C9F9C;
+	}
+	section .mainBackground .navWrap .navUl>li:first-child a{
+		line-height: 75px;
+	}
+	section .mainBackground .navWrap .navUl>li a>.btnArrow{
+		margin-left:55px;
+		width:20px;
+	}
+	.sub_subDropdown{
+		display: none;
+		background: #376d6a;
+	} 
+	.sub_subDropdown>li{
+		text-align: left;
+		border-bottom:1px solid #9bb6b5;
+	}
+	.sub_subDropdown>li a{
+		height:60px; 
+		line-height: 60px !important;
+		font-size: 18px !important;
+	}
+	.sub_subDropdown>li a:hover{
+		font-weight: bold;
+	}
+	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
+		display: block;
+	}
+	section .contentWrap{
+		width:100%;
+		max-width:1200px;
+		margin:0 auto;
+		margin-top:100px;
+		text-align: center;
+		clear:both;
+		position:relative;
+	}
+	/* quick menu */
+	.quick{
+		display:none;
+	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
+	}
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
+	}
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
+	}
+	.content{
+		width:100%;
+	}
+	.content h2{
+		font-size:30px;
+		font-weight:500;
+	}
+	.content .diaIcon{
+		 margin-bottom:30px;
+	}
+	.slogan{
+		margin-top:70px;
+		margin-bottom:70px;
+	}
+	.slogan>h1, .slogan>h1>span, .color1, .color2{
+		font-size:50px;
+		font-weight:500;
+	}
+	.slogan>h1>.color1{
+		color:#04a19f;
+		font-weight:600;
+	}
+	.slogan>h1>.color2{
+		color:#06807e;
+		font-weight:600;
+	}
+	.mobile_ContentWrap{
+		display:none;
+	}
+	.content0{
+		font-size:20px;
+		margin-bottom:50px;
+	}
+	.content1{
+		margin-bottom:50px;
+	}
+	.content1>p{
+		font-size:25px;
+		font-weight: 500;
+	}
+	.content2{
+		font-size:20px;
+		margin-bottom:50px;
+		color:#2d2d2d;
+	}
+	.content2>span{
+		font-size:20px;
+		font-weight:600;
+		color:black;
+	}
+	.content3{
+		width:644px;
+		margin:0 auto;
+		margin-bottom:50px;
+	}
+	.content3>li{
+		font-size:20px;
+		color:#2d2d2d;
+		text-align: left;
+		margin-bottom:10px;
+	}
+	.boldblack{ 
+		font-size:20px;
+		color:black;
+		font-weight: 600;
+		float:left;
+	}
+	.listtext{
+		display:inline-block;
+		font-size:20px;
+	}
+	.content4{
+		font-size:20px;
+		margin-bottom:50px;
+	}
+	.content5{
+		font-size:20px;
+		margin-top:50px;
+	}
+	.info01img{
+		width:85%;
+		margin:0 auto;
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -381,6 +618,12 @@
         	$("html").animate({scrollTop:"0"},500);
         	return false;
         });
+        
+        $(".navUl>li>a").bind("touchstart",function(e){
+        	alert("touch");
+        	
+        	e.preventDefault();
+        });
 	});
 </script>
 </head>
@@ -462,19 +705,31 @@
 				
 				<ul class="content3">
 					<li>
-						<span class="boldblack">첫째,</span> 사람들이 살면서 제일 많이 겪는 허리통증, 목통증(척추통증),<br>
-						 대상포진 및 극심한 통증인 대상포진 후 신경통, 어깨와 무릎 등의<br>
-						 여러 관절통증 치료를 위해서 전문성을 키우겠습니다.
+						<span class="boldblack">첫째,&nbsp;</span>
+						<span class="listtext">
+							사람들이 살면서 제일 많이 겪는 허리통증, 목통증(척추통증),<br>
+							대상포진 및 극심한 통증인 대상포진 후 신경통, 어깨와 무릎 등의<br>
+							여러 관절통증 치료를 위해서 전문성을 키우겠습니다.
+						</span>
 					</li>
 					<li>
-						<span class="boldblack">둘째,</span> 통증으로 고통받는 사람을 치유함에 믿음과 신뢰를 간직하겠습니다.
+						<span class="boldblack">둘째,&nbsp;</span>
+						<span class="listtext">
+							통증으로 고통받는 사람을 치유함에 믿음과 신뢰를 간직하겠습니다.
+						</span>
 					</li>
 					<li>
-						<span class="boldblack">셋째,</span> 직원 및 환자와 소통하고 함께 나누겠습니다.
+						<span class="boldblack">셋째,&nbsp;</span>
+						<span class="listtext">
+							직원 및 환자와 소통하고 함께 나누겠습니다.
+						</span>
 					</li>
 					<li>
-						<span class="boldblack">넷째,</span> 지역사회 공동체와 함께 하여 행복한 세상을 만드는데<br>
-						작은 보탬이 되도록 노력하겠습니다.
+						<span class="boldblack">넷째,&nbsp;</span>
+						<span class="listtext">
+							지역사회 공동체와 함께 하여 행복한 세상을 만드는데 작은 보탬이<br>
+							되도록 노력하겠습니다.
+						</span>
 					</li>
 				</ul>
 				
@@ -483,10 +738,13 @@
 					또 그런 병원이 되도록 소통하고 지역사회와<br>
 					함께 나누는 병원이 되도록 노력하겠습니다.
 				</div>
-				<img src="${pageContext.request.contextPath}/resources/images/info01img.png">
+				
+				<img class="info01img" src="${pageContext.request.contextPath}/resources/images/info01img.png">
+				
 				<div class="content5">
 					2018년 5월 8일<br>
-					유한마취통증의학과 직원 모두의 마음을 담아 여러분께 드립니다.
+					유한마취통증의학과 직원 모두의 마음을 담아 여러분께 드립니다.<br><br>
+					- 유한마취통증의학과 직원 일동 -
 				</div>
 			</div><!-- content end -->
 		</div><!-- contentWrap end -->
