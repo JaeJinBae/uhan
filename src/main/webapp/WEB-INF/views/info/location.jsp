@@ -126,18 +126,18 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap .title{
-		margin-top:50px;
-		margin-bottom:50px;
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
 	}
-	.contentWrap .title p{
-		font-size: 1.5em;
-		margin-bottom:10px;
-		color:#333333;
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
 	}
-	.contentWrap .title p:nth-child(2){
-		font-weight: bold;
-		font-size: 1.6em;
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
 	}
 	.addr{
 		font-size: 1.5em;
@@ -338,18 +338,18 @@
 		clear:both;
 		position:relative;
 	}
-	.contentWrap .title{
-		margin-top:50px;
-		margin-bottom:50px;
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		margin-bottom:70px;
 	}
-	.contentWrap .title p{
-		font-size: 1.5em;
-		margin-bottom:10px;
-		color:#333333;
+	.sub_title p{
+		font-size:25px;
+		margin-bottom:20px; 
 	}
-	.contentWrap .title p:nth-child(2){
-		font-weight: bold; 
-		font-size: 1.6em;
+	.sub_title h1{
+		font-size:35px;
+		font-weight: 500;
 	}
 	#map{
 		width:100% !important;
@@ -502,11 +502,11 @@
 	section .mainBackground .navWrap .navUl>li:hover >.sub_subDropdown {
 		display: block;
 	}
-	.contentWrap .title p{
+	.sub_title p{
 		text-align: center;
 		margin-bottom: 10px;
 	}
-	.contentWrap .title p:LAST-CHILD{
+	.sub_title h1{
 		text-align: center;
 		font-size: 1.5rem;
 		font-weight: 550;
@@ -620,9 +620,9 @@
 			</div><!-- navWrap end -->
 		</div><!-- mainBackground end -->
 		<div class="contentWrap">
-			<div class="title">
+			<div class="sub_title">
 				<p>|</p>
-				<p>오시는 길</p>
+				<h1>진료안내</h1>				
 			</div>
 			
 			<div id="map" style="width:1024px;height:450px;margin:0 auto;"></div>
