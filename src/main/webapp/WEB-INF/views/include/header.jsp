@@ -26,6 +26,7 @@
 		float:right;
 		height:108px;
 	}
+	
 	.mainMenu > li{
 		width:33.24%;
 		height:20px;
