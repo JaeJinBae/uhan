@@ -806,9 +806,9 @@
 						시술로서 내시경과 레이저가 탑재된 1mm 가량의 카테터를 삽입해<br>
 						치료를 진행 합니다.<br>
 						신경성형술과 유사하게 환자의 꼬리뼈에 카테터를 삽입해 약물로<br>
-						증상을 개선하지만, 내시경 영상응로 문제가 되는 병변 부위를 직접<br>
+						증상을 개선하지만, 내시경 영상으로 문제가 되는 병변 부위를 직접<br>
 						확인하며 초정밀 레이저와 약물을 주입하여 치료하기 때문에 정확성,<br>
-						안전성을 높인 회복이 빠른 시술법입니다.
+						안전성을 높이는 회복이 빠른 시술법입니다.
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_01img.png">

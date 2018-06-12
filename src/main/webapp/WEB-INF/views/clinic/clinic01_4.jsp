@@ -866,7 +866,7 @@
 						<p><span>시술방법</span></p>
 					</div>
 					<div class="content_small_content last_content">
-						(1) 병변 부위 극소마취<br>
+						(1) 병변 부위 국소마취<br>
 						(2) 직경 1mm의 초소형 특수 카테터를 삽입<br>
 						(3) 병변 부위를 찾아내어 염증 및 유착 제거<br>
 						(4) 병변부위에 특수 약물을 주입하여 치료

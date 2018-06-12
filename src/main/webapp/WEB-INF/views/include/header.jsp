@@ -390,7 +390,7 @@
 	<a class="menuClose" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/x.png"></a>
 	<ul class="mainMenu">
 		<li class="mainMenu_li">
-			<a href="${pageContext.request.contextPath}info01">병원소개</a>
+			<a href="${pageContext.request.contextPath}/info01">병원소개</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
 					<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>

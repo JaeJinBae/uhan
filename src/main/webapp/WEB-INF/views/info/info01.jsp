@@ -83,7 +83,7 @@
 		font-size: 20px;
 		color:white;
 		line-height: 70px;
-		margin:0 40px;
+		margin:0px 40px;
 	}
 	section .mainBackground .navWrap .navUl>li:first-child{
 		text-align: center;
@@ -95,8 +95,10 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:55px;
-		width:20px;
+		margin-left:60px; 
+		margin-top:23px;
+		float:right;
+		width:25px;
 	}
 	.sub_subDropdown{
 		display: none;

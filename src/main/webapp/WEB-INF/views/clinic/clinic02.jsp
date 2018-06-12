@@ -722,7 +722,7 @@
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/num04.png">
-							<p>띠 모양으로 비푸발진이 나타나며 수포가 생깁니다.</p>
+							<p>띠 모양으로 피부발진이 나타나며 수포가 생깁니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/num05.png">
