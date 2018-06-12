@@ -504,7 +504,7 @@
 	}
 	.contentWrap .title p{
 		text-align: center;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 	.contentWrap .title p:LAST-CHILD{
 		text-align: center;

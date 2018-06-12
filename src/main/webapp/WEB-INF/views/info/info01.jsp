@@ -683,9 +683,9 @@
 				
 				<div class="slogan">
 					<h1>'<span class="color1">생명</span>을 최우선으로</h1>
-					<h1><span class="color2">사람</span>을 최우선으로'</h1>
+					<h1><span class="color2">&nbsp;&nbsp;사람</span>을 최우선으로'</h1>
 				</div>
-				
+				 
 				<p class="content0">인도 고대의 길가메쉬 서사시에 인생의 삶에 대해서 이런 글귀가 있습니다.</p>
 				
 				<div class="content1">
