@@ -730,14 +730,14 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/notice">병원소식<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/notice">병원소식<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/broadcasting">언론보도<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/broadcasting">언론보도<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
 							<li><a href="${pageContext.request.contextPath}/comment">시술후기</a></li>

@@ -649,14 +649,14 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/info02">의료진 소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/info02">의료진 소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>
 							<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
