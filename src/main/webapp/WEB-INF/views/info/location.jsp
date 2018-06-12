@@ -505,6 +505,9 @@
 		text-align: center;
 		margin-bottom: 10px;
 	}
+	.sub_title{
+		margin-bottom: 52px;
+	}
 	.sub_title h1{
 		text-align: center;
 		font-size: 1.5rem;
