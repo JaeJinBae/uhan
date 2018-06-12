@@ -629,7 +629,6 @@
 	}
 	.mainBackground .bgText p{
 		font-weight: 300;
-		letter-spacing: 0.1em;
 		opacity:0.8;
 	}
 	section .mainBackground .navWrap{
