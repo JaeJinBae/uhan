@@ -107,8 +107,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -260,6 +260,9 @@
 		font-size:18px;
 		margin-top:10px;
 	}
+	.sub_title{
+		display:none;
+	}
 	.mobile_ContentWrap{
 		display:none;
 	}
@@ -362,8 +365,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -478,6 +481,9 @@
 		font-size:18px;
 		margin-top:10px;
 	}
+	.sub_title{
+		display:none;
+	}
 	.mobile_ContentWrap{
 		display:none;
 	}
@@ -583,6 +589,20 @@
 	}
 	.contentWrap{
 		display:none;
+	}
+	.sub_title{
+		width:100%;
+		margin:0 auto;
+		text-align: center;
+	}
+	.sub_title p{
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.sub_title h1{
+		text-align: center;
+		font-size: 19.5px;
+		font-weight: 550;
 	}
 	.mobile_ContentWrap{
 		width:100%;
@@ -699,6 +719,10 @@
 				</ol>
 			</div>
 		</div><!-- contentWrap end -->
+		<div class="sub_title">
+				<p>|</p>
+				<h1>의료진 소개</h1>				
+			</div>
 		<div class="mobile_ContentWrap">
 			<img src="${pageContext.request.contextPath}/resources/mobileImage/bossIntro.png"><!-- mInfo2 -->
 		</div>

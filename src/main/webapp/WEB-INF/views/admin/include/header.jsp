@@ -29,12 +29,12 @@
     font-weight: bold;
     letter-spacing: 3px;
 	}
-	#headerDiv #logo a{
+	#headerDiv>.gohome{
 		position: absolute;
-		left:283px;
-		top:13px;
+		right:50px;
+		top:21px;
 	}
-	#headerDiv #logo a img{
+	#headerDiv>.gohome>img{
 		width:40px;
 	}
 	#headerDiv #headerMenu{
@@ -90,8 +90,8 @@
 	<div id="headerDiv">
 		<div id="logo">
 			<h2>유한통증의학과 관리자</h2>
-			<a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" id="home"></a>
 		</div>
+		<a class="gohome" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" alt="메인페이지 바로가기" id="home"></a>
 		<div id="headerMenu"> 
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리" id="boardCtr">게시판 관리</a></li>

@@ -107,8 +107,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -319,8 +319,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -546,6 +546,9 @@
 	.info3 ul li{
 		padding: 10px 0px;
 		font-weight: 550;
+	}
+	.info3>ul:first-child>li:nth-child(2){
+		line-height: 11px;
 	}
 	 .line{
 	 	display:block;

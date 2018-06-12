@@ -110,8 +110,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -359,8 +359,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px;
-		line-height: 60px !important;
+		height:52px;
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{

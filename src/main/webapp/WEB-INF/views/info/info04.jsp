@@ -107,8 +107,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -339,8 +339,8 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:60px; 
-		line-height: 60px !important;
+		height:52px; 
+		line-height: 52px !important;
 		font-size: 18px !important;
 	}
 	.sub_subDropdown>li a:hover{
@@ -542,50 +542,16 @@
 		font-weight: 550;
 	}
 	.content{
-		text-align: center;
+		display:none;
 	}
-	.content .diaIcon{
-		width:35px !important;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-	.content h2{
-		font-size: 1.2em;
-		font-weight: 550;
-		margin-bottom: 15px;
-	}
-	.content img{
+	.mobile_ContentWrap{
 		width:100%;
-		margin-bottom: 15px;
-		
-	}
-	.content hr{
-		width:90%;
-		margin: 0 auto;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-	.content ul {
-		width:80%;
-		margin: 0 auto;
-		margin-top: 25px;
-	}
-	.content ul li{
+		margin:0 auto;
 		text-align: center;
 	}
-	.content ul li img{
-		width:25px;
-	}
-	.content ul li p{
-		float: right;
-		width:90%;
-		text-align: left;
-		margin-left: 5px;
-	}
-	.content ul li p span{
-		font-weight: 550;
-	}
-	
+	.mobile_ContentWrap> img{
+		width:100%;
+	}	
 }
 </style>
 <script type="text/javascript">
