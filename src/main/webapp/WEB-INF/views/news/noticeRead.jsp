@@ -643,7 +643,7 @@
 				<h1>공지사항</h1>				
 			</div>
 			<div class="notice_content">
-				<hr>
+				<hr> 
 				<p class="nTitle">${item.title}</p>
 				<p class="nRegdate">
 					<span>작성자: ${item.writer}</span>
