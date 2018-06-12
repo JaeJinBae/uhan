@@ -499,5 +499,19 @@ public class HomeController {
 		
 		return vo;
 	}
+	
+	@RequestMapping(value="/adminLogin", method=RequestMethod.GET)
+	public String adminLogin() throws Exception {
+		logger.info("adminLogin");
+
+		return "admin/adminLogin";
+	}
+	
+	@RequestMapping(value="/loginCheck")
+	public String adminLoginCheck(){
+		logger.info("admin Login Check");
+		
+		return "";
+	}
 		
 }

@@ -88,7 +88,16 @@
 	.arrow{
 		display: none;
 	}
-	
+	.adminBtn{
+		position: absolute;
+		top:16px;
+		right:50px;
+	}
+	.adminBtn>img{
+		width:15px;
+		float:left;
+		margin-top:2px;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	*{
@@ -179,7 +188,9 @@
 	.arrow{
 		display: none;
 	}
-	
+	.adminBtn{
+		display:none;
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	*{
@@ -264,6 +275,9 @@
 	}
 	.borderCss{
 		border-bottom: 1px solid #dcdcdc;
+	}
+	.adminBtn{
+		display:none;
 	}
 }
 </style>
@@ -413,5 +427,5 @@
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
 		</li>
 	</ul><!-- mainMenu end -->
-	
+	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock1.png">관리자</a>
 </div><!-- headerWrap end -->
