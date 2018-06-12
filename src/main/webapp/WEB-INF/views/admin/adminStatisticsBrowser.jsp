@@ -95,6 +95,7 @@
 	}
 	#tableDiv .t th{
 		padding:8px 13px;
+		font-weight: bold;
 	}
 	#tableDiv .t td{
 		text-align: center;
@@ -115,7 +116,8 @@
 	}
 	#tableDiv .t td #searchBtn{
 		width:35px;
-		height:30px;
+		height:25px;
+		line-height:25px;
 		color:white;
 		background-color: #00B4AE;
 		text-decoration: none;

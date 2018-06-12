@@ -98,10 +98,11 @@
 	}
 	#tableDiv .t th{
 		padding:8px 13px;
+		font-weight: bold;
 	}
 	#tableDiv .t td{
 		text-align: center;
-		padding:8px 13px;
+		padding:5px 3px;
 	}
 	#tableDiv .t td input{
 		height:23px;
@@ -112,13 +113,18 @@
 	#tableDiv .info_t tr{
 		border-bottom: 1px solid #e3e3e3;
 	}
+	#tableDiv .info_t th{
+		padding:8px 13px;
+		font-weight: bold;
+	}
 	#tableDiv .t .bar{
 		width:5px;
 		padding:8px 0px;
 	}
 	#tableDiv .t td #searchBtn{
 		width:35px;
-		height:30px;
+		height:25px;
+		line-height:25px;
 		color:white;
 		background-color: #00B4AE;
 		text-decoration: none;
@@ -157,6 +163,12 @@
 	}
 	#searchBtn{
 		cursor: pointer;
+	}
+	.info_t .b, .info_t .d{
+		width:60px;
+	}
+	.info_t .c{
+		width:70px;
 	}
 </style>
 <script type="text/javascript">
@@ -323,10 +335,10 @@
 			</table>		
 			<table class="t info_t">
 				<tr class="tbl_header">
-					<th>접속경로</th>
-					<th>브라우저</th>
-					<th>디바이스</th>
-					<th>일시</th>
+					<th class="u">접속경로</th>
+					<th class="b">브라우저</th>
+					<th class="d">디바이스</th>
+					<th class="c">일시</th>
 				</tr>
 				<c:if test="${list.size() > 0 }">
 					<c:forEach var="list" items="${list }">
@@ -335,7 +347,7 @@
 						<td>${list.browser }</td>
 						<td>${list.device }</td>
 						<fmt:formatDate value="${list.connectdate }" var="connectdate" pattern="yyyy-MM-dd HH:mm:ss"/>
-						<td>${connectdate }</td>
+						<td class="c">${connectdate }</td>
 					</tr>
 				</c:forEach>
 				</c:if>
