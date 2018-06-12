@@ -267,7 +267,9 @@
 <script type="text/javascript">
 	$(function(){
 		$("section").bind("touchstart",function(){
+			if(window.innerWidth <= 767){
 			$(".menuClose").trigger("click");
+			}
 		})
 			$(".mainMenu").find(".mainMenu_li > a").bind("touchstart",function(e){
 					
@@ -296,7 +298,7 @@
 			});
 			
 			$(".mainMenu").find(".mainMenu_li img").bind("touchstart",function(e){
-				if(window.innerWidth <= 767){
+				if(window.innerWidth < 767){
 					
 					var $target=$(this).prevAll(".dropdown").find(".mainSubMenu");
 					$(this).parent("li").find(".arrow").attr("src","${pageContext.request.contextPath}/resources/images/arrow_up.png");
@@ -330,7 +332,7 @@
 		});
 		
 		$(".mobileMenu").click(function(e){
-			
+		
 			$(".mainLogo").find("img").attr("src","${pageContext.request.contextPath}/resources/images/mobileMenuLogo.png");
 			 $(".mainLogo").find("img").css({"margin-top":"19px","width":"200px","height":"40px","margin-left":"14px"}); 
 			 
@@ -360,9 +362,9 @@
 			
 			e.preventDefault();
 		});
-		$(".navUl>li:not(:first-child)>a").click(function(){
-        	return false;
-        });
+		 $(".navUl>li:not(:first-child)>a").click(function(){
+			return false;
+        }); 
 	});	
 </script>
 <div class="headerWrap">
