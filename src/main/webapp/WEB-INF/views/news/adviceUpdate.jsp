@@ -681,19 +681,19 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="notice">병원소식<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/notice">병원소식<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="info01">병원소개</a></li>
-							<li><a href="clinic01_01">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="advice">진료/비용 상담<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/advice">진료/비용 상담<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="notice">공지사항</a></li>
-							<li><a href="broadcasting">언론보도</a></li>
-							<li><a href="comment">시술후기</a></li>
-							<li><a href="freqQuestion">자주하는 질문</a></li>
+							<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
+							<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
+							<li><a href="${pageContext.request.contextPath}/comment">시술후기</a></li>
+							<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
 						</ul>	
 					</li>
 				</ul><!-- navUl end -->
@@ -703,9 +703,9 @@
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
-					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
-					<li><a href="freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
-					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
@@ -740,15 +740,15 @@
 							<td colspan="2">
 								<textarea id="editor1" name="content">${item.content}</textarea>
 								<script>
-									CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload"});
+									CKEDITOR.replace('content',{filebrowserUploadUrl:"/admin/imgUpload"});
 								</script>
 							</td>
 						</tr>
 					</table>
 					<div class="btnWrap">
-						<a href="advice${pageMaker.makeSearch(pageMaker.cri.page)}" class="goListBtn"><button type="button">목록</button></a>
+						<a href="${pageContext.request.contextPath}/advice${pageMaker.makeSearch(pageMaker.cri.page)}" class="goListBtn"><button type="button">목록</button></a>
 						<input type="submit" value="수정" class="submitBtn">
-						<a href="adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}" class="cancelBtn"><button type="button">취소</button></a>
+						<a href="${pageContext.request.contextPath}/adviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}" class="cancelBtn"><button type="button">취소</button></a>
 					</div>
 				</form>
 			</div>

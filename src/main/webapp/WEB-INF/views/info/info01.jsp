@@ -630,19 +630,19 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="clinic01_01">진료분야</a></li>
-							<li><a href="notice">병원소식</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="info01">인사말<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/info01">인사말<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="info02">의료진 소개</a></li>
-							<li><a href="info03">병원 둘러보기</a></li>
-							<li><a href="info04">진료안내</a></li>
-							<li><a href="location">오시는길</a></li>
+							<li><a href="${pageContext.request.contextPath}/info02">의료진 소개</a></li>
+							<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
+							<li><a href="${pageContext.request.contextPath}/info04">진료안내</a></li>
+							<li><a href="${pageContext.request.contextPath}/location">오시는길</a></li>
 						</ul>	
 					</li>
 				</ul>
@@ -652,9 +652,9 @@
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
-					<li><a href="advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
-					<li><a href="freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
-					<li><a href="location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
 			</div><!-- quick end -->
