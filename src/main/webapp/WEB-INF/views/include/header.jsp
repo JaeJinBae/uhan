@@ -387,7 +387,7 @@
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
-		</li>
+		</li> 
 		<li class="mainMenu_li">
 			<a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a>
 			<div class="dropdown">
