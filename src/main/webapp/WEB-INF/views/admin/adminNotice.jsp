@@ -205,7 +205,7 @@
 					<c:choose>
 					    <c:when test="${fn:length(list) == 0}">
 				        	<tr>
-				        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+				        		<td colspan="6" style=" text-align: center;">등록된 게시물이 없습니다.</td>
 				        	</tr>
 					    </c:when>
 					    <c:otherwise>
