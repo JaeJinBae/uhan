@@ -47,7 +47,56 @@
 		font-size:14px;
 		line-height: 7px;
 	}
+	.goMainBtn{
+		width:123px;
+		display:block;
+		margin: 30px auto;
+		margin-bottom:20px;
+	}
+	.goMainBtn>button{
+		background:#00B4AE;
+		border:0;
+		border-radius: 5px;
+		color:white;
+	}
 </style>
+<script type="text/javascript">
+	$(function(){
+		
+		function idpwCheck(){
+			var id=$("input[name='id']").val();
+			var pw=$("input[name='pw']").val();
+			if(id==""||pw==""){
+				alert("아이디와 비밀번호를 모두 입력하세요.");
+				return;
+			}
+			$.ajax({
+				url:"${pageContext.request.contextPath}/loginCheck/"+id+"/"+pw,
+				type:"post",
+				dataType:"text",
+				success:function(json){
+					console.log(json);
+					
+					if(json!="ok"){
+						alert("아이디 또는 비밀번호를 다시 확인하세요.");
+					}else{
+						location.href="${pageContext.request.contextPath}/admin/";
+					}
+				}
+			});
+		}
+		
+		$(".loginBtn>button").click(function(){
+			var id=$("input[name='id']").val();
+			var pw=$("input[name='pw']").val();
+			if(id==null||id==""||pw==null||pw==""){
+				alert("아이디와 비밀번호를 다시 확인하세요.");
+			}else{
+				idpwCheck();
+			}
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="formWrap">
@@ -70,7 +119,7 @@
 			<p>* 관리자 아이디 및 비밀번호 관리에 유의해 주십시오.</p>
 			<p>* 관리자 아이디 및 비밀번호가 기억나지 않을 때는 제작 업체에 문의해 주십시오.</p>
 		</div>
-		<a href="${pageContext.request.contextPath}/"><button>메인으로 돌아가기</button></a>
+		<a  class="goMainBtn" href="${pageContext.request.contextPath}/"><button>메인으로 돌아가기</button></a>
 	</div>
 </body>
 </html>

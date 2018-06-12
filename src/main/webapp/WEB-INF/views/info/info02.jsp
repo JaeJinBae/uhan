@@ -713,7 +713,7 @@
 					<li>2008년 Texas Tech University Health Science 신경성형술 개발자이신 Gabor Racz 박사와 대구 경북 최초로 신경성형술 시연</li>
 					<li>2009년 Robert Wood Johson University Hospital YK Choi 박사와 국내 및 대구 경북 경막외내시경술 시연</li>
 					<li>2010년 미국의 Dr.Rostein과 레이저를 이용한 경막외 내시경술 시연</li>
-					<li>그외 국내 의료진과 함께 꼬리뼈를 이용한 레이저를 이용한 레이져 경막외 내시경술(SLED) 시연</li>
+					<li>그외 국내 의료진과 함께 레이저를 이용한 꼬리뼈 레이져 경막외 내시경술(SLED) 시연</li>
 					<li>지난 10년간 지역 최초로 신경성형술, 신경박리술, 경막외 내시경술을 도입하여 시술하였으며, 그 외 추간판내 고주파 열응고술<br>(IDET,L-DISQ, necleoplasty) 시술 및 수만건의 영상장치 유도하 척추시술</li>
 				</ol>
 			</div>

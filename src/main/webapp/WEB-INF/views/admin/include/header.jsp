@@ -91,7 +91,7 @@
 		<div id="logo">
 			<h2>유한통증의학과 관리자</h2>
 		</div>
-		<a class="gohome" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/home2.png" alt="메인페이지 바로가기" id="home"></a>
+		<a class="gohome" href="${pageContext.request.contextPath}/logout"><img src="${pageContext.request.contextPath}/resources/images/home2.png" alt="메인페이지 바로가기" id="home"></a>
 		<div id="headerMenu"> 
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리" id="boardCtr">게시판 관리</a></li>

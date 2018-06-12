@@ -3,6 +3,7 @@ package com.antweb.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -507,11 +509,29 @@ public class HomeController {
 		return "admin/adminLogin";
 	}
 	
-	@RequestMapping(value="/loginCheck")
-	public String adminLoginCheck(){
+	@RequestMapping(value="/loginCheck/{id}/{pw}")
+	public ResponseEntity<String> loginCheck(@PathVariable("id") String id,@PathVariable("pw") String pw, HttpServletRequest req) throws Exception{
 		logger.info("admin Login Check");
+		ResponseEntity<String> entity=null;
 		
-		return "";
+		HttpSession session=req.getSession();
+		
+		if(id.equals("admin")&&pw.equals("uhan7536001")){
+			entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			session.setAttribute("id", id);
+		}else{
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	public String logout(HttpServletRequest req){
+		HttpSession session=req.getSession();
+		session.invalidate();
+		
+		return "redirect:/";
 	}
 		
 }
