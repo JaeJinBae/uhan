@@ -765,7 +765,7 @@
 	</header>
 	<section>
 		<div class="mainBackground">
-			<img class="bgImg" src="${pageContext.request.contextPath}/resources/images/news_top_bg.png">
+			<img class="bgImg" src="${pageContext.request.contextPath}/resources/images/clinic_top_bg.png">
 			<div class="bgText">
 				<h1>진료분야</h1>
 				<p>

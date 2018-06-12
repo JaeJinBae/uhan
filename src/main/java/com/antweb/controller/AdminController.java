@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.logging.SimpleFormatter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -530,9 +531,16 @@ public class AdminController {
 		OutputStream out = null;
 
 		Map<String, Object> map = new HashMap<String, Object>();
-
+		
+		//오리지날 파일명
+		String originalName=upload.getOriginalFilename();
+		
+		//랜덤이름 생성(중복 방지용)
+		UUID uid=UUID.randomUUID();
+		String savedName=uid.toString()+"_"+originalName;
+		
 		// 업로드한 파일 이름
-		String fileName = upload.getOriginalFilename();
+		String fileName = savedName;
 
 		//바이트 배열로 변환
 		byte[] bytes=upload.getBytes();
