@@ -184,13 +184,6 @@
 	.content{
 		width:100%;
 	}
-	.content h2{
-		font-size:30px;
-		font-weight:500;
-	}
-	.content .diaIcon{
-		 margin-bottom:30px;
-	}
 	.slogan{
 		margin-top:70px;
 		margin-bottom:70px;
@@ -400,13 +393,6 @@
 	}
 	.content{
 		width:100%;
-	}
-	.content h2{
-		font-size:30px;
-		font-weight:500;
-	}
-	.content .diaIcon{
-		 margin-bottom:30px;
 	}
 	.slogan{
 		margin-top:70px;
@@ -678,8 +664,6 @@
 				<h1>인사말</h1>				
 			</div>
 			<div class="content">
-				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h2>병원장 인사말</h2>
 				
 				<div class="slogan">
 					<h1>'<span class="color1">생명</span>을 최우선으로</h1>

@@ -622,7 +622,7 @@
 		<div class="contentWrap">
 			<div class="sub_title">
 				<p>|</p>
-				<h1>진료안내</h1>				
+				<h1>오시는 길</h1>				
 			</div>
 			
 			<div id="map" style="width:1024px;height:450px;margin:0 auto;"></div>
