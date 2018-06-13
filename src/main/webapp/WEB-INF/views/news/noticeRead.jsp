@@ -217,6 +217,7 @@
 	}
 	.notice_content .nContent{
 		margin-bottom:50px;
+		text-align: left;
 	}
 	.notice_content .nContent img{
 		max-width:1000px;
@@ -400,6 +401,7 @@
 	}
 	.notice_content .nContent{
 		margin-bottom:50px;
+		text-align: left;
 	}
 	.notice_content .nContent img{
 		max-width:685px;
@@ -562,6 +564,7 @@
 	.notice_content .nContent{
 		margin-bottom:20px;
 		margin-left:10px;
+		text-align: left;
 	}
 	.notice_content .nContent img{
 		max-width:340px;
