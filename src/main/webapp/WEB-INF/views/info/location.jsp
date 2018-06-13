@@ -142,7 +142,7 @@
 		font-weight: 500;
 	}
 	.addr{
-		font-size: 1.5em;
+		font-size: 25px;
 		margin-top:20px;
 		margin-bottom:100px;
 		font-weight: bold;
@@ -157,6 +157,7 @@
 	}
 	.info2{
 		float:left;
+		margin-top:20px;
 	}
 	.info2>p{
 		font-size:15px;
@@ -171,12 +172,12 @@
 		list-style: disc;
 		text-align: left;
 		font-weight: bold;
-		font-size: 15px;
+		font-size: 17px;
 		margin-bottom:10px;
 	}
 	.line{
 		width:920px;
-		margin-bottom:50px;
+		margin-bottom:25px;
 	}
 	/* quick menu */
 	.quick{

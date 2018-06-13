@@ -185,7 +185,31 @@
 		margin-bottom:50px;
 		text-align: center;
 	}
-	
+	/* 이미지 업로드 설명서 */
+	.howToUpload{
+		width:225px;
+		position:absolute;
+		top:400px;
+		left:17px;
+		padding:15px;
+		background: white;
+		text-align: center;
+		border-radius: 10px;
+	}
+	.howToUpload>h3{
+		font-size:20px;
+		margin-bottom:20px;
+	}
+	.howToUpload ol{
+		text-align: left;
+		margin-left:30px;
+	}
+	.howToUpload ol li{
+		list-style: decimal;
+	}
+	.howToUpload ol li img{
+		width:20px;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -215,6 +239,16 @@
 				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice"> 진료/비용 상담</a></li>
 			</ul>
+		</div>
+		<div class="howToUpload">
+			<h3>이미지 업로드 사용법</h3>
+			<ol>
+				<li><img src="${pageContext.request.contextPath}/resources/images/uploadIcon.PNG"> 클릭</li>
+				<li>업로드 탭 클릭</li>
+				<li>파일 선택</li>
+				<li>서버로 전송 클릭</li>
+				<li>필요시 너비, 높이, 테두리 등 설정 후 확인</li>
+			</ol>
 		</div>
 		<div class="centerMenu">
 			<h1 class="boardTitle">&lt;언론보도 관리&gt;</h1>
