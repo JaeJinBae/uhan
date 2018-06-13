@@ -194,7 +194,8 @@
 		margin-bottom:100px;
 	}
 	.bossIntro .bossimg{
-		width:50%;
+		/* width:50%; */
+		width:425px;
 		margin-right:70px;
 	}
 	.bossIntro .bosstext{
@@ -688,7 +689,7 @@
 				<h1>의료진 소개</h1>
 			</div>
 			<div class="bossIntro">
-				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/info02img1.png">
+				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/bossImg22.png">
 				<div class="bosstext">
 					<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
 					<p class="bossname"><span>유한목</span> 원장님</p>
@@ -729,7 +730,7 @@
 				<h1>의료진 소개</h1>				
 			</div>
 		<div class="mobile_ContentWrap">
-			<img src="${pageContext.request.contextPath}/resources/mobileImage/bossIntro.png"><!-- mInfo2 -->
+			<img src="${pageContext.request.contextPath}/resources/mobileImage/bossIntro2.png"><!-- mInfo2 -->
 		</div>
 	</section>
 	<footer>
