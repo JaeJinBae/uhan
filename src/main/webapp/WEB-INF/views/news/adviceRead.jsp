@@ -99,8 +99,10 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:55px;
-		width:20px;
+		margin-left:50px; 
+		margin-top:26px;
+		float:right;
+		width:22px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -248,6 +250,9 @@
 		padding:20px 15px;
 		text-align: left;
 	}
+	.replyContent img{
+		max-width:1000px;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -333,8 +338,10 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:55px;
-		width:20px;
+		margin-left:50px; 
+		margin-top:26px;
+		float:right;
+		width:22px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -440,7 +447,9 @@
 		padding:20px 15px;
 		text-align: left;
 	}
-	
+	.replyContent img{
+		max-width:685px;
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -515,7 +524,9 @@
 		line-height: 51px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:25px;
+		margin-left:25px; 
+		margin-top:14px;
+		float:right;
 		width:20px;
 	}
 	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
@@ -624,6 +635,9 @@
 		margin:0 auto;
 		padding:20px 15px;
 		text-align: left;
+	}
+	.replyContent img{
+		max-width:340px;
 	}
 }
 </style>

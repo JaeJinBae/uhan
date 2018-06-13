@@ -100,8 +100,10 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:55px;
-		width:20px;
+		margin-left:50px; 
+		margin-top:26px;
+		float:right;
+		width:22px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -346,8 +348,10 @@
 		line-height: 75px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:55px;
-		width:20px;
+		margin-left:50px; 
+		margin-top:26px;
+		float:right;
+		width:22px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -543,7 +547,9 @@
 		line-height: 51px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:25px;
+		margin-left:25px; 
+		margin-top:14px;
+		float:right;
 		width:20px;
 	}
 	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
@@ -575,12 +581,13 @@
 		text-align: center;
 	}
 	.sub_title p{
-		font-size:20px;
-		margin-bottom:20px; 
+		text-align: center;
+		margin-bottom: 10px;
 	}
 	.sub_title h1{
-		font-size:25px;
-		font-weight: 500;
+		text-align: center;
+		font-size: 1rem;
+		font-weight: 550;
 	}
 	/* 공지사항 */
 	.tbl_board{
