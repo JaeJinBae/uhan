@@ -91,12 +91,14 @@
 	.adminBtn{
 		position: absolute;
 		top:16px;
-		right:50px;
+		right:30px;
+		color:#666;
 	}
 	.adminBtn>img{
-		width:15px;
+		width:9px;
 		float:left;
-		margin-top:2px;
+		margin-top:5px;
+		margin-right:4px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -427,5 +429,5 @@
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
 		</li>
 	</ul><!-- mainMenu end -->
-	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock1.png">관리자</a>
+	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
 </div><!-- headerWrap end -->

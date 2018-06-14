@@ -205,10 +205,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:first-child{
+	.clinic_sub_nav ul li:last-child{
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:first-child a{
+	.clinic_sub_nav ul li:last-child a{
 		color:white; 
 	}
 	.content{
@@ -475,10 +475,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:first-child{
+	.clinic_sub_nav ul li:last-child{
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:first-child a{
+	.clinic_sub_nav ul li:last-child a{
 		color:white; 
 	}
 	.content{
@@ -705,7 +705,7 @@
 	}
 	.clinic_sub_nav ul{
 		width:100%;
-		margin:0 auto;
+			margin:0 auto;
 	}
 	.clinic_sub_nav ul li{
 		width:24%;
@@ -717,19 +717,19 @@
 	}
 	.clinic_sub_nav ul li a{
 		color:#888686;
-		
 	}
 	.clinic_sub_nav ul li:FIRST-CHILD{
 		width:31%;
-		background: #00b4ae;
-	}
-	.clinic_sub_nav ul li:FIRST-CHILD a{
-	 	color:white;
 	}
 	.clinic_sub_nav ul li:nth-child(2){
 		width:20%;
 	}
-	
+	.clinic_sub_nav ul li:last-child{
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:last-child a{
+		color:white;
+	}
 	.content{
 		display:none;
 	}
@@ -811,8 +811,8 @@
 			<div class="clinic_sub_nav">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic03_01">스포츠 재활치료</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic03_02">주사치료</a></li>
-					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic03_03">척추측만증</a></li>
+					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic03_02">주사치료</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic03_03">척추측만증</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic03_04">초음파진단</a></li>
 				</ul> 
 			</div>

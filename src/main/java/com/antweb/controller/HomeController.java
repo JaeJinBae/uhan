@@ -169,6 +169,16 @@ public class HomeController {
 		
 		return "clinic/clinic03_2";
 	}
+	@RequestMapping(value="/clinic03_03")
+	public String clinic03_03(){
+		
+		return "clinic/clinic03_3";
+	}
+	@RequestMapping(value="/clinic03_04")
+	public String clinic03_04(){
+		
+		return "clinic/clinic03_4";
+	}
 
 	// ========================== news(병원소식)===============================
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)

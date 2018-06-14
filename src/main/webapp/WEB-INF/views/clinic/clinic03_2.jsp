@@ -192,13 +192,12 @@
 		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
-		width:50%;
+		width:100%;
 		margin:0 auto;
 		overflow: hidden;
 	}
 	.clinic_sub_nav ul li{
-		width:49.9%;
-		margin:0 auto;
+		width:24.9%;
 		float:left;
 		background: #dcdcdc; 
 	}
@@ -209,10 +208,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:last-child{
+	.clinic_sub_nav ul li:nth-child(2){
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:last-child a{
+	.clinic_sub_nav ul li:nth-child(2) a{
 		color:white;
 	}
 	.content{
@@ -465,13 +464,12 @@
 		margin-bottom:80px;
 	}
 	.clinic_sub_nav ul{
-		width:50%;
+		width:100%;
 		margin:0 auto;
 		overflow: hidden;
 	}
 	.clinic_sub_nav ul li{
-		width:49.9%;
-		margin:0 auto;
+		width:24.9%;
 		float:left;
 		background: #dcdcdc; 
 	}
@@ -482,10 +480,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:last-child{
+	.clinic_sub_nav ul li:nth-child(2){
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:last-child a{
+	.clinic_sub_nav ul li:nth-child(2) a{
 		color:white;
 	}
 	.content{
@@ -717,22 +715,25 @@
 			margin:0 auto;
 	}
 	.clinic_sub_nav ul li{
-		width:50%;
+		width:24%;
 		height:40px;
 		line-height:40px;
 		text-align:center;
 		float: left;
+		background: #dcdcdc;
 	}
 	.clinic_sub_nav ul li a{
-		width:99%;
 		color:#888686;
-		background:#dcdcdc;
-		display: block;
-		font-size: 1.2em;
 	}
-	.clinic_sub_nav ul li:LAST-CHILD a{
+	.clinic_sub_nav ul li:FIRST-CHILD{
+		width:31%;
+	}
+	.clinic_sub_nav ul li:nth-child(2) a{
 	 	color:white;
-	 	background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:nth-child(2){
+		width:20%;
+		background: #00b4ae;
 	}
 	.content{
 		display:none;
@@ -816,6 +817,8 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic03_01">스포츠 재활치료</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic03_02">주사치료</a></li>
+					<li style="border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic03_03">척추측만증</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic03_04">초음파진단</a></li>
 				</ul> 
 			</div>
 			<div class="content">
