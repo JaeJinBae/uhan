@@ -837,10 +837,10 @@
 					</div>
 					<div class="content_small_content first_child">
 						유한통증의학과의 주사치료는 어깨, 무릎 등 퇴행성 관절 질환에<br>
-						적용하는 치료법으로 통증의 원인이 되는 신경을 제어해서 작은<br>
-						자극에도 반응하는 통증을 줄이는 원리입니다. 주사치료의 경우<br>
-						수술이 아닌 시술 이므로 짧은 시술시간과 함께 시술 후 약 1시간<br>
-						이후에는 일상으로 복귀하여 정상생활이 가능합니다.
+						적용하는 치료법으로 통증의 원인이 되는 신경을 차단해서 작은<br>
+						자극에도 반응하는 통증을 줄이는 원리입니다.<br>
+						주사치료의 경우 짧은 시술시간과 함께 시술 후 약 1시간 이후에는<br>
+						일상으로 복귀하여 정상생활이 가능합니다.
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_2img1.png">

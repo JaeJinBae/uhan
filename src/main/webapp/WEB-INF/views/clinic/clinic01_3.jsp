@@ -818,7 +818,7 @@
 						진행되므로 추간공 협착해소가 무조건 적으로 필요합니다.<br>
 						추간공확장술을 통해 추간공에 염증 유발 물질을 긁어내며 협착<br>
 						해소를 합니다. 확장키트를 옆구리 쪽으로 삽입하여 유착되고<br>
-						퇴하된 인대를 제거하여 좁아진 추간공을 확장합니다.
+						퇴화된 인대를 제거하여 좁아진 추간공을 확장합니다.
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_03img.png">
