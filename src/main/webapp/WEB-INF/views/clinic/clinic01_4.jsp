@@ -262,6 +262,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	.imgText{
 		font-size:21px;
 	}
@@ -523,6 +526,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	.imgText{
 		font-size:21px;
@@ -807,7 +813,7 @@
 						<hr>
 						<p>신경성형술 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						신경성형술이란, 미국 텍사스대 가보 라트 교수가 개발한 시술로써<br>
 						지름 1mm인 소형 카테터를 환부에 삽입한 뒤, 영상장비를 사용하여<br>
 						실시간으로 화인하며 신경의 유착을 풀고 유착방지 효소제와 항염증제<br>

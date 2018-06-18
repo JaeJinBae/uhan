@@ -262,6 +262,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -536,6 +539,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -829,7 +835,7 @@
 						<hr>
 						<p>주사치료</p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						유한통증의학과의 주사치료는 어깨, 무릎 등 퇴행성 관절 질환에<br>
 						적용하는 치료법으로 통증의 원인이 되는 신경을 제어해서 작은<br>
 						자극에도 반응하는 통증을 줄이는 원리입니다. 주사치료의 경우<br>

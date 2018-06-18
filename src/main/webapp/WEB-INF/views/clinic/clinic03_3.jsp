@@ -27,7 +27,7 @@
 	}
 	section{
 		width:100%;
-		margin-top:27px;
+		margin-top:54px;
 		margin-bottom:100px;
 	}
 	section .mainBackground{
@@ -231,18 +231,19 @@
 	}
 	
 	.content00 .content_small_title{
-		width:26%;
+		/* width:26%; */
+		width:275px;
 		float:left;
 		text-align: left;
 	}
 	.content00 .content_small_title hr{
 		width:100%;
 		border:0;
-		border-top:4px solid #0d7586;
+		border-top:4px solid #00938e;
 	}
 	.content00 .content_small_title p{
 		font-size:35px;
-		color:#0d7586;
+		color:#00938e;
 		font-weight:500;
 	}
 	.content00 .content_small_title span{
@@ -252,29 +253,34 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		width:58%;
+		/* width:58%; */
+		width:633px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
 	}
 	.content00 .content_small_content ul:first-child{
-		margin-right:40px;
 		width:140px;
 	}
 	.content00 .content_small_content ul:last-child{
-		width:268px;
+		width:586px;
 	}
 	.content00 .content_small_content ul li{
-		list-style: disc;
+		list-style: none;
 		font-size:19px;
 		color:#2d2d2d;
 		list-style-position: inside;
+		line-height: 23px;
+		margin-bottom:15px;
 	}
 	.content00 .content_small_content .ccc{
 		width:100%; 
@@ -299,9 +305,6 @@
 		font-size:26px;
 		font-weight:bold;
 	}
-	.ccc:last-child h2{
-		margin-top:30px;
-	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
 	}
@@ -311,7 +314,7 @@
 		line-height: 27px;
 		margin-top:10px;
 	}
-	.content00 .content_small_content .ccc ul li:before{
+	.content00 .small_content ul li:before{
 		content:"- ";
 	}
 	.mContent{
@@ -509,12 +512,12 @@
 	.content00 .content_small_title hr{
 		width:100%;
 		border:0;
-		border-top:4px solid #0d7586;
+		border-top:4px solid #00938e;
 	}
 	.content00 .content_small_title p{
 		font-size:35px;
-		color:#0d7586;
-		font-weight:500;
+		color:#00938e;
+		font-weight:500; 
 	}
 	.content00 .content_small_title span{
 		font-size:35px;
@@ -524,13 +527,16 @@
 	/* 시술 이란? */
 	.content00 .content_small_content{
 		/* width:58%; */
-		width:583px;
+		width:586px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -541,10 +547,10 @@
 		width:140px;
 	}
 	.content00 .content_small_content ul:last-child{
-		width:268px;
+		width:545px;
 	}
 	.content00 .content_small_content ul li{
-		list-style: disc;
+		list-style: none;
 		font-size:19px;
 		color:#2d2d2d;
 		list-style-position: inside;
@@ -572,9 +578,6 @@
 		font-size:26px;
 		font-weight:bold;
 	}
-	.ccc:last-child h2{
-		margin-top:30px;
-	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
 	}
@@ -584,7 +587,7 @@
 		line-height: 27px;
 		margin-top:10px;
 	}
-	.content00 .content_small_content .ccc ul li:before{
+	.content00 .small_content ul li:before{
 		content:"- ";
 	}
 	.mContent{
@@ -819,68 +822,99 @@
 			</div>
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h1 class="subTitle">스포츠 재활치료</h1>
+				<h1 class="subTitle">척추측만증</h1>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>스포츠 재활치료</p>
+						<p>척추측만증 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
-						많은 분들이 스포츠재활치료하면 운동 선수들이 부상 이후 복귀를<br>
-						돕기 위한 치료로 알고 있습니다. 하지만 재활치료는 운동선수뿐만<br>
-						아니라 일반인도 일상으로의 복귀를 위한 중요한 치료입니다.<br>
-						관절염에는 특히나 재활치료가 필요합니다.
-					</div>
-				</div><!-- content00 end -->
-				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img1.png">
-				<div class="content00">
-					<div class="content_small_title">
-						<!-- <hr>
-						<p>신경성형술</p>
-						<p><span>적용질환</span></p> -->
-					</div>
-					<div class="content_small_content">
-						스포츠재활치료는 녹이 슬어 문이 잘 열리고 닫히지 않는 것 같은<br>
-						관절염에 매우 종요한 치료방법입니다.<br>
-						적절한 운동과 함께하는 유한통증의학과의 스포츠재활치료는 녹이<br>
-						슨 부위에 윤활유를 바른 후 여러 번 닫았다 열었다 하는 동작을 반복<br>
-						하며 문이 잘 열리고 닫히게 하는 것처럼 관절의 부드러움을 되찾아<br>
-						환자분들의 통증을 개선시키는 치료입니다.
-						<br><br><br>
-						스포츠재활치료를 하는 이유는 대부분의 척추 및 관절 질환은 부실한<br>
-						주변 근육과 인대에 원인이 있기 때문입니다. 허리 근육이 약해지면<br>
-						척추에 부담을 주게 되어 디스크탈출이나 불안정한 상태로 발전하여<br>
-						여러 척추 질환들을 발생시킵니다. 100세 시대 삶의 질을 향상 시키기<br>
-						위해 유한통증의학과의 스포츠재활치료가 필요합니다.
+					<div class="content_small_content first_child">
+						정상적인 척추는 정면에서 바라보았을 때 일자로 곧게 펴져있지만,<br>
+						척추측만증은 S자형 또는 C자형으로 척추가 굽어져 있습니다.<br>
+						이처럼 척추의 모양이 곧지않고 왼쪽 혹은 오른쪽으로 휘어지는 증상을<br>
+						척추측만증이라고 합니다. 척추측만증은 보통 10세 전후 성장기 부터<br>
+						서서히 진행되며, 성장이 활발한 사춘기에는 측만 증세가 집중적으로<br>
+						악화됩니다. 성장이 끝나면 측만증 악화는 덜 하지만 치료가 어려워지게<br>
+						됩니다. 그렇기 때문에 조기에 발견하여 치료하는 것이 매우 중요합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img1.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>스포츠재활치료</p>
-						<p><span>필요 대상 및</span></p>
-						<p><span>기대효과</span></p>
+						<p>척추측만증 <span>원인</span></p>
 					</div>
 					<div class="content_small_content">
-						<div class="ccc"> 
-							<h2><span class="dot">·</span> 필요대상</h2>
-							<p>- 허리수술 또는 인공관절 수술을 받은 환자, 관절염 환자 등</p>
+						<div class="ccc">
+							<h2><span class="dot">·</span> 기능성</h2>
+							<p>
+								영양 불균형, 잘못된 자세, 생활습관, 편식으로 인해 측만증이 발생하는 경우
+							</p>
 						</div>
 						<div class="ccc">
-							<h2><span class="dot">·</span> 기대효과</h2>
-							<ul>
-								<li>관절염 환자가 재활치료를 진행하면 관절 주위 근육들이 튼튼해지며<br>&nbsp;&nbsp;뼈와 연골 조직들이 건강해 집니다.</li>
-								<li>관절염 통증으로 인해 움직이지 않을 때 발생할 수 있는 관절 경직을<br>&nbsp;&nbsp;예방합니다.</li>
-								<li>몸의 컨디션을 높여주며 통증으로 생길 수 있는 우울증을 예방합니다.</li>
-								<li>인공관절 수술환자에게는 인공관절 수명을 늘려주고 통증을 완하시켜<br>&nbsp;&nbsp;빠른 일상행활복귀가 가능하게 합니다.</li>
-							</ul>
+							<h2><span class="dot">·</span> 특발성</h2>
+							<p>
+								전체 측만증 환자 비율의 70%를 차지하는 특별한 원인 없이 발생하는 경우
+							</p>
 						</div>
+						<div class="ccc">
+							<h2><span class="dot">·</span> 선천성</h2>
+							<p>
+								선천적으로 척추 변형이 있어 측만증이 생기는 경우
+							</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>척추측만증<span> 증상</span></p>
+					</div>
+					<div class="content_small_content small_content">
+						<ul>
+							<li>양쪽 어깨 균형이 맞지 않고 한쪽 어깨가 지나치게 솟아 있는 경우</li>
+							<li>유난히 한쪽 골반이 틀어진 경우</li>
+							<li>젖가슴이 균형있지 않고 한쪽이 다른 쪽에 비해 덜 발달되어 있는 경우</li>
+							<li>서서 땅을 짚을 때 한쪽 등이 튀어 올라오는 경우</li>
+							<li>걷기를 조금만 하여도 몹시 피곤하고 힘이 드는 경우</li>
+						</ul>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>척추측만증<span> 치료</span></p>
+					</div>
+					<div class="content_small_content first_child">
+						척추측만증은 요추를 포함하여 척추 전체의 곡선이 변형되어 통증이<br>
+						발생하게 되는 질환으로 수술보다는 근육 균형을 유지하며 통증을<br>
+						완화시키는 운동요법 위주의 치료가 이루어집니다.<br>
+						치료를 진행 할 때 전반적으로 어깨와 척추 근육을 강화하는데 중점을<br>
+						두지만 척추의 앞, 뒤, 측면의 근육을 고르게 강화시키는 것이 매우<br>
+						중요합니다.<br>
+						이에 유한마취통증의학과는 전체적인 척추의 형태를 바르게 환원시켜<br>
+						척추의 정상만곡을 만들어주는 추나요법과 독일식 슈로스 치료법을<br>
+						적용하고 있습니다.
+					</div>
+				</div><!-- content00 end -->
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img2.jpg">
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>슈로스 치료법</p>
+					</div>
+					<div class="content_small_content first_child">
+						슈로스 치료는 독일 물리치료사 '카사리나 슈로스'가 1920년 고안한<br>
+						운동 치료방법으로 척추측만증 치료에 특성화 되어있는 치료 방법<br>
+						입니다. 슈로스 치료법은 기본적으로 월바(Wall Bar)와 볼(Ball)을<br>
+						체계적인 호흡 방법과 함께 3차원적 운동을 통하여 신체 근육을 훈련<br>
+						시켜주고 곧지 않고 뒤틀린 흉곽, 척추를 바로 잡아주며 척추 비대칭을<br>
+						잡아줌으로써 신체 균형을 맞춥니다.
 					</div>
 				</div><!-- content00 end -->
 			</div> <!-- content end -->
 			<div class="mContent">
-				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic03_01img.png">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic03_03img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

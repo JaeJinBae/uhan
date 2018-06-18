@@ -233,6 +233,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -455,6 +458,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -688,7 +694,7 @@
 						<hr>
 						<p>대상포진 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						피부에 물집 형태의 병적인 증상과 발진이 나타나며 해당 부위에<br>
 						극심한 통증을 유발하는 질환입니다. 수두-대상포진 바이러스가<br>
 						신경절 부위에 잠복해 있으며 아무런 증상과 지장이 없다가 면역력이<br>

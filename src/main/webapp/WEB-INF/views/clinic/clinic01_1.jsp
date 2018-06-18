@@ -262,6 +262,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -522,6 +525,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -807,7 +813,7 @@
 						<p>꼬리뼈 레이저</p>
 						<p>내시경술 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						MRI로도 찾지 못한 병변의 문제를 정확하게 진단하고 치료할 수 있는<br>
 						시술로서 내시경과 레이저가 탑재된 1mm 가량의 카테터를 삽입해<br>
 						치료를 진행 합니다.<br>

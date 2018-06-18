@@ -260,6 +260,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	.imgText{
 		font-size:21px;
 	}
@@ -520,6 +523,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	.imgText{
 		font-size:21px;
@@ -805,7 +811,7 @@
 						<hr>
 						<p>풍선확장술 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						풍선확장술이란, 혈관 성형술이라고도 불리며 체외에서 카테터를<br>
 						환자의 혈관 안에 넣고 혈관이 잘 보이도록 하는 조영제를 주사하여<br>
 						엑스선에서 혈관의 좁아진 부위를 찾고 이를 넓혀주는 비수술 시술<br>

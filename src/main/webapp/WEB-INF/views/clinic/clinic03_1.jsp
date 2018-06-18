@@ -27,7 +27,7 @@
 	}
 	section{
 		width:100%;
-		margin-top:27px;
+		margin-top:54px;
 		margin-bottom:100px;
 	}
 	section .mainBackground{
@@ -258,6 +258,9 @@
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
+	}
+	.first_child{ 
+		line-height: 28px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -532,6 +535,9 @@
 		line-height: 35px;
 		margin-top:50px;
 	}
+	.first_child{ 
+		line-height: 26px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -571,7 +577,7 @@
 	.ccc .dot{
 		font-size:26px;
 		font-weight:bold;
-	}
+	} 
 	.ccc:last-child h2{
 		margin-top:30px;
 	}
@@ -824,7 +830,7 @@
 						<hr>
 						<p>스포츠 재활치료</p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						많은 분들이 스포츠재활치료하면 운동 선수들이 부상 이후 복귀를<br>
 						돕기 위한 치료로 알고 있습니다. 하지만 재활치료는 운동선수뿐만<br>
 						아니라 일반인도 일상으로의 복귀를 위한 중요한 치료입니다.<br>

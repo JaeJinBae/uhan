@@ -27,7 +27,7 @@
 	}
 	section{
 		width:100%;
-		margin-top:27px;
+		margin-top:54px;
 		margin-bottom:100px;
 	}
 	section .mainBackground{
@@ -231,7 +231,7 @@
 	}
 	
 	.content00 .content_small_title{
-		width:26%;
+		width:275px;
 		float:left;
 		text-align: left;
 	}
@@ -252,12 +252,16 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		width:58%;
+		/* width:58%; */
+		width:594px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
 		font-size:19px;
 		line-height: 35px;
+	}
+	.first_child{ 
+		line-height: 28px !important;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -265,7 +269,7 @@
 	}
 	.content00 .content_small_content ul:first-child{
 		margin-right:40px;
-		width:140px;
+		width:215px;
 	}
 	.content00 .content_small_content ul:last-child{
 		width:268px;
@@ -532,13 +536,16 @@
 		line-height: 35px;
 		margin-top:50px;
 	}
+	.first_child{ 
+		line-height: 26px !important;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
 	}
 	.content00 .content_small_content ul:first-child{
 		margin-right:40px;
-		width:140px;
+		width:205px;
 	}
 	.content00 .content_small_content ul:last-child{
 		width:268px;
@@ -818,68 +825,85 @@
 			</div>
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h1 class="subTitle">스포츠 재활치료</h1>
+				<h1 class="subTitle">초음파진단</h1>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>스포츠 재활치료</p>
+						<p>초음파진단 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
-						많은 분들이 스포츠재활치료하면 운동 선수들이 부상 이후 복귀를<br>
-						돕기 위한 치료로 알고 있습니다. 하지만 재활치료는 운동선수뿐만<br>
-						아니라 일반인도 일상으로의 복귀를 위한 중요한 치료입니다.<br>
-						관절염에는 특히나 재활치료가 필요합니다.
-					</div>
-				</div><!-- content00 end -->
-				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img1.png">
-				<div class="content00">
-					<div class="content_small_title">
-						<!-- <hr>
-						<p>신경성형술</p>
-						<p><span>적용질환</span></p> -->
-					</div>
-					<div class="content_small_content">
-						스포츠재활치료는 녹이 슬어 문이 잘 열리고 닫히지 않는 것 같은<br>
-						관절염에 매우 종요한 치료방법입니다.<br>
-						적절한 운동과 함께하는 유한통증의학과의 스포츠재활치료는 녹이<br>
-						슨 부위에 윤활유를 바른 후 여러 번 닫았다 열었다 하는 동작을 반복<br>
-						하며 문이 잘 열리고 닫히게 하는 것처럼 관절의 부드러움을 되찾아<br>
-						환자분들의 통증을 개선시키는 치료입니다.
-						<br><br><br>
-						스포츠재활치료를 하는 이유는 대부분의 척추 및 관절 질환은 부실한<br>
-						주변 근육과 인대에 원인이 있기 때문입니다. 허리 근육이 약해지면<br>
-						척추에 부담을 주게 되어 디스크탈출이나 불안정한 상태로 발전하여<br>
-						여러 척추 질환들을 발생시킵니다. 100세 시대 삶의 질을 향상 시키기<br>
-						위해 유한통증의학과의 스포츠재활치료가 필요합니다.
+					<div class="content_small_content first_child">
+						사람이 들을 수 있는 주파수 영역인 가청주파수 대역보다 주파수가<br>
+						커서 사람이 들을 수 없는 음파를 초음파라고 합니다. 이 초음파는<br>
+						박쥐나 돌고래들이 의사소통을 할 때 사용한다고 알려져 있습니다.<br>
+						이러한 초음파를 사람의 몸에 부드러운 연조직이라 불리는 조직에<br>
+						반사되는 영상을 이용하는 검사 방법이 초음파 검사입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
+				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_04img1.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>스포츠재활치료</p>
-						<p><span>필요 대상 및</span></p>
-						<p><span>기대효과</span></p>
+						<p>초음파진단 <span>특징</span></p>
+					</div>
+					<div class="content_small_content first_child">
+						많은 분들이 초음파 검사는 간, 콩팥, 심장 등 내장기관의 검사 또는<br>
+						임산부의 뱃속 아기를 검사하는데 이용되는 방법으로 많이 알고<br>
+						있습니다. 하지만 최근에는 관절, 근육, 힘줄, 인대 등 근골격계에도<br>
+						적용이 되고 있습니다. 초음파 검사는 무엇보다도 인체에 아무런<br>
+						영향을 주지 않습니다. 또한 검사 과정이 간편하고 환자가 편안하게<br>
+						검사를 받을 수 있는 검사방법 입니다. CT, MRI촬영에 비해 검사<br>
+						장비를 손 쉽게 움직이며 신체 내부 구조물을 실제로 볼 수 있어 만성<br>
+						및 급성 통증 환자 치료에 유리하며 특히 관절이나 근골겨고가 같은 신체<br>
+						표면에 위치한 구조를 쉽고 정확하게 파악할 수 있어 널리 사용되고<br>
+						있는 검사 방법입니다.
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>초음파진단 <span>장점</span></p>
 					</div>
 					<div class="content_small_content">
-						<div class="ccc"> 
-							<h2><span class="dot">·</span> 필요대상</h2>
-							<p>- 허리수술 또는 인공관절 수술을 받은 환자, 관절염 환자 등</p>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point01_3.png">
+							<p style="margin-top:15px;">CT, MRI 검사에 비해 가격이 저렵합니다.</p>
 						</div>
 						<div class="ccc">
-							<h2><span class="dot">·</span> 기대효과</h2>
-							<ul>
-								<li>관절염 환자가 재활치료를 진행하면 관절 주위 근육들이 튼튼해지며<br>&nbsp;&nbsp;뼈와 연골 조직들이 건강해 집니다.</li>
-								<li>관절염 통증으로 인해 움직이지 않을 때 발생할 수 있는 관절 경직을<br>&nbsp;&nbsp;예방합니다.</li>
-								<li>몸의 컨디션을 높여주며 통증으로 생길 수 있는 우울증을 예방합니다.</li>
-								<li>인공관절 수술환자에게는 인공관절 수명을 늘려주고 통증을 완하시켜<br>&nbsp;&nbsp;빠른 일상행활복귀가 가능하게 합니다.</li>
-							</ul>
+							<img src="${pageContext.request.contextPath}/resources/images/point02_3.png">
+							<p style="margin-top:15px;">방사선 노출이 없어 인체에 무해합니다.</p>
 						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
+							<p>검사를 진행하며 즉각적으로 주사 치료를 병행할 수<br>있어 간편합니다.</p>
+						</div>
+						<div class="ccc">
+							<img src="${pageContext.request.contextPath}/resources/images/point04.png">
+							<p>다양한 부위를 움직여가며 관찰이 가능하여 진단이<br>더 정확합니다.</p>
+						</div>
+					</div>
+				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>초음파진단 <span>특징</span></p>
+					</div>
+					<div class="content_small_content first_child">
+						<ul>
+							<li>목</li>
+							<li>어깨</li>
+							<li>손</li>
+							<li>모든 관절과 근골격계</li>
+						</ul>
+						<ul>
+							<li>팔</li>
+							<li>허리</li>
+							<li>발</li>
+						</ul>
 					</div>
 				</div><!-- content00 end -->
 			</div> <!-- content end -->
 			<div class="mContent">
-				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic03_01img.png">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic03_04img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

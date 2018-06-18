@@ -260,6 +260,9 @@
 		font-size:19px;
 		line-height: 35px;
 	}
+	.first_child{ 
+		line-height: 28px !important;
+	}
 	.imgText{
 		font-size:21px;
 	}
@@ -521,6 +524,9 @@
 		font-size:19px;
 		line-height: 35px;
 		margin-top:50px;
+	}
+	.first_child{ 
+		line-height: 26px !important;
 	}
 	.imgText{
 		font-size:21px;
@@ -805,7 +811,7 @@
 						<hr>
 						<p>추간공확장술 <span>이란?</span></p>
 					</div>
-					<div class="content_small_content">
+					<div class="content_small_content first_child">
 						쉽게 말해 협착이 많이 진행된 신경통로를 넓혀주는 시술입니다.<br>
 						자율신경, 림프관, 혈관, 신경계 등 신경이 잘 뻗어나가기 위해<br>
 						지나가는 통로인 추간공에 협착이 진행되면 유착과 신경손상이<br>
