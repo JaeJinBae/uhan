@@ -179,6 +179,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -453,6 +456,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -700,7 +706,11 @@
 	}
 	.clinic_title p{
 		text-align: center;
+		margin:0 auto;
 		margin-bottom: 10px;
+	}
+	.clinic_title>p>img{
+		width:30px;
 	}
 	.clinic_title h1{
 		text-align: center;
@@ -812,7 +822,7 @@
 				</ul>
 			</div>
 			<div class="clinic_title">
-				<p>|</p>
+				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>관절통증 클리닉</h1>
 			</div>
 			<div class="clinic_sub_nav">
@@ -866,7 +876,7 @@
 					<div class="content_small_content">
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point01_3.png">
-							<p style="margin-top:15px;">CT, MRI 검사에 비해 가격이 저렵합니다.</p>
+							<p style="margin-top:15px;">CT, MRI 검사에 비해 가격이 저렴ㅌ합니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point02_3.png">

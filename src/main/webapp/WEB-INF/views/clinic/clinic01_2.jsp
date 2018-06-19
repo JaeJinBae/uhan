@@ -179,6 +179,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -253,7 +256,7 @@
 	/* 시술 이란? */
 	.content00 .content_small_content{
 		/* width:61%; */
-		width:568px;
+		width:577px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
@@ -438,6 +441,9 @@
 	.clinic_title p{
 		font-size:25px;
 		margin-bottom:20px; 
+	}
+	.clinic_title>p>img{
+		width:40px;
 	}
 	.clinic_title h1{
 		font-size:35px;
@@ -675,7 +681,11 @@
 	}
 	.clinic_title p{
 		text-align: center;
+		margin:0 auto;
 		margin-bottom: 10px;
+	}
+	.clinic_title>p>img{
+		width:30px;
 	}
 	.clinic_title h1{
 		text-align: center;
@@ -792,7 +802,7 @@
 				</ul>
 			</div>
 			<div class="clinic_title">
-				<p>|</p>
+				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>비수술 클리닉</h1>
 			</div>
 			<div class="clinic_sub_nav">
@@ -805,18 +815,19 @@
 			</div>
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h1 class="subTitle">풍선확장술(혈관 성형술)</h1>
+				<h1 class="subTitle">풍선확장술</h1>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
 						<p>풍선확장술 <span>이란?</span></p>
 					</div>
 					<div class="content_small_content first_child">
-						풍선확장술이란, 혈관 성형술이라고도 불리며 카테터를 체외에서 <br>
-						환자의 혈관 안에 넣고 혈관이 잘 보이도록 하는 조영제를 주사하여<br>
-						엑스선에서 혈관의 좁아진 부위를 찾고 이를 넓혀주는 비수술 시술<br>
-						입니다. 혈관을 열어주는데 사용하는 기구는 아주 가는 관에 풍선이<br>
-						달려 있는 카테터를 사용하여 좁혀진 혈관을 넓게 확장해 줍니다.
+						풍선확장술이란, 좁아진 추간공(척추신경통로)에 풍선이 달려있는<br>
+						가느다란 특수 카테터를 삽입하여 풍선의 이완과 수축을 반복하며<br>
+						좁아진 추간공을 넓혀주고 약물을 주입하여 신경근 주변 유착을<br>
+						완화시키는 시술입니다. 풍선확장술은 척추신경이 주변 조직과<br>
+						엉겨붙는 현상인 유착과 척추관협착증 환자에게 효과적이며 만성통증<br>
+						감소 등 기능개선에도 탁월한 효과를 보이는 시술입니다.
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_02img.png">

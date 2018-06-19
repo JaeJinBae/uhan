@@ -179,6 +179,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -441,6 +444,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -678,7 +684,11 @@
 	}
 	.clinic_title p{
 		text-align: center;
+		margin:0 auto;
 		margin-bottom: 10px;
+	}
+	.clinic_title>p>img{
+		width:30px;
 	}
 	.clinic_title h1{
 		text-align: center;
@@ -794,7 +804,7 @@
 				</ul>
 			</div>
 			<div class="clinic_title">
-				<p>|</p>
+				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>비수술 클리닉</h1>
 			</div>
 			<div class="clinic_sub_nav">

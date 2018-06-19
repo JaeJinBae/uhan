@@ -62,21 +62,25 @@
 	}
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
-		border-right:1px solid #E1F3F2;
+		border-right:2px solid #E1F3F2;
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
-		width:120px;
+		width:121px;
 		margin:0 auto;
 		text-align: left;
 	}
+	.secondSubMenu>li{
+		width:135px !important;
+	}
 	.mainSubMenu li a{
 		font-size: 18px;
-		width:135px;
+		width:100%;
 		font-weight: 300;
 	}
 	.mainSubMenu li:hover a{
 		color:#00B4AE; 
+		font-weight: 400;
 		/* font-weight: bold; */
 	}
 	.mobileMenu{
@@ -164,7 +168,7 @@
 	}
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
-		border-right:1px solid #E1F3F2;
+		border-right:2px solid #E1F3F2;
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
@@ -174,11 +178,12 @@
 	}
 	.mainSubMenu li a{
 		font-size: 16px;
-		width:135px; 
+		width:141px; 
 		font-weight: 300;
 	}
 	.mainSubMenu li:hover a{
 		color:#00B4AE; 
+		font-weight:400;
 		/* font-weight: bold; */
 	}
 	.mobileMenu{
@@ -395,11 +400,11 @@
 			<a href="${pageContext.request.contextPath}/info01">병원소개</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>
-					<li><a href="${pageContext.request.contextPath}/info02">의료진 소개</a></li>
-					<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
-					<li><a href="${pageContext.request.contextPath}/info04">진료안내</a></li>
-					<li><a href="${pageContext.request.contextPath}/location">오시는 길</a></li>
+					<li><a href="${pageContext.request.contextPath}/info01">- 인사말</a></li>
+					<li><a href="${pageContext.request.contextPath}/info02">- 의료진 소개</a></li>
+					<li><a href="${pageContext.request.contextPath}/info03">- 병원 둘러보기</a></li>
+					<li><a href="${pageContext.request.contextPath}/info04">- 진료안내</a></li>
+					<li><a href="${pageContext.request.contextPath}/location">- 오시는 길</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -407,10 +412,10 @@
 		<li class="mainMenu_li">
 			<a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a>
 			<div class="dropdown">
-				<ul class="mainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
+				<ul class="mainSubMenu secondSubMenu">
+					<li><a href="${pageContext.request.contextPath}/clinic01_01">- 비수술 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic02">- 대상포진 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic03_01">- 관절통증 클리닉</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -419,11 +424,11 @@
 			<a href="${pageContext.request.contextPath}/notice">병원소식</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu" id="lastMainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
-					<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
-					<li><a href="${pageContext.request.contextPath}/comment">시술 후기</a></li>
-					<li><a href="${pageContext.request.contextPath}/advice">진료/비용 상담</a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
+					<li><a href="${pageContext.request.contextPath}/notice">- 공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}/broadcasting">- 언론보도</a></li>
+					<li><a href="${pageContext.request.contextPath}/comment">- 시술 후기</a></li>
+					<li><a href="${pageContext.request.contextPath}/advice">- 진료/비용 상담</a></li>
+					<li><a href="${pageContext.request.contextPath}/freqQuestion">- 자주하는 질문</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">

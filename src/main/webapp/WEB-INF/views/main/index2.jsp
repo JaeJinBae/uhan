@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="유한통증의학과">
 <meta property="og:description" content="대구광역시 수성구 범어동, 비수술클리닉, 대상포진클리닉, 관절클리닉">
-<meta property="og:image" content="http://www.mysite.com/myimage.jpg">
+<meta property="og:image" content="http://www.uhan-hospital.com/logo.png">
 <meta property="og:url" content="http://www.uhan-hospital.com">
 <link rel="canonical" href="http://www.uhan-hospital.com/">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">

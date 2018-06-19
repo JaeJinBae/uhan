@@ -380,11 +380,11 @@
 				<a href="info01">병원소개</a>
 				<div class="dropdown">
 					<ul class="mainSubMenu">
-						<li><a href="info01">인사말</a></li>
-						<li><a href="info02">의료진 소개</a></li>
-						<li><a href="info03">병원 둘러보기</a></li>
-						<li><a href="info04">진료안내</a></li>
-						<li><a href="location">오시는 길</a></li>
+						<li><a href="info01">- 인사말</a></li>
+						<li><a href="info02">- 의료진 소개</a></li>
+						<li><a href="info03">- 병원 둘러보기</a></li>
+						<li><a href="info04">- 진료안내</a></li>
+						<li><a href="location">- 오시는 길</a></li>
 					</ul>
 				</div>
 				<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -393,9 +393,9 @@
 				<a href="clinic01_01">진료분야</a>
 				<div class="dropdown">
 					<ul class="mainSubMenu">
-						<li><a href="clinic01_01">비수술 클리닉</a></li>
-						<li><a href="clinic02">대상포진 클리닉</a></li>
-						<li><a href="clinic03_01">관절통증 클리닉</a></li>
+						<li><a href="clinic01_01">- 비수술 클리닉</a></li>
+						<li><a href="clinic02">-대상포진 클리닉</a></li>
+						<li><a href="clinic03_01">- 관절통증 클리닉</a></li>
 					</ul>
 				</div>
 				<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -404,11 +404,11 @@
 				<a href="notice">병원소식</a>
 				<div class="dropdown">
 					<ul class="mainSubMenu" id="lastMainSubMenu">
-						<li><a href="notice">공지사항</a></li>
-						<li><a href="broadcasting">언론보도</a></li>
-						<li><a href="comment">시술 후기</a></li>
-						<li><a href="advice">진료/비용 상담</a></li>
-						<li><a href="freqQuestion">자주하는 질문</a></li>
+						<li><a href="notice">- 공지사항</a></li>
+						<li><a href="broadcasting">- 언론보도</a></li>
+						<li><a href="comment">- 시술 후기</a></li>
+						<li><a href="advice">- 진료/비용 상담</a></li>
+						<li><a href="freqQuestion">- 자주하는 질문</a></li>
 					</ul>
 				</div>
 				<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">

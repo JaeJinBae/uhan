@@ -179,6 +179,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.sub_title>p>img{
+		width:40px;
+	}
 	.sub_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -391,6 +394,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.sub_title>p>img{
+		width:40px;
+	}
 	.sub_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -579,7 +585,11 @@
 	}
 	.sub_title p{
 		text-align: center;
+		margin:0 auto;
 		margin-bottom: 10px;
+	}
+	.sub_title>p>img{
+		width:30px;
 	}
 	.sub_title h1{
 		text-align: center;
@@ -665,7 +675,7 @@
 				</ul>
 			</div><!-- quick end -->
 			<div class="sub_title">
-				<p>|</p>
+				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>인사말</h1>				
 			</div>
 			<div class="content">

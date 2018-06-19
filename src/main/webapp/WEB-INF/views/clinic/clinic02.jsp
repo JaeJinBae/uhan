@@ -179,6 +179,9 @@
 		font-size:25px;
 		margin-bottom:20px; 
 	}
+	.clinic_title>p>img{
+		width:40px;
+	}
 	.clinic_title h1{
 		font-size:35px;
 		font-weight: 500;
@@ -269,6 +272,20 @@
 		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
+	}
+	.clinic02Solution p{
+		font-size:19px;
+	}
+	.solutionText{
+		width:550px;
+		margin:0 auto;
+		text-align: right;
+		margin-top:40px;
+		font-size:15px;
+		color:#777;
+	}
+	.solutionImg{
+		width:550px;
 	}
 	.mContent{
 		display:none;
@@ -403,6 +420,9 @@
 	.clinic_title p{
 		font-size:25px;
 		margin-bottom:20px; 
+	}
+	.clinic_title>p>img{
+		width:40px;
 	}
 	.clinic_title h1{
 		font-size:35px;
@@ -602,7 +622,11 @@
 	}
 	.clinic_title p{
 		text-align: center;
+		margin:0 auto;
 		margin-bottom: 10px;
+	}
+	.clinic_title>p>img{
+		width:30px;
 	}
 	.clinic_title h1{
 		text-align: center;
@@ -685,7 +709,7 @@
 				</ul>
 			</div>
 			<div class="clinic_title">
-				<p>|</p>
+				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>대상포진 클리닉</h1>
 			</div>
 			<div class="content">
@@ -785,6 +809,24 @@
 						</div>
 					</div>
 				</div><!-- content00 end -->
+				<div class="content00">
+					<div class="content_small_title">
+						<hr>
+						<p>대상포진 <span>치료방법</span></p>
+					</div>
+					<div class="content_small_content clinic02Solution">
+						<p>- 경도(mild): &nbsp;&nbsp;IVNT, 혈관주사, 영양주사를 통한 치료</p>
+						<p>- 중등도(moderate): &nbsp;&nbsp;C-ARM을 이용한 신경차단술로 치료</p>
+						<p>- 고도(severe): &nbsp;&nbsp;고주파 열응고술을 통하여 치료</p>
+					</div>
+				</div><!-- content00 end -->
+				
+				<p class="solutionText">IVNT, 혈관주사, 영양주사</p>
+				<img class="solutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02Img3.png">
+				<p class="solutionText">C-ARM을 이용한 신경차단술</p>
+				<img class="solutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02img4.png">
+				<p class="solutionText">고주파 열응고술</p>
+				<img class="solutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02img5.png">
 			</div><!-- content end -->
 			<div class="mContent">
 				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic02img.png">
