@@ -66,12 +66,12 @@
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
-		width:121px;
+		width:130px;
 		margin:0 auto;
 		text-align: left;
 	}
 	.secondSubMenu>li{
-		width:135px !important;
+		width:141px !important;
 	}
 	.mainSubMenu li a{
 		font-size: 18px;
