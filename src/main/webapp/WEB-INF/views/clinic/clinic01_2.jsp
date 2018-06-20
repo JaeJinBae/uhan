@@ -197,7 +197,7 @@
 		overflow: hidden;
 	}
 	.clinic_sub_nav ul li{
-		width:24.9%;
+		width:19.9%;
 		float:left;
 		background: #dcdcdc;
 	}
@@ -464,8 +464,8 @@
 		margin: 0 auto;
 		float:left;
 		background: #dcdcdc;
-		padding-left:34.5px;
-		padding-right:34.5px;
+		padding-left:8.5px;
+		padding-right:8.5px;
 	}
 	.clinic_sub_nav ul li a{
 		width:100%;
@@ -711,20 +711,25 @@
 		color:#888686;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(1) {
-		width: 38%;
-	}
-	.clinic_sub_nav ul li:NTH-CHILD(2) a{
-		color:white;
-	}
-	.clinic_sub_nav ul li:NTH-CHILD(3){
-		width:22%;
-	}
-	.clinic_sub_nav ul li:NTH-CHILD(2){
-		width:19%;
+		width: 50%;
+		margin-bottom:1px;
 		background: #00b4ae;
 	}
+	.clinic_sub_nav ul li:NTH-CHILD(1) a{
+		color:white;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(2){
+		width:50%;
+		margin-bottom:1px;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(3){
+		width:33%;
+	}
 	.clinic_sub_nav ul li:NTH-CHILD(4){
-		width:20%;
+		width:33%;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(5){
+		width:33%;
 	}
 	.content{
 		text-align: center;
@@ -807,6 +812,7 @@
 			</div>
 			<div class="clinic_sub_nav">
 				<ul>
+					<li><a href="${pageContext.request.contextPath}/clinic01_00">영상유도하 신경차단술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_01">꼬리뼈 레이저 내시경술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
 					<li style="border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_03">추간공확장술</a></li>

@@ -815,86 +815,90 @@
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic01_00">영상유도하 신경차단술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_01">꼬리뼈 레이저 내시경술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
+					<li style="border-left:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
 					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_03">추간공확장술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_04">신경성형술</a></li>
 				</ul> 
 			</div>
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h1 class="subTitle">꼬리뼈 레이저 내시경술</h1>
+				<h1 class="subTitle">영상유도하 신경차단술</h1>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>꼬리뼈 레이저</p>
-						<p>내시경술 <span>이란?</span></p>
+						<p>영상유도하</p>
+						<p>신경차단술 <span>이란?</span></p>
 					</div>
 					<div class="content_small_content first_child">
-						MRI로도 찾지 못한 병변의 문제를 정확하게 진단하고 치료할 수 있는<br>
-						시술로서 내시경과 레이저가 탑재된 1mm 가량의 카테터를 삽입해<br>
-						치료를 진행합니다.<br>
-						신경성형술과 유사하게 환자의 꼬리뼈에 카테터를 삽입해 약물로<br>
-						증상을 개선하지만, 내시경 영상으로 문제가 되는 병변 부위를 직접<br>
-						확인하며 초정밀 레이저와 약물을 주입하여 치료하기 때문에 정확성,<br>
-						안전성을 높이는 회복이 빠른 시술법입니다.
+						디스크 돌출, 중심 신경에서 신경가지들이 빠져나오거나 척수신경
+						압박이 일어나면 통증이 발생하게 됩니다. 이러한 부위에는 신경
+						부종과 신경염증이 생깁니다. 이때 통증 부위를 찾아 주사로 약물을
+						주입함으로써 치료하는 방법이 신경차단술 입니다.
+						신경차단술은  C-ARM(영상증폭장치)를 이용하여 통증 원인이 되는
+						실처럼 가는 신경부위를 정확하게 하나하나 찾아내어 치료하므로 안전하고
+						통증완화에 매우 효과적입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_01img.png">
-				<p class="imgText"><span>대구 경북 최초</span> '꼬리뼈 레이저 내시경술' 유한목 원장, 최영국 박사 시연</p>
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img2.png">
+				<p class="imgText">생명을 최우선으로, 사람을 최우선으로 생각하는<br><span>시술전문의 유한목 원장님 직접 시술</span></p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>꼬리뼈 레이저</p>
-						<p>내시경술 <span>적용질환</span></p>
+						<p>영상유도하</p>
+						<p>신경차단술</p>
+						<p><span>적용질환</span></p>
 					</div>
 					<div class="content_small_content">
 						<ul>
+							<li>목디스크</li>
 							<li>척추관협착증</li>
-							<li>허리디스크</li>
-							<li>급/만성 요통</li>
+							<li>급/만성 통증</li>
 						</ul>
 						<ul>
-							<li>척추 수술 후 계속되는 통증</li>
-							<li>원인을 찾을 수 없는 허리통증</li>
+							<li>허리디스크</li>
+							<li>허리관절염</li>
+							<li>하지저림, 하지 방사통</li>
 						</ul>
 					</div>
 				</div><!-- content00 end -->
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>꼬리뼈 레이저</p>
-						<p>내시경술 <span>장점</span></p>
+						<p>영상유도하</p>
+						<p>신경차단술 <span>장점</span></p>
 					</div>
 					<div class="content_small_content">
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point01.png">
-							<p>국소마취로 시술 후유증이 적고 시술 시간이 짧으며<br>빠른 회복이 가능합니다.</p>
+							<p>국소마취로 시술 후유증이 적고,<br>시술 시간이 5~10분 정도로 짧습니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point02.png">
-							<p style="margin-top:15px;">조직손상과 상처가 최소화되어 후유증이 적습니다.</p>
+							<p style="margin-top:18px;">시술 후 빠른 일상생활 복귀가 가능합니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
-							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
+							<p style="margin-top:18px;">약 7~14일 간격으로 반복치료가 가능합니다.</p>
 						</div>
 					</div>
 				</div><!-- content00 end -->
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>꼬리뼈 레이저</p>
-						<p>내시경술 <span>시술방법</span></p>
+						<p>영상유도하</p>
+						<p>신경차단술</p>
+						<p><span>시술방법</span></p>
 					</div>
 					<div class="content_small_content last_content">
-						(1) 꼬리뼈 부위 약 2~4mm 절개<br>
-						(2) 내시경과 레이저가 탑재된 특수 카테터 삽입<br>
-						(3) 레이저 치료 및 약물 주입
+						(1) 영상증폭장치(C-ARM)를 이용하여 통증 부위 확인<br>
+						(2) 허리나 꼬리뼈를 통하여 주사<br>
+						(3) 약물 주입으로 치료
 					</div>
 				</div><!-- content00 end -->
 			</div><!-- content end -->
 			<div class="mContent">
-				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_01img.png">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_00img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

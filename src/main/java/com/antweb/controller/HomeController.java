@@ -134,6 +134,11 @@ public class HomeController {
 		return "info/location";
 	}
 	//========================== clinic(진료분야)===============================
+	@RequestMapping(value="/clinic01_00")
+	public String clinic01_00(){
+		
+		return "clinic/clinic01_0";
+	}
 	@RequestMapping(value="/clinic01_01")
 	public String clinic01_01(){
 		
