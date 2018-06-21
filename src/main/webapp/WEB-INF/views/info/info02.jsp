@@ -668,7 +668,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/info01">병원소개<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>

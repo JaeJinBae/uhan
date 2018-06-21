@@ -410,10 +410,10 @@
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
 		</li> 
 		<li class="mainMenu_li">
-			<a href="${pageContext.request.contextPath}/clinic01_01">진료분야</a>
+			<a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu secondSubMenu">
-					<li><a href="${pageContext.request.contextPath}/clinic01_01">- 비수술 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_00">- 비수술 클리닉</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic02">- 대상포진 클리닉</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic03_01">- 관절통증 클리닉</a></li>
 				</ul>

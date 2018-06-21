@@ -7,7 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8"> 
-<title>인사말 | 유한통증의학과</title>
+<title>유한통증의학과</title>
+<meta name="description" content="대구광역시 수성구 범어동 통증의학과, 비수술클리닉, 대상포진클리닉, 관절클리닉">
+<meta property="og:type" content="website">
+<meta property="og:title" content="유한통증의학과">
+<meta property="og:description" content="대구광역시 수성구 범어동, 비수술클리닉, 대상포진클리닉, 관절클리닉">
+<meta property="og:image" content="http://www.uhan-hospital.com/logo.png">
+<meta property="og:url" content="http://www.uhan-hospital.com">
+<link rel="canonical" href="http://www.uhan-hospital.com/">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=5">
@@ -162,7 +169,7 @@
 					<p><span class="boldText">수술 없이도</span> 통증의 원인을</p>
 					<p>분석하여 빠르게 통증을 줄이는</p>
 					<p>유한통증의학과만의 <span class="boldText">비수술 클리닉</span></p>
-					<a href="clinic01_01"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
+					<a href="clinic01_00"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
 				</div>
 				<div class="mainClinic" style="border:7px solid #6b5b95;">
 					<p class="clinicIcon"><img src="${pageContext.request.contextPath}/resources/images/icon_02.png" style="width:35px;"></p>

@@ -266,6 +266,15 @@
 	.first_child{ 
 		line-height: 28px !important;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -545,6 +554,15 @@
 	.first_child{ 
 		line-height: 26px !important;
 	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
+		text-decoration: underline;
+	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -795,7 +813,7 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
@@ -804,7 +822,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 						</ul>	
 					</li>
@@ -850,6 +868,7 @@
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_04img1.png">
+				<p class="imgText"><span>과잉진료 없는 선진 병원문화</span> 유한통증의학과가 만들어가겠습니다.</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
@@ -876,7 +895,7 @@
 					<div class="content_small_content">
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point01_3.png">
-							<p style="margin-top:15px;">CT, MRI 검사에 비해 가격이 저렴ㅌ합니다.</p>
+							<p style="margin-top:15px;">CT, MRI 검사에 비해 가격이 저렴합니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point02_3.png">
@@ -895,7 +914,8 @@
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>초음파진단 <span>특징</span></p>
+						<p>초음파진단</p>
+						<p><span>적용부위</span></p>
 					</div>
 					<div class="content_small_content first_child">
 						<ul>

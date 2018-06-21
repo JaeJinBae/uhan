@@ -303,6 +303,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
@@ -584,6 +585,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
@@ -799,7 +801,7 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
@@ -808,7 +810,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 						</ul>	
 					</li>

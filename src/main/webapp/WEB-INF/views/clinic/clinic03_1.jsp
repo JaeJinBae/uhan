@@ -300,6 +300,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.ccc .dot{
 		font-size:26px;
@@ -307,6 +308,7 @@
 	}
 	.ccc:last-child h2{
 		margin-top:30px;
+		font-weight: 600;
 	}
 	.content00 .content_small_content .ccc ul{
 		width:100%;
@@ -579,6 +581,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.ccc .dot{
 		font-size:26px;
@@ -794,7 +797,7 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
@@ -803,7 +806,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 						</ul>	
 					</li>
@@ -855,21 +858,21 @@
 						<p><span>적용질환</span></p> -->
 					</div>
 					<div class="content_small_content">
-						스포츠재활치료는 녹이 슬어 문이 잘 열리고 닫히지 않는 것 같은<br>
+						<span style="color:#01948c; font-size:19px; font-weight:600;">스포츠재활치료</span>는 녹이 슬어 문이 잘 열리고 닫히지 않는 것 같은<br>
 						관절염에 매우 중요한 치료방법입니다.<br>
 						적절한 운동과 함께하는 유한통증의학과의 스포츠재활치료는 녹이<br>
 						슨 부위에 윤활유를 바른 후 여러 번 닫았다 열었다 하는 동작을 반복<br>
-						하며 문이 잘 열리고 닫히게 하는 것처럼 관절의 부드러움을 되찾아<br>
-						환자분들의 통증을 개선시키는 치료입니다.
+						하며 문이 잘 열리고 닫히게 하는 것처럼 <span style="font-size:19px; font-weight:600;">관절의 부드러움을 되찾아<br>
+						환자분들의 통증을 개선</span>시키는 치료입니다.
 						<br><br><br>
-						스포츠재활치료를 하는 이유는 대부분의 척추 및 관절 질환은 부실한<br>
-						주변 근육과 인대에 원인이 있기 때문입니다. 허리 근육이 약해지면<br>
+						<span style="color:#01948c; font-size:19px; font-weight:600;">스포츠재활치료</span>를 하는 이유는 <span style="font-size:19px; font-weight:600;">대부분의 척추 및 관절 질환은 부실한<br>
+						주변 근육과 인대에 원인</span>이 있기 때문입니다. 허리 근육이 약해지면<br>
 						척추에 부담을 주게 되어 디스크탈출이나 불안정한 상태로 발전하여<br>
 						여러 척추 질환들을 발생시킵니다. 100세 시대 삶의 질을 향상 시키기<br>
 						위해 유한통증의학과의 스포츠재활치료가 필요합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:100px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
+				<img style="margin-top:100px; width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03img2.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

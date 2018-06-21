@@ -207,10 +207,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:nth-child(3){
+	.clinic_sub_nav ul li:nth-child(4){
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:nth-child(3) a{
+	.clinic_sub_nav ul li:nth-child(4) a{
 		color:white; 
 	}
 	.content{
@@ -474,10 +474,10 @@
 		font-size:20px;
 		color:#888686;
 	}
-	.clinic_sub_nav ul li:nth-child(3){
+	.clinic_sub_nav ul li:nth-child(4){
 		background: #00b4ae;
 	}
-	.clinic_sub_nav ul li:nth-child(3) a{
+	.clinic_sub_nav ul li:nth-child(4) a{
 		color:white; 
 	}
 	.content{
@@ -712,22 +712,22 @@
 		color:#888686;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(1) {
-		width: 50%;
+		width: 49.7%;
 		margin-bottom:1px;
-		background: #00b4ae;
-	}
-	.clinic_sub_nav ul li:NTH-CHILD(1) a{
-		color:white;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(2){
-		width:50%;
+		width:49.7%;
 		margin-bottom:1px;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(3){
 		width:33%;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(4){
-		width:33%;
+		width:33.4%;
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(4) a{
+		color:white;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(5){
 		width:33%;
@@ -780,14 +780,14 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
@@ -813,10 +813,10 @@
 			<div class="clinic_sub_nav">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic01_00">영상유도하 신경차단술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_01">꼬리뼈 레이저 내시경술</a></li>
-					<li style="border-left:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
+					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">신경성형술</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_03">추간공확장술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_04">신경성형술</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_04">꼬리뼈 레이저 내시경술</a></li>
 				</ul> 
 			</div>
 			<div class="content">

@@ -781,14 +781,14 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
@@ -814,10 +814,10 @@
 			<div class="clinic_sub_nav">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic01_00">영상유도하 신경차단술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_01">꼬리뼈 레이저 내시경술</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_01">신경성형술</a></li>
 					<li style="border-left:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
 					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_03">추간공확장술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_04">신경성형술</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_04">꼬리뼈 레이저 내시경술</a></li>
 				</ul> 
 			</div>
 			<div class="content">
@@ -830,13 +830,13 @@
 						<p>신경차단술 <span>이란?</span></p>
 					</div>
 					<div class="content_small_content first_child">
-						디스크 돌출, 중심 신경에서 신경가지들이 빠져나오거나 척수신경
-						압박이 일어나면 통증이 발생하게 됩니다. 이러한 부위에는 신경
-						부종과 신경염증이 생깁니다. 이때 통증 부위를 찾아 주사로 약물을
-						주입함으로써 치료하는 방법이 신경차단술 입니다.
-						신경차단술은  C-ARM(영상증폭장치)를 이용하여 통증 원인이 되는
-						실처럼 가는 신경부위를 정확하게 하나하나 찾아내어 치료하므로 안전하고
-						통증완화에 매우 효과적입니다.
+						디스크 돌출, 중심 신경에서 신경가지들이 빠져나오거나 척수신경<br>
+						압박이 일어나면 통증이 발생하게 됩니다. 이러한 부위에는 신경<br>
+						부종과 신경염증이 생깁니다. 이때 통증 부위를 찾아 주사로 약물을<br>
+						주입함으로써 치료하는 방법이 신경차단술 입니다.<br>
+						신경차단술은  C-ARM(영상증폭장치)를 이용하여 통증 원인이 되는<br>
+						실처럼 가는 신경부위를 정확하게 하나하나 찾아내어 치료하므로<br>
+						안전하고 통증완화에 매우 효과적입니다.
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img1.png">
@@ -871,7 +871,7 @@
 					<div class="content_small_content">
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point01.png">
-							<p>국소마취로 시술 후유증이 적고,<br>시술 시간이 5~10분 정도로 짧습니다.</p>
+							<p>국소마취로 시술 후유증이 적고, 시술 시간이<br>5~10분 정도로 짧습니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point02.png">

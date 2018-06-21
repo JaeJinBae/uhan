@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <title>비수술 클리닉 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=-1">
 <style type="text/css">
 @media only screen and (min-width:1100px){
 	body{
@@ -35,10 +37,9 @@
 	}
 	section .mainBackground>.bgImg{
 		width:100%;
-		/* min-width:1200px; */
 		height:346px;
 		float:left;
-	} 
+	}
 	.bgText{
 		width:1200px;
 		position: absolute;
@@ -109,7 +110,7 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:52px; 
+		height:52px;
 		line-height: 52px !important;
 		font-size: 18px !important;
 	}
@@ -223,7 +224,7 @@
 		margin-bottom:30px;
 	}
 	.content .subTitle{
-		font-size:32px;
+		font-size:32px; 
 		font-weight:500;
 	}
 	.content00{
@@ -235,18 +236,18 @@
 	
 	.content00 .content_small_title{
 		/* width:31%; */
-		width:271px;
+		width:288px;
 		float:left;
 		text-align: left;
 	}
 	.content00 .content_small_title hr{
 		width:100%;
 		border:0;
-		border-top:4px solid #0d7586;
+		border-top:4px solid #00938e;
 	}
 	.content00 .content_small_title p{
 		font-size:35px;
-		color:#0d7586;
+		color:#00938e;
 		font-weight:500;
 	}
 	.content00 .content_small_title span{
@@ -254,11 +255,10 @@
 		color:black;
 		font-weight:500;
 	}
-	
 	/* 시술 이란? */
 	.content00 .content_small_content{
 		/* width:61%; */
-		width:581px;
+		width:568px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
@@ -267,15 +267,6 @@
 	}
 	.first_child{ 
 		line-height: 28px !important;
-	}
-	.imgText{
-		font-size:21px;
-	}
-	.imgText>span{
-		font-size:25px;
-		color: #070b63;
-		font-weight:600;
-		text-decoration: underline;
 	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
@@ -286,7 +277,7 @@
 		width:140px;
 	}
 	.content00 .content_small_content ul:last-child{
-		width:268px;
+		width:272px;
 	}
 	.content00 .content_small_content ul li{
 		list-style: disc;
@@ -309,6 +300,14 @@
 		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
 	}
 	.mContent{
 		display:none;
@@ -341,7 +340,7 @@
 		width:100%;
 		height:346px;
 		float:left;
-	} 
+	}
 	.bgText{
 		width:95%;
 		position: absolute;
@@ -412,7 +411,7 @@
 		border-bottom:1px solid #9bb6b5;
 	}
 	.sub_subDropdown>li a{
-		height:52px; 
+		height:52px;
 		line-height: 52px !important;
 		font-size: 18px !important;
 	}
@@ -503,18 +502,18 @@
 	
 	.content00 .content_small_title{
 		/* width:31%; */
-		width:271px;
+		width:288px;
 		float:left;
 		text-align: left;
 	}
 	.content00 .content_small_title hr{
 		width:100%;
 		border:0;
-		border-top:4px solid #0d7586;
+		border-top:4px solid #00938e;
 	}
 	.content00 .content_small_title p{
 		font-size:35px;
-		color:#0d7586;
+		color:#00938e;
 		font-weight:500;
 	}
 	.content00 .content_small_title span{
@@ -524,8 +523,8 @@
 	}
 	/* 시술 이란? */
 	.content00 .content_small_content{
-		/* width:61%; */
-		width:581px;
+		/* width:61%; */ 
+		width:568px;
 		float:right;
 		text-align: left;  
 		color:#2d2d2d;
@@ -536,15 +535,6 @@
 	.first_child{ 
 		line-height: 26px !important;
 	}
-	.imgText{
-		font-size:21px;
-	}
-	.imgText>span{
-		font-size:25px;
-		color: #070b63;
-		font-weight:600;
-		text-decoration: underline;
-	}
 	/* 적용질환 */
 	.content00 .content_small_content ul{
 		float:left;
@@ -554,7 +544,7 @@
 		width:140px;
 	}
 	.content00 .content_small_content ul:last-child{
-		width:268px;
+		width:272px;
 	}
 	.content00 .content_small_content ul li{
 		list-style: disc;
@@ -577,6 +567,14 @@
 		font-size:19px;
 		margin-top:9px;
 		line-height: 21px;
+	}
+	.imgText{
+		font-size:21px;
+	}
+	.imgText>span{
+		font-size:25px;
+		color: #070b63;
+		font-weight:600;
 	}
 	.mContent{
 		display:none;
@@ -714,15 +712,11 @@
 		color:#888686;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(1) {
-		width: 50%;
+		width: 49.7%;
 		margin-bottom:1px;
-		background: #00b4ae;
-	}
-	.clinic_sub_nav ul li:NTH-CHILD(1) a{
-		color:white;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(2){
-		width:50%;
+		width:49.7%;
 		margin-bottom:1px;
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(3){
@@ -733,8 +727,13 @@
 	}
 	.clinic_sub_nav ul li:NTH-CHILD(5){
 		width:33%;
+		background: #00b4ae;
+	}
+	.clinic_sub_nav ul li:NTH-CHILD(5) a{
+		color:white;
 	}
 	.content{
+		text-align: center;
 		display:none;
 	}
 	.mContent{
@@ -782,14 +781,14 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
@@ -807,7 +806,7 @@
 					<li><a href="${pageContext.request.contextPath}/location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>
-			</div>
+			</div><!-- quick end -->
 			<div class="clinic_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>비수술 클리닉</h1>
@@ -815,94 +814,87 @@
 			<div class="clinic_sub_nav">
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/clinic01_00">영상유도하 신경차단술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_01">꼬리뼈 레이저 내시경술</a></li>
-					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
+					<li style="border-left:1px solid white; border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_01">신경성형술</a></li>
+					<li style="border-right:1px solid white;"><a href="${pageContext.request.contextPath}/clinic01_02">풍선확장술</a></li>
 					<li><a href="${pageContext.request.contextPath}/clinic01_03">추간공확장술</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic01_04">신경성형술</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_04">꼬리뼈 레이저 내시경술</a></li>
 				</ul> 
-			</div>
+			</div> 
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
-				<h1 class="subTitle">신경성형술</h1>
+				<h1 class="subTitle">꼬리뼈 레이저 내시경술</h1>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>신경성형술 <span>이란?</span></p>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>이란?</span></p>
 					</div>
 					<div class="content_small_content first_child">
-						신경성형술이란, 미국 텍사스대 가보 라트 교수가 개발한 시술로써<br>
-						지름 1mm인 소형 카테터를 환부에 삽입한 뒤, 영상장비를 사용하여<br>
-						실시간으로 확인하며 신경의 유착을 풀고 유착방지 효소제와 항염증제<br>
-						등 특수 약물을 주입해 통증 유발 원인 질환을 치료하는 시술입니다.<br>
-						실시간 영상장치인 C-arm을 이용해 시술하므로 유착 부위를 정확히<br>
-						찾아 치료할 수 있습니다.
+						MRI로도 찾지 못한 병변의 문제를 정확하게 진단하고 치료할 수 있는<br>
+						시술로서 내시경과 레이저가 탑재된 1mm 가량의 카테터를 삽입해<br>
+						치료를 진행합니다.<br>
+						신경성형술과 유사하게 환자의 꼬리뼈에 카테터를 삽입해 약물로<br>
+						증상을 개선하지만, 내시경 영상으로 문제가 되는 병변 부위를 직접<br>
+						확인하며 초정밀 레이저와 약물을 주입하여 치료하기 때문에 정확성,<br>
+						안전성을 높이는 회복이 빠른 시술법입니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_04img.png">
-				<p class="imgText"><span>국내 최초</span> '신경성형술' Racz박사와 시연</p>
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_01img.png">
+				<p class="imgText"><span>대구 경북 최초</span> '꼬리뼈 레이저 내시경술' 유한목 원장, 최영국 박사 시연</p>
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>신경성형술</p>
-						<p><span>적용질환</span></p>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>적용질환</span></p>
 					</div>
 					<div class="content_small_content">
 						<ul>
 							<li>척추관협착증</li>
-							<li>목 디스크</li>
-							<li>허리 디스크</li>
+							<li>허리디스크</li>
+							<li>급/만성 요통</li>
 						</ul>
 						<ul>
 							<li>척추 수술 후 계속되는 통증</li>
-							<li>급/만성 요통 및 디스크 통증</li>
-							<li>손/발 저림</li>
+							<li>원인을 찾을 수 없는 허리통증</li>
 						</ul>
 					</div>
 				</div><!-- content00 end -->
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>신경성형술 <span>장점</span></p>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>장점</span></p>
 					</div>
 					<div class="content_small_content">
 						<div class="ccc">
-							<img src="${pageContext.request.contextPath}/resources/images/point01_3.png">
-							<p>약 30분 정도의 짧은 시술시간과 빠른 회복이<br>가능합니다.</p>
+							<img src="${pageContext.request.contextPath}/resources/images/point01.png">
+							<p>국소마취로 시술 후유증이 적고 시술 시간이 짧으며<br>빠른 회복이 가능합니다.</p>
 						</div>
 						<div class="ccc">
-							<img src="${pageContext.request.contextPath}/resources/images/point02_3.png">
-							<p style="margin-top:15px;">시술 통증이 적습니다.</p>
+							<img src="${pageContext.request.contextPath}/resources/images/point02.png">
+							<p style="margin-top:15px;">조직손상과 상처가 최소화되어 후유증이 적습니다.</p>
 						</div>
 						<div class="ccc">
 							<img src="${pageContext.request.contextPath}/resources/images/point03.png">
 							<p>당뇨, 고혈압, 심장질환 등 만성질환이 있는<br>고령 환자도 치료 가능합니다.</p>
 						</div>
-						<div class="ccc">
-							<img src="${pageContext.request.contextPath}/resources/images/point04.png">
-							<p>전신마취를 하지 않아도 되어 부담감을<br>느끼지 않습니다.</p>
-						</div>
-						<div class="ccc">
-							<img src="${pageContext.request.contextPath}/resources/images/point05.png">
-							<p>1mm의 가느다란 관을 이용하므로 흉터가<br>남지 않습니다.</p>
-						</div>
 					</div>
 				</div><!-- content00 end -->
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>신경성형술</p>
-						<p><span>시술방법</span></p>
+						<p>꼬리뼈 레이저</p>
+						<p>내시경술 <span>시술방법</span></p>
 					</div>
 					<div class="content_small_content last_content">
-						(1) 병변 부위 국소마취<br>
-						(2) 직경 1mm의 초소형 특수 카테터를 삽입<br>
-						(3) 병변 부위를 찾아내어 염증 및 유착 제거<br>
-						(4) 병변부위에 특수 약물을 주입하여 치료
+						(1) 꼬리뼈 부위 약 2~4mm 절개<br>
+						(2) 내시경과 레이저가 탑재된 특수 카테터 삽입<br>
+						(3) 레이저 치료 및 약물 주입
 					</div>
 				</div><!-- content00 end -->
 			</div><!-- content end -->
 			<div class="mContent">
-				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_04img.png">
+				<img src="${pageContext.request.contextPath}/resources/mobileImage/mclinic01_01img.png">
 			</div>
 		</div><!-- contentWrap end -->
 	</section>

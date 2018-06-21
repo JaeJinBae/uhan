@@ -303,6 +303,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.ccc .dot{
 		font-size:26px;
@@ -579,6 +580,7 @@
 	}
 	.ccc>h2{
 		font-size: 22px;
+		font-weight: 600;
 	}
 	.ccc .dot{
 		font-size:26px;
@@ -792,7 +794,7 @@
 				<ul class="navUl"> 
 					<li><a href="${pageContext.request.contextPath}/"><img class="btnHome" src="${pageContext.request.contextPath}/resources/images/home.png"></a></li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_01">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">진료분야<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/notice">병원소식</a></li>
@@ -801,7 +803,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/clinic01_01">비수술 클리닉</a></li>
+							<li><a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 						</ul>	
 					</li>
@@ -896,13 +898,13 @@
 						<p>척추측만증<span> 치료</span></p>
 					</div>
 					<div class="content_small_content first_child">
-						척추측만증은 요추를 포함하여 척추 전체의 곡선이 변형되어 통증이<br>
-						발생하게 되는 질환으로 수술보다는 근육 균형을 유지하며 통증을<br>
-						완화시키는 운동요법 위주의 치료가 이루어집니다.<br>
+						<span style="color:#01948c; font-size:19px; font-weight:600;">척추측만증</span>은 요추를 포함하여 척추 전체의 곡선이 변형되어 통증이<br>
+						발생하게 되는 질환으로 수술보다는 <span style="font-size:19px; font-weight:600;">근육 균형을 유지하며 통증을<br>
+						완화시키는 운동요법 위주의 치료</span>가 이루어집니다.<br>
 						치료를 진행 할 때 전반적으로 어깨와 척추 근육을 강화하는데 중점을<br>
 						두지만 척추의 앞, 뒤, 측면의 근육을 고르게 강화시키는 것이 매우<br>
 						중요합니다.<br>
-						이에 유한마취통증의학과는 전체적인 척추의 형태를 바르게 환원시켜<br>
+						이에 <span style="font-size:19px; font-weight:600;">유한마취통증의학과</span>는 전체적인 척추의 형태를 바르게 환원시켜<br>
 						척추의 정상만곡을 만들어주는 추나요법과 독일식 슈로스 치료법을<br>
 						적용하고 있습니다.
 					</div>
@@ -914,7 +916,7 @@
 						<p>슈로스 치료법</p>
 					</div>
 					<div class="content_small_content first_child">
-						슈로스 치료는 독일 물리치료사 '카사리나 슈로스'가 1920년 고안한<br>
+						<span style="color:#01948c; font-size:19px; font-weight:600;">슈로스 치료</span>는 독일 물리치료사 '카사리나 슈로스'가 1920년 고안한<br>
 						운동 치료방법으로 척추측만증 치료에 특성화 되어있는 치료 방법<br>
 						입니다. 슈로스 치료법은 기본적으로 월바(Wall Bar)와 볼(Ball)을<br>
 						체계적인 호흡 방법과 함께 3차원적 운동을 통하여 신체 근육을 훈련<br>
