@@ -534,6 +534,7 @@ public class HomeController {
 		if(id.equals("admin")&&pw.equals("uhan7536001")){
 			entity=new ResponseEntity<String>("ok",HttpStatus.OK);
 			session.setAttribute("id", id);
+			System.out.println("session 아이디"+session.getAttribute("id"));
 		}else{
 			entity=new ResponseEntity<String>("no",HttpStatus.OK);
 		}
@@ -543,7 +544,8 @@ public class HomeController {
 	
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public String logout(HttpServletRequest req){
-		HttpSession session=req.getSession();
+		HttpSession session=req.getSession(false);
+		
 		session.invalidate();
 		
 		return "redirect:/";

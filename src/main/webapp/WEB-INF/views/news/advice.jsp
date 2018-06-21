@@ -19,6 +19,7 @@
 	}
 	header{
 		width:100%;
+		min-width:1250px;
 		height:108px;
 		position: absolute;
 		top: 0;

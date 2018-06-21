@@ -17,6 +17,7 @@
 	}
 	header{
 		width:100%;
+		min-width:1250px;
 		height:108px;
 		position: absolute;
 		top: 0;
@@ -167,7 +168,7 @@
 	}
 	.info3{
 		float:right;
-		width:650px;
+		width:665px;
 		margin:0 auto;
 		margin-top:50px;
 	}

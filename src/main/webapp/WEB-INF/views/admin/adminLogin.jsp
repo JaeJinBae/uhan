@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관리자 로그인 | 유한통증의학과</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style type="text/css">
 	.formWrap{
@@ -48,7 +48,8 @@
 		line-height: 7px;
 	}
 	.goMainBtn{
-		width:123px;
+		width:130px;
+		height:30px;
 		display:block;
 		margin: 30px auto;
 		margin-bottom:20px;
