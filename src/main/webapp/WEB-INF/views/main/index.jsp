@@ -167,7 +167,7 @@
 					<hr align="center">
 					<h1>비수술 클리닉</h1>
 					<p><span class="boldText">수술 없이도</span> 통증의 원인을</p>
-					<p>분석하여 빠르게 통증을 줄이는</p>
+					<p>분석하여 정확하게 통증을 치료하는</p>
 					<p>유한통증의학과만의 <span class="boldText">비수술 클리닉</span></p>
 					<a href="clinic01_00"><img class="barogo" src='${pageContext.request.contextPath}/resources/images/barogo.png'></a>
 				</div>
@@ -224,7 +224,7 @@
 					<p>09:00 ~ 18:30</p>
 					<ul>
 						<li>&nbsp;점심시간<span class="number"> : 12:30 ~ 14:00</span></li> 
-						<li>&nbsp;토요일<span class="number"> : 09:00 ~ 13:00</span><br>
+						<li>&nbsp;토요일<span class="number"> : 09:00 ~ 15:00</span><br>
 							&nbsp;&nbsp;&nbsp;<span class="smallText">(점심시간 없음)</span>
 						</li> 
 						<li>&nbsp;일요일 및 공휴일 휴무<br>
@@ -238,7 +238,7 @@
 					<ul>
 						<li><img src="${pageContext.request.contextPath}/resources/images/location_icon.png">대구광역시 수성구 달구벌대로<br>2372, 4층(범어동)</li>
 						<li style="color:white;"><img src="${pageContext.request.contextPath}/resources/images/tel_icon.png">진료예약 :&nbsp;053.753.6001</li>
-						<li><img src="${pageContext.request.contextPath}/resources/images/fax_icon.png">FAX : 053.123.4567</li>
+						<li><img src="${pageContext.request.contextPath}/resources/images/fax_icon.png">FAX : 053.753.6007</li>
 					</ul>
 				</div>
 			</div><!-- content2Wrap end -->
