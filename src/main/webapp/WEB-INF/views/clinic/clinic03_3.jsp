@@ -851,7 +851,7 @@
 						됩니다. 그렇기 때문에 조기에 발견하여 치료하는 것이 매우 중요합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img3.png"><!-- clinic03_3img1.png -->
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

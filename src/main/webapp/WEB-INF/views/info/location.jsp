@@ -690,6 +690,20 @@
 					</ul>
 				</div>
 			</div>
+			<img class="line" src="${pageContext.request.contextPath}/resources/images/line.png">
+			<div class="addrInfo">
+				<div class="info2">
+					<img src="${pageContext.request.contextPath}/resources/images/car.png">
+					<p>자가용 이용시</p>
+				</div>
+				<div class="info3">
+					<ul>
+						<li>지번주소: 대구 수성구 범어동 804-77</li>
+						<li>도로명 주소: 대구 수성구 달구벌대로 2372</li>
+						<li>병원 앞 주차장 또는 병원 밑 공영주차장 이용</li>
+					</ul>
+				</div>
+			</div>
 			<div class="quick">
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
