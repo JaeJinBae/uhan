@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta charset="UTF-8">
 <title>오시는 길 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
@@ -700,7 +701,7 @@
 					<ul>
 						<li>지번주소: 대구 수성구 범어동 804-77</li>
 						<li>도로명 주소: 대구 수성구 달구벌대로 2372</li>
-						<li>병원 앞 주차장 또는 병원 밑 공영주차장 이용</li>
+						<li>병원 건물 뒷편 주차 또는 수성범어천 4공영 주차장 이용</li>
 					</ul>
 				</div>
 			</div>
