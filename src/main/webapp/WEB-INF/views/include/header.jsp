@@ -34,7 +34,7 @@
 		min-width:1024px;
 		display:inline-block;
 		height:108px;
-		border-bottom: 1px solid lightgray;
+		padding-left:30%;
 	}
 	
 	.mainMenu > li{
@@ -60,9 +60,9 @@
 	.headerWrap:hover>.mainMenu>li>a{
 		color:black;
 	}
-	.mainMenu>li:hover>a{
+	/* .mainMenu>li:hover>a{
 		border-bottom:4px solid #00B4AE;
-	}
+	} */
 	.mainMenu .dropdown{
 		display: none;
 		height:240px;
@@ -109,8 +109,12 @@
 	}
 	.adminBtn{
 		position: absolute;
-		top:16px;
+		top:40px;
 		right:30px;
+		color:white;
+		font-weight: 100;
+	}
+	.headerWrap:hover>.adminBtn{
 		color:#666;
 	}
 	.adminBtn>img{
@@ -365,11 +369,36 @@
 		
 		$(".headerWrap").mouseover(function(){
 			$(this).css("height","374px");
+			$(this).css("background","white");
 			$(".dropdown").css("display","block");
+			$(".mainMenu").css("border-bottom","1px solid lightgray");
+			$(".mainMenu>li>a").css("color","black");
 		});
 		$(".headerWrap").mouseout(function(){
 			$(this).css("height","108px");
+			$(this).css("background","none");
+			$(".mainMenu").css("border","0");
 			$(".dropdown").css("display","none");
+			$(".mainMenu>li>a").css("color","white");
+			if($(window).scrollTop()>10){
+				$(".headerWrap").css("background","white");
+            	$(".mainMenu>li>a").css("color","black");
+            	$(".adminBtn").css("color","#666");
+			}
+		});
+		
+		$(window).scroll(function() {
+	    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+	        	if(position>10){
+	            	$(".headerWrap").css("background","white");
+	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".adminBtn").css("color","#666");
+	            	$(".mainMenu").css("height","108px");
+	            }
+	            if(position<10){
+	            	$(".headerWrap").css("background","none");
+	            	$(".mainMenu>li>a").css("color","white");
+	            }
 		});
 		
 		$(".mobileMenu").click(function(e){
@@ -398,14 +427,16 @@
 			$(".menuClose").css("display","none");
 			$(".headerWrap").css("background","white");
 			$(".mainMenu").slideUp("slow", function() {
-			$(".mainMenu").css("display","none");
-		});
+				$(".mainMenu").css("display","none");
+			});
 			
 			e.preventDefault();
 		});
 		 $(".navUl>li:not(:first-child)>a").click(function(){
 			return false;
-        }); 
+        });
+		 
+		
 	});	
 </script>
 <div class="headerWrap">

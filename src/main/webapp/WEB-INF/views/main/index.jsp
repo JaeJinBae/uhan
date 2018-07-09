@@ -35,7 +35,7 @@
 	header{
 		width:100%;
 		min-width:1250px;
-		/* height:374px; */
+		height:108px;
 		position: fixed; 
 		top: 0;
 		left:0; 
