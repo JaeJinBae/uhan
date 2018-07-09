@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 <meta name="viewport" content="width=device-width, initial-scale=-1">
 <style type="text/css">
 /* pc size */
@@ -16,10 +16,12 @@
 		padding:0;
 	}
 	.headerWrap{
-		width:1073px;
-		height:108px;
+		width:100%;
+		height:374px;
 		margin:0 auto;
-		background: url("${pageContext.request.contextPath}/resources/images/gnb_bg.png") no-repeat;
+	}
+	.headerWrap:hover{
+		background: white;
 	}
 	.headerWrap>.mainLogo{
 		height:37px;
@@ -32,7 +34,8 @@
 	}
 	.mainMenu{
 		width:750px;
-		float:right;
+		/* float:right; */
+		display:inline-block;
 		height:108px;
 	}
 	.mainMenu > li{
@@ -52,21 +55,23 @@
 		height:23px;
 		display: inline;
 		padding-bottom:32px;
+		color:white;
+	}
+	.headerWrap:hover .mainMenu>li>a{
+		color:black;
 	}
 	.mainMenu>li:hover>a{
 		border-bottom:4px solid #00B4AE;
+		
 	}
 	.mainMenu .dropdown{
 		display: none;
 		height:240px;
-		background: #fafafa;
 		padding-top:30px;
 		margin-top:38px;
 	}
 	.mainMenu .dropdown:nth-child(2){
 		width:248.3px;
-		border-left:1px solid #fafafa;
-		border-right:1px solid #fafafa;
 	}
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
@@ -329,10 +334,10 @@
 				
 			});
 		
-		$(".mainMenu").mouseover(function(){
+		$(".headerWrap").mouseover(function(){
 			$(".dropdown").css("display","block");
 		});
-		$(".mainMenu").mouseout(function(){
+		$(".headerWrap").mouseout(function(){
 			$(".dropdown").css("display","none");
 		});
 		

@@ -27,11 +27,13 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 64px;
+    height: 60px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
     transform: translate(0, -50%);
 
     cursor: pointer;
@@ -67,11 +69,11 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
+    font-size: 64px;/* 20px */
+    line-height: 70px;
 
     opacity: .75;
-    color: white;
+    color: #0b8783;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,7 +81,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: -67px;
 }
 [dir='rtl'] .slick-prev
 {
@@ -97,7 +99,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: -67px;
 }
 [dir='rtl'] .slick-next
 {

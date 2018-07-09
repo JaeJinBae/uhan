@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=2"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -212,7 +212,7 @@
 		font-size:20px;
 	}
 	.smallImg{
-		width:800px;
+		width:850px;
 		margin:0 auto;
 		margin-top:100px;
 	}
@@ -360,11 +360,11 @@
 		font-weight: 500;
 	}
 	.bigImg{
-		width:700px;
+		width:600px;
 		margin:0 auto;
 	}
 	.bigImg img{ 
-		width: 700px;
+		width: 600px;
 	}
 	.bigImg .imgText{
 		width:100%;
@@ -380,8 +380,19 @@
 		margin-top:100px;
 	}
 	.smallImg div img{
-		width:200px;
+		width:185px;
+		margin:0 auto;
 	}
+	/* .slick-prev:before{ 
+		content:"<" !important;
+		color:red !important;
+		font-size:30px !important;
+	}
+	.slick-next:before{
+		content:">" !important;
+		color:red !important;
+		font-size:30px !important;
+	} */
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 
@@ -506,7 +517,8 @@
 		margin-top:50px;
 	}
 	.bigImg img{
-		width:100%;
+		width:280px;
+		margin:0 auto;
 	}
 	.bigImg .imgText{
 		width:100%;
@@ -521,6 +533,17 @@
 	}
 	.smallImg img{
 		display: none;
+	}
+	.slick-prev:before, .slick-next:before{
+		font-size:30px;
+	}
+	.slick-next{
+		right:-7px;
+		z-index:99;
+	}
+	.slick-prev{
+		left:-7px;
+		z-index:99;
 	}
 }
 </style>
@@ -544,16 +567,17 @@
         $(".bigImg").slick({
         	slidesToShow:1,
         	slidesToScroll:1,
-        	arrows:false,
+        	arrows:true,
         	fade:true,
         	asNavFor:".smallImg"
         });
         $(".smallImg").slick({
-			slidesToShow: 3,
+			slidesToShow: 4,
 			slidesToScroll: 1,
         	asNavFor:".bigImg",
+        	arrows:false,
         	dots:true,
-        	centerMode:true,
+        	centerMode:false,
         	focusOnSelect:true
         });
 	});

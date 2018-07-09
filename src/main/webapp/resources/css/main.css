@@ -8,8 +8,8 @@
 	header{
 		width:100%;
 		min-width:1250px;
-		height:108px;
-		position: absolute; 
+		height:374px;
+		position: fixed; 
 		top: 0;
 		left:0; 
 		right:0;
@@ -19,7 +19,6 @@
 	}
 	section{
 		width:100%;
-		margin-top:54px;
 		margin-bottom:100px;
 	}
 	.mainBanner{
