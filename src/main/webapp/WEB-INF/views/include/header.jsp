@@ -373,6 +373,7 @@
 			$(".dropdown").css("display","block");
 			$(".mainMenu").css("border-bottom","1px solid lightgray");
 			$(".mainMenu>li>a").css("color","black");
+			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 		});
 		$(".headerWrap").mouseout(function(){
 			$(this).css("height","108px");
@@ -380,24 +381,31 @@
 			$(".mainMenu").css("border","0");
 			$(".dropdown").css("display","none");
 			$(".mainMenu>li>a").css("color","white");
+			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 			if($(window).scrollTop()>10){
 				$(".headerWrap").css("background","white");
             	$(".mainMenu>li>a").css("color","black");
             	$(".adminBtn").css("color","#666");
+            	$(".mainMenu").css("border-bottom","1px solid lightgray");
+            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 			}
 		});
 		
 		$(window).scroll(function() {
 	    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
 	        	if(position>10){
+	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 	            	$(".headerWrap").css("background","white");
 	            	$(".mainMenu>li>a").css("color","black");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("height","108px");
+	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            }
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");
 	            	$(".mainMenu>li>a").css("color","white");
+	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
+	            	$(".mainMenu").css("border","0");
 	            }
 		});
 		
@@ -440,7 +448,7 @@
 	});	
 </script>
 <div class="headerWrap">
-	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
+	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/whitelogo.png"></a>
 	<a class="mobileMenu" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/mobileMenu.png"></a>
 	<a class="menuClose" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/x.png"></a>
 	<ul class="mainMenu">
