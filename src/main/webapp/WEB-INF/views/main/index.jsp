@@ -313,7 +313,7 @@
 	header{
 		width:100%;
 		height:108px;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left:0; 
 		right:0;
@@ -323,7 +323,6 @@
 	}
 	section{
 		width:100%;
-		margin-top:54px;
 		margin-bottom:100px;
 	}
 	.mainBanner{
@@ -990,7 +989,7 @@
 	<section>
 		<div class="mainBanner">
 			<div><img src="${pageContext.request.contextPath}/resources/images/slide_1.jpg" alt="유한통증의학과"></div>
-			<div><img src="${pageContext.request.contextPath}/resources/images/slide_2.jpg" alt="유한통증의학과"></div>
+			<div><img src="${pageContext.request.contextPath}/resources/images/slide_4.png" alt="유한통증의학과"></div>
 			<div><img src="${pageContext.request.contextPath}/resources/images/slide_3.jpg" alt="유한통증의학과"></div>
 		</div>
 		<div class="contentWrap">

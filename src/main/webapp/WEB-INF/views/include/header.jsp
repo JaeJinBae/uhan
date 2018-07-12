@@ -309,9 +309,17 @@
 </style>
 <script type="text/javascript">
 	$(function(){
+		if(window.innerWidth<1099){
+			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+		}
+		
+		
 		$("section").bind("touchstart",function(){
 			if(window.innerWidth <= 767){
-			$(".menuClose").trigger("click");
+				$(".menuClose").trigger("click");
+			}
+			if(window.innerWidth>767 || window.innerWidth<1100){
+				$(".dropdown").css("display","none");
 			}
 		})
 			$(".mainMenu").find(".mainMenu_li > a").bind("touchstart",function(e){
@@ -368,31 +376,45 @@
 			});
 		
 		$(".headerWrap").mouseover(function(){
-			$(this).css("height","374px");
-			$(this).css("background","white");
-			$(".dropdown").css("display","block");
-			$(".mainMenu").css("border-bottom","1px solid lightgray");
-			$(".mainMenu>li>a").css("color","black");
-			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+			if(window.innerWidth > 1099){				
+				$(this).css("height","374px");
+				$(this).css("background","white");
+				$(".dropdown").css("display","block");
+				$(".mainMenu").css("border-bottom","1px solid lightgray");
+				$(".mainMenu>li>a").css("color","black");
+				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+				$(this).css("border-bottom","1px solid lightgray");
+				$(".adminBtn").css("color","#666");
+			}else if(window.innerWidth<1100 && window.innerWidth>767){
+				$(".dropdown").css("display","block");
+			}
 		});
 		$(".headerWrap").mouseout(function(){
-			$(this).css("height","108px");
-			$(this).css("background","none");
-			$(".mainMenu").css("border","0");
-			$(".dropdown").css("display","none");
-			$(".mainMenu>li>a").css("color","white");
-			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
-			if($(window).scrollTop()>10){
-				$(".headerWrap").css("background","white");
-            	$(".mainMenu>li>a").css("color","black");
-            	$(".adminBtn").css("color","#666");
-            	$(".mainMenu").css("border-bottom","1px solid lightgray");
-            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+			if(window.innerWidth > 1099){
+				$(this).css("height","108px");
+				$(this).css("background","none");
+				$(this).css("border","0");
+				$(".mainMenu").css("border","0");
+				$(".dropdown").css("display","none");
+				$(".mainMenu>li>a").css("color","white");
+				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
+				$(".adminBtn").css("color","white");
+				if($(window).scrollTop()>10){
+					$(".headerWrap").css("background","white");
+	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".adminBtn").css("color","#666");
+	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
+	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+				}
+			}else if(window.innerWidth<1100 && window.innerWidth>767){
+				$(".dropdown").css("display","none");
 			}
+			
 		});
 		
 		$(window).scroll(function() {
-	    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+			if(window.innerWidth > 1099){
+		    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 	            	$(".headerWrap").css("background","white");
@@ -404,9 +426,11 @@
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");
 	            	$(".mainMenu>li>a").css("color","white");
+	            	$(".adminBtn").css("color","white");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 	            	$(".mainMenu").css("border","0");
 	            }
+			}
 		});
 		
 		$(".mobileMenu").click(function(e){

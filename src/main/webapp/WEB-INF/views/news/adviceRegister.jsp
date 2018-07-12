@@ -23,17 +23,16 @@
 		width:100%;
 		min-width:1250px;
 		height:108px;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left:0;
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 9991;
 	}
 	section{
 		width:100%;
-		margin-top:54px;
 		margin-bottom:150px;
 	}
 	section .mainBackground{
@@ -680,7 +679,7 @@
 		$(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
             if(position>500){
-            	$(".quick").stop().animate({"top":position-450+"px"},1000);	
+            	$(".quick").stop().animate({"top":position-350+"px"},1000);	
             }
             if(position<=500){
             	$(".quick").stop().animate({"top":0+"px"},1000);
