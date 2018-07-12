@@ -22,7 +22,7 @@
 		color:black;
 		text-decoration: none;
 	}
-	.contentWrap{
+	.contentWrap{ 
 		width:100%;
 		min-width:1280px;
 		/* height:700px; */
