@@ -856,7 +856,7 @@
 						일상으로 복귀하여 정상생활이 가능합니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_2img1.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_2img2.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
@@ -879,6 +879,9 @@
 						</ul>
 					</div>
 				</div><!-- content00 end -->
+				
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_2img1.png">
+				
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>

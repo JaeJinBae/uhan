@@ -614,7 +614,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/info04">진료안내<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/info04">진료철학<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>
 							<li><a href="${pageContext.request.contextPath}/info02">의료진 소개</a></li>
@@ -637,7 +637,7 @@
 			</div><!-- quick end -->
 			<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>진료안내</h1>				
+				<h1>진료철학</h1>				
 			</div>
 			<div class="content">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">

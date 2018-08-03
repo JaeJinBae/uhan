@@ -823,15 +823,15 @@
 					</ul>
 				</div><!-- page end -->
 				<div class="box-body">
-						<select name="searchType">
-							<option value="n">선택해주세요.</option>
-							<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
-							<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
-							<option value="r" ${cri.searchType=='r'?'selected':''}>작성일</option>
-						</select> 
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
-						<button id="searchBtn">검색</button>
-					</div>
+					<select name="searchType">
+						<option value="n">선택해주세요.</option>
+						<option value="t" ${cri.searchType=='t'?'selected':''}>제목</option>
+						<option value="c" ${cri.searchType=='c'?'selected':''}>내용</option>
+						<option value="r" ${cri.searchType=='r'?'selected':''}>작성일</option>
+					</select> 
+					<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
+					<button id="searchBtn">검색</button>
+				</div>
 			</div><!-- tbl_board -->
 		</div><!-- contentWrap end -->
 	</section>

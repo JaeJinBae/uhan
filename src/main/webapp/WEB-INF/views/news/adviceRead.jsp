@@ -762,11 +762,7 @@
 				<div class="replyContent">
 					${reply.replytext}
 				</div>
-				</c:if>
-<%-- 				<c:if test="${item.state=='답변대기'}">
-					
-				</c:if> --%>
-				
+				</c:if>				
 			</div><!-- reply end -->
 		</div><!-- contentWrap end -->
 	</section>

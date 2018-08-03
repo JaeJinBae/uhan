@@ -658,7 +658,7 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info02">의료진 소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
-							<li><a href="${pageContext.request.contextPath}/info04">진료안내</a></li>
+							<li><a href="${pageContext.request.contextPath}/info04">진료철학</a></li>
 							<li><a href="${pageContext.request.contextPath}/location">오시는길</a></li>
 						</ul>	
 					</li>
@@ -739,7 +739,7 @@
 					함께 나누는 병원이 되도록 노력하겠습니다.
 				</div>
 				
-				<img class="info01img" src="${pageContext.request.contextPath}/resources/images/info01img.png">
+				<%-- <img class="info01img" src="${pageContext.request.contextPath}/resources/images/info01img.png"> --%>
 				
 				<div class="content5">
 					2018년 5월 8일<br>

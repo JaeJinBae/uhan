@@ -910,11 +910,12 @@
 						적용하고 있습니다.
 					</div>
 				</div><!-- content00 end -->
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img2.jpg">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img4.png">
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic03_3img5.png">
 				<div class="content00">
 					<div class="content_small_title">
 						<hr>
-						<p>슈로스 치료법</p>
+						<p>슈로스 치료법</p> 
 					</div>
 					<div class="content_small_content first_child">
 						<span style="color:#01948c; font-size:19px; font-weight:600;">슈로스 치료</span>는 독일 물리치료사 '카사리나 슈로스'가 1920년 고안한<br>

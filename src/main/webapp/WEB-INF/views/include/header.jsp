@@ -8,7 +8,7 @@
 	} 
 	.headerWrap{
 		width:100%;
-		min-width:1250px;
+		min-width:1200px;
 		height:108px;
 		margin:0 auto;
 	}
@@ -34,7 +34,7 @@
 		min-width:1024px;
 		display:inline-block;
 		height:108px;
-		padding-left:30%;
+		padding-left:26%;
 	}
 	
 	.mainMenu > li{
@@ -48,6 +48,9 @@
 	}
 	.mainMenu>li:nth-child(2){
 		border-left:1px solid #dcdcdc;
+		border-right:1px solid #dcdcdc;
+	}
+	.mainMenu>li:nth-child(3){
 		border-right:1px solid #dcdcdc;
 	}
 	.mainMenu>li>a{ 
@@ -83,7 +86,7 @@
 		line-height: 40px;
 		width:130px;
 		margin:0 auto;
-		text-align: left;
+		text-align: center;
 	}
 	.secondSubMenu>li{
 		width:141px !important;
@@ -130,11 +133,11 @@
 		padding:0;
 	}
 	.headerWrap{
-		width:768px;
+		width:100%;
 		height:75px;
 		margin:0 auto;
-		border:1px solid #e3e3e3;
-		background: white;
+		/* border:1px solid #e3e3e3; */
+		/* background: white; */
 		position: relative;
 		z-index: 99;
 	}
@@ -148,12 +151,13 @@
 		width:160px;
 	}
 	.mainMenu{
-		width:550px;
-		float:right;
+		width:100%;
+		/* float:right; */
 		height:75px;
+		padding-left:20%;
 	}
 	.mainMenu > li{
-		width:33.2%;
+		width:145px;
 		height:20px;
 		float: left; 
 		text-align: center;
@@ -164,26 +168,30 @@
 		border-left:1px solid #dcdcdc;
 		border-right:1px solid #dcdcdc;
 	}
+	.mainMenu>li:nth-child(3){ 
+		border-right:1px solid #dcdcdc;
+	}
 	.mainMenu>li>a{ 
 		font-size: 18px;
 		height:23px;
 		display: inline;
 		padding-bottom:20px;
+		color:#fff;
 	}
 	.mainMenu>li:hover>a{
 		border-bottom:4px solid #00B4AE;
 	}
 	.mainMenu .dropdown{
 		display: none;
-		height:240px;
-		background: #fafafa;
-		padding-top:30px;
+		height:220px;
+		background: #fff;
+		padding-top:25px;
 		margin-top:25px;
 	}
 	.mainMenu .dropdown:nth-child(2){
-		width:182.3px;
-		border-left:1px solid #fafafa;
-		border-right:1px solid #fafafa;
+		width:100%;
+		/* border-left:1px solid #fafafa;
+		border-right:1px solid #fafafa; */
 	}
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
@@ -191,13 +199,13 @@
 	}
 	.mainMenu .mainSubMenu>li{
 		line-height: 40px;
-		width:100px;
+		width:100%;
 		margin:0 auto;
-		text-align: left;
+		text-align: center;
 	}
 	.mainSubMenu li a{
-		font-size: 16px;
-		width:141px; 
+		font-size: 15px;
+		width:100%; 
 		font-weight: 300;
 	}
 	.mainSubMenu li:hover a{
@@ -309,7 +317,7 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		if(window.innerWidth<1099){
+		if(window.innerWidth<767){
 			$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 		}
 		
@@ -343,7 +351,6 @@
 					}else{
 						$(this).parent("li").find(".arrow").attr("src","${pageContext.request.contextPath}/resources/images/arrow_down.png");
 					}
-			
 						e.preventDefault();
 					}
 			});
@@ -370,8 +377,6 @@
 					}
 					e.preventDefault();
 				}
-						
-					
 				
 			});
 		
@@ -386,7 +391,15 @@
 				$(this).css("border-bottom","1px solid lightgray");
 				$(".adminBtn").css("color","#666");
 			}else if(window.innerWidth<1100 && window.innerWidth>767){
+				/* $(".dropdown").css("display","block"); */
+				$(this).css("height","330px");
+				$(this).css("background","white");
 				$(".dropdown").css("display","block");
+				$(".mainMenu").css("border-bottom","1px solid lightgray");
+				$(".mainMenu>li>a").css("color","black");
+				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+				$(this).css("border-bottom","1px solid lightgray");
+				$(".adminBtn").css("color","#666");
 			}
 		});
 		$(".headerWrap").mouseout(function(){
@@ -407,13 +420,29 @@
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 				}
 			}else if(window.innerWidth<1100 && window.innerWidth>767){
+				/* $(".dropdown").css("display","none"); */
+				$(this).css("height","75px");
+				$(this).css("background","none");
+				$(this).css("border","0");
+				$(".mainMenu").css("border","0");
 				$(".dropdown").css("display","none");
+				$(".mainMenu>li>a").css("color","white");
+				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
+				$(".adminBtn").css("color","white");
+				if($(window).scrollTop()>10){
+					$(".headerWrap").css("background","white");
+	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".adminBtn").css("color","#666");
+	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
+	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+				}
 			}
 			
 		});
 		
+		/* 페이지 스크롤 될대 메뉴 css */
 		$(window).scroll(function() {
-			if(window.innerWidth > 1099){
+			if(window.innerWidth > 1099){/* pc */
 		    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
@@ -422,6 +451,25 @@
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("height","108px");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
+	            }
+	            if(position<10){
+	            	$(".headerWrap").css("background","none");
+	            	$(".mainMenu>li>a").css("color","white");
+	            	$(".adminBtn").css("color","white");
+	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
+	            	$(".mainMenu").css("border","0");
+	            }
+			}
+			else if(window.innerWidth > 767 && window.innerWidth < 1099){/* 테블릿 */
+		    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+	        	if(position>10){
+	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
+	            	$(".headerWrap").css("background","white");
+	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".adminBtn").css("color","#666");
+	            	$(".mainMenu").css("height","75px");
+	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
+	            	$(".headerWrap").css("height","75px");
 	            }
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");
@@ -480,11 +528,11 @@
 			<a href="${pageContext.request.contextPath}/info01">병원소개</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/info01">- 인사말</a></li>
-					<li><a href="${pageContext.request.contextPath}/info02">- 의료진 소개</a></li>
-					<li><a href="${pageContext.request.contextPath}/info03">- 병원 둘러보기</a></li>
-					<li><a href="${pageContext.request.contextPath}/info04">- 진료안내</a></li>
-					<li><a href="${pageContext.request.contextPath}/location">- 오시는 길</a></li>
+					<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>
+					<li><a href="${pageContext.request.contextPath}/info02">원장 소개</a></li>
+					<li><a href="${pageContext.request.contextPath}/info04">진료철학</a></li>
+					<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
+					<li><a href="${pageContext.request.contextPath}/location">오시는 길</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -493,9 +541,20 @@
 			<a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu secondSubMenu">
-					<li><a href="${pageContext.request.contextPath}/clinic01_00">- 비수술 클리닉</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic02">- 대상포진 클리닉</a></li>
-					<li><a href="${pageContext.request.contextPath}/clinic03_01">- 관절통증 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
+					<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
+				</ul>
+			</div>
+			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
+		</li>
+		<li class="mainMenu_li">
+			<a href="${pageContext.request.contextPath}/notice">진료안내</a>
+			<div class="dropdown">
+				<ul class="mainSubMenu">
+					<li><a href="${pageContext.request.contextPath}/notice">진료시간</a></li>
+					<li><a href="${pageContext.request.contextPath}/broadcasting">진료비용</a></li>
+					<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -504,11 +563,11 @@
 			<a href="${pageContext.request.contextPath}/notice">병원소식</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu" id="lastMainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/notice">- 공지사항</a></li>
-					<li><a href="${pageContext.request.contextPath}/broadcasting">- 언론보도</a></li>
-					<li><a href="${pageContext.request.contextPath}/comment">- 시술 후기</a></li>
-					<li><a href="${pageContext.request.contextPath}/advice">- 진료/비용 상담</a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion">- 자주하는 질문</a></li>
+					<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
+					<li><a href="${pageContext.request.contextPath}/comment">시술 후기</a></li>
+					<%-- <li><a href="${pageContext.request.contextPath}/advice">- 진료/비용 상담</a></li>
+					<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li> --%>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">

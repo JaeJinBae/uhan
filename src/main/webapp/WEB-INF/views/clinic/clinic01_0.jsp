@@ -840,7 +840,8 @@
 					</div>
 				</div><!-- content00 end -->
 				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img1.png">
-				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img2.png">
+				<%-- <img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img2.png"> --%>
+				<img style="margin-top:70px;width:600px;" src="${pageContext.request.contextPath}/resources/images/clinic01_00img3.png">
 				<p class="imgText">생명을 최우선으로, 사람을 최우선으로 생각하는<br><span>시술전문의 유한목 원장님 직접 시술</span></p>
 				<div class="content00">
 					<div class="content_small_title">

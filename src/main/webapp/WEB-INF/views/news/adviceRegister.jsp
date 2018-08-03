@@ -200,7 +200,6 @@
 	}
 	.registerForm #f1{ 
 		width:100%;
-		max-width:1000px;
 		margin:0 auto;
 	}
 	.registerForm #f1 table{
@@ -241,7 +240,7 @@
 	.btnWrap{
 		width:100%;
 		margin-top:10px;
-	}
+	} 
 	.btnWrap button{
 		width:50px;
 		height:24px;
