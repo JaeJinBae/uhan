@@ -710,7 +710,7 @@
 							<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
 							<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
 							<li><a href="${pageContext.request.contextPath}/comment">시술후기</a></li>
-							<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
+							<li><a href="${pageContext.request.contextPath}/news">유한소식</a></li>
 						</ul>	
 					</li>
 				</ul><!-- navUl end -->
@@ -721,7 +721,7 @@
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="${pageContext.request.contextPath}/advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/intro3"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
 					<li><a href="${pageContext.request.contextPath}/location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>

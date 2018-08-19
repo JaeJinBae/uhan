@@ -246,7 +246,7 @@
 	header{
 		width:100%;
 		height:75px;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left:0;
 		right:0;
@@ -256,7 +256,6 @@
 	}
 	section{
 		width:100%;
-		margin-top:27px;
 		margin-bottom:100px;
 	}
 	section .mainBackground{
@@ -643,6 +642,7 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/intro1">진료안내</a></li>
 						</ul>
 					</li>
 					<li>
@@ -650,8 +650,8 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
 							<li><a href="${pageContext.request.contextPath}/comment">시술후기</a></li>
+							<li><a href="${pageContext.request.contextPath}/news">유한소식</a></li>
 							<li><a href="${pageContext.request.contextPath}/advice">진료/비용 상담</a></li>
-							<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
 						</ul>	
 					</li>
 				</ul><!-- navUl end -->
@@ -662,7 +662,7 @@
 				<ul>
 					<li><p>Quick<br>Menu</p></li>
 					<li><a href="${pageContext.request.contextPath}/advice"><img src="${pageContext.request.contextPath}/resources/images/quick_sangdam.png" style="width:40px;"><br><span>진료/비용 상담</span></a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
+					<li><a href="${pageContext.request.contextPath}/intro3"><img src="${pageContext.request.contextPath}/resources/images/quick_freqQues.png" style="width:40px;"><br><span>자주하는 질문</span></a></li>
 					<li><a href="${pageContext.request.contextPath}/location"><img src="${pageContext.request.contextPath}/resources/images/quick_location.png" style="width:30px;"><br><span>오시는 길</span></a></li>
 					<li><a href=""><img src="${pageContext.request.contextPath}/resources/images/quick_top.png" style="width:20px;"><br><span>TOP</span></a></li>
 				</ul>

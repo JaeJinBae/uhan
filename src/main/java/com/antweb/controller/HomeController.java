@@ -22,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
+import com.antweb.domain.NewsVO;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
 import com.antweb.domain.ReplyVO;
@@ -30,6 +31,7 @@ import com.antweb.domain.StatisticsVO;
 import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
+import com.antweb.service.NewsService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
 import com.antweb.service.StatisticsService;
@@ -48,6 +50,9 @@ public class HomeController {
 
 	@Autowired
 	private CommentService cService;
+	
+	@Autowired
+	private NewsService newsService;	
 	
 	@Autowired
 	private AdviceService aService;
@@ -128,6 +133,7 @@ public class HomeController {
 		
 		return "info/info05";
 	}
+	
 	@RequestMapping(value="/location")
 	public String info06(){
 		
@@ -185,6 +191,22 @@ public class HomeController {
 		return "clinic/clinic03_4";
 	}
 
+	@RequestMapping(value="/intro1")
+	public String intro1(){
+		
+		return "intro/intro01";
+	}
+	@RequestMapping(value="/intro2")
+	public String intro2(){
+		
+		return "intro/intro02";
+	}
+	@RequestMapping(value="/intro3")
+	public String intro3(){
+		
+		return "intro/freqQuestion";
+	}
+	
 	// ========================== news(병원소식)===============================
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
 	public String notice(@ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rttr, Model model) throws Exception {
@@ -290,6 +312,41 @@ public class HomeController {
 		model.addAttribute("pageMaker", pageMaker);
 		return "news/commentRead";
 	}
+	
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
+	public String news(@ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rttr, Model model) throws Exception {
+		logger.info("news get");
+		
+		List<NewsVO> list = newsService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "/news/news";
+	}
+
+	@RequestMapping(value = "/newsRead", method = RequestMethod.GET)
+	public String readNews(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("newsRead Get");
+
+		NewsVO vo = newsService.selectOne(bno);
+		newsService.updateCnt(bno);
+		// Criteria cri=new Criteria();
+		// cri.setPage(page);
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "news/newsRead";
+	}
 
 	@RequestMapping(value = "/advice", method=RequestMethod.GET)
 	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
@@ -321,6 +378,14 @@ public class HomeController {
 		aService.insert(vo);
 		
 		return "redirect:/advice";
+	}
+	
+	@RequestMapping(value = "/adviceRegister2", method = RequestMethod.POST)
+	public String adviceRegister2Post(AdviceVO vo) {
+		logger.info("adviceRegister2 post");
+		aService.insert(vo);
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value = "/advicePWtype", method = RequestMethod.GET)
@@ -384,6 +449,7 @@ public class HomeController {
 		
 		AdviceVO vo=aService.selectOne(bno);
 		ReplyVO rvo=rService.select(bno);
+		aService.updateCnt(bno);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -441,12 +507,6 @@ public class HomeController {
 		pageMaker.setCri(cri);
 		
 		return "redirect:/advice"+pageMaker.makeSearch(cri.getPage());
-	}
-
-	@RequestMapping(value = "/freqQuestion")
-	public String frequentlyQuestion() {
-
-		return "news/freqQuestion";
 	}
 	
 	private StatisticsVO getUser(HttpServletRequest request){

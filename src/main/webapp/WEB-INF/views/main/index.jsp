@@ -48,6 +48,7 @@
 		width:100%;
 		min-width:1200px;
 		margin-bottom:100px;
+		position: relative;
 	}
 	.mainBanner{
 		width:100%;
@@ -70,7 +71,7 @@
 		margin-bottom:0;
 	}
 	.contentWrap{
-		width:1200px;
+		width:1100px;
 		margin:0 auto;
 		margin-bottom:100px;
 		overflow: hidden;
@@ -81,11 +82,20 @@
 	.centerContent{
 		margin: 0 14px;
 	}
+	#mVision{
+		display:none;
+	}
 	.smallMenu{
 		border-bottom:2px solid lightgray;
-		padding-top:28px;
-		padding-bottom:28px;
-		margin-bottom:28px;
+		padding-top:30px;
+		padding-bottom:30px;
+		margin-bottom:50px;
+	}
+	.smallMenu > a{
+		margin-right:10px;
+	}
+	.smallMenu > a:last-child{
+		margin:0;
 	}
 	.smallMenu > a > span{
 		display:block;
@@ -94,12 +104,14 @@
 		margin-top:15px;
 	}
 	.clinicMenu{
-		width:551.84px;
+		width:600px;
 		overflow:hidden;
 	}
 	.clinicMenu > a{
 		float:left;
-		width:33.33%;
+	}
+	.clinicMenu > a:nth-child(2){
+		margin:0 26px;
 	}
 	.clinicMenu > a > img{
 		width:100%;
@@ -109,31 +121,82 @@
 	}
 	.rightContent > .rightContentMenuWrap{
 		width:100%;
-	}
-	.rightContent > .rightContentMenuWrap > a{
-		width:311px;
-		display:block;
-		height:52px;
-		position: relative;
-	}
-	.rightContent > .rightContentMenuWrap > a > img{
-		width:25px;
-		margin:13px;
-	}
-	.rightContent > .rightContentMenuWrap > a > span{
+		margin-bottom:5px;
+	} 
+	.rightContentMenuWrap > p{
+		background: #00b4ae;
 		color:#fff;
-		position:absolute;
-		top:14px;
-		font-size:15px;
+		text-align: center;
+		font-size:20px;
+		padding:10px 0;
 	}
-	.timeImg{
-		width:309px;
-		border-left:1px solid lightgray;
-		border-right:1px solid lightgray;
+	.rightContentMenuWrap > form > table{
+		border:1px solid lightgray;
+		width:100%;
+	}
+	.rightContentMenuWrap > form > table tr{
+		display:block;
 		border-bottom:1px solid lightgray;
+		padding:2px 0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child{
+		border:0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td{
+		display:block;
+		width:70px;
+		margin:0 auto;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td > input{
+		width:100%;
+		color:white;
+		font-size:14px;
+		background: #00b4ae;
+		border:0;
+		border-radius: 5px;
+		cursor:pointer;
+	}
+	.rightContentMenuWrap > form > table tr .tTitle{
+		font-size:15px;
+		width:70px;
+		padding-left:15px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent{
+		width:335px; 
+	}
+	.rightContentMenuWrap > form > table tr .tContent input{
+		border: 1px solid lightgray;
+	}
+	.rightContentMenuWrap > form > table tr .tContent input[name="title"]{
+		width:335px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent textarea{
+		width:100%;
+		height:90px;
+		border:1px solid lightgray;
 	}
 	.timeImgTablet{
-		display:none;
+		width:450px;
+		border:1px solid lightgray;
+	}
+	.popup{
+		width:300px;
+		position:absolute;
+		top:150px;
+		left:100px;
+		background: #f1f1f1;
+	}
+	.popup:last-child{
+		left:420px;
+	}
+	.popup > img{
+		width:100%;
+	}
+	.popup > p{
+		width:95%;
+		text-align: right;
+		background: #f1f1f1;
+		padding-right:15px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -178,18 +241,24 @@
 		margin:0 auto;
 		overflow:hidden;
 	}
-	.leftContent{
+	/* .leftContent{
 		float:left;
 		width:276px;
 		margin-left:2px;
+	} */
+	#mVision{
+		display:none;
 	}
 	.leftContent > a > img{
 		width:100%;
 	}
 	.centerContent{
-		float:right;
-		width:483px;
-		margin-right:2px;
+		/* float:right; */
+		width:550px;
+		/* margin-right:2px; */
+		margin:0 auto;
+		margin-bottom:30px;
+		
 	}
 	.smallMenu{
 		width:100%;
@@ -219,7 +288,10 @@
 	}
 	.clinicMenu > a{
 		float:left;
-		width:33.33%;
+		width:32.1%;
+	}
+	.clinicMenu > a:nth-child(2){
+		margin:0 10px;
 	}
 	.clinicMenu > a > img{
 		width:100%;
@@ -229,33 +301,96 @@
 		width:100%;
 	}
 	.rightContentMenuWrap{
-		float:left;
-		margin-left:2px;
+		/* float:left;
+		margin-left:2px; */
+		width:550px;
+		margin:0 auto;
 	}
-	.rightContent > .rightContentMenuWrap > a{
-		display:block;
-		width:276px;
-		height:77.5px;
-		position: relative;
-	}
-	.rightContent > .rightContentMenuWrap > a > img{
-		width:25px;
-		margin:27px;
-	}
-	.rightContent > .rightContentMenuWrap > a > span{
+	.rightContentMenuWrap > p{
+		background: #00b4ae;
 		color:#fff;
-		position:absolute;
-		top:27px;
-		font-size:16px;
+		text-align: center;
+		font-size:20px;
+		padding:10px 0;
+	}
+	.rightContentMenuWrap > form > table{
+		border:1px solid lightgray;
+		width:100%;
+	}
+	.rightContentMenuWrap > form > table tr{
+		display:block;
+		border-bottom:1px solid lightgray;
+		padding:2px 0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child{
+		border:0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td{
+		display:block;
+		width:70px;
+		margin:0 auto;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td > input{
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		width:100%;
+		color:white;
+		font-size:14px;
+		background: #00b4ae;
+		border:0;
+		border-radius: 5px;
+		cursor:pointer;
+		
+	}
+	.rightContentMenuWrap > form > table tr .tTitle{
+		font-size:15px;
+		width:70px;
+		padding-left:15px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent{
+		width:430px; 
+	}
+	.rightContentMenuWrap > form > table tr .tContent input{
+		border: 1px solid lightgray;
+	}
+	.rightContentMenuWrap > form > table tr .tContent input[name="title"]{
+		width:430px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent textarea{
+		width:100%;
+		height:100px;
+		border:1px solid lightgray;
 	}
 	.rightContent > .timeImg{
 		display:none;
 	}
 	.rightContent > .timeImgTablet{
-		float:right;
-		width:481px;
-		margin-right:2px;
+		/* float:right; */
+		display:block;
+		width:550px;
+		/* margin-right:2px; */
+		margin:0 auto;
+		margin-top:30px;
 		border:1px solid lightgray;
+	}
+	.popup{
+		width:300px;
+		position:absolute;
+		top:150px;
+		left:100px;
+		background: #f1f1f1;
+	}
+	.popup:last-child{
+		left:420px;
+	}
+	.popup > img{
+		width:100%;
+	}
+	.popup > p{
+		width:95%;
+		text-align: right;
+		background: #f1f1f1;
+		padding-right:15px;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -293,15 +428,6 @@
 		width:100%;
 		margin: 0 auto;
 	}
-	.leftContent{
-	
-	}
-	.leftContent > a{
-	
-	}
-	.leftContent > a > img{
-	
-	}
 	.centerContent{
 		width:100%;
 	}
@@ -310,7 +436,7 @@
 	}
 	.smallMenu{
 		width:100%;
-		margin:0 auto;
+		margin:20px auto;
 		text-align: center;
 	}
 	.smallMenu > a > img{
@@ -336,31 +462,94 @@
 		margin:0 auto;
 	}
 	.rightContentMenuWrap{
-		width:100%;
-		overflow: hidden;
+		width:99%;
+		margin:0 auto;
 	}
-	.rightContentMenuWrap > a{
-		width:33.33%;
-		height:37px;
-		float:left;
-		position: relative;
-	}
-	.rightContentMenuWrap > a > img{
-		width:17px;
-		margin:8px;
-	}
-	.rightContentMenuWrap > a > span{
+	.rightContentMenuWrap > p{
+		background: #00b4ae;
 		color:#fff;
-		position:absolute;
-		top:8px;
-		font-size:12px;
+		text-align: center;
+		font-size:20px;
+		padding:10px 0;
+	}
+	.rightContentMenuWrap > form > table{
+		border:1px solid lightgray;
+		width:100%;
+	}
+	.rightContentMenuWrap > form > table tr{
+		display:block;
+		border-bottom:1px solid lightgray;
+		padding:4px 0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child{
+		border:0;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td{
+		display:block;
+		width:70px;
+		margin:0 auto;
+	}
+	.rightContentMenuWrap > form > table tr:last-child td > input{
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		width:100%;
+		color:white;
+		font-size:14px;
+		background: #00b4ae;
+		border:0;
+		border-radius: 5px;
+		cursor:pointer;
+		
+	}
+	.rightContentMenuWrap > form > table tr .tTitle{
+		font-size:15px;
+		width:80px;
+		padding-left:10px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent{
+		width:240px; 
+	}
+	.rightContentMenuWrap > form > table tr .tContent input{
+		border: 1px solid lightgray;
+		width:150px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent input[name="title"]{
+		width:230px;
+	}
+	.rightContentMenuWrap > form > table tr .tContent textarea{
+		width:100%;
+		height:100px;
+		border:1px solid lightgray;
 	}
 	
 	.timeImg{
 		display:none;
 	}
 	.timeImgTablet{
+		display:block;
+		width:99%;
+		margin:0 auto;
+		margin-top:10px;
+		border:1px solid lightgray;
+	}
+	/* .popup{
+		display:none;
+	} */
+	.popup{
+		width:300px;
+		position:absolute;
+		top:77px;
+		left:10px;
+		background: #f1f1f1;
+	}
+	.popup > img{
 		width:100%;
+	}
+	.popup > p{
+		width:95%;
+		text-align: right;
+		background: #f1f1f1;
+		padding-right:15px;
 	}
 }
 </style>
@@ -377,6 +566,10 @@
 			autoplaySpeed:4000,
 			dots:true,
 		});	
+		
+		$(".popup > p > a").click(function(){
+			$(this).parent().parent(".popup").css("display","none");
+		});
 	});
 </script>
 </head>
@@ -391,54 +584,75 @@
 			<div><img src="${pageContext.request.contextPath}/resources/images/slide_3.jpg" alt="유한통증의학과"></div>
 		</div>
 		<div class="contentWrap">
-			<div class="leftContent">
-				<a href="${pageContext.request.contextPath}/info04">
-					<img src="${pageContext.request.contextPath}/resources/images/mainVision.png">
-				</a>
-			</div><!-- leftContent end -->
 			<div class="centerContent">
 				<div class="smallMenu">
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/info01">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon1.png">
 						<span>인사말</span>
 					</a>
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/info03">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon2.png">
 						<span>둘러보기</span>
 					</a>
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/notice">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon3.png">
 						<span>공지사항</span>
 					</a>
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/broadcasting">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon4.png">
 						<span>언론보도</span>
 					</a>
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/comment">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon5.png">
 						<span>시술후기</span>
 					</a>
-					<a href="${pageContext.request.contextPath}/info1">
+					<a href="${pageContext.request.contextPath}/location">
 						<img src="${pageContext.request.contextPath}/resources/images/mainSmallIcon6.png">
 						<span>오시는길</span>
 					</a>
 				</div><!-- smallMenu end -->
 				<div class="clinicMenu">
-					<a href=""><img src="${pageContext.request.contextPath}/resources/images/mainClinic3.png"></a>
-					<a href=""><img src="${pageContext.request.contextPath}/resources/images/mainClinic2.png"></a>
-					<a href=""><img src="${pageContext.request.contextPath}/resources/images/mainClinic1.png"></a>
+					<a href="${pageContext.request.contextPath}/clinic01_00"><img src="${pageContext.request.contextPath}/resources/images/mainClinic3.png"></a>
+					<a href="${pageContext.request.contextPath}/clinic02"><img src="${pageContext.request.contextPath}/resources/images/mainClinic2.png"></a>
+					<a href="${pageContext.request.contextPath}/clinic03_01"><img src="${pageContext.request.contextPath}/resources/images/mainClinic1.png"></a>
 				</div><!-- clinicMenu end -->
 			</div><!-- centerContent end -->
 			<div class="rightContent">
 				<div class="rightContentMenuWrap">
-					<a href="" style="background:#e44b0e;"><img src="${pageContext.request.contextPath}/resources/images/asdftest3.png"><span>진료시간안내</span></a>
-					<a href="" style="background:#e3800c;"><img src="${pageContext.request.contextPath}/resources/images/asdftest.png"><span>진료비용안내</span></a><!-- mainRightMenu1.png -->
-					<a href="" style="background: #f5a241;"><img src="${pageContext.request.contextPath}/resources/images/asdftest2.png"><span>자주하는 질문</span></a>
+					<p>진료/비용 간편문의</p>
+					<form method="post" action="adviceRegister2">
+						<input type="hidden" value="x" name="pwtype">
+						<table>
+							<tr>
+								<td class="tTitle">제목</td>
+								<td class="tContent"><input type="text" name="title"></td>
+							</tr>
+							<tr>
+								<td class="tTitle">작성자</td>
+								<td class="tContent"><input type="text" name="writer"></td>
+							</tr>
+							<tr>
+								<td class="tTitle">비밀번호</td>
+								<td class="tContent"><input type="password" name="pw"></td>
+							</tr>
+							<tr>
+								<td class="tTitle">내용</td>
+								<td class="tContent"><textarea name="content"></textarea></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input type="submit" value="등록"></td>
+							</tr>
+						</table>
+					</form>
 				</div>
-				<img class="timeImg" src="${pageContext.request.contextPath}/resources/images/mainTime.png">
+				<%-- <img class="timeImg" src="${pageContext.request.contextPath}/resources/images/mainTime.png"> --%>
 				<img class="timeImgTablet" src="${pageContext.request.contextPath}/resources/images/mainTimeTablet2.png">
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
+		<%-- <div class="popup">
+			<img src="${pageContext.request.contextPath}/resources/images/popup02.jpg">
+			<p><a href="#none">[ 닫 기 ]</a></p>
+		</div> --%>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>

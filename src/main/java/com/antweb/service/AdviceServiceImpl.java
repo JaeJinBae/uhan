@@ -24,7 +24,6 @@ public class AdviceServiceImpl implements AdviceService{
 
 	@Override
 	public AdviceVO selectOne(int bno) {
-		dao.updateCnt(bno);
 		return dao.selectOne(bno);
 	}
 

@@ -190,6 +190,7 @@
 				<li> <a href="${pageContext.request.contextPath}/admin/"> 공지사항</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminBroadcasting"> 언론보도</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminComment"> 시술후기</a></li>
+				<li> <a href="${pageContext.request.contextPath}/admin/adminNews"> 유한소식</a></li>
 				<li> <a href="${pageContext.request.contextPath}/admin/adminAdvice" style="font-weight:bold;"> 진료/비용 상담</a></li>
 			</ul>
 		</div>

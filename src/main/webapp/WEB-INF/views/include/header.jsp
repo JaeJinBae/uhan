@@ -13,7 +13,7 @@
 		margin:0 auto;
 	}
 	.headerWrap:hover{
-		background: white;
+		background: #f5a241;
 	}
 	.headerWrap>.mainLogo{
 		height:37px;
@@ -21,11 +21,11 @@
 		margin-left:40px; 
 		float:left;*/
 		position:absolute;
-		top:33px;
+		top:33px; 
 		left:40px;
 	} 
 	.headerWrap>.mainLogo>img{
-		width:220px;
+		width:250px;
 	}
 	.mainMenu{
 		/*width:750px;
@@ -383,10 +383,11 @@
 		$(".headerWrap").mouseover(function(){
 			if(window.innerWidth > 1099){				
 				$(this).css("height","374px");
-				$(this).css("background","white");
+				$(this).css("background","#fff");
 				$(".dropdown").css("display","block");
 				$(".mainMenu").css("border-bottom","1px solid lightgray");
-				$(".mainMenu>li>a").css("color","black");
+				$(".mainMenu").css("background","#f5a241");
+				$(".mainMenu>li>a").css("color","#fff");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 				$(this).css("border-bottom","1px solid lightgray");
 				$(".adminBtn").css("color","#666");
@@ -408,13 +409,14 @@
 				$(this).css("background","none");
 				$(this).css("border","0");
 				$(".mainMenu").css("border","0");
+				$(".mainMenu").css("background","none");
 				$(".dropdown").css("display","none");
 				$(".mainMenu>li>a").css("color","white");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 				$(".adminBtn").css("color","white");
 				if($(window).scrollTop()>10){
-					$(".headerWrap").css("background","white");
-	            	$(".mainMenu>li>a").css("color","black");
+					$(".headerWrap").css("background","#f5a241");
+	            	$(".mainMenu>li>a").css("color","#fff");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
@@ -446,10 +448,11 @@
 		    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
-	            	$(".headerWrap").css("background","white");
-	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".headerWrap").css("background","#f5a241");
+	            	$(".mainMenu>li>a").css("color","#fff");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("height","108px");
+	            	/* $(".mainMenu").css(); */
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            }
 	            if(position<10){
@@ -529,7 +532,7 @@
 			<div class="dropdown">
 				<ul class="mainSubMenu">
 					<li><a href="${pageContext.request.contextPath}/info01">인사말</a></li>
-					<li><a href="${pageContext.request.contextPath}/info02">원장 소개</a></li>
+					<li><a href="${pageContext.request.contextPath}/info02">의료진 소개</a></li>
 					<li><a href="${pageContext.request.contextPath}/info04">진료철학</a></li>
 					<li><a href="${pageContext.request.contextPath}/info03">병원 둘러보기</a></li>
 					<li><a href="${pageContext.request.contextPath}/location">오시는 길</a></li>
@@ -549,12 +552,12 @@
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
 		</li>
 		<li class="mainMenu_li">
-			<a href="${pageContext.request.contextPath}/notice">진료안내</a>
+			<a href="${pageContext.request.contextPath}/intro1">진료안내</a>
 			<div class="dropdown">
 				<ul class="mainSubMenu">
-					<li><a href="${pageContext.request.contextPath}/notice">진료시간</a></li>
-					<li><a href="${pageContext.request.contextPath}/broadcasting">진료비용</a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li>
+					<li><a href="${pageContext.request.contextPath}/intro1">진료시간</a></li>
+					<li><a href="${pageContext.request.contextPath}/intro2">진료비용</a></li>
+					<li><a href="${pageContext.request.contextPath}/intro3">자주하는 질문</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
@@ -566,8 +569,8 @@
 					<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
 					<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
 					<li><a href="${pageContext.request.contextPath}/comment">시술 후기</a></li>
-					<%-- <li><a href="${pageContext.request.contextPath}/advice">- 진료/비용 상담</a></li>
-					<li><a href="${pageContext.request.contextPath}/freqQuestion">자주하는 질문</a></li> --%>
+					<li><a href="${pageContext.request.contextPath}/news">유한소식</a></li>
+					<li><a href="${pageContext.request.contextPath}/advice">진료/비용 상담</a></li>
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
