@@ -235,7 +235,7 @@
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 999;
 	}
 	section{
 		width:100%;
@@ -608,6 +608,7 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/intro1">진료안내</a></li>
 						</ul>
 					</li>
 					<li>

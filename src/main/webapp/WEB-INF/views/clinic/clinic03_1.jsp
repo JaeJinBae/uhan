@@ -340,7 +340,7 @@
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 999;
 	}
 	section{
 		width:100%;

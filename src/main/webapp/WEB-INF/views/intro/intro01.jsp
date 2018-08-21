@@ -264,7 +264,7 @@
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 999;
 	}
 	section{
 		width:100%;
@@ -592,7 +592,7 @@
 				<h1>진료시간</h1>				
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/intro1Img.png">
+				<img src="${pageContext.request.contextPath}/resources/images/intro1Img2.png">
 			</div><!-- content end -->
 		</div><!-- contentWrap end -->
 		<div class="mobile_ContentWrap">

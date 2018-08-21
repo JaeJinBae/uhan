@@ -277,7 +277,7 @@
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 999;
 	}
 	section{
 		width:100%;
@@ -638,17 +638,32 @@
 	.btnWrap{
 		width:100%;
 		margin-top:10px;
+		text-align: center;
 	}
-	.btnWrap .goListBtn>button{
+	.btnWrap button{
 		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 	.btnWrap .submitBtn{
 		width:50px;
+		height:24px;
+		background: #00b4ae;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 	.btnWrap .cancelBtn>button{
 		width:50px;
 	}
-	input[type=submit] {-webkit-appearance:none;}
+	input[type=submit] {
+		-webkit-appearance:none;
+	}
 }
 </style>
 <script type="text/javascript">
@@ -702,6 +717,7 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/intro1">진료안내</a></li>
 						</ul>
 					</li>
 					<li>

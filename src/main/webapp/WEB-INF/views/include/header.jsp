@@ -396,8 +396,9 @@
 				$(this).css("height","330px");
 				$(this).css("background","white");
 				$(".dropdown").css("display","block");
+				$(".mainMenu").css("background","#f5a241");
 				$(".mainMenu").css("border-bottom","1px solid lightgray");
-				$(".mainMenu>li>a").css("color","black");
+				$(".mainMenu>li>a").css("color","#fff");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 				$(this).css("border-bottom","1px solid lightgray");
 				$(".adminBtn").css("color","#666");
@@ -432,8 +433,8 @@
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 				$(".adminBtn").css("color","white");
 				if($(window).scrollTop()>10){
-					$(".headerWrap").css("background","white");
-	            	$(".mainMenu>li>a").css("color","black");
+					$(".headerWrap").css("background","#f5a241");
+	            	$(".mainMenu>li>a").css("color","#fff");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
@@ -467,15 +468,15 @@
 		    	var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
-	            	$(".headerWrap").css("background","white");
-	            	$(".mainMenu>li>a").css("color","black");
+	            	$(".headerWrap").css("background","#f5a241");
+	            	$(".mainMenu>li>a").css("color","#fff");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("height","75px");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            	$(".headerWrap").css("height","75px");
 	            }
 	            if(position<10){
-	            	$(".headerWrap").css("background","none");
+	            	/* $(".headerWrap").css("background","none"); */
 	            	$(".mainMenu>li>a").css("color","white");
 	            	$(".adminBtn").css("color","white");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");

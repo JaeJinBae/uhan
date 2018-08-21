@@ -297,7 +297,7 @@
 		right:0;
 		bottom:0;
 		margin:0 auto;
-		z-index: 99;
+		z-index: 999;
 	}
 	section{
 		width:100%;
@@ -670,12 +670,26 @@
 	.tbl_board table tr td:first-child{
 		width:28px;
 	}
+	.tbl_board table tr td:nth-child(3){
+		width:42px;
+	}
+	.tbl_board table tr td:nth-child(4){
+		width:48px;
+	}
+	.tbl_board table tr td:nth-child(5){
+		width:64px;
+	}
 	.tbl_board table tr td:last-child{
 		width:28px;
 	}
 	.title{
-		width:97px !important;
-		text-overflow: ellipsis;
+		width:90px !important;
+	}
+	.title > a{
+		width:70px;
+		overflow:hidden; 
+		white-space:nowrap;
+		text-overflow:ellipsis;
 	}
 	.tbl_board table td:not(.title){
 		text-align: center;
@@ -803,6 +817,7 @@
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/info01">병원소개</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic01_00">진료분야</a></li>
+							<li><a href="${pageContext.request.contextPath}/intro1">진료안내</a></li>
 						</ul>
 					</li>
 					<li>
