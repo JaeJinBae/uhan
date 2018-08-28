@@ -633,14 +633,14 @@
 		text-align: center;
 	}
 	section .mainBackground .navWrap .navUl>li:last-child{
-		width:45%;
+		width:52%;/* 45 */
 		text-align: left;
 	}
 	section .mainBackground .navWrap .navUl>li a{  
 		font-size: 17px;
 		color:white;
 		line-height: 45px;
-		margin:0 15px;
+		margin:0 12px; 
 	}
 	section .mainBackground .navWrap .navUl>li:first-child{
 		text-align: center;
@@ -652,13 +652,13 @@
 		line-height: 51px;
 	}
 	section .mainBackground .navWrap .navUl>li a>.btnArrow{
-		margin-left:25px; 
+		margin-left:10px;/* 25 */ 
 		margin-top:14px;
 		float:right;
 		width:20px;
 	}
 	section .mainBackground .navWrap .navUl>li:last-child a>.btnArrow{
-		margin-left:14px;
+		margin-left:10px;
 	}
 	.sub_subDropdown{
 		display: none;
@@ -788,7 +788,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/clinic01_00">비수술 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/clinic01_00">비수술 척추 클리닉<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/clinic02">대상포진 클리닉</a></li>
 							<li><a href="${pageContext.request.contextPath}/clinic03_01">관절통증 클리닉</a></li>
@@ -809,7 +809,7 @@
 			</div>
 			<div class="clinic_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>비수술 클리닉</h1>
+				<h1>비수술 척추 클리닉</h1>
 			</div>
 			<div class="clinic_sub_nav">
 				<ul>
