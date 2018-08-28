@@ -1,5 +1,7 @@
 package com.antweb.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -92,7 +94,7 @@ public class HomeController {
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model, HttpServletRequest req) {
+	public String home(Model model, HttpServletRequest req) throws UnsupportedEncodingException {
 		logger.info("home");	
 		List<NoticeVO> list=nService.selectAll();
 		model.addAttribute("list", list);
@@ -509,11 +511,19 @@ public class HomeController {
 		return "redirect:/advice"+pageMaker.makeSearch(cri.getPage());
 	}
 	
-	private StatisticsVO getUser(HttpServletRequest request){
+	private StatisticsVO getUser(HttpServletRequest request) throws UnsupportedEncodingException{
+		String decodeResult;
+		if(request.getHeader("referer")==null){
+			decodeResult=null;
+		}else{
+			decodeResult = URLDecoder.decode(request.getHeader("referer"), "UTF-8");
+		} 
+		
+		
 		String agent = request.getHeader("User-Agent");
 		String browser = null;
 		String device = "";
-		String old_url = request.getHeader("referer"); 
+		String old_url = decodeResult; 
 	
 		StatisticsVO vo = new StatisticsVO();
 		
