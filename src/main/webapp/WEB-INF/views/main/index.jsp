@@ -179,8 +179,11 @@
 		width:450px;
 		border:1px solid lightgray;
 	}
+	/* .popup{
+		display:none;
+	} */
 	.popup{
-		width:300px;
+		width:600px;
 		position:absolute;
 		top:150px;
 		left:100px;
@@ -197,6 +200,7 @@
 		text-align: right;
 		background: #f1f1f1;
 		padding-right:15px;
+		padding-bottom:5px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -373,15 +377,18 @@
 		margin-top:30px;
 		border:1px solid lightgray;
 	}
+	/* .popup{
+		display:none;
+	} */
 	.popup{
-		width:300px;
+		width:440px;
 		position:absolute;
 		top:150px;
 		left:100px;
 		background: #f1f1f1;
 	}
 	.popup:last-child{
-		left:420px;
+		left:40px;
 	}
 	.popup > img{
 		width:100%;
@@ -391,6 +398,7 @@
 		text-align: right;
 		background: #f1f1f1;
 		padding-right:15px;
+		padding-bottom:5px;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -550,6 +558,7 @@
 		text-align: right;
 		background: #f1f1f1;
 		padding-right:15px;
+		padding-bottom:5px;
 	}
 }
 </style>
@@ -649,10 +658,10 @@
 				<img class="timeImgTablet" src="${pageContext.request.contextPath}/resources/images/mainTimeTablet2.png">
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
-		<%-- <div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/images/popup02.jpg">
+		<div class="popup">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20180927.png">
 			<p><a href="#none">[ 닫 기 ]</a></p>
-		</div> --%>
+		</div>
 	</section>
 	<footer>
 		<jsp:include page="../include/footer.jsp"></jsp:include>
