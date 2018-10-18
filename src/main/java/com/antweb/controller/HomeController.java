@@ -71,7 +71,7 @@ public class HomeController {
 		String old_url = req.getHeader("referer");
 		logger.info(old_url);
 		
-		return "test/testmain";
+		return "main/indexBackup";
 	}
 	
 	@RequestMapping(value="/testboard")
