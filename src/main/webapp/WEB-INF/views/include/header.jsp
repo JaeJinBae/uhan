@@ -428,6 +428,7 @@
 				$(this).css("background","none");
 				$(this).css("border","0");
 				$(".mainMenu").css("border","0");
+				$(".mainMenu").css("background","none");
 				$(".dropdown").css("display","none");
 				$(".mainMenu>li>a").css("color","white");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
@@ -476,11 +477,12 @@
 	            	$(".headerWrap").css("height","75px");
 	            }
 	            if(position<10){
-	            	/* $(".headerWrap").css("background","none"); */
+	            	$(".headerWrap").css("background","none");
 	            	$(".mainMenu>li>a").css("color","white");
 	            	$(".adminBtn").css("color","white");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 	            	$(".mainMenu").css("border","0");
+	            	console.log(position);
 	            }
 			}
 		});
