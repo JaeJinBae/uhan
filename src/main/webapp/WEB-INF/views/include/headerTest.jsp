@@ -9,19 +9,31 @@
 	.headerWrap{
 		width:100%;
 		min-width:1200px;
-		height:108px;
+		height:91px;
 		margin:0 auto;
 	}
 	.headerWrap:hover{
 		background: #f5a241;
 	}
+	/* login css */
+	.loginDiv{
+		width:100%;
+		text-align: right;
+		padding-top:5px;
+	}
+	.loginDiv > a{
+		color:#fff;
+		margin-right:20px;
+	}
+	.loginDiv > a > img{
+		width:9px;
+		margin-right:3px;
+	}
+	/* login css end */
 	.headerWrap > .mainLogo{
 		height:37px;
-		/* margin-top:33px;
-		margin-left:40px; 
-		float:left;*/
 		position:absolute;
-		top:33px; 
+		top:34px; 
 		left:40px;
 	} 
 	.headerWrap > .mainLogo > img{
@@ -33,7 +45,7 @@
 		width:100%;
 		min-width:1024px;
 		display:inline-block;
-		height:108px;
+		height:90px;
 		padding-left:26%;
 	}
 	
@@ -42,8 +54,8 @@
 		height:20px;
 		float: left; 
 		text-align: center;
-		margin-top:43px;
-		line-height: 20px;
+		margin-top:23px;
+		line-height: 17px;
 		
 	}
 	.mainMenu > li:nth-child(2){
@@ -59,6 +71,7 @@
 		display: inline;
 		padding-bottom:32px;
 		color:white;
+		font-weight:500;
 	}
 	.headerWrap:hover > .mainMenu > li > a{
 		color:black;
@@ -109,22 +122,6 @@
 	}
 	.arrow{
 		display: none;
-	}
-	.adminBtn{
-		position: absolute;
-		top:40px;
-		right:30px;
-		color:white;
-		font-weight: 100;
-	}
-	.headerWrap:hover > .adminBtn{
-		color:#666;
-	}
-	.adminBtn > img{
-		width:9px;
-		float:left;
-		margin-top:5px;
-		margin-right:4px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -386,17 +383,18 @@
 				$(this).css("background","#fff");
 				$(".dropdown").css("display","block");
 				$(".mainMenu").css("border-bottom","1px solid lightgray");
+				$(".loginDiv").css("background","#f5a241");
 				$(".mainMenu").css("background","#f5a241");
 				$(".mainMenu>li>a").css("color","#fff");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 				$(this).css("border-bottom","1px solid lightgray");
-				$(".adminBtn").css("color","#666");
 			}else if(window.innerWidth<1100 && window.innerWidth>767){
 				/* $(".dropdown").css("display","block"); */
 				$(this).css("height","330px");
 				$(this).css("background","white");
 				$(".dropdown").css("display","block");
 				$(".mainMenu").css("background","#f5a241");
+				$(".loginDiv").css("background","#f5a241");
 				$(".mainMenu").css("border-bottom","1px solid lightgray");
 				$(".mainMenu>li>a").css("color","#fff");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
@@ -406,19 +404,20 @@
 		});
 		$(".headerWrap").mouseout(function(){
 			if(window.innerWidth > 1099){
-				$(this).css("height","108px");
+				$(this).css("height","90px");
 				$(this).css("background","none");
 				$(this).css("border","0");
 				$(".mainMenu").css("border","0");
 				$(".mainMenu").css("background","none");
+				$(".loginDiv").css("background","none");
 				$(".dropdown").css("display","none");
 				$(".mainMenu>li>a").css("color","white");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 				$(".adminBtn").css("color","white");
 				if($(window).scrollTop()>10){
 					$(".headerWrap").css("background","#f5a241");
+					$(".loginDiv").css("background","#f5a241");
 	            	$(".mainMenu>li>a").css("color","#fff");
-	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 				}
@@ -429,12 +428,14 @@
 				$(this).css("border","0");
 				$(".mainMenu").css("border","0");
 				$(".mainMenu").css("background","none");
+				$(".loginDiv").css("background","none");
 				$(".dropdown").css("display","none");
 				$(".mainMenu>li>a").css("color","white");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 				$(".adminBtn").css("color","white");
 				if($(window).scrollTop()>10){
 					$(".headerWrap").css("background","#f5a241");
+					$(".loginDiv").css("background","#f5a241");
 	            	$(".mainMenu>li>a").css("color","#fff");
 	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
@@ -451,16 +452,15 @@
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 	            	$(".headerWrap").css("background","#f5a241");
+	            	$(".loginDiv").css("background","#f5a241");
 	            	$(".mainMenu>li>a").css("color","#fff");
-	            	$(".adminBtn").css("color","#666");
-	            	$(".mainMenu").css("height","108px");
-	            	/* $(".mainMenu").css(); */
+	            	$(".mainMenu").css("height","90px");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            }
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");
+	            	$(".loginDiv").css("background","none");
 	            	$(".mainMenu>li>a").css("color","white");
-	            	$(".adminBtn").css("color","white");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
 	            	$(".mainMenu").css("border","0");
 	            }
@@ -470,14 +470,15 @@
 	        	if(position>10){
 	        		$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
 	            	$(".headerWrap").css("background","#f5a241");
+	            	$(".loginDiv").css("background","#f5a241");
 	            	$(".mainMenu>li>a").css("color","#fff");
-	            	$(".adminBtn").css("color","#666");
 	            	$(".mainMenu").css("height","75px");
 	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
 	            	$(".headerWrap").css("height","75px");
 	            }
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");
+	            	$(".loginDiv").css("background","none");
 	            	$(".mainMenu>li>a").css("color","white");
 	            	$(".adminBtn").css("color","white");
 	            	$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/whitelogo.png");
@@ -525,6 +526,11 @@
 		
 	});	
 </script>
+<div class="loginDiv">
+	<a href="${pageContext.request.contextPath}/login">로그인</a>
+	<a href="#none">회원가입</a>
+	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
+</div>
 <div class="headerWrap">
 	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/whitelogo.png"></a>
 	<a class="mobileMenu" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/mobileMenu.png"></a>
@@ -579,5 +585,4 @@
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
 		</li>
 	</ul><!-- mainMenu end -->
-	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
 </div><!-- headerWrap end -->

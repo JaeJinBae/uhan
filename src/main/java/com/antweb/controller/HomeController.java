@@ -71,7 +71,7 @@ public class HomeController {
 		String old_url = req.getHeader("referer");
 		logger.info(old_url);
 		
-		return "main/indexBackup";
+		return "test/testmain";
 	}
 	
 	@RequestMapping(value="/testboard")
@@ -91,6 +91,23 @@ public class HomeController {
 		
 		return "test/headmenu";
 	}
+	
+	//========================== main ===============================
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginGet(Model model, HttpServletRequest req) throws UnsupportedEncodingException {
+		logger.info("login Get");	
+		
+		
+		StatisticsVO vo = getUser(req);
+		if(vo.getUrl().indexOf("http://www.uhan-hospital.com/")>-1){
+			logger.info("같은 홈페이지");
+		}else{
+			sService.insert(getUser(req));
+		}
+		
+		return "membership/login";
+	}
+	
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
