@@ -133,14 +133,27 @@
 		width:100%;
 		height:75px;
 		margin:0 auto;
-		/* border:1px solid #e3e3e3; */
-		/* background: white; */
 		position: relative;
 		z-index: 99;
 	}
+	/* login css */
+	.loginDiv{
+		width:100%;
+		text-align: right;
+		padding-top:3px;
+	}
+	.loginDiv > a{
+		color:#fff;
+		margin-right:20px;
+		font-size:12px;
+	}
+	.loginDiv > a > img{
+		width:9px;
+		margin-right:3px;
+	}
+	/* login css end*/
 	.headerWrap > .mainLogo{
-		/* height:37px; */
-		margin-top:25px;
+		margin-top:1px;
 		margin-left:30px;
 		float:left;
 	}
@@ -150,7 +163,7 @@
 	.mainMenu{
 		width:100%;
 		/* float:right; */
-		height:75px;
+		height:50px;
 		padding-left:20%;
 	}
 	.mainMenu > li{
@@ -158,7 +171,7 @@
 		height:20px;
 		float: left; 
 		text-align: center;
-		margin-top:29px;
+		margin-top:5px;
 		line-height: 20px;
 	}
 	.mainMenu > li:nth-child(2){ 
@@ -187,8 +200,6 @@
 	}
 	.mainMenu .dropdown:nth-child(2){
 		width:100%;
-		/* border-left:1px solid #fafafa;
-		border-right:1px solid #fafafa; */
 	}
 	.mainMenu .mainSubMenu:not(#lastMainSubMenu){
 		height:200px;
@@ -398,7 +409,6 @@
 				$(".mainMenu").css("border-bottom","1px solid lightgray");
 				$(".mainMenu>li>a").css("color","#fff");
 				$(".mainLogo>img").attr("src","${pageContext.request.contextPath}/resources/images/logo.png");
-				$(this).css("border-bottom","1px solid lightgray");
 				$(".adminBtn").css("color","#666");
 			}
 		});
@@ -423,7 +433,7 @@
 				}
 			}else if(window.innerWidth<1100 && window.innerWidth>767){
 				/* $(".dropdown").css("display","none"); */
-				$(this).css("height","75px");
+				$(this).css("height","50px");
 				$(this).css("background","none");
 				$(this).css("border","0");
 				$(".mainMenu").css("border","0");
@@ -472,9 +482,8 @@
 	            	$(".headerWrap").css("background","#f5a241");
 	            	$(".loginDiv").css("background","#f5a241");
 	            	$(".mainMenu>li>a").css("color","#fff");
-	            	$(".mainMenu").css("height","75px");
-	            	$(".mainMenu").css("border-bottom","1px solid lightgray");
-	            	$(".headerWrap").css("height","75px");
+	            	$(".mainMenu").css("height","50px");
+	            	$(".headerWrap").css("height","50px");
 	            }
 	            if(position<10){
 	            	$(".headerWrap").css("background","none");

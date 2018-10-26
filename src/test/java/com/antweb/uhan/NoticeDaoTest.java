@@ -6,47 +6,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.antweb.domain.BoardVO;
-import com.antweb.domain.NoticeVO;
-import com.antweb.persistence.NoticeDao;
+import com.antweb.domain.MemberVO;
+import com.antweb.persistence.MemberDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 public class NoticeDaoTest {
 
 	@Autowired
-	private NoticeDao dao;
+	private MemberDao dao;
 	
-	//@Test
+	@Test
 	public void selectAll(){
 		dao.selectAll();
 	}
 	
 	//@Test
 	public void selectOne(){
-		dao.selectOne(1);
+		dao.selectOne("asdf");
 	}
 	
 	//@Test
 	public void insert(){
-		NoticeVO vo=new NoticeVO();
-		vo.setWriter("관리자");
-		vo.setTitle("안녕하세요");
-		vo.setContent("가나다라마바사");
+		MemberVO vo=new MemberVO();
+		vo.setId("bjj");
+		vo.setPw("bjj");
+		vo.setName("가나다라마바사");
+		vo.setMail("asdf@asdf.com");
 		dao.insert(vo);
 	}
 	
-	@Test
+	//@Test
 	public void update(){
-		NoticeVO vo=new NoticeVO();
-		vo.setBno(20);
-		vo.setTitle("ㅋㅋㅋ");
-		vo.setWriter("sadf");
-		vo.setContent("ㅋㅋ이바이");
+		MemberVO vo=new MemberVO();
+		vo.setId("asdf");
+		vo.setPw("bjj");
+		vo.setName("가나다라마바사");
+		vo.setMail("asdf@asdf.com");
 		dao.update(vo);
 	}
 	//@Test
 	public void delete(){
-		dao.delete(2);
+		dao.delete("asdf");
 	}
 }
