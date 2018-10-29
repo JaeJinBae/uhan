@@ -32,7 +32,7 @@
 	padding:0;
  }
  .popup{
- 	display:none;
+ 	/* display:none; */
  }
 @media only screen and (min-width:1100px){
 	header{
@@ -662,7 +662,7 @@
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20180927.png">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20181029.png">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>

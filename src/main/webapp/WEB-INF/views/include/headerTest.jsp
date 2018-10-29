@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style type="text/css">
 @media only screen and (min-width:1100px){
  *{
@@ -536,9 +539,15 @@
 	});	
 </script>
 <div class="loginDiv">
-	<a href="${pageContext.request.contextPath}/login">로그인</a>
-	<a href="#none">회원가입</a>
-	<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
+	<c:if test="${vo.id != null}">
+		<a href="${pageContext.request.contextPath}/login">${vo.getId}</a>
+	</c:if>
+	<c:if test="${vo.id == null}">
+		<a href="${pageContext.request.contextPath}/login">로그인</a>
+		<a href="#none">회원가입</a>
+		<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
+	</c:if>
+	
 </div>
 <div class="headerWrap">
 	<a class="mainLogo" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/whitelogo.png"></a>

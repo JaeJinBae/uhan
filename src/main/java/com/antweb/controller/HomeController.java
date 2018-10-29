@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
+import com.antweb.domain.MemberVO;
 import com.antweb.domain.NewsVO;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
@@ -33,6 +34,7 @@ import com.antweb.domain.StatisticsVO;
 import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
+import com.antweb.service.MemberService;
 import com.antweb.service.NewsService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
@@ -65,12 +67,18 @@ public class HomeController {
 	@Autowired
 	private StatisticsService sService;
 	
+	@Autowired
+	private MemberService mService;
+	
 	@RequestMapping(value = "/testmain", method = RequestMethod.GET)
 	public String testmain(Model model, HttpServletRequest req) {
 		logger.info("home");
 		String old_url = req.getHeader("referer");
 		logger.info(old_url);
 		
+		String t=(String) req.getAttribute("id");
+		
+		logger.info(t);
 		return "test/testmain";
 	}
 	
@@ -92,7 +100,7 @@ public class HomeController {
 		return "test/headmenu";
 	}
 	
-	//========================== main ===============================
+	//========================== member login ===============================
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginGet(Model model, HttpServletRequest req) throws UnsupportedEncodingException {
 		logger.info("login Get");	
@@ -106,6 +114,37 @@ public class HomeController {
 		}
 		
 		return "membership/login";
+	}
+	
+	@RequestMapping(value="/memberLoginCheck/{id}/{pw}")
+	public ResponseEntity<String> memberLoginCheck(@PathVariable("id") String id,@PathVariable("pw") String pw, HttpServletRequest req, Model model) throws Exception{
+		logger.info("member Login Check");
+		ResponseEntity<String> entity=null;
+		
+		HttpSession session=req.getSession();
+		logger.info(id+", "+pw);
+		
+		try {
+			MemberVO vo=mService.selectOne(id);
+			
+			String getId=vo.getId();
+			String getPw=vo.getPw();
+			
+			if(id.equals(getId)&&pw.equals(getPw)){
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+				session.setAttribute("id", id);
+				System.out.println("session 아이디"+session.getAttribute("id"));
+				model.addAttribute("vo",vo);
+			}else{
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
+			}
+			
+			return entity;
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+		}
+		
+		return entity;
 	}
 	
 

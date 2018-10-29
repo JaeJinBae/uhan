@@ -190,36 +190,62 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* 자주하는 질문 */
-	.collapsibleWrap{
-		padding:0;
-		width:882px;
-		margin: 50px auto;
-		list-style: none;
+	/* login form */
+	.loginFormWrap{
+		width:600px;
+		margin:0 auto;
 	}
-	.collapsible{
-		margin-bottom:3px;
+	.loginFormWrap > h2{
+		font-size: 23px;
+		margin-bottom:20px;
 	}
-	.collapsible_title{
-		padding:10px 15px;
-		background: rgb(245, 245, 245);
-		border:1px solid #e3e3e3;
-		border-radius: 4px;
-		text-align: left;
+	.loginFormWrap > .form{
+		width:100%;
+		margin:0 auto;
+		padding:20px 0;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
 	}
-	.collapsible_title>a{
-		display:block;
-		font-size:18px;
+	.loginFormWrap > .form > table{
+		width:40%;
+		margin:0 auto;
 	}
-	.content{
+	.loginFormWrap > .form > table th{
+		font-size:14px;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > input{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
 		font-size:15px;
-		padding:15px;
-		border:1px solid #e3e3e3;
-		text-align: left;
 	}
-	.selected{
-		text-decoration: underline;
-		font-weight: bold;
+	.signInWrap{
+		width:100%;
+		margin-top:20px;
+	}
+	.signIn{
+		width:60%;
+		margin: 0 auto;
+		overflow:hidden;
+	}
+	.signIn > p{
+		float:left;
+		width:60%;
+		font-size:14px;
+	}
+	.signIn > a {
+		float:left;
+		font-size:14px;
+	}
+	.signIn > a:hover{
+		color: #0561fa;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -553,27 +579,38 @@
         	return false;
         });
         
-        //collapsible menu
-		$(".collapsible:eq(0) a").addClass("selected");
+        //id, pw check
+        function idpwCheck(id, pw){
+			if(id==""||pw==""){
+				alert("아이디와 비밀번호를 모두 입력하세요.");
+				return;
+			}
+			$.ajax({
+				url:"${pageContext.request.contextPath}/memberLoginCheck/"+id+"/"+pw,
+				type:"post",
+				dataType:"text",
+				success:function(json){
+					console.log(json);
+					
+					if(json!="ok"){
+						alert("아이디 또는 비밀번호를 다시 확인하세요.");
+						location.href="${pageContext.request.contextPath}/login";
+					}else{
+						location.href="${pageContext.request.contextPath}/testmain";
+					}
+				}
+			});
+		}
 		
-		//첫번째 collapsible 클래스를 제외한 나머지 collapsible 클래스를 선택하여, 그 아래의 content클래스를 찾아 숨긴다.
-		$(".collapsible").not(":eq(0)").find(".content").hide();
-		
-		$(".collapsible .collapsible_title a").click(function(){
-			//나를 제외한 것들을 removeClass한다.
-			$(".collapsible .collapsible_title a").not(this).removeClass("selected");
-			
-			$(this).toggleClass("selected");
-			
-			var $target=$(this).parents(".collapsible").find(".content");
-			$target.slideToggle(300);
-			
-			//선택한 애를 제외한 나머지 content class는 닫겨야 한다.
-			var $other=$(".collapsible .collapsible_title a").not(this).parents(".collapsible").find(".content");
-			$other.slideUp(300);
-			
-			return false;//link차단
-			
+		$(".submitDiv > button").click(function(){
+			var id=$("input[name='id']").val();
+			var pw=$("input[name='pw']").val();
+			if(id==null||id==""||pw==null||pw==""){
+				alert("아이디와 비밀번호를 다시 확인하세요.");
+				return false;
+			}else{
+				idpwCheck(id, pw);
+			}
 		});
 	});
 </script>
@@ -608,8 +645,7 @@
 						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/">회원가입</a></li>
-							<li><a href="${pageContext.request.contextPath}/">아이디찾기</a></li>
-							<li><a href="${pageContext.request.contextPath}/">비밀번호찾기</a></li>
+							<li><a href="${pageContext.request.contextPath}/">회원정보찾기</a></li>
 							<li><a href="${pageContext.request.contextPath}/">이용약관</a></li>
 							<li><a href="${pageContext.request.contextPath}/">개인정보취급방침</a></li>
 							
@@ -632,22 +668,28 @@
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
 				<h1>로그인</h1>				
 			</div>			
-			<div class="loginFormWrap">
-				<form>
+			<div class="loginFormWrap"> 
+				<h2>회원서비스를 이용하기 위해서는 로그인이 필요합니다.</h2>
+				<div class="form">
 					<table>
 						<tr>
 							<th>아이디</th>
-							<td><input type="text"></td>
+							<td><input type="text" name="id"></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td><input type="password"></td>
+							<td><input type="password" name="pw"></td>
 						</tr>
 					</table>
-					<div>
-						<input type="submit" value="로그인">
+					<div class="submitDiv">
+						<!-- <input type="submit" value="로그인"> -->
+						<button>로그인</button>
 					</div>
-				</form>
+				</div>
+				<div class="signInWrap">
+					<div class="signIn"><p>아직 회원이 아니십니까?</p><a href="">회원가입</a></div>
+					<div class="signIn"><p>아이디/비밀번호를 잊으셨습니까?</p><a href="">아이디/비밀번호 찾기</a></div>
+				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->
 	</section>
