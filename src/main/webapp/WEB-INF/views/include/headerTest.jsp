@@ -539,10 +539,11 @@
 	});	
 </script>
 <div class="loginDiv">
-	<c:if test="${vo.id != null}">
-		<a href="${pageContext.request.contextPath}/login">${vo.getId}</a>
+	<c:if test="${sessionScope.id != null}">
+		<a href="${pageContext.request.contextPath}/login">${sessionScope.id}</a>
+		<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 	</c:if>
-	<c:if test="${vo.id == null}">
+	<c:if test="${sessionScope.id == null}">
 		<a href="${pageContext.request.contextPath}/login">로그인</a>
 		<a href="#none">회원가입</a>
 		<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
