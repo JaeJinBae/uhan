@@ -540,7 +540,7 @@
 </script>
 <div class="loginDiv">
 	<c:if test="${sessionScope.id != null}">
-		<a href="${pageContext.request.contextPath}/login">${sessionScope.id}</a>
+		<a href="${pageContext.request.contextPath}/userInfo">${sessionScope.id}</a>
 		<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 	</c:if>
 	<c:if test="${sessionScope.id == null}">

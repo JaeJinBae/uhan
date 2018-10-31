@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -190,63 +193,8 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* login form */
-	.loginFormWrap{
-		width:600px;
-		margin:0 auto;
-	}
-	.loginFormWrap > h2{
-		font-size: 23px;
-		margin-bottom:20px;
-	}
-	.loginFormWrap > .form{
-		width:100%;
-		margin:0 auto;
-		padding:20px 0;
-		border-top:2px solid lightgray;
-		border-bottom:2px solid lightgray;
-	}
-	.loginFormWrap > .form > table{
-		width:40%;
-		margin:0 auto;
-	}
-	.loginFormWrap > .form > table th{
-		font-size:14px;
-	}
-	.submitDiv{
-		width:100%;
-		text-align: center;
-		margin-top:10px;
-	}
-	.submitDiv > input{
-		background: #00B4AE;
-		color:#fff;
-		border:1px solid lightgray;
-		border-radius: 5px;
-		padding:3px 10px;
-		font-size:15px;
-	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:60%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
-	}
+	/* update form */
+	
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -384,37 +332,7 @@
 		font-size:30px;
 		font-weight: 500;
 	}
-	/* 자주하는 질문 */
-	.collapsibleWrap{
-		padding:0;
-		width:700px;
-		margin: 50px auto;
-		list-style: none;
-	}
-	.collapsible{
-		margin-bottom:3px;
-	}
-	.collapsible_title{
-		padding:10px 15px;
-		background: rgb(245, 245, 245);
-		border:1px solid #e3e3e3;
-		border-radius: 4px;
-		text-align: left;
-	}
-	.collapsible_title>a{
-		display:block;
-		font-size:18px;
-	}
-	.content{
-		font-size:15px;
-		padding:15px;
-		border:1px solid #e3e3e3;
-		text-align: left;
-	}
-	.selected{
-		text-decoration: underline;
-		font-weight: bold;
-	}
+	
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -529,37 +447,7 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	/* 자주하는 질문 */
-	.collapsibleWrap{
-		padding:0;
-		width:360px;
-		margin: 50px auto;
-		list-style: none;
-	}
-	.collapsible{
-		margin-bottom:3px;
-	}
-	.collapsible_title{
-		padding:10px 15px;
-		background: rgb(245, 245, 245);
-		border:1px solid #e3e3e3;
-		border-radius: 4px;
-		text-align: left;
-	}
-	.collapsible_title>a{
-		display:block;
-		font-size:14px;
-	}
-	.content{
-		font-size:13px;
-		padding:15px;
-		border:1px solid #e3e3e3;
-		text-align: left;
-	}
-	.selected{
-		text-decoration: underline;
-		font-weight: bold;
-	}
+	
 }
 </style>
 <script type="text/javascript">
@@ -580,23 +468,20 @@
         });
         
         //id, pw check
-        function idpwCheck(id, pw){
-			if(id==""||pw==""){
-				alert("아이디와 비밀번호를 모두 입력하세요.");
-				return;
+        function userUpdate(id, pw, mail){
+			if(pw==""){
+				pw="no";
 			}
+			/* alert("아이디: "+id+", 비번: "+pw+", 메일: "+mail); */
 			$.ajax({
-				url:"${pageContext.request.contextPath}/memberLoginCheck/"+id+"/"+pw,
+				url:"${pageContext.request.contextPath}/userUpdate/"+id+"/"+pw+"/"+mail,
 				type:"post",
 				dataType:"text",
 				success:function(json){
 					console.log(json);
 					
-					if(json!="ok"){
-						alert("아이디 또는 비밀번호를 다시 확인하세요.");
-						location.href="${pageContext.request.contextPath}/login";
-					}else{
-						location.href="${pageContext.request.contextPath}/testmain";
+					if(json =="ok"){
+						location.href="${pageContext.request.contextPath}/userInfo";
 					}
 				}
 			});
@@ -604,18 +489,29 @@
 		
 		$(".submitDiv > button").click(function(){
 			var id=$("input[name='id']").val();
-			var pw=$("input[name='pw']").val();
-			if(id==null||id==""||pw==null||pw==""){
-				alert("아이디와 비밀번호를 다시 확인하세요.");
+			var pw=$("input[name='pw']").eq(0).val(); 
+			var pwConfirm=$("input[name='pw']").eq(1).val();
+			var mail=$("input[name='mail']").val();
+			
+			if(pw != pwConfirm){
+				alert("비밀번호가 일치하지 않습니다.");
+				return false;
+			}else if(mail == ""){
+				alert("이메일을 바르게 입력해주세요.");
 				return false;
 			}else{
-				idpwCheck(id, pw);
+				userUpdate(id, pw, mail);
 			}
 		});
 	});
 </script>
 </head>
 <body>
+	<c:if test="${sessionScope.id == null}">
+		<script>
+			location.href="${pageContext.request.contextPath}/login"
+		</script>
+	</c:if>
 	<header>
 		<jsp:include page="../include/headerTest.jsp"></jsp:include>
 	</header>
@@ -666,29 +562,37 @@
 			</div><!-- quick end -->
 			<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>로그인</h1>				
+				<h1>회원정보관리</h1>				
 			</div>			
-			<div class="loginFormWrap"> 
-				<h2>회원서비스를 이용하기 위해서는 로그인이 필요합니다.</h2>
-				<div class="form">
+			<div class="formWrap"> 
+				<h2>'${vo.name}'님의 정보를 확인 및 수정할 수 있습니다.</h2>
+				<div class="formDiv">
 					<table>
 						<tr>
+							<th>이름</th>
+							<td><input type="text" name="name" value="${vo.name}" readonly></td>
+						</tr>
+						<tr>
 							<th>아이디</th>
-							<td><input type="text" name="id"></td>
+							<td><input type="text" name="id" value="${vo.id}" readonly></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
 							<td><input type="password" name="pw"></td>
 						</tr>
+						<tr>
+							<th>비밀번호확인</th>
+							<td><input type="password" name="pw"></td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td><input type="text" name="mail" value="${vo.mail}"></td>
+						</tr>
 					</table>
 					<div class="submitDiv">
 						<!-- <input type="submit" value="로그인"> -->
-						<button>로그인</button>
+						<button>저장</button>
 					</div>
-				</div>
-				<div class="signInWrap">
-					<div class="signIn"><p>아직 회원이 아니십니까?</p><a href="">회원가입</a></div>
-					<div class="signIn"><p>아이디/비밀번호를 잊으셨습니까?</p><a href="">아이디/비밀번호 찾기</a></div>
 				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->

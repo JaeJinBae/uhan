@@ -17,7 +17,7 @@
 	</insert>
 	
 	<update id="update">
-		update member set name=#{name}, pw=#{pw}, mail=#{mail} where id=#{id}
+		update member set pw=#{pw}, mail=#{mail} where id=#{id}
 	</update>
 	
 	<delete id="delete">

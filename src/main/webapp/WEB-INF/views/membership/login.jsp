@@ -384,37 +384,7 @@
 		font-size:30px;
 		font-weight: 500;
 	}
-	/* 자주하는 질문 */
-	.collapsibleWrap{
-		padding:0;
-		width:700px;
-		margin: 50px auto;
-		list-style: none;
-	}
-	.collapsible{
-		margin-bottom:3px;
-	}
-	.collapsible_title{
-		padding:10px 15px;
-		background: rgb(245, 245, 245);
-		border:1px solid #e3e3e3;
-		border-radius: 4px;
-		text-align: left;
-	}
-	.collapsible_title>a{
-		display:block;
-		font-size:18px;
-	}
-	.content{
-		font-size:15px;
-		padding:15px;
-		border:1px solid #e3e3e3;
-		text-align: left;
-	}
-	.selected{
-		text-decoration: underline;
-		font-weight: bold;
-	}
+	
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
@@ -529,37 +499,7 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	/* 자주하는 질문 */
-	.collapsibleWrap{
-		padding:0;
-		width:360px;
-		margin: 50px auto;
-		list-style: none;
-	}
-	.collapsible{
-		margin-bottom:3px;
-	}
-	.collapsible_title{
-		padding:10px 15px;
-		background: rgb(245, 245, 245);
-		border:1px solid #e3e3e3;
-		border-radius: 4px;
-		text-align: left;
-	}
-	.collapsible_title>a{
-		display:block;
-		font-size:14px;
-	}
-	.content{
-		font-size:13px;
-		padding:15px;
-		border:1px solid #e3e3e3;
-		text-align: left;
-	}
-	.selected{
-		text-decoration: underline;
-		font-weight: bold;
-	}
+	
 }
 </style>
 <script type="text/javascript">

@@ -147,6 +147,40 @@ public class HomeController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/userInfo", method=RequestMethod.GET)
+	public String userUpdateGet(HttpServletRequest req, Model model){
+		HttpSession session=req.getSession();
+		MemberVO vo = mService.selectOne(session.getAttribute("id")+"");
+		model.addAttribute("vo", vo);
+		return "membership/updateInfo";
+	}
+	
+	@RequestMapping(value="/userUpdate/{id}/{pw}/{mail:.+}")
+	public ResponseEntity<String> userUpdatePost(@PathVariable("id") String id, @PathVariable("pw") String pw, @PathVariable("mail") String mail, HttpServletRequest req, Model model) throws Exception{
+		logger.info("userUpdate post");
+		logger.info(mail);
+		ResponseEntity<String> entity=null;
+		
+		try {
+			MemberVO vo=mService.selectOne(id);
+			
+			//vo.setId(id);
+			if(pw.equals("no")){
+				vo.setPw(vo.getPw());
+			}else{
+				vo.setPw(pw);
+			}
+			vo.setMail(mail);
+			
+			mService.update(vo);
+			entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			return entity;
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+		}
+		
+		return entity;
+	}
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
