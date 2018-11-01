@@ -545,7 +545,7 @@
 	</c:if>
 	<c:if test="${sessionScope.id == null}">
 		<a href="${pageContext.request.contextPath}/login">로그인</a>
-		<a href="#none">회원가입</a>
+		<a href="${pageContext.request.contextPath}/userSignIn">회원가입</a>
 		<a class="adminBtn" href="${pageContext.request.contextPath}/adminLogin"><img src="${pageContext.request.contextPath}/resources/images/lock777.png">관리자</a>
 	</c:if>
 	

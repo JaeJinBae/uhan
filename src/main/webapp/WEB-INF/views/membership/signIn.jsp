@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -190,28 +193,65 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* login form */
-	.loginFormWrap{
-		width:600px;
+	/* update form */
+	.formWrap{
+		width:780px;
 		margin:0 auto;
 	}
-	.loginFormWrap > h2{
+	.formWrap > h2{
 		font-size: 23px;
 		margin-bottom:20px;
 	}
-	.loginFormWrap > .form{
+	.formDiv{
 		width:100%;
 		margin:0 auto;
-		padding:20px 0;
+		padding:20px 15px;
 		border-top:2px solid lightgray;
 		border-bottom:2px solid lightgray;
 	}
-	.loginFormWrap > .form > table{
-		width:40%;
-		margin:0 auto;
+	.agreeInfoWrap{
+		width:100%;
+		text-align: left;
 	}
-	.loginFormWrap > .form > table th{
-		font-size:14px;
+	.warning{
+		color:orange;
+		margin-top:15px;
+		font-size:16px;
+		text-align: center;
+	}
+	.agreeInfoWrap > h2{
+		font-size:23px;
+		margin:15px 0 7px 0;
+	}
+	.txtWrap{
+		width:99%;
+		height:200px;
+		border:1px solid lightgray;
+		padding:5px;
+		overflow: scroll;
+	}
+	input[type='checkbox']{
+		margin:10px;
+	}
+	hr{
+		margin:15px 0;
+	}
+	.formDiv > table{
+		width:47%;
+		margin:0 auto;
+		margin-top:20px;
+	}
+	.formDiv > table th{
+		font-size:15px;
+		text-align: left;
+	}
+	.formDiv > table td > input{
+		padding-left:3px;
+		border-radius:5px;
+	}
+	.idConfirmBtn{
+		border-radius:5px;
+		padding:0 3px;
 	}
 	.submitDiv{
 		width:100%;
@@ -225,27 +265,6 @@
 		border-radius: 5px;
 		padding:3px 10px;
 		font-size:15px;
-	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:60%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -520,23 +539,20 @@
         });
         
         //id, pw check
-        function idpwCheck(id, pw){
-			if(id==""||pw==""){
-				alert("아이디와 비밀번호를 모두 입력하세요.");
-				return;
+        function userUpdate(id, pw, mail){
+			if(pw==""){
+				pw="no";
 			}
+			/* alert("아이디: "+id+", 비번: "+pw+", 메일: "+mail); */
 			$.ajax({
-				url:"${pageContext.request.contextPath}/memberLoginCheck/"+id+"/"+pw,
+				url:"${pageContext.request.contextPath}/userUpdate/"+id+"/"+pw+"/"+mail,
 				type:"post",
 				dataType:"text",
 				success:function(json){
 					console.log(json);
 					
-					if(json!="ok"){
-						alert("아이디 또는 비밀번호를 다시 확인하세요.");
-						location.href="${pageContext.request.contextPath}/login";
-					}else{
-						location.href="${pageContext.request.contextPath}/testmain";
+					if(json =="ok"){
+						location.href="${pageContext.request.contextPath}/userInfo";
 					}
 				}
 			});
@@ -544,12 +560,18 @@
 		
 		$(".submitDiv > button").click(function(){
 			var id=$("input[name='id']").val();
-			var pw=$("input[name='pw']").val();
-			if(id==null||id==""||pw==null||pw==""){
-				alert("아이디와 비밀번호를 다시 확인하세요.");
+			var pw=$("input[name='pw']").eq(0).val(); 
+			var pwConfirm=$("input[name='pw']").eq(1).val();
+			var mail=$("input[name='mail']").val();
+			
+			if(pw != pwConfirm){
+				alert("비밀번호가 일치하지 않습니다.");
+				return false;
+			}else if(mail == ""){
+				alert("이메일을 바르게 입력해주세요.");
 				return false;
 			}else{
-				idpwCheck(id, pw);
+				userUpdate(id, pw, mail);
 			}
 		});
 	});
@@ -584,7 +606,7 @@
 					<li>
 						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></li>
+							<li><a href="${pageContext.request.contextPath}/">회원가입</a></li>
 							<li><a href="${pageContext.request.contextPath}/">회원정보찾기</a></li>
 							<li><a href="${pageContext.request.contextPath}/">이용약관</a></li>
 							<li><a href="${pageContext.request.contextPath}/">개인정보취급방침</a></li>
@@ -606,29 +628,57 @@
 			</div><!-- quick end -->
 			<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>로그인</h1>				
+				<h1>회원가입</h1>				
 			</div>			
-			<div class="loginFormWrap"> 
-				<h2>회원서비스를 이용하기 위해서는 로그인이 필요합니다.</h2>
-				<div class="form">
+			<div class="formWrap"> 
+				<h2>서비스를 이용하기 위해서는 회원가입이 필요합니다.</h2>
+				<div class="formDiv">
+					<div class="agreeInfoWrap">
+						<p class="warning">회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
+						<h2>회원가입약관</h2>
+						<div class="txtWrap">
+							<jsp:include page="signInText1.jsp"></jsp:include>
+						</div>
+						<input type="checkbox">회원가입약관의 내용에 동의합니다.
+						<hr>
+						
+						<h2>개인정보처리방침</h2>
+						<div class="txtWrap">
+							<jsp:include page="signInText2.jsp"></jsp:include>
+						</div>
+						<input type="checkbox">개인정보처리방침의 내용에 동의합니다.
+						<hr>
+					</div>
 					<table>
 						<tr>
-							<th>아이디</th>
-							<td><input type="text" name="id"></td>
+							<th>- 이름</th>
+							<td><input type="text" name="name"></td>
 						</tr>
 						<tr>
-							<th>비밀번호</th>
+							<th>- 아이디</th>
+							<td><input type="text" name="id"></td>
+							<td><button class="idConfirmBtn">중복확인</button></td>
+						</tr>
+						<tr>
+							<th>- 비밀번호</th>
 							<td><input type="password" name="pw"></td>
 						</tr>
+						<tr>
+							<th>- 비밀번호확인</th>
+							<td><input type="password" name="pwConfirm"></td>
+						</tr>
+						<tr>
+							<th>- 이메일</th>
+							<td><input type="text" name="mail" value="${vo.mail}"></td>
+						</tr>
 					</table>
-					<div class="submitDiv">
-						<!-- <input type="submit" value="로그인"> -->
-						<button>로그인</button>
-					</div>
+					<p class="warning">
+						※비밀번호 분실 시 입력한 이메일로 정보가 발송되오니 정확하게 입력해주세요.※
+					</p>
 				</div>
-				<div class="signInWrap">
-					<div class="signIn"><p>아직 회원이 아니십니까?</p><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></div>
-					<div class="signIn"><p>아이디/비밀번호를 잊으셨습니까?</p><a href="">아이디/비밀번호 찾기</a></div>
+				<div class="submitDiv">
+					<!-- <input type="submit" value="로그인"> -->
+					<button>회원가입</button>
 				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->

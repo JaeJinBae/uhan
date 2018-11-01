@@ -194,7 +194,53 @@
 		font-weight: 500;
 	}
 	/* update form */
-	
+	.formWrap{
+		width:580px;
+		margin:0 auto;
+	}
+	.formWrap > h2{
+		font-size: 23px;
+		margin-bottom:20px;
+	}
+	.formDiv{
+		width:100%;
+		margin:0 auto;
+		padding:20px 0;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
+	}
+	.formDiv > table{
+		width:49%;
+		margin:0 auto;
+	}
+	.formDiv > table th{
+		font-size:15px;
+		text-align: left;
+	}
+	.formDiv > table td > input[name='name'], .formDiv > table td > input[name='id']{
+		background: #F3F3F3;
+	}
+	.formDiv > table td > input{
+		padding-left:3px;
+		border-radius:5px;
+	}
+	.warning{
+		color: blue;
+		margin-top:15px;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > button{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
+		font-size:15px;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -569,30 +615,33 @@
 				<div class="formDiv">
 					<table>
 						<tr>
-							<th>이름</th>
+							<th>- 이름</th>
 							<td><input type="text" name="name" value="${vo.name}" readonly></td>
 						</tr>
 						<tr>
-							<th>아이디</th>
+							<th>- 아이디</th>
 							<td><input type="text" name="id" value="${vo.id}" readonly></td>
 						</tr>
 						<tr>
-							<th>비밀번호</th>
+							<th>- 비밀번호</th>
 							<td><input type="password" name="pw"></td>
 						</tr>
 						<tr>
-							<th>비밀번호확인</th>
+							<th>- 비밀번호확인</th>
 							<td><input type="password" name="pw"></td>
 						</tr>
 						<tr>
-							<th>이메일</th>
+							<th>- 이메일</th>
 							<td><input type="text" name="mail" value="${vo.mail}"></td>
 						</tr>
 					</table>
-					<div class="submitDiv">
-						<!-- <input type="submit" value="로그인"> -->
-						<button>저장</button>
-					</div>
+					<p class="warning">
+						※비밀번호 분실 시 입력한 이메일로 정보가 발송되오니 정확하게 입력해주세요.※
+					</p>
+				</div>
+				<div class="submitDiv">
+					<!-- <input type="submit" value="로그인"> -->
+					<button>저장</button>
 				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->

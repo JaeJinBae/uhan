@@ -181,6 +181,14 @@ public class HomeController {
 		
 		return entity;
 	}
+	
+	@RequestMapping(value="/userSignIn", method=RequestMethod.GET)
+	public String userSignInGet(HttpServletRequest req, Model model){
+		HttpSession session=req.getSession();
+		MemberVO vo = mService.selectOne(session.getAttribute("id")+"");
+		model.addAttribute("vo", vo);
+		return "membership/signIn";
+	}
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
