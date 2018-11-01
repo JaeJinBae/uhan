@@ -189,6 +189,24 @@ public class HomeController {
 		model.addAttribute("vo", vo);
 		return "membership/signIn";
 	}
+	
+	@RequestMapping(value="/idCheck/{id}", method=RequestMethod.POST)
+	public  ResponseEntity<String> userUpdatePost(@PathVariable("id") String id, HttpServletRequest req, Model model){
+		logger.info("idCheck");
+		ResponseEntity<String> entity= null;
+		try {
+			MemberVO vo=mService.selectOne(id);
+			if(vo.getClass() == null){
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			}else if(vo.getClass() != null){
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+		}
+		
+		return entity;
+	}
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)

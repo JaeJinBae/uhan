@@ -560,6 +560,33 @@
         	return false;
         });
         
+        //아이디 중복확인
+        $(".idConfirmBtn").click(function(){
+        	var id_=$("input[name='id']").val();
+        	
+        	if(id_==""||id_==null){
+        		alert("아이디를 입력해주세요.");
+        	}else{
+        		idCheck(id_);
+        	}
+        });
+        
+        function idCheck(id){
+        	$.ajax({
+        		url:"${pageContext.request.contextPath}/idCheck/"+id,
+        		type:"post",
+        		dataType:"text",
+        		success:function(json){
+        			console.log(json);
+        			if(json=="ok"){
+        				alert("사용가능한 아이디 입니다.");
+        			}else{
+        				alert("이미 존재하는 아이디입니다.");
+        			}
+        		}
+        	})
+        }
+        
         //id, pw check
         function userUpdate(id, pw, mail){
 			if(pw==""){
