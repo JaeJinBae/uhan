@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<title>자주하는 질문 | 유한통증의학과</title>
+<title>회원가입 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -235,23 +235,45 @@
 	}
 	hr{
 		margin:15px 0;
+		margin-bottom:35px;
+	}
+	.formTitle{
+		font-size:23px;
+		margin:15px 0 7px 0;
+		text-align: left;
 	}
 	.formDiv > table{
-		width:47%;
+		width:95%;
 		margin:0 auto;
 		margin-top:20px;
 	}
+	.formDiv > table tr{
+		display:block;
+		border-bottom:1px solid lightgray;
+	}
+	.formDiv > table tr:first-child{
+		border-top:1px solid lightgray;
+	}
 	.formDiv > table th{
-		font-size:15px;
+		font-size:17px;
+		padding:5px 0 5px 10px;
 		text-align: left;
+		background: #f5f8f9;
+		width:110px;
+	}
+	.formDiv > table td:not(.idConfirmBtn){
+		text-align: left;
+		padding-left:15px;
 	}
 	.formDiv > table td > input{
 		padding-left:3px;
 		border-radius:5px;
+		width:180px;
 	}
-	.idConfirmBtn{
+	.idConfirmBtn > button{
 		border-radius:5px;
-		padding:0 3px;
+		padding: 0 3px;
+		margin:0 7px;
 	}
 	.submitDiv{
 		width:100%;
@@ -579,7 +601,7 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/headerTest.jsp"></jsp:include>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="mainBackground">
@@ -604,9 +626,9 @@
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/userSignIn">회원가입<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/">회원가입</a></li>
+							<li><a href="${pageContext.request.contextPath}/">로그인</a></li>
 							<li><a href="${pageContext.request.contextPath}/">회원정보찾기</a></li>
 							<li><a href="${pageContext.request.contextPath}/">이용약관</a></li>
 							<li><a href="${pageContext.request.contextPath}/">개인정보취급방침</a></li>
@@ -634,7 +656,7 @@
 				<h2>서비스를 이용하기 위해서는 회원가입이 필요합니다.</h2>
 				<div class="formDiv">
 					<div class="agreeInfoWrap">
-						<p class="warning">회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
+						<p class="warning">※회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.※</p>
 						<h2>회원가입약관</h2>
 						<div class="txtWrap">
 							<jsp:include page="signInText1.jsp"></jsp:include>
@@ -649,27 +671,28 @@
 						<input type="checkbox">개인정보처리방침의 내용에 동의합니다.
 						<hr>
 					</div>
+					<h2 class="formTitle">회원정보입력</h2>
 					<table>
 						<tr>
-							<th>- 이름</th>
-							<td><input type="text" name="name"></td>
+							<th>이름</th>
+							<td colspan='2'><input type="text" name="name"></td>
 						</tr>
 						<tr>
-							<th>- 아이디</th>
+							<th>아이디</th>
 							<td><input type="text" name="id"></td>
-							<td><button class="idConfirmBtn">중복확인</button></td>
+							<td class="idConfirmBtn"><button>중복확인</button><span class="idTxt">영문, 숫자만 가능. 최소 5자리 이상 입력하세요.</span></td>
 						</tr>
 						<tr>
-							<th>- 비밀번호</th>
-							<td><input type="password" name="pw"></td>
+							<th>비밀번호</th>
+							<td colspan='2'><input type="password" name="pw"></td>
 						</tr>
 						<tr>
-							<th>- 비밀번호확인</th>
-							<td><input type="password" name="pwConfirm"></td>
+							<th>비밀번호확인</th>
+							<td colspan='2'><input type="password" name="pwConfirm"></td>
 						</tr>
 						<tr>
-							<th>- 이메일</th>
-							<td><input type="text" name="mail" value="${vo.mail}"></td>
+							<th>이메일</th>
+							<td colspan='2'><input type="text" name="mail"></td>
 						</tr>
 					</table>
 					<p class="warning">

@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<title>자주하는 질문 | 유한통증의학과</title>
+<title>회원정보 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -559,7 +559,7 @@
 		</script>
 	</c:if>
 	<header>
-		<jsp:include page="../include/headerTest.jsp"></jsp:include>
+		<jsp:include page="../include/header.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="mainBackground">
