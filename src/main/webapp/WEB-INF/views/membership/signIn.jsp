@@ -242,45 +242,49 @@
 		margin:15px 0 7px 0;
 		text-align: left;
 	}
-	.formDiv > table{
+	.formDiv > form{
+		width:100%;
+	}
+	.formDiv > form > table{
 		width:95%;
 		margin:0 auto;
 		margin-top:20px;
 	}
-	.formDiv > table tr{
+	.formDiv > form > table tr{
 		display:block;
 		border-bottom:1px solid lightgray;
 	}
-	.formDiv > table tr:first-child{
+	.formDiv > form > table tr:first-child{
 		border-top:1px solid lightgray;
 	}
-	.formDiv > table th{
+	.formDiv > form > table th{
 		font-size:17px;
 		padding:5px 0 5px 10px;
 		text-align: left;
 		background: #f5f8f9;
 		width:110px;
 	}
-	.formDiv > table td:not(.idConfirmBtn){
+	.formDiv > form > table td:not(.idConfirmBtn){
 		text-align: left;
 		padding-left:15px;
 	}
-	.formDiv > table td > input{
+	.formDiv > form > table td > input{
 		padding-left:3px;
 		border-radius:5px;
 		width:180px;
-	}
-	.idConfirmBtn > button{
+	} 
+	.idConfirmBtn > input{
 		border-radius:5px;
 		padding: 0 3px;
 		margin:0 7px;
+		width:70px !important;
 	}
 	.submitDiv{
 		width:100%;
 		text-align: center;
 		margin-top:10px;
 	}
-	.submitDiv > button{
+	.submitDiv > input[type='submit']{
 		background: #00B4AE;
 		color:#fff;
 		border:1px solid lightgray;
@@ -560,16 +564,29 @@
         	return false;
         });
         
+        
+        //아이디 정규표현식
+        var idReg=/^[A-Za-z0-9+]{5,15}$/;
+        
         //아이디 중복확인
-        $(".idConfirmBtn").click(function(){
+        $(".idConfirmBtn > input[type='button']").click(function(){
         	var id_=$("input[name='id']").val();
+        	
+        	
+        	console.log(idReg.test(id_));
         	
         	if(id_==""||id_==null){
         		alert("아이디를 입력해주세요.");
+        		return false;
+        	}else if(!idReg.test(id_)){
+        		alert("아이디가 조건에 맞지 않습니다.");
+        		return false;
         	}else{
         		idCheck(id_);
         	}
         });
+        
+        var idChk=0;
         
         function idCheck(id){
         	$.ajax({
@@ -580,47 +597,54 @@
         			console.log(json);
         			if(json=="ok"){
         				alert("사용가능한 아이디 입니다.");
+        				idChk=1;
         			}else{
         				alert("이미 존재하는 아이디입니다.");
+        				idChk=0;
         			}
         		}
         	})
         }
         
-        //id, pw check
-        function userUpdate(id, pw, mail){
-			if(pw==""){
-				pw="no";
-			}
-			/* alert("아이디: "+id+", 비번: "+pw+", 메일: "+mail); */
-			$.ajax({
-				url:"${pageContext.request.contextPath}/userUpdate/"+id+"/"+pw+"/"+mail,
-				type:"post",
-				dataType:"text",
-				success:function(json){
-					console.log(json);
-					
-					if(json =="ok"){
-						location.href="${pageContext.request.contextPath}/userInfo";
-					}
-				}
-			});
-		}
 		
-		$(".submitDiv > button").click(function(){
+		$("#formTag").submit(function(){
+			var chkBox1=$("input[type='checkbox']").eq(0).prop("checked");
+			var chkBox2=$("input[type='checkbox']").eq(1).prop("checked");
+			var name=$("input[name='name']").val();
 			var id=$("input[name='id']").val();
-			var pw=$("input[name='pw']").eq(0).val(); 
-			var pwConfirm=$("input[name='pw']").eq(1).val();
+			var pw=$("input[name='pw']").val(); 
+			var pwConfirm=$("input[name='pwConfirm']").val();
 			var mail=$("input[name='mail']").val();
 			
-			if(pw != pwConfirm){
+			name=name.toLowerCase();
+			id=id.toLowerCase();
+			pw=pw.toLowerCase();
+			pwConfirm=pwConfirm.toLowerCase();
+			mail=mail.toLowerCase();
+			
+			if(chkBox1==false || chkBox2==false){
+				alert("회원가입약관 및 개인정보처리방침안내의 내용에 동의하지 않으면  회원가입을 할 수 없습니다.");
+				return false;
+			}
+			else if(name == ""){
+				alert("이름을 입력하세요.");
+				return false;
+				
+			}else if(id==""){
+				alert("아이디를 입력해주세요.");
+				return false;
+				
+			}else if(pw != pwConfirm){
 				alert("비밀번호가 일치하지 않습니다.");
 				return false;
+				
 			}else if(mail == ""){
 				alert("이메일을 바르게 입력해주세요.");
 				return false;
-			}else{
-				userUpdate(id, pw, mail);
+				
+			}else if(idChk == 0){
+				alert("아이디 중복확인을 해주세요.");
+				return false;
 			}
 		});
 	});
@@ -699,37 +723,39 @@
 						<hr>
 					</div>
 					<h2 class="formTitle">회원정보입력</h2>
-					<table>
+					<form id="formTag" method="post" action="userSignIn">
+						<table>
 						<tr>
 							<th>이름</th>
-							<td colspan='2'><input type="text" name="name"></td>
+							<td colspan='2'><input type="text" name="name" onkeyup="this.value=this.value.toLowerCase();"></td>
 						</tr>
 						<tr>
 							<th>아이디</th>
-							<td><input type="text" name="id"></td>
-							<td class="idConfirmBtn"><button>중복확인</button><span class="idTxt">영문, 숫자만 가능. 최소 5자리 이상 입력하세요.</span></td>
+							<td><input type="text" name="id" onkeyup="this.value=this.value.toLowerCase();"></td>
+							<td class="idConfirmBtn"><input type="button" value="중복확인"><span class="idTxt">영문, 숫자만 가능. 최소 5자리 이상 입력하세요.</span></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td colspan='2'><input type="password" name="pw"></td>
+							<td colspan='2'><input type="password" name="pw" onkeyup="this.value=this.value.toLowerCase();"></td>
 						</tr>
 						<tr>
 							<th>비밀번호확인</th>
-							<td colspan='2'><input type="password" name="pwConfirm"></td>
+							<td colspan='2'><input type="password" name="pwConfirm" onkeyup="this.value=this.value.toLowerCase();"></td>
 						</tr>
 						<tr>
 							<th>이메일</th>
-							<td colspan='2'><input type="text" name="mail"></td>
+							<td colspan='2'><input type="text" name="mail" onkeyup="this.value=this.value.toLowerCase();"></td>
 						</tr>
 					</table>
 					<p class="warning">
 						※비밀번호 분실 시 입력한 이메일로 정보가 발송되오니 정확하게 입력해주세요.※
 					</p>
-				</div>
-				<div class="submitDiv">
-					<!-- <input type="submit" value="로그인"> -->
-					<button>회원가입</button>
-				</div>
+					<div class="submitDiv">
+						<input type="submit" value="회원가입">
+					</div>
+					</form>
+				</div><!-- formDiv end -->
+				
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->
 	</section>

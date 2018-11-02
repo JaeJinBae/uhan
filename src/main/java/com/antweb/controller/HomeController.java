@@ -183,13 +183,21 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/userSignIn", method=RequestMethod.GET)
-	public String userSignInGet(HttpServletRequest req, Model model){
-		HttpSession session=req.getSession();
-		MemberVO vo = mService.selectOne(session.getAttribute("id")+"");
-		model.addAttribute("vo", vo);
+	public String userSignInGet(){
+		logger.info("userSignIn Get");
+		
 		return "membership/signIn";
 	}
 	
+	@RequestMapping(value="/userSignIn", method=RequestMethod.POST)
+	public String userSignInPost(MemberVO vo){
+		logger.info("signIn Post");
+		mService.insert(vo);
+		
+		return "membership/login";
+	}
+	
+	//회원가입 아이디 중복확인
 	@RequestMapping(value="/idCheck/{id}", method=RequestMethod.POST)
 	public  ResponseEntity<String> userUpdatePost(@PathVariable("id") String id, HttpServletRequest req, Model model){
 		logger.info("idCheck");
@@ -207,6 +215,8 @@ public class HomeController {
 		
 		return entity;
 	}
+	
+	
 
 	//========================== main ===============================
 	@RequestMapping(value = "/", method = RequestMethod.GET)
