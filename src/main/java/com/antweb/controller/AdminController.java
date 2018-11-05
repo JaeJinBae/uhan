@@ -32,6 +32,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.antweb.domain.AdviceVO;
 import com.antweb.domain.BroadcastingVO;
 import com.antweb.domain.CommentVO;
+import com.antweb.domain.MemberVO;
 import com.antweb.domain.NewsVO;
 import com.antweb.domain.NoticeVO;
 import com.antweb.domain.PageMaker;
@@ -41,6 +42,7 @@ import com.antweb.domain.StatisticsVO;
 import com.antweb.service.AdviceService;
 import com.antweb.service.BroadcastingService;
 import com.antweb.service.CommentService;
+import com.antweb.service.MemberService;
 import com.antweb.service.NewsService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
@@ -71,6 +73,9 @@ public class AdminController {
 
 	@Autowired
 	private StatisticsService sService;
+	
+	@Autowired
+	private MemberService mService;
 
 	@RequestMapping(value = "/")
 	public String adminMain(@ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req)
@@ -947,6 +952,24 @@ public class AdminController {
 		map.put("url", fileUrl);
 
 		return map;
+	}
+	
+	//회원관리
+	@RequestMapping(value="/member", method=RequestMethod.GET)
+	public String memberGet(Model model, @ModelAttribute("cri") SearchCriteria cri) throws Exception{
+		logger.info("admin member controller Get");
+		
+		List<MemberVO> list = mService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/adminMember";
 	}
 
 	@RequestMapping(value = "/statistics")

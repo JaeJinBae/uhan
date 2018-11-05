@@ -24,6 +24,11 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO selectOne(String id) {
 		return dao.selectOne(id);
 	}
+	
+	@Override
+	public MemberVO selectByMail(String mail) {
+		return dao.selectByMail(mail);
+	}
 
 	@Override
 	public void insert(MemberVO vo) {
@@ -50,7 +55,6 @@ public class MemberServiceImpl implements MemberService {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
 	}
-
 	
 
 }

@@ -210,12 +210,16 @@
 		border-bottom:2px solid lightgray;
 	}
 	.formDiv > table{
-		width:49%;
+		width:50%;
 		margin:0 auto;
 	}
 	.formDiv > table th{
 		font-size:15px;
 		text-align: left;
+		width:100px;
+	}
+	.formDiv > table td{
+		width:175px;
 	}
 	.formDiv > table td > input[name='name'], .formDiv > table td > input[name='id']{
 		background: #F3F3F3;
@@ -223,6 +227,7 @@
 	.formDiv > table td > input{
 		padding-left:3px;
 		border-radius:5px;
+		width:100%;
 	}
 	.warning{
 		color: blue;
@@ -533,7 +538,7 @@
 			});
 		}
 		
-		$(".submitDiv > button").click(function(){
+		$(".submitDiv > button").eq(0).click(function(){
 			var id=$("input[name='id']").val();
 			var pw=$("input[name='pw']").eq(0).val(); 
 			var pwConfirm=$("input[name='pw']").eq(1).val();
@@ -547,6 +552,16 @@
 				return false;
 			}else{
 				userUpdate(id, pw, mail);
+			}
+		});
+		
+		$(".submitDiv > button").eq(1).click(function(){
+			var id=$("input[name='id']").val();
+			var delConfirm = confirm("회원탈퇴를 하시겠습니까?");
+			if(delConfirm==true){
+				location.href="${pageContext.request.contextPath}/delUser/"+id;
+			}else{
+				return false;
 			}
 		});
 	});
@@ -642,6 +657,7 @@
 				<div class="submitDiv">
 					<!-- <input type="submit" value="로그인"> -->
 					<button>저장</button>
+					<button>회원탈퇴</button>
 				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->

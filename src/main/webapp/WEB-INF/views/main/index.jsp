@@ -32,7 +32,7 @@
 	padding:0;
  }
  .popup{
- 	/* display:none; */
+ 	display:none;
  }
 @media only screen and (min-width:1100px){
 	header{

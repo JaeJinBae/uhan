@@ -25,9 +25,9 @@
 		position:  relative;
 	}
 	#headerDiv #logo h2 {
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 3px;
+	    font-size: 25px;
+	    font-weight: bold;
+	    letter-spacing: 3px;
 	}
 	#headerDiv>.gohome{
 		position: absolute;
@@ -95,6 +95,7 @@
 		<div id="headerMenu"> 
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/admin/" title="게시판 관리" id="boardCtr">게시판 관리</a></li>
+				<li><a href="${pageContext.request.contextPath}/admin/member" title="회원 관리" id="memberCtr">회원 관리</a></li>
 				<li><a href="statistics" title="통계" id="statistics">통 계</a></li>
 			</ul>
 		</div>

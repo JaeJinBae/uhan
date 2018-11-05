@@ -96,6 +96,12 @@
 				idpwCheck();
 			}
 		});
+		
+		$("input[name='pw']").keydown(function(){
+			if(event.keyCode==13){
+				idpwCheck();
+			}
+		});
 	});
 </script>
 </head>

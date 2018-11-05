@@ -196,7 +196,7 @@
 		margin:0 auto;
 	}
 	.loginFormWrap > h2{
-		font-size: 23px;
+		font-size: 18px;
 		margin-bottom:20px;
 	}
 	.loginFormWrap > .form{
@@ -527,36 +527,34 @@
         });
         
         //id, pw check
-        function idpwCheck(id, pw){
-			if(id==""||pw==""){
-				alert("아이디와 비밀번호를 모두 입력하세요.");
-				return;
-			}
+        function mailCheck(mail){
+			
 			$.ajax({
-				url:"${pageContext.request.contextPath}/memberLoginCheck/"+id+"/"+pw,
+				url:"${pageContext.request.contextPath}/userInfoReq/"+mail,
 				type:"post",
 				dataType:"text",
 				success:function(json){
 					console.log(json);
 					
 					if(json!="ok"){
-						alert("아이디 또는 비밀번호를 다시 확인하세요.");
-						location.href="${pageContext.request.contextPath}/login";
+						alert("존재하지 않는 회원이거나 이메일이 다릅니다.");
+						return false;
 					}else{
-						location.href="${pageContext.request.contextPath}/";
+						alert("입력하신 이메일로 아이디와 비밀번호 정보를 전송하였습니다.");
+						location.href="${pageContext.request.contextPath}/login";
 					}
 				}
 			});
 		}
 		
 		$(".submitDiv > button").click(function(){
-			var id=$("input[name='id']").val();
-			var pw=$("input[name='pw']").val();
-			if(id==null||id==""||pw==null||pw==""){
-				alert("아이디와 비밀번호를 다시 확인하세요.");
+			var mail=$("input[name='mail']").val();
+			
+			if(mail==null||mail==""){
+				alert("이메일을 정확히 입력해주세요.");
 				return false;
 			}else{
-				idpwCheck(id, pw);
+				mailCheck(mail);
 			}
 		});
 	});
@@ -592,7 +590,7 @@
 						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></li>
-							<li><a href="${pageContext.request.contextPath}/userFindInfo">회원정보찾기</a></li>
+							<li><a href="${pageContext.request.contextPath}/">회원정보찾기</a></li>
 							<li><a href="${pageContext.request.contextPath}/">이용약관</a></li>
 							<li><a href="${pageContext.request.contextPath}/">개인정보취급방침</a></li>
 							
@@ -613,29 +611,21 @@
 			</div><!-- quick end -->
 			<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>로그인</h1>				
+				<h1>회원정보찾기</h1>				
 			</div>			
 			<div class="loginFormWrap"> 
-				<h2>회원서비스를 이용하기 위해서는 로그인이 필요합니다.</h2>
+				<h2>회원가입 시 등록하신 이메일 주소를 입력해주세요.<br>해당 이메일로 아이디와 비밀번호 정보를 보내드립니다.</h2>
 				<div class="form">
 					<table>
 						<tr>
-							<th>아이디</th>
-							<td><input type="text" name="id"></td>
-						</tr>
-						<tr>
-							<th>비밀번호</th>
-							<td><input type="password" name="pw"></td>
+							<th>이메일</th>
+							<td><input type="text" name="mail"></td>
 						</tr>
 					</table>
 					<div class="submitDiv">
 						<!-- <input type="submit" value="로그인"> -->
-						<button>로그인</button>
+						<button>확인</button>
 					</div>
-				</div>
-				<div class="signInWrap">
-					<div class="signIn"><p>아직 회원이 아니십니까?</p><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></div>
-					<div class="signIn"><p>아이디/비밀번호를 잊으셨습니까?</p><a href="${pageContext.request.contextPath}/userFindInfo">아이디/비밀번호 찾기</a></div>
 				</div>
 			</div><!-- loginFormWrap end -->
 		</div><!-- contentWrap end -->

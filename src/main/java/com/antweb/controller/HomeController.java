@@ -3,7 +3,16 @@ package com.antweb.controller;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -39,6 +48,7 @@ import com.antweb.service.NewsService;
 import com.antweb.service.NoticeService;
 import com.antweb.service.ReplyService;
 import com.antweb.service.StatisticsService;
+
 
 
 @Controller
@@ -182,6 +192,16 @@ public class HomeController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/delUser/{id}")
+	public String userRemove(@PathVariable("id") String id, HttpServletRequest req){
+		logger.info("remove user");
+		
+		mService.delete(id);
+		HttpSession session=req.getSession(false);
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value="/userSignIn", method=RequestMethod.GET)
 	public String userSignInGet(){
 		logger.info("userSignIn Get");
@@ -199,7 +219,7 @@ public class HomeController {
 	
 	//회원가입 아이디 중복확인
 	@RequestMapping(value="/idCheck/{id}", method=RequestMethod.POST)
-	public  ResponseEntity<String> userUpdatePost(@PathVariable("id") String id, HttpServletRequest req, Model model){
+	public ResponseEntity<String> userUpdatePost(@PathVariable("id") String id, HttpServletRequest req, Model model){
 		logger.info("idCheck");
 		ResponseEntity<String> entity= null;
 		try {
@@ -216,6 +236,105 @@ public class HomeController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/userLoginChk", method=RequestMethod.POST)
+	public ResponseEntity<String> userLoginChk(HttpServletRequest req, Model model){
+		logger.info("user login check");
+		ResponseEntity<String> entity= null;
+		HttpSession session=req.getSession();
+		String loginId=(String) session.getAttribute("id");
+		
+		try {
+		
+			if(loginId==null || loginId.equals("")){
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
+			}else{
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/userFindInfo", method=RequestMethod.GET)
+	public String userFindInfoGet(){
+		logger.info("userFindInfo Get");
+		
+		return "membership/findUserInfo";
+	}
+	
+	@RequestMapping(value="/userInfoReq/{mail:.+}", method=RequestMethod.POST)
+	public ResponseEntity<String> userInfoReqPost(@PathVariable("mail") String mail, HttpServletRequest req, Model model){
+		logger.info("userInfoReq Get");
+		ResponseEntity<String> entity= null;
+		
+		try {
+			MemberVO vo=mService.selectByMail(mail);
+			if(vo==null || vo.equals("")){
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
+			}else{
+				SendEmail(vo);
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
+	private void SendEmail(MemberVO vo) throws UnsupportedEncodingException {
+		logger.info("sendmail 진입");
+		String host = "smtp.naver.com";
+		String user = "youhanhospital";
+		String password = "63xy67$$";
+		int port=465;
+		
+		Properties props = new Properties();
+		props.put("mail.smtp.host", host);
+		props.put("mail.smtp.port", port);
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.ssl.enable", "true");
+		props.put("mail.smtp.ssl.trust", host);
+
+		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(user, password);
+			}
+		});
+
+		// Compose the message
+		try {
+			MimeMessage message = new MimeMessage(session);
+			message.setFrom(new InternetAddress(user,"유한마취통증의학과"));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(vo.getMail()));
+
+			// Subject
+			String subject = "유한통증의학과에서 보내드리는 "+vo.getName()+"님의 가입정보입니다.";
+			try {
+				message.setSubject(MimeUtility.encodeText(subject, "UTF-8", "B"));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			/*String PwMeg = "이름 : " + vo.getName() + "<br>" + "아이디 : " + vo.getId() + "<br>" + "비밀번호 : " + vo.getPw()
+					+ "<br>" + "이메일 : " + vo.getMail()+"<br>"+"가입일 : "+vo.getRegdate();
+
+			message.setText(PwMeg, "UTF-8");*/
+			message.setContent("<img src='http://www.uhan-hospital.com/resources/images/mailBanner.png'><br>이름 : " + vo.getName() + "<br>" 
+					+ "아이디 : " + vo.getId() + "<br>" + "비밀번호 : " + vo.getPw()
+					+ "<br>" + "이메일 : " + vo.getMail()+"<br>"+"가입일 : "+vo.getRegdate(), "text/html; charset=utf-8");
+			message.setHeader("content-Type", "text/html");
+
+			// send the message
+			Transport.send(message);
+			System.out.println("전송성공");
+
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 	
 
 	//========================== main ===============================

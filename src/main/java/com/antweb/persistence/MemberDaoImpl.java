@@ -26,6 +26,11 @@ public class MemberDaoImpl implements MemberDao {
 	public MemberVO selectOne(String id) {
 		return session.selectOne(namespace+".selectOne", id);
 	}
+	
+	@Override
+	public MemberVO selectByMail(String mail) {
+		return session.selectOne(namespace+".selectByMail",mail);
+	}
 
 	@Override
 	public void insert(MemberVO vo) {
@@ -52,5 +57,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace+".listSearchCount", cri);
 	}
+
+	
 
 }
