@@ -191,59 +191,11 @@
 			<h1 class="boardTitle">&lt;회원 관리&gt;</h1>
 			<div class="tbl_board">
 				<table>
-					<tr class="tbl_header">
+					<tr>
 						<th>이름</th>
-						<th>아이디</th>
-						<th>이메일</th>
-						<th>가입일</th> 
-						<th>비고</th>
+						<td><input type="text" name="id"></td>
 					</tr>
-					<c:choose>
-					    <c:when test="${fn:length(list) == 0}">
-				        	<tr>
-				        		<td colspan="6" style=" text-align: center;">가입된 회원이 없습니다.</td>
-				        	</tr>
-					    </c:when>
-					    <c:otherwise>
-					        <c:forEach var="item" items="${list}">
-								<tr>
-									<td>${item.name}</td>
-									<td>${item.id}</td>
-									<td>${item.mail}</td>
-									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-									<td><a href="${pageContext.request.contextPath}/admin/memberUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&id=${item.id}"><button class="updateBtn">수정</button></a><button>강제탈퇴</button></td>
-								</tr>	
-							</c:forEach>
-					    </c:otherwise> 
-					</c:choose>
 				</table>
-				<p class="registerBtn"><a href="adminCommentRegister${pageMaker.makeSearch(pageMaker.cri.page)}"><button>글쓰기</button></a></p>
-				<div class="page">
-					<ul>
-						<c:if test="${pageMaker.prev}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.startPage-1) }">&laquo;</a></li>
-						</c:if>
-						
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li ${pageMaker.cri.page == idx? 'class=active1':''}><a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=active2':''}>${idx}</a></li>
-						</c:forEach>
-						
-						<c:if test="${pageMaker.next}">
-							<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
-						</c:if>
-						
-					</ul>
-				</div><!-- page end -->
-				<div class="box-body" style="text-align:center;">
-						<select name="searchType">
-							<option value="n">선택해주세요.</option>
-							<option value="t" ${cri.searchType=='n'?'selected':''}>이름</option>
-							<option value="c" ${cri.searchType=='i'?'selected':''}>아이디</option>
-							<option value="r" ${cri.searchType=='e'?'selected':''}>이메일</option>
-						</select> 
-						<input type="text" name="keyword" id="keywordInput" value="${cri.keyword}">
-						<button id="searchBtn">검색</button>
-					</div>
 			</div><!-- tbl_board -->
 		</div>
 	</div>

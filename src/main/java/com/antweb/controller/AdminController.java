@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -970,6 +971,23 @@ public class AdminController {
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "admin/adminMember";
+	}
+	
+	@RequestMapping(value="/memberUpdate", method=RequestMethod.GET)
+	public String memberUpdateGet(String id, Model model, @ModelAttribute("cri") SearchCriteria cri) throws Exception{
+		logger.info("admin member update Get");
+		
+		MemberVO vo = mService.selectOne(id);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mService.listSearchCount(cri));
+		
+		model.addAttribute("vo", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/adminMemberUpdate";
 	}
 
 	@RequestMapping(value = "/statistics")
