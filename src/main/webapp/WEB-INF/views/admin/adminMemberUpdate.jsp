@@ -193,7 +193,23 @@
 				<table>
 					<tr>
 						<th>이름</th>
-						<td><input type="text" name="id"></td>
+						<td><input type="text" name="name" value="${vo.name}" readonly></td>
+					</tr>
+					<tr>
+						<th>아이디</th>
+						<td><input type="text" name="id" value="${vo.id}" readonly></td>
+					</tr>
+					<tr>
+						<th>비밀번호</th>
+						<td><input type="text" name="pw" value="${vo.pw}"></td>
+					</tr>
+					<tr>
+						<th>이메일</th>
+						<td><input type="text" name="mail" value="${vo.mail}"></td>
+					</tr>
+					<tr>
+						<th>가입일</th>
+						<td><input type="text" name="regdate" value="<fmt:formatDate pattern = "yyyy-MM-dd" value = "${vo.regdate}"/>" readonly></td>
 					</tr>
 				</table>
 			</div><!-- tbl_board -->
