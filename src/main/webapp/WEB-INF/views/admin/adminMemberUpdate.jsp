@@ -22,7 +22,7 @@
 		color:black;
 		text-decoration: none;
 	}
-	#headerDiv #headerMenu #boardCtr{
+	#headerDiv #headerMenu #memberCtr{
 		background: white;
 		color:black;
 	}

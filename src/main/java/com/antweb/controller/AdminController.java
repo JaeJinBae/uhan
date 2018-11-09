@@ -1015,6 +1015,19 @@ public class AdminController {
 			return entity;
 		}
 	}
+	
+	@RequestMapping(value="/memberDelete/{id}")
+	public ResponseEntity<String> memberDelete(@PathVariable("id") String id){
+		ResponseEntity<String> entity=null;
+		try {
+			mService.delete(id);
+			entity=new ResponseEntity<String>("ok", HttpStatus.OK);
+			return entity;
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no", HttpStatus.OK);
+			return entity;
+		}
+	}
 
 	@RequestMapping(value = "/statistics")
 	public String statistics(HttpServletRequest req, Model model, @ModelAttribute("cri") SearchCriteria cri) {

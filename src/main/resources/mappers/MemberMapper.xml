@@ -29,7 +29,7 @@
 	</delete>
 	
 	<select id="listSearch" resultType="MemberVO">
-		select * from member <include refid="search"></include> order by id asc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from member <include refid="search"></include> order by name asc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">

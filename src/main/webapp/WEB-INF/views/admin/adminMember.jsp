@@ -22,7 +22,7 @@
 		color:black;
 		text-decoration: none;
 	}
-	#headerDiv #headerMenu #boardCtr{
+	#headerDiv #headerMenu #memberCtr{
 		background: white;
 		color:black;
 	}
@@ -162,6 +162,31 @@
     		location.href="adminComment${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
 		
+		//강제탈퇴
+		$(".deleteBtn").click(function(){
+			var id=$(this).parent().parent().find(".idTd").text();
+			var deleteConfirm=confirm(id+"회원을 정말 탈퇴시키겠습니까?");
+			
+			if(deleteConfirm==true){
+				$.ajax({
+					url:"${pageContext.request.contextPath}/admin/memberDelete/"+id,
+					type:"post",
+					dataType:"text",
+					success:function(json){
+						console.log(json);
+						
+						if(json =="ok"){
+							alert("삭제되었습니다.");
+							location.href="${pageContext.request.contextPath}/admin/member";
+						}else{
+							alert("탈퇴가 되지않았습니다. 관리자에게 문의하세요.");
+						}
+					}
+				});
+			}else{
+				return false;
+			}
+		});
 	});
 </script>
 </head>
@@ -195,10 +220,10 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.name}</td>
-									<td>${item.id}</td>
+									<td class="idTd">${item.id}</td>
 									<td>${item.mail}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-									<td><a href="${pageContext.request.contextPath}/admin/memberUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&id=${item.id}"><button class="updateBtn">수정</button></a><button>강제탈퇴</button></td>
+									<td><a href="${pageContext.request.contextPath}/admin/memberUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&id=${item.id}"><button class="updateBtn">수정</button></a><button class="deleteBtn">강제탈퇴</button></td>
 								</tr>	
 							</c:forEach>
 					    </c:otherwise> 
