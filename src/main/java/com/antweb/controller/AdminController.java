@@ -989,6 +989,32 @@ public class AdminController {
 		
 		return "admin/adminMemberUpdate";
 	}
+	
+	@RequestMapping(value="/memberUpdate/{id}/{pw}/{mail:.+}", method=RequestMethod.POST)
+	public ResponseEntity<String> memberUpdatePost(@PathVariable("id") String id, @PathVariable("pw") String pw, @PathVariable("mail") String mail, Model model, @ModelAttribute("cri") SearchCriteria cri) throws Exception{
+		logger.info("admin member update Post");
+		
+		ResponseEntity<String> entity=null;
+		try {
+			MemberVO vo = mService.selectOne(id);
+			vo.setPw(pw);
+			vo.setMail(mail);
+			
+			mService.update(vo);
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			pageMaker.makeSearch(cri.getPage());
+			pageMaker.setTotalCount(mService.listSearchCount(cri));
+			
+			
+			model.addAttribute("pageMaker", pageMaker);
+			entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+			return entity;
+		} catch (Exception e) {
+			entity=new ResponseEntity<String>("no",HttpStatus.OK);
+			return entity;
+		}
+	}
 
 	@RequestMapping(value = "/statistics")
 	public String statistics(HttpServletRequest req, Model model, @ModelAttribute("cri") SearchCriteria cri) {

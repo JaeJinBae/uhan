@@ -116,21 +116,13 @@
 	}
 	.tbl_board table td a{
 		font-size:15px;
-	}
-	.tbl_board table tr:not(first-child) td:nth-child(2){
-		text-align: left;
+		margin-right:3px;
 	}
 	.tbl_board table td:not(.title){
 		text-align: center;
 	}
 	.replyCnt{
 		font-weight: 600;
-	}
-	.title>a:hover{
-		color:red;
-	}
-	.title>img{
-		width:12px;
 	}
 	.page{
 		clear:both;
@@ -157,11 +149,6 @@
 	.page ul li a{
 		font-size:1.1em;
 		line-height: 40px;
-	}
-	.registerBtn{
-		float:right;
-		margin-right:35px;
-		margin-top:31px;
 	}
 </style>
 <script type="text/javascript">
@@ -217,7 +204,6 @@
 					    </c:otherwise> 
 					</c:choose>
 				</table>
-				<p class="registerBtn"><a href="adminCommentRegister${pageMaker.makeSearch(pageMaker.cri.page)}"><button>글쓰기</button></a></p>
 				<div class="page">
 					<ul>
 						<c:if test="${pageMaker.prev}">

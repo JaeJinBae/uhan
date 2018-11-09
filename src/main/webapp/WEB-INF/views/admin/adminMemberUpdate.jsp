@@ -96,72 +96,29 @@
 		position:relative;
 	}
 	.tbl_board table{
-		width:800px;
+		width:100%;
 		margin:0 auto;
 		border-collapse: collapse; 
 	}
-	.tbl_board table .tbl_header th{
-		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
-		padding:8px 13px;
-		font-size:15px;
+	.tbl_board table tr{
+		border-bottom:1px solid lightgray;
 	}
-	/* .tbl_board table .tbl_header th:nth-child(2){
-		width:400px;
-	} */
+	.tbl_board table tr:first-child{
+		border-top:1px solid lightgray;
+	}
+	.tbl_board table tr th{
+		background: #e3e3e3;
+	}
 	.tbl_board table td{
 		padding:8px 13px;
-		border-bottom:1px solid lightgray;
 		font-size:15px;
 	}
-	.tbl_board table td a{
-		font-size:15px;
+	.tbl_board table td > input[name='name'], .tbl_board table td > input[name='id'], .tbl_board table td > input[name='regdate']{
+		background:#f1f1f1;
 	}
-	.tbl_board table tr:not(first-child) td:nth-child(2){
-		text-align: left;
-	}
-	.tbl_board table td:not(.title){
+	.btnDiv{
+		margin-top:20px;
 		text-align: center;
-	}
-	.replyCnt{
-		font-weight: 600;
-	}
-	.title>a:hover{
-		color:red;
-	}
-	.title>img{
-		width:12px;
-	}
-	.page{
-		clear:both;
-		width:626px; 
-		margin:70px auto;
-		text-align: center;
-	}
-	.page ul li{
-		width:45px;
-		height:40px;
-		margin:0 auto;
-		list-style: none;
-		display: inline-block;
-		text-align:center;
-		border:1px solid #e9e9e9;
-	}
-	.active1{
-		background: #00B4AE;
-	}
-	.active2{
-		font-weight: bold;
-		color:white;
-	}
-	.page ul li a{
-		font-size:1.1em;
-		line-height: 40px;
-	}
-	.registerBtn{
-		float:right;
-		margin-right:35px;
-		margin-top:31px;
 	}
 </style>
 <script type="text/javascript">
@@ -175,6 +132,32 @@
     		location.href="adminComment${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
 		
+		$(".updateBtn").click(function(){
+			var id=$("input[name='id']").val();
+			var pw=$("input[name='pw']").val();
+			var mail=$("input[name='mail']").val();
+			if(pw==""){
+				alert("비밀번호를 입력해주세요.");
+				return false;
+			}else if(mail==""){
+				alert("메일을 입력해주세요.");
+				return false;
+			}else{
+				$.ajax({
+					url:"${pageContext.request.contextPath}/admin/memberUpdate/"+id+"/"+pw+"/"+mail,
+					type:"post",
+					dataType:"text",
+					success:function(json){
+						console.log(json);
+						
+						if(json =="ok"){
+							alert("수정되었습니다.");
+							location.href="${pageContext.request.contextPath}/admin/member";
+						}
+					}
+				});
+			}
+		});
 	});
 </script>
 </head>
@@ -209,9 +192,13 @@
 					</tr>
 					<tr>
 						<th>가입일</th>
-						<td><input type="text" name="regdate" value="<fmt:formatDate pattern = "yyyy-MM-dd" value = "${vo.regdate}"/>" readonly></td>
+						<td><input type="text" name="regdate" value="<fmt:formatDate type='date' value='${vo.regdate}'/>" readonly></td>
 					</tr>
 				</table>
+				<div class="btnDiv">
+					<button class="updateBtn">수정</button>
+					<a href="${pageContext.request.contextPath}/admin/member${pageMaker.makeSearch(pageMaker.cri.page)}"><input class="listBtn" type="button" value="목록"></a>
+				</div>
 			</div><!-- tbl_board -->
 		</div>
 	</div>
