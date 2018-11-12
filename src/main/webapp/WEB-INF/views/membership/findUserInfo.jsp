@@ -233,27 +233,7 @@
 		padding:3px 10px;
 		font-size:15px;
 	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:60%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
-	}
+	
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	body{
@@ -390,6 +370,48 @@
 	.sub_title h1{
 		font-size:30px;
 		font-weight: 500;
+	}
+	.loginFormWrap{
+		width:600px;
+		margin:0 auto;
+	}
+	.loginFormWrap > h2{
+		font-size: 18px;
+		margin-bottom:20px;
+	}
+	.loginFormWrap > .form{
+		width:100%;
+		margin:0 auto;
+		padding:20px 0;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
+	}
+	.loginFormWrap > .form > table{
+		width:40%;
+		margin:0 auto;
+	}
+	.loginFormWrap > .form > table th{
+		font-size:14px;
+		width:60px;
+	}
+	.loginFormWrap > .form > table td{
+		width:175px;
+	}
+	.loginFormWrap > .form > table td > input{
+		width:100%;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > button{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
+		font-size:15px;
 	}
 	
 }

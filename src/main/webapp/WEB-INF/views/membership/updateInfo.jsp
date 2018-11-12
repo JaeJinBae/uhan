@@ -383,7 +383,58 @@
 		font-size:30px;
 		font-weight: 500;
 	}
-	
+	.formWrap{
+		width:580px;
+		margin:0 auto;
+	}
+	.formWrap > h2{
+		font-size: 23px;
+		margin-bottom:20px;
+	}
+	.formDiv{
+		width:100%;
+		margin:0 auto;
+		padding:20px 0;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
+	}
+	.formDiv > table{
+		width:50%;
+		margin:0 auto;
+	}
+	.formDiv > table th{
+		font-size:15px;
+		text-align: left;
+		width:100px;
+	}
+	.formDiv > table td{
+		width:175px;
+	}
+	.formDiv > table td > input[name='name'], .formDiv > table td > input[name='id']{
+		background: #F3F3F3;
+	}
+	.formDiv > table td > input{
+		padding-left:3px;
+		border-radius:5px;
+		width:100%;
+	}
+	.warning{
+		color: blue;
+		margin-top:15px;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > button{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
+		font-size:15px;
+	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
 	html{
