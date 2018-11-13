@@ -284,6 +284,7 @@ public class HomeController {
 		return entity;
 	}
 	
+	//메일
 	private void SendEmail(MemberVO vo) throws UnsupportedEncodingException {
 		logger.info("sendmail 진입");
 		String host = "smtp.naver.com";
@@ -866,4 +867,19 @@ public class HomeController {
 		return "redirect:/";
 	}
 		
+	//개인정보처리방침
+	@RequestMapping(value = "/personalInfo", method = RequestMethod.GET)
+	public String personalInfoGet() {
+		logger.info("personalInfo Get");
+		
+		return "membership/personalInfo";
+	}
+	
+	//이용약관
+	@RequestMapping(value = "/agreement", method = RequestMethod.GET)
+	public String agreementGet() {
+		logger.info(" Get");
+		
+		return "membership/agreement";
+	}
 }

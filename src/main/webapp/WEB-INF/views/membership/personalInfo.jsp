@@ -1,16 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<title>로그인 | 유한통증의학과</title>
+<title>개인정보처리방침 | 유한통증의학과</title>
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
+.txt_bold{
+	font-weight:600;
+	font-size:15px;
+}
 @media only screen and (min-width:1100px){
 	body{
 		font-family: 'Noto Sans', sans-serif;
@@ -190,69 +197,10 @@
 		font-size:35px;
 		font-weight: 500;
 	}
-	/* login form */
-	.loginFormWrap{
-		width:600px;
-		margin:0 auto;
-	}
-	.loginFormWrap > h2{
-		font-size: 23px;
-		margin-bottom:20px;
-	}
-	.loginFormWrap > .form{
-		width:100%;
-		margin:0 auto;
-		padding:20px 0;
-		border-top:2px solid lightgray;
-		border-bottom:2px solid lightgray;
-	}
-	.loginFormWrap > .form > table{
-		width:40%;
-		margin:0 auto;
-	}
-	.loginFormWrap > .form > table th{
-		font-size:14px;
-		width:60px;
-	}
-	.loginFormWrap > .form > table td{
-		width:175px;
-	}
-	.loginFormWrap > .form > table td > input{
-		width:100%;
-	}
-	.submitDiv{
-		width:100%;
-		text-align: center;
-		margin-top:10px;
-	}
-	.submitDiv > button{
-		background: #00B4AE;
-		color:#fff;
-		border:1px solid lightgray;
-		border-radius: 5px;
-		padding:3px 10px;
-		font-size:15px;
-	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:60%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
+	/* txt Wrap */
+	.txtWrap{
+		text-align: left;
+		padding:0 70px;
 	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
@@ -391,68 +339,11 @@
 		font-size:30px;
 		font-weight: 500;
 	}
-	.loginFormWrap{
-		width:600px;
-		margin:0 auto;
-	}
-	.loginFormWrap > h2{
-		font-size: 23px;
-		margin-bottom:20px;
-	}
-	.loginFormWrap > .form{
-		width:100%;
-		margin:0 auto;
-		padding:20px 0;
-		border-top:2px solid lightgray;
-		border-bottom:2px solid lightgray;
-	}
-	.loginFormWrap > .form > table{
-		width:40%;
-		margin:0 auto;
-	}
-	.loginFormWrap > .form > table th{
-		font-size:14px;
-		width:60px;
-	}
-	.loginFormWrap > .form > table td{
-		width:175px;
-	}
-	.loginFormWrap > .form > table td > input{
-		width:100%;
-	}
-	.submitDiv{
-		width:100%;
-		text-align: center;
-		margin-top:10px;
-	}
-	.submitDiv > button{
-		background: #00B4AE;
-		color:#fff;
-		border:1px solid lightgray;
-		border-radius: 5px;
-		padding:3px 10px;
-		font-size:15px;
-	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:60%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
+	
+	/* txt Wrap */
+	.txtWrap{
+		text-align: left;
+		padding:0 20px;
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px){
@@ -568,71 +459,7 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	.loginFormWrap{
-		width:100%;
-		margin:0 auto;
-		margin-top:20px;
-	}
-	.loginFormWrap > h2{
-		font-size: 16px;
-		margin-bottom:20px;
-		text-align: center;
-	}
-	.loginFormWrap > .form{
-		width:100%;
-		margin:0 auto;
-		padding:20px 0;
-		border-top:2px solid lightgray;
-		border-bottom:2px solid lightgray;
-	}
-	.loginFormWrap > .form > table{
-		width:60%;
-		margin:0 auto;
-	}
-	.loginFormWrap > .form > table th{
-		font-size:14px;
-		width:60px;
-	}
-	.loginFormWrap > .form > table td{
-		width:175px;
-	}
-	.loginFormWrap > .form > table td > input{
-		width:100%;
-	}
-	.submitDiv{
-		width:100%;
-		text-align: center;
-		margin-top:10px;
-	}
-	.submitDiv > button{
-		background: #00B4AE;
-		color:#fff;
-		border:1px solid lightgray;
-		border-radius: 5px;
-		padding:3px 10px;
-		font-size:15px;
-	}
-	.signInWrap{
-		width:100%;
-		margin-top:20px;
-	}
-	.signIn{
-		width:93%;
-		margin: 0 auto;
-		overflow:hidden;
-	}
-	.signIn > p{
-		float:left;
-		width:60%;
-		font-size:14px;
-	}
-	.signIn > a {
-		float:left;
-		font-size:14px;
-	}
-	.signIn > a:hover{
-		color: #0561fa;
-	}
+	
 }
 </style>
 <script type="text/javascript">
@@ -715,12 +542,16 @@
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/personalInfo">개인정보처리방침<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
-							<li><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></li>
-							<li><a href="${pageContext.request.contextPath}/agreement">이용약관</a></li>
-							<li><a href="${pageContext.request.contextPath}/personlInfo">개인정보취급방침</a></li>
-							
+							<c:if test="${sessionScope.id == null}">
+								<li><a href="${pageContext.request.contextPath}/login">로그인</a></li>
+								<li><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></li>
+							</c:if>
+							<c:if test="${sessionScope.id != null}">
+								<li><a href="${pageContext.request.contextPath}/userFindInfo">회원정보찾기</a></li>
+							</c:if>
+							<li><a href="${pageContext.request.contextPath}/agreement">이용약관</a></li>					
 						</ul>	
 					</li>
 				</ul><!-- navUl end -->
@@ -738,31 +569,11 @@
 			</div><!-- quick end -->
 			<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
-				<h1>로그인</h1>				
+				<h1>개인정보처리방침</h1>				
 			</div>			
-			<div class="loginFormWrap"> 
-				<h2>회원서비스를 이용하기 위해서는 로그인이 필요합니다.</h2>
-				<div class="form">
-					<table>
-						<tr>
-							<th>아이디</th>
-							<td><input type="text" name="id"></td>
-						</tr>
-						<tr>
-							<th>비밀번호</th>
-							<td><input type="password" name="pw"></td>
-						</tr>
-					</table>
-					<div class="submitDiv">
-						<!-- <input type="submit" value="로그인"> -->
-						<button>로그인</button>
-					</div>
-				</div>
-				<div class="signInWrap">
-					<div class="signIn"><p>아직 회원이 아니십니까?</p><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></div>
-					<div class="signIn"><p>아이디/비밀번호를 잊으셨습니까?</p><a href="${pageContext.request.contextPath}/userFindInfo">아이디/비밀번호 찾기</a></div>
-				</div>
-			</div><!-- loginFormWrap end -->
+			<div class="txtWrap"> 
+				<jsp:include page="signInText2.jsp"></jsp:include>
+			</div><!-- txtWrap end -->
 		</div><!-- contentWrap end -->
 	</section>
 	<footer>

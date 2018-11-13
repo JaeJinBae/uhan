@@ -609,12 +609,12 @@
 						</ul>
 					</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/">로그인<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
+						<a href="${pageContext.request.contextPath}/login">회원정보찾기<img class="btnArrow" src="${pageContext.request.contextPath}/resources/images/down_arrow.png"></a>
 						<ul class="sub_subDropdown">
 							<li><a href="${pageContext.request.contextPath}/userSignIn">회원가입</a></li>
-							<li><a href="${pageContext.request.contextPath}/">회원정보찾기</a></li>
-							<li><a href="${pageContext.request.contextPath}/">이용약관</a></li>
-							<li><a href="${pageContext.request.contextPath}/">개인정보취급방침</a></li>
+							<li><a href="${pageContext.request.contextPath}/login">로그인</a></li>
+							<li><a href="${pageContext.request.contextPath}/agreement">이용약관</a></li>
+							<li><a href="${pageContext.request.contextPath}/personalInfo">개인정보취급방침</a></li>
 							
 						</ul>	
 					</li>

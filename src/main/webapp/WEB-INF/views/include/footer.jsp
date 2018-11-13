@@ -86,8 +86,21 @@
 		margin:0;
 		padding:0;
 	}
-	#footer1{
+	.footer0{
+		width:100%;
+		background: #1D1E1D;
+		text-align: center;
+		border-bottom:1px solid lightgray;
 		margin-top: 75px;
+	}
+	.footer0 > a{
+		color: lightgray;
+		padding:10px;
+	}
+	.footer0 > a:hover{
+		color:#fff;
+	}
+	#footer1{
 		width:100%;
 		background: #1D1E1D;
 		color:#828282;
@@ -128,10 +141,10 @@
 	}
 </script>
 <div class="footer0">
-	<a href="${pageContext.request.contextPath}/">회원약관</a>
-	<a href="${pageContext.request.contextPath}/">개인정보처리방침</a>
-	<a href="${pageContext.request.contextPath}/">오시는 길</a>
-	<a href="${pageContext.request.contextPath}/">진료비용</a>
+	<a href="${pageContext.request.contextPath}/agreement">이용약관</a>
+	<a href="${pageContext.request.contextPath}/personalInfo">개인정보처리방침</a>
+	<a href="${pageContext.request.contextPath}/location">오시는 길</a>
+	<a href="${pageContext.request.contextPath}/intro2">진료비용</a>
 </div>
 <div id="footer1">
 	<p>대구광역시 수성구 달구벌대로 2372, 4층(범어동)</p>

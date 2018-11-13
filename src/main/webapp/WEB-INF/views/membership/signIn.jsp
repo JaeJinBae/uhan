@@ -641,7 +641,107 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	
+	.formWrap{
+		width:93%;
+		margin:0 auto;
+	}
+	.formWrap > h2{
+		font-size: 17px;
+		margin-bottom:20px;
+	}
+	.formDiv{
+		width:100%;
+		margin:0 auto;
+		padding:20px 6px;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
+	}
+	.agreeInfoWrap{
+		width:100%;
+		text-align: left;
+	}
+	.warning{
+		color:orange;
+		margin-top:15px;
+		font-size:14px;
+		text-align: center;
+	}
+	.agreeInfoWrap > h2{
+		font-size:18px;
+		margin:15px 0 7px 0;
+	}
+	.txtWrap{
+		width:95%;
+		height:200px;
+		border:1px solid lightgray;
+		padding:5px;
+		overflow: scroll;
+	}
+	input[type='checkbox']{
+		margin:10px;
+	}
+	hr{
+		margin:15px 0;
+		margin-bottom:35px;
+	}
+	.formTitle{
+		font-size:18px;
+		margin:15px 0 7px 0;
+		text-align: left;
+	}
+	.formDiv > form{
+		width:100%;
+	}
+	.formDiv > form > table{
+		width:98%;
+		margin:0 auto;
+		margin-top:20px;
+	}
+	.formDiv > form > table tr{
+		display:block;
+		border-bottom:1px solid lightgray;
+	}
+	.formDiv > form > table tr:first-child{
+		border-top:1px solid lightgray;
+	}
+	.formDiv > form > table th{
+		font-size:15px;
+		padding:5px 0 5px 5px;
+		text-align: left;
+		background: #f5f8f9;
+		width:90px;
+	}
+	.formDiv > form > table td:not(.idConfirmBtn){
+		text-align: left;
+		padding-left:7px;
+	}
+	.formDiv > form > table td > input{
+		padding-left:3px;
+		border-radius:5px;
+		width:130px;
+	} 
+	.idConfirmBtn > input{
+		border-radius:5px;
+		padding: 0 3px;
+		
+		width:70px !important;
+	}
+	.idTxt{
+		display:none;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > input[type='submit']{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
+		font-size:15px;
+	}
 }
 </style>
 <script type="text/javascript">

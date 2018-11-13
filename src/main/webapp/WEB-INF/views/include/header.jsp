@@ -324,6 +324,17 @@
 	.adminBtn{
 		display:none;
 	}
+	.loginDiv{
+		display:none;
+	}
+	.mLoginDiv{
+		width:100%;
+		text-align: center;
+		border-bottom:1px solid lightgray;
+	}
+	.mLoginDiv > a{
+		margin:15px;
+	}
 }
 </style>
 <script type="text/javascript">
@@ -602,6 +613,18 @@
 				</ul>
 			</div>
 			<img class="arrow" src="${pageContext.request.contextPath}/resources/images/arrow_down.png">
+		</li>
+		<li>
+			<div class="mLoginDiv">
+				<c:if test="${sessionScope.id != null}">
+					<a href="${pageContext.request.contextPath}/userInfo">${sessionScope.id}님</a>
+					<a href="${pageContext.request.contextPath}/logout">[ 로그아웃 ]</a>
+				</c:if>
+				<c:if test="${sessionScope.id == null}">
+					<a href="${pageContext.request.contextPath}/login">[ 로그인 ]</a>
+					<a href="${pageContext.request.contextPath}/userSignIn">[ 회원가입 ]</a>
+				</c:if>
+			</div>
 		</li>
 	</ul><!-- mainMenu end -->
 </div><!-- headerWrap end -->
