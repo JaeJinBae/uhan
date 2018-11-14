@@ -528,7 +528,52 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	
+	.loginFormWrap{
+		width:100%;
+		margin:0 auto;
+	}
+	.loginFormWrap > h2{
+		width:100%;
+		margin:0 auto;
+		margin-top:14px;
+		text-align:center;
+		font-size: 15px;
+		margin-bottom:14px;
+	}
+	.loginFormWrap > .form{
+		width:100%;
+		margin:0 auto;
+		padding:15px 0;
+		border-top:2px solid lightgray;
+		border-bottom:2px solid lightgray;
+	}
+	.loginFormWrap > .form > table{
+		width:80%;
+		margin:0 auto;
+	}
+	.loginFormWrap > .form > table th{
+		font-size:14px;
+		width:60px;
+	}
+	.loginFormWrap > .form > table td{
+		width:175px;
+	}
+	.loginFormWrap > .form > table td > input{
+		width:100%;
+	}
+	.submitDiv{
+		width:100%;
+		text-align: center;
+		margin-top:10px;
+	}
+	.submitDiv > button{
+		background: #00B4AE;
+		color:#fff;
+		border:1px solid lightgray;
+		border-radius: 5px;
+		padding:3px 10px;
+		font-size:15px;
+	}
 }
 </style>
 <script type="text/javascript">

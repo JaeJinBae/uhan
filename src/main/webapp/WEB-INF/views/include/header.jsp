@@ -126,6 +126,9 @@
 	.arrow{
 		display: none;
 	}
+	.mLoginDiv{
+		display:none;
+	}
 }
 @media only screen and (min-width:768px) and (max-width:1099px){
 	*{
@@ -234,6 +237,9 @@
 		display: none;
 	}
 	.adminBtn{
+		display:none;
+	}
+	.mLoginDiv{
 		display:none;
 	}
 }

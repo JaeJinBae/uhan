@@ -459,7 +459,9 @@
 		font-size: 1rem;
 		font-weight: 550;
 	}
-	
+	.txtWrap{
+		padding:0 10px;
+	}
 }
 </style>
 <script type="text/javascript">
