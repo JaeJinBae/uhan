@@ -656,6 +656,7 @@ public class HomeController {
 			logger.info("go Read");
 			
 			ReplyVO rvo=rService.select(bno);
+			aService.updateCnt(bno);
 			
 			model.addAttribute("reply", rvo);
 			

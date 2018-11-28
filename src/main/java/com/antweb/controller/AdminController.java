@@ -751,7 +751,8 @@ public class AdminController {
 
 		AdviceVO vo = aService.selectOne(bno);
 		ReplyVO rvo = rService.select(bno);
-
+		aService.updateCnt(bno);
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
