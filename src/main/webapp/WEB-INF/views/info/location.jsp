@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css?ver=2">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=uFwNagnnR3Ef3GygBT7t&submodules=drawing"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f62d88e57c71e604c94f4ab7f287918d&libraries=drawing"></script>
 <style type="text/css">
 @media only screen and (min-width:1100px){
 	body{
@@ -645,7 +645,7 @@
 				<h1>오시는 길</h1>				
 			</div>
 			
-			<div id="map" style="width:1024px;height:450px;margin:0 auto;"></div>
+			<!-- <div id="map" style="width:1024px;height:450px;margin:0 auto;"></div>
 	
 			<script> 
 				var mapOptions = {
@@ -660,7 +660,60 @@
 				    map: map
 				});
 				
-			</script>
+			</script> -->
+			<div id="map" style="width:1024px;height:450px;margin:0 auto;"></div>
+				<script>
+					var container = document.getElementById('map');
+					var options = {
+						center: new daum.maps.LatLng(35.859189, 128.621849),
+						level: 3
+					};
+			
+					var map = new daum.maps.Map(container, options);
+					
+					// 마커가 표시될 위치입니다 
+					var markerPosition  = new daum.maps.LatLng(35.859189, 128.621849); 
+
+					// 마커를 생성합니다
+					var marker = new daum.maps.Marker({
+					    position: markerPosition
+					});
+
+					// 마커가 지도 위에 표시되도록 설정합니다
+					marker.setMap(map);
+					
+					// 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다.
+					var iwContent = '<div style="padding-left:23px; padding-top:2px; color:#033c60; font-size:15px; font-weight:bold;">유한통증의학과</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+					// 인포윈도우를 생성합니다
+					var infowindow = new daum.maps.InfoWindow({
+					    content : iwContent
+					});
+
+					// 마커에 마우스오버 이벤트를 등록합니다
+					daum.maps.event.addListener(marker, 'mouseover', function() {
+					  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					    infowindow.open(map, marker);
+					});
+
+					// 마커에 마우스아웃 이벤트를 등록합니다
+					daum.maps.event.addListener(marker, 'mouseout', function() {
+					    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					    infowindow.close();
+					});
+					
+					//마커 누르면 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					daum.maps.event.addListener(marker, 'click', function() {
+					  	// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					    infowindow.open(map, marker);
+					});
+					
+					// 마커 외 영역 누르면 이벤트를 등록합니다
+					daum.maps.event.addListener(map, 'click', function() {
+					    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					    infowindow.close();
+					});
+				</script>
 			<p class="addr">대구광역시 수성구 달구벌대로 2372, 4층(범어동)</p>
 			<div class="addrInfo">
 				<div class="info2">
