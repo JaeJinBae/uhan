@@ -844,8 +844,8 @@
 					</div>
 				</div><!-- content00 end -->
 				
-				<p class="solutionText">IVNT, 혈관주사, 영양주사</p>
-				<img class="solutionImg firstSolutionImg" id="firstSolutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02Img3.png">
+				<%-- <p class="solutionText">IVNT, 혈관주사, 영양주사</p>
+				<img class="solutionImg firstSolutionImg" id="firstSolutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02Img3.png"> --%>
 				<p class="solutionText">C-ARM을 이용한 신경차단술</p>
 				<img class="solutionImg firstSolutionImg" src="${pageContext.request.contextPath}/resources/images/clinic02img4.png">
 				<p class="solutionText">고주파 열응고술</p>

@@ -543,11 +543,11 @@
 				<h1>진료비용</h1>				
 			</div>
 			<div class="content">
-				<img src="${pageContext.request.contextPath}/resources/images/intro2Img2.PNG">
+				<img src="${pageContext.request.contextPath}/resources/images/intro2Img3.PNG">
 			</div><!-- content end -->
 		</div><!-- contentWrap end -->
 		<div class="mobile_ContentWrap">
-			<img src="${pageContext.request.contextPath}/resources/images/intro2Img2.PNG">
+			<img src="${pageContext.request.contextPath}/resources/images/intro2Img3.PNG">
 		</div>
 	</section>
 	<footer>

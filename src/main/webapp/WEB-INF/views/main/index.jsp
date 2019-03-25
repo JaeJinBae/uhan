@@ -662,7 +662,7 @@
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20181029.png">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190102.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>
