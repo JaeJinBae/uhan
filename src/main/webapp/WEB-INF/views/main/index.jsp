@@ -32,7 +32,7 @@
 	padding:0;
  }
  .popup{
- 	display:none;
+ 	display:block;
  }
 @media only screen and (min-width:1100px){
 	header{
@@ -188,12 +188,13 @@
 	.popup{
 		width:600px;
 		position:absolute;
-		top:150px;
-		left:100px;
+		top:450px;
+		left:50px;
 		background: #f1f1f1;
 	}
 	.popup:last-child{
-		left:420px;
+		left: 655px;
+		width: 960px;
 	}
 	.popup > img{
 		width:100%;
@@ -380,18 +381,18 @@
 		margin-top:30px;
 		border:1px solid lightgray;
 	}
-	/* .popup{
-		display:none;
-	} */
+
 	.popup{
 		width:440px;
 		position:absolute;
-		top:150px;
+		top:210px;
 		left:100px;
 		background: #f1f1f1;
 	}
 	.popup:last-child{
-		left:40px;
+		left:20px;
+		top: 575px;
+		width: 730px;
 	}
 	.popup > img{
 		width:100%;
@@ -543,15 +544,18 @@
 		margin-top:10px;
 		border:1px solid lightgray;
 	}
-	/* .popup{
-		display:none;
-	} */
+
 	.popup{
 		width:300px;
 		position:absolute;
-		top:77px;
+		top:210px;
 		left:10px;
 		background: #f1f1f1;
+	}
+	.popup:last-child{
+		left:0px;
+		top: 470px;
+		width: 100%;
 	}
 	.popup > img{
 		width:100%;
@@ -568,6 +572,21 @@
 <script type="text/javascript">
 
 	$(function(){		
+		
+		//해외접속 우회
+		var type=navigator.appName;
+		if(type == "Netscape")
+			var lang = navigator.language;
+		else
+			var lang = navigator.userLangage;
+		console.log(lang);
+		lang=lang.substr(0,2);
+		
+		if(lang != "ko"){
+			
+			window.open("${pageContext.request.contextPath}/location");
+		}
+		
 		$(".mainBanner").slick({
 			arrows:false,
 			infinite:true,
@@ -658,11 +677,15 @@
 					</form>
 				</div>
 				<%-- <img class="timeImg" src="${pageContext.request.contextPath}/resources/images/mainTime.png"> --%>
-				<img class="timeImgTablet" src="${pageContext.request.contextPath}/resources/images/mainTimeTablet2.png">
+				<img class="timeImgTablet" src="${pageContext.request.contextPath}/resources/images/mainTimeTablet3.png">
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190102.jpg">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190610.jpg">
+			<p><a href="#none">[ 닫 기 ]</a></p>
+		</div>
+		<div class="popup">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190702.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>

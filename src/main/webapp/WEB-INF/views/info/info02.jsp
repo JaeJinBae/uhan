@@ -195,17 +195,19 @@
 		max-width:1100px;
 		margin:0 auto;
 		overflow: hidden;
-		margin-bottom:100px;
+		margin-bottom: 40px;
 	}
 	.bossIntro .bossimg{
-		/* width:50%; */
+		float: left;
 		width:425px;
 		margin-right:70px;
+		margin-left: 120px;
 	}
 	.bossIntro .bosstext{
+		float: right;
 		width:30%;
-		display:inline-block;
 		text-align: left;
+		margin-right: 120px;
 	}
 	.bossIntro .bosstext .diaIcon{ 
 		margin-bottom:50px;
@@ -237,13 +239,14 @@
 		width:100%;
 		border:0;
 		border-top:2px solid gray;
+		margin: 100px 0;
 	}
 	.bosscareer{
 		width:100%;
 		margin:0 auto;
 	}
 	.bosscareer .diaIcon{
-		margin-top:100px;
+		margin-top: 50px;
 		margin-bottom:40px;
 	}
 	.bosscareer h2{
@@ -261,7 +264,7 @@
 		font-size:18px;
 		line-height: 45px;
 	}
-	.bosscareer ol li:last-child{
+	.bosscareer ol li:last-child{ 
 		list-style: decimal;
 		text-align: left;
 		font-size:18px;
@@ -424,16 +427,19 @@
 		margin-bottom:100px;
 	}
 	.bossIntro .bossimg{
+		float: left;
 		width:50%;
 		margin-right:40px;
+		margin-left:5px;
 	}
 	.bossIntro .bosstext{
-		width:39%;
-		display:inline-block;
+		float: right;
+		width:43%;
 		text-align: left;
+		margin-right: 5px;
 	}
 	.bossIntro .bosstext .diaIcon{ 
-		margin-bottom:50px;
+		/* margin-bottom:50px; */
 	}
 	.bossname{
 		font-size:37px;
@@ -459,17 +465,17 @@
 		font-size:18px;
 	}
 	hr{
-		width:100%;
+		width:98%;
 		border:0;
 		border-top:2px solid gray;
+		margin: 50px auto;
 	}
 	.bosscareer{
 		width:100%;
 		margin:0 auto;
 	}
 	.bosscareer .diaIcon{
-		margin-top:100px;
-		margin-bottom:40px;
+		margin-bottom:10px;
 	}
 	.bosscareer h2{
 		font-size:30px;
@@ -724,7 +730,6 @@
 					</ul>
 				</div><!-- bosstext end -->
 			</div><!-- bossIntro end -->
-			<hr>
 			<div class="bosscareer">
 				<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
 				<h2>시술 시연 사례</h2>
@@ -736,6 +741,26 @@
 					<li>지난 10년간 지역 최초로 신경성형술, 신경박리술, 경막외 내시경술을 도입하여 시술하였으며, 그 외 추간판내 고주파 열응고술<br>(IDET,L-DISQ, necleoplasty) 시술 및 수만건의 영상장치 유도하 척추시술</li>
 				</ol>
 			</div>
+			<hr>
+			<div class="bossIntro">
+				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/bossImg3.jpg">
+				<div class="bosstext">
+					<img class="diaIcon" src="${pageContext.request.contextPath}/resources/images/icon_dia.png">
+					<p class="bossname"><span>권성현</span> 원장님</p>
+					<div class="bossyak">
+						약 력
+					</div>
+					<ul>
+						<li>- 현, 대한통증학회 대구경북지부 정회원</li>
+						<li>- 현, 유한통증의학과의원 원장</li>
+						<li>- 한국통증중재시술연구회(KORSIS) 정회원</li> 
+						<li>- Mindray 초음파 강사 역임</li>
+						<li>- 서대구병원 학술부장 역임</li>
+						<li>- 선린병원 마취통증의학과 역임</li>
+						<li>- 영남대학교 의과대학 졸업 및 전공의 수료</li>
+					</ul>
+				</div><!-- bosstext end -->
+			</div><!-- bossIntro end -->
 		</div><!-- contentWrap end -->
 		<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>

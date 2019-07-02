@@ -768,6 +768,20 @@
 </style>
 <script type="text/javascript">
 	$(function(){
+		//해외접속 우회
+		var type=navigator.appName;
+		if(type == "Netscape")
+			var lang = navigator.language;
+		else
+			var lang = navigator.userLangage;
+		console.log(lang);
+		lang=lang.substr(0,2);
+		
+		if(lang != "ko"){
+			
+			window.open("${pageContext.request.contextPath}/location");
+		}
+		
 		//quick menu
 		$(window).scroll(function() {
             var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
