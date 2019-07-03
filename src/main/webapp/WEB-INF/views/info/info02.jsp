@@ -205,7 +205,7 @@
 	}
 	.bossIntro .bosstext{
 		float: right;
-		width:30%;
+		width:32%;
 		text-align: left;
 		margin-right: 120px;
 	}
