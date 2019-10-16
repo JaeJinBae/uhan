@@ -739,7 +739,7 @@
 					함께 나누는 병원이 되도록 노력하겠습니다.
 				</div>
 				
-				<%-- <img class="info01img" src="${pageContext.request.contextPath}/resources/images/info01img.png"> --%>
+				<img class="info01img" src="${pageContext.request.contextPath}/resources/images/info01img.jpg">
 				
 				<div class="content5">
 					2018년 5월 8일<br>
@@ -748,7 +748,7 @@
 			</div><!-- content end -->
 		</div><!-- contentWrap end -->
 		<div class="mobile_ContentWrap">
-			<img src="${pageContext.request.contextPath}/resources/mobileImage/info01img.png">
+			<img src="${pageContext.request.contextPath}/resources/mobileImage/info01img.jpg">
 		</div>
 	</section>
 	<footer>

@@ -194,7 +194,7 @@
 	}
 	.popup:last-child{
 		left: 655px;
-		width: 960px;
+		width: 900px;
 	}
 	.popup > img{
 		width:100%;
@@ -685,7 +685,7 @@
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190702.jpg">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191001.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>
