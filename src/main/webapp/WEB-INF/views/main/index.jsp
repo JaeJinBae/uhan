@@ -681,11 +681,11 @@
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20190610.jpg">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191209.png">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191001.jpg">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191202.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>

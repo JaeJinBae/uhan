@@ -206,7 +206,7 @@
 		border-collapse: collapse;
 	}
 	.tbl_board table .tbl_header th{
-		width:50px;
+		width:60px;
 		border-top:2px solid #e3e3e3;
 		border-bottom:2px solid #00B4AE;
 		padding:8px 5px;
