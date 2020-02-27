@@ -33,6 +33,7 @@
  }
  .popup{
  	display:block;
+ 	border: 1px solid #efefef;
  }
 @media only screen and (min-width:1100px){
 	header{
@@ -685,7 +686,11 @@
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191202.jpg">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20200130.jpg">
+			<p><a href="#none">[ 닫 기 ]</a></p>
+		</div>
+		<div class="popup">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20200205.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>
