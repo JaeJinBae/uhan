@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 
 <title>유한통증의학과</title>
+<meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
 <meta name="description" content="대구광역시 수성구 범어동 통증의학과, 비수술클리닉, 대상포진클리닉, 관절클리닉">
 <meta property="og:type" content="website">
 <meta property="og:title" content="유한통증의학과">
@@ -34,6 +35,7 @@
  .popup{
  	display:block;
  	border: 1px solid #efefef;
+ 	z-index: 9999;
  }
 @media only screen and (min-width:1100px){
 	header{
@@ -183,9 +185,6 @@
 		width:450px;
 		border:1px solid lightgray;
 	}
-	/* .popup{
-		display:none;
-	} */
 	.popup{
 		width:600px;
 		position:absolute;
@@ -195,7 +194,6 @@
 	}
 	.popup:last-child{
 		left: 655px;
-		width: 900px;
 	}
 	.popup > img{
 		width:100%;
@@ -382,7 +380,7 @@
 		margin-top:30px;
 		border:1px solid lightgray;
 	}
-
+	
 	.popup{
 		width:440px;
 		position:absolute;
@@ -545,7 +543,7 @@
 		margin-top:10px;
 		border:1px solid lightgray;
 	}
-
+	
 	.popup{
 		width:300px;
 		position:absolute;
@@ -572,9 +570,8 @@
 </style>
 <script type="text/javascript">
 
-	$(function(){		
-		
-		//해외접속 우회
+	$(function(){
+		//해외접속 우회 
 		var type=navigator.appName;
 		if(type == "Netscape")
 			var lang = navigator.language;
@@ -682,15 +679,11 @@
 			</div><!-- rightContent end -->
 		</div><!-- contentWrap end -->
 		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20191209.png">
+			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20200303.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 		<div class="popup">
 			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20200130.jpg">
-			<p><a href="#none">[ 닫 기 ]</a></p>
-		</div>
-		<div class="popup">
-			<img src="${pageContext.request.contextPath}/resources/popupImg/popup20200205.jpg">
 			<p><a href="#none">[ 닫 기 ]</a></p>
 		</div>
 	</section>
