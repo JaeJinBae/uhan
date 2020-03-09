@@ -741,7 +741,7 @@
 					<li>지난 10년간 지역 최초로 신경성형술, 신경박리술, 경막외 내시경술을 도입하여 시술하였으며, 그 외 추간판내 고주파 열응고술<br>(IDET,L-DISQ, necleoplasty) 시술 및 수만건의 영상장치 유도하 척추시술</li>
 				</ol>
 			</div>
-			<hr>
+			<%-- <hr>
 			<div class="bossIntro">
 				<img class="bossimg" src="${pageContext.request.contextPath}/resources/images/bossImg3.jpg">
 				<div class="bosstext">
@@ -760,7 +760,7 @@
 						<li>- 영남대학교 의과대학 졸업 및 전공의 수료</li>
 					</ul>
 				</div><!-- bosstext end -->
-			</div><!-- bossIntro end -->
+			</div><!-- bossIntro end --> --%>
 		</div><!-- contentWrap end -->
 		<div class="sub_title">
 				<p><img src="${pageContext.request.contextPath}/resources/images/sLogo.png"></p>
